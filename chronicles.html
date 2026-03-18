@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mga Kronika | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html" class="active">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MGA KRONIKA</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Mga personal na tala, sulat, at huling habilin ng mga magani ng Salong-Salong.</p>
+      </div>
+    </header>
+
+    <!-- ── TAB NAVIGATION ── -->
+    <div class="section-container section-container--tight" style="padding-bottom: 0;">
+      <div class="tab-system">
+        <nav class="tab-nav" aria-label="Chronicles sections">
+          <a href="#tala" class="tab-nav__link">Mga Tala: Pakulo 2</a>
+          <a href="#habilin" class="tab-nav__link">Mga Huling Habilin: Pakulo 3</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+         TAB 1: MGA TALA, PAKULO 2
+    ════════════════════════════════════════════ -->
+    <section id="tala" class="tab-section" aria-label="Mga Tala">
+      <div class="section-container">
+
+        <h2 class="section-heading">MGA TALA: Pakulo 2</h2>
+
+        <div class="entries-stack">
+
+          <!-- ── TSINTA'S JOURNAL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Talaarawan ni Tsinta</span>
+              <h3 class="chronicle-title">Talaarawan ni Tsinta</h3>
+
+              <p class="chronicle-section-header">Unang Pahina</p>
+              <p>Listahan ng mga sangkap para sa nilagang buwaya:</p>
+              <ul style="margin-bottom: 1rem;">
+                <li>Buwaya (hiniwa sa maliliit na piraso)</li>
+                <li>Saging</li>
+                <li>Patatas</li>
+                <li>Pechay</li>
+                <li>Sibuyas</li>
+              </ul>
+
+              <p class="chronicle-section-header">Gitnang Pahina, Mga Bagong Mukha</p>
+              <ul class="lore-list">
+                <li><strong>Dapithapon</strong>, Mukhang nagdurusa sa mga nangyari sa kanyang mga kasama, masaya siya magkwento!! Sana matulungan niya kami...</li>
+                <li><strong>Mang Tomas</strong>, Mukhang pagod na... (<em>~Aswang ba siya na nagpapanggap na kasama nila? Buti na lang at ginising nila ako, hindi ko napansin na kinagat na pala ako~</em>) Tigbanua buso pala ang tawag sa kanila.</li>
+                <li><strong>Babaylan Tina</strong>, Siya pala yung naririnig ko sa ilalim ng altar! Akala ko merong patibong doon! Malakas siya, nagagawa nyang pamunuan ang mga natitirang taga sitio ng hindi natatakot!!</li>
+                <li><strong>Lira</strong>, Ang ganda ng gagawin niya, sana maipakita niya sa lahat na gumagana ito.</li>
+                <li><strong>Alon</strong>, Nakakatakot na ganito ang mangyayari sa mga taong natulak na ng todo ang hangganan. Tama siya, pero hindi ako kailan man sasang-ayon na lang sa pagpatay ng inosenteng tao... Kahit na may pagkakataong gawin ko rin ito...</li>
+              </ul>
+
+              <p class="chronicle-section-header">Pangalawa sa Dulong Pahina</p>
+              <p>Makakapunta na rin kami sa Sitio Pasang! Sabik na akong makita kung anong naroon! Ang tagal ng tinatago ni mama kung ano ang naroon. Baka marami silang mga kaibigang hayop kaya malaki, at mataas ang harang, para di makawala. Gusto ko rin magkaroon ng mga kaibigang hayop... O kaya nag-aaral sila ng mga mahika gamit ang iba't-ibang klase ng symbolo, at kapag nakita ng iba malalaman rin nila kung paano gamitin iyon, kaya mataas ang harang nila? Sana naroon ang solusyon kung bakit siya nawala...</p>
+            </div>
+          </article>
+
+          <!-- ── ABO'S NOTES ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang mga Tala ni Abo</span>
+              <h3 class="chronicle-title">Mga Tala ni Abo</h3>
+
+              <p class="chronicle-section-header">Unang Tala</p>
+              <p>Nasilayan na rin namin ang araw muli, ngunit kasabay nito ang lumalagablab na apoy ng Bulkang Betis. Maaari nga naming idaan ito sa ibang Sitio... Nakakabahala, nakakalungkot na kailangan namin pumili. Maaari sana naming tulungan sila, sinubukan ko ng bawasan ang umaagos na mainit na putik. Hayy... Nagpapasalamat ako sa kanila ng napakarami, sobra sobrang sa kanilang tulong. Grabe ang tinakbo namin at kung wala si Maria, Balanoy at Rea, malamang sa malamang ay pisat na kami.</p>
+
+              <p class="chronicle-section-header">Pangalawang Tala</p>
+              <p>Marahil sa pag-aaral ng tinikling bumilis ang maliliit ko na paa, salamat na lamang sa kanya. Napaka buting ginoo. Mapipisat talaga kami nun eh...</p>
+            </div>
+          </article>
+
+          <!-- ── DH INTERLUDE: BABAYLAN TINA'S NOTES ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Interlude: Balangkas ng Pakikipagsapalaran ng mga Magani</span>
+              <h3 class="chronicle-title">Mga Tala ni Babaylan Tina</h3>
+              <span class="chronicle-subtitle">Habang naglalakad palabas sa tagong kampo nila Babaylan Tina, nahulog ang ilan sa mga kawayang papel niya.</span>
+
+              <p class="chronicle-section-header">Balangkas ng Pakikipagsapalaran ng mga Magani</p>
+              <p><em>Titulo: (Kasalukuyang Isinasagawa)</em></p>
+
+              <p style="margin-top: 0.75rem; margin-bottom: 0.5rem;"><strong>Mga Magani:</strong></p>
+              <ul class="lore-list">
+                <li><strong>Sikatuna</strong>, Ang barbarong minsan nang inihatid sa itim na ilog, ngunit nakaligtas sa tulong ng kanyang mga kasama.</li>
+                <li><strong>Mang Tomas</strong>, Isang siday na nagbibigay ng lakas ng loob sa mga Magani upang magpatuloy.</li>
+                <li><strong>Ponce</strong>, Unang naging kawal, at kinalaunan ay naging kaibigan ni Datu Laya. Dalubhasa sa iba't ibang uri ng sandata.</li>
+                <li><strong>Balanoy</strong>, Ang mentala ng Sitio Tambis, dalubhasa sa salamangka at may kakayahang magbahagi ng kanyang mahika gamit ang kawayang papel.</li>
+                <li><strong>Rea</strong>, Isang magsasaka sa oras ng kapayapaan, at mandirigma ng dugo sa oras ng pangangailangan. Siya rin ang kababata ni Datu Laya.</li>
+                <li><strong>Maria Clara</strong>, Magiting na mandirigma at butihing ina at maybahay. Kadalasang nagtatapos ang laban sa pagwagayway niya ng ulo ng kalabang pinuno.</li>
+                <li><strong>Dapithapon</strong>, Debotong kleriko ni Mayari, at bukal ng kaalaman at pagpapagaling sa loob at labas ng pakikipaglaban.</li>
+              </ul>
+
+              <p class="chronicle-section-header" style="margin-top: 1.5rem;">Mga Kabanata</p>
+              <ol class="kabanata-list">
+                <li><strong>Ang pagsalakay sa Sitio Tambis</strong>, Nagtipon ang mga magani para sa kaarawan ni Datu Laya. Umatake ang mga aswang na suot ang wangis ng mga emisaryo ng Sitio Pagangpang. Dinakip si Maginoo Hain nang buhay. Nasawi ang dalawa: Sikatuna at Dapithapon. Ibinalik sila ni Datu Laya gamit ang isang ipinagbabawal na salamangka.</li>
+                <li><strong>Ang Karunungan ng Puno ng Balete</strong>, Sa dakong timog ng Sitio Tambis, isang kagubatan ang nagtago ng misteryosong puno ng balete.</li>
+                <li><strong>Ang natutulog na Sitio ng Anilau</strong>, Natutulog ang buong sitio. Bangungot. Tama nga bang paslangin siya upang magising ang sitio?</li>
+                <li><strong>Ang mga anino ng Sitio Anilau</strong>, Ang pagsubok ng ginintuang mangga. Isang nagpapanggap na aswang ang suot ng mukha ni Datu Cardo, o si Datu Cardo mismo ay nahimok maging aswang?</li>
+                <li><strong>Ang unang sulyap kay Gabunan</strong>, Nakasulat sa sariling dugo ang mga salitang: <em>KAILANGAN NIYANG MAMATAY...</em></li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- ── RHEA'S JOURNAL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Talaarawan ni Rhea</span>
+              <h3 class="chronicle-title">Talaarawan ni Rhea</h3>
+              <span class="chronicle-subtitle">Mga larawang may kasamang paliwanag mula sa kanyang talaarawan.</span>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 1</strong></p>
+                <p>Isang guhit ng malaking puno ng balete na napapalibutan ng ilaw ng buwan. Sa ilalim nito, may isang maliit na pigura na nakatayo, nakatingin sa itaas.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 2</strong></p>
+                <p>Isang mapa ng Sitio Tambis na may mga markang pula, ang mga lugar na sinalakay ng mga aswang. May mga salitang nakasulat sa gilid: "Bakit dito? Bakit ngayon?"</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 3</strong></p>
+                <p>Mga mukha ng mga bagong kaibigan. Si Dapithapon, matanda, pagod, ngunit may kaalaman sa mga mata. Si Mang Tomas, malungkot, ngunit nagtitiis. Si Babaylan Tina, matatag, walang takot.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 4</strong></p>
+                <p>Isang bulkan sa malayo, may usok na umaangat sa langit. Sa harap nito, pitong pigura na nakatayo, nagmamasid. Ilang salita sa ibaba: "Kailangan naming pumunta doon."</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 5</strong></p>
+                <p>Isang babae na nakaupo sa gitna ng isang ritwal na bilog, inilulan ng apoy. Ang kanyang mga kamay ay nakatanggap ng isang bagay na maliwanag at mapanganib.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 6</strong></p>
+                <p>Ang loob ng isang yungib na may kulay asul na liwanag. May mga bato na may ukit, at sa gitna, isang prisma ng yelo na may isang tao sa loob.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 7</strong></p>
+                <p>Isang espiritu ng babae, maganda ngunit maputla, nakalutang sa hangin, may mga mata na walang emosyon. Sa paligid niya, mga hibla ng liwanag na kumokonekta sa isang natutulog na katawan.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 8</strong></p>
+                <p>Lava. Pulang-pula na apoy na sumasaklaw sa lahat. Sa gitna nito, dalawang katawan, isang lalaki at isang babae, nakahalukipkip sa isa't isa habang sila ay nalulunod sa init.</p>
+              </div>
+
+              <div class="chronicle-image-entry">
+                <p class="chronicle-image-caption"><strong>Larawan 9</strong></p>
+                <p>Ang labas ng Bulkang Betis mula sa malayo. Ang grupo ng mga magani, pagod at sugatan, nakatayo sa gilid ng bundok. Sa itaas: isang salitang nakaukit sa papel, "Natapos na ba?"</p>
+              </div>
+
+            </div>
+          </article>
+
+        </div><!-- /.entries-stack -->
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         TAB 2: MGA HULING HABILIN, PAKULO 3
+    ════════════════════════════════════════════ -->
+    <section id="habilin" class="tab-section" aria-label="Mga Huling Habilin">
+      <div class="section-container">
+
+        <h2 class="section-heading">MGA HULING HABILIN: Pakulo 3</h2>
+
+        <div class="entries-stack">
+
+          <!-- ── MARIA CLARA'S LAST WILL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Huling Habilin ni Maria Clara</span>
+              <h3 class="chronicle-title">Ang Huling Habilin ni Maria Clara</h3>
+              <hr class="gold-divider">
+
+              <p class="chronicle-section-header">Para sa anak na si Agila</p>
+              <p>Kung mababasa mo ito, nangangahulugang hindi na ako nandito. Hindi ito katulad ng lahat ng beses na umalis ako, alam kong hindi ka naniniwala sa akin, at tama ka. Ngunit sa pagkakataong ito, hindi ko kaya ang bumalik.</p>
+              <p>Gusto kong malaman mo: palagi kang nasa puso ko, kahit sa mga oras na hindi ko ito maipakita. Ang bawat laban na nilaban ko, ang bawat kaaway na aking pinatay, ginawa ko ito para sa pag-asa na isang araw ay hindi mo na kailangang lumaban.</p>
+              <p>Mahalin mo ang iyong sarili. Mahalin mo ang mga taong nagmamahal sa iyo. At kung makakahanap ka ng kapayapaan na hindi ko natagpuan, hawakan mo iyon nang mahigpit.</p>
+              <p>Ikaw ang pinakamahalagang bagay na nagawa ko sa buhay na ito.</p>
+              <p style="text-align:right; font-style:italic;">- Nanay</p>
+
+              <p class="chronicle-section-header">Para sa mahal na si Isagani</p>
+              <p>Isagani. Alam mo na ang lahat ng kailangan mong malaman. Hindi kita kailangang sabihin kung gaano kita kamahal, naranasan mo na iyon sa bawat araw na magkasama tayo.</p>
+              <p>Pangalagaan mo si Agila. Ipakita sa kanya ang mundo na hindi ko nakita. At kung makikita mo ang mga tala sa langit sa mga gabing hindi ka makatulog, alalahanin na kasama mo pa rin ako.</p>
+              <p>Patawarin mo ako sa lahat ng hindi ko nagawa. At salamat sa lahat ng nagawa mo.</p>
+              <p style="text-align:right; font-style:italic;">- Maria Clara</p>
+
+              <p class="chronicle-section-header">Sa sinumang makakabasa nito</p>
+              <p>Ang mga ginawa ko ay hindi lahat mapapawalang-sala. Ngunit ginawa ko ang lahat ng kaya ko sa mundo na ibinigay sa akin. Kung may pagkakataon ka pang baguhin ang iyong landas, gawin mo. Huwag hintayin ang katapusan bago mapagtanto kung ano ang mahalaga.</p>
+              <p>Ang Isla ng Salong-Salong ay puno ng mga sugat, ngunit puno rin ng lakas. Alagaan ninyo ito.</p>
+              <p style="text-align:right; font-style:italic;">- Maria Clara</p>
+            </div>
+          </article>
+
+          <!-- ── TSINTA'S LETTER TO SANTEL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Sulat ni Tsinta para kay Santel</span>
+              <h3 class="chronicle-title">Sulat ni Tsinta para kay Santel</h3>
+              <hr class="gold-divider">
+
+              <p>Santel,</p>
+              <p>Hindi ko alam kung paano simulan ito. Matagal na akong nagsusulat nito sa isip ko, muling sinusulat, binubura, sinimulan muli. Ngunit ngayon kailangan ko na itong isulat nang totoona.</p>
+              <p>Sumama ako sa iyo sa Kasaanan. Sumama ako dahil alam ko na hindi mo ito gagawin nang mag-isa, o mas masamang mangyayari, gagawin mo ito nang mag-isa at hindi na bumabalik. Kaya sumama ako. At bumalik tayo.</p>
+              <p>Ngunit, Santel, hindi tayo pareho ang bumalik na lumabas doon.</p>
+              <p>Nakita ko ang mga bagay na hindi dapat makita ng sinuman. Naramdaman ko ang hapdi ng pagkamatay na paulit-ulit na dumating sa akin at umalis. Natuto akong mabuhay kasama ang bigat ng mga kaluluwa na hindi mapahinga. At sa bawat hakbang pababa, lagi kang nasa harap ko, lagi kang humihila, at lagi akong sumusunod.</p>
+              <p>Hindi kita sisihin para doon. Hindi mo kailangan ang aking kapatawaran, ngunit ibinibigay ko ito sa iyo.</p>
+              <p>Ngunit kailangan mo ring malaman: mahal kita. Hindi dahil obligasyon ko ito, hindi dahil wala akong ibang pagpipilian. Mahal kita dahil pinili kita. Pinili kita sa bawat hakbang pababa at sa bawat pagsasakripisyo, at pipiliin kita muli kahit alam ko ang lahat ng mangyayari.</p>
+              <p>Sana mahanap mo ang kapayapaan na hinahanap mo. Sana ang lahat ng ginawa natin ay nagbigay ng sapat na kahulugan para sa ikaw na bago. At sana, kahit isang beses, pahintulutan mo ang iyong sariling magpahinga.</p>
+              <p>Nandito pa rin ako. Kahit anong mangyari.</p>
+              <p style="text-align:right; font-style:italic;">- Tsinta</p>
+            </div>
+          </article>
+
+          <!-- ── AHBO'S LETTER ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Sulat ni Ahbo para sa mga Kabataan</span>
+              <h3 class="chronicle-title">Sulat ni Ahbo para sa mga Kabataan</h3>
+              <hr class="gold-divider">
+
+              <p>Sa inyong lahat na magbabasa nito,</p>
+              <p>Hindi ko kayo lahat kilala. Ngunit alam ko na kayo ay mga kabataang mula sa Sitio Amalciga, ang mga batang pinalaki ko sa turo ng Lalahon, sa pag-asa na isang araw ay magiging mas mabuti ang mundo para sa inyo.</p>
+              <p>Nais kong sabihin sa inyo: hindi ko pagsisisihan ang aking buhay. Binigay ko ito sa Lalahon, at ibinigay niya ito sa laban. Ngunit kung may isang bagay na gusto kong maibigay sa inyo bilang pamana, ito ay hindi kapangyarihan o lakas ng digmaan. Ito ay ang kalayaang pumili.</p>
+              <p>Pinili ko ang landas ng paglilingkod. Pinili ko ang lumaban para sa iba. At kahit na ang diyosa na pinagsilbihan ko ay nagkuwestyon, pinili ko pang manatiling tapat sa aking mga puso, sa aking mga tao.</p>
+              <p>Kayo rin ay may pagpipilian. Ang mga diyos, ang mga pinuno, ang mga tradisyon, lahat sila ay magbibigay sa inyo ng landas. Ngunit sa huli, kayo ang lalakad.</p>
+              <p>Huwag matakot na pumili nang naiiba. Huwag matakot na magmahal nang buong-buo. At huwag kalimutan ang mga taong nauna sa inyo, hindi upang mabigo sa kanilang anino, kundi upang matutunan kung paano sila humakbang sa dilim.</p>
+              <p>Ang apoy ng Amalciga ay nandito pa. Nasa inyo na ito ngayon.</p>
+              <p style="text-align:right; font-style:italic;">- Ahbo, alagad ni Lalahon</p>
+            </div>
+          </article>
+
+          <!-- ── DAPITHAPON'S FAREWELL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Pamamaalam ni Dapithapon</span>
+              <h3 class="chronicle-title">Ang Pamamaalam ni Dapithapon</h3>
+              <hr class="gold-divider">
+
+              <p>Sa lahat ng maaari kong maiwanan,</p>
+              <p>Maraming taon na akong nag-iingat ng Punong Balete. Maraming taon na akong nakatayo sa pagitan ng mundo ng mga buhay at ng mundo ng mga nakaraan. At sa lahat ng mga taon na iyon, isang tanong ang palagi kong inuulit sa aking sarili:</p>
+              <p><em>Sapat na ba ang ginawa ko?</em></p>
+              <p>Hindi ko pa rin alam ang sagot. Ngunit ito ang natutunan ko: ang tanong mismo ang nagpapanatili sa atin na bukas. Ang araw na titigil tayo sa pagtatanong, iyon ang araw na talaga tayong mamamatay.</p>
+              <p>Nagsimula ako bilang kleriko ni Mayari, isang kabataan na puno ng pananampalataya at walang karanasan sa tunay na kalungkutan ng mundo. Natutunan ko ang kapangyarihan ng gabi at ng liwanag ng buwan. Natutunan ko ang pagpapagaling at ang pagsugat. Natutunan ko ang pagmamahal at ang pagkawala.</p>
+              <p>Ang Punong Balete ay nagturo sa akin ng pinakamahalaga: na ang lahat ng bagay ay may ugat. Ang lahat ng kapangyarihan, ang lahat ng karunungan, ang lahat ng puso, may pinagmulan. At kung gusto mong maunawaan ang isang bagay, kailangan mong hanapin ang ugat nito, hindi ang mga sanga.</p>
+              <p>Sa mga susunod na magbabantay ng punong ito, kung mayroon man, sana maunawaan ninyo ito: hindi ang puno ang kailangan ng proteksyon. Ang puno ay matagal nang nakaligtas sa lahat ng sumubok sa kanya. Ang kailangan ng proteksyon ay ang mga taong hindi pa handa sa karunungang inaalok nito.</p>
+              <p>Hinahanap ko si Hilberto. Isang kleriko ng Mayari na binanggit ng Balatiti. Hindi ko siya natagpuan sa buong buhay ko, o baka natagpuan ko siya nang hindi ko namamalayan. Kung mababasa mo ito, at kung ikaw si Hilberto, huwag hintayin ang isang matandang lalaki na manggaling sa nakaraan. Simulan mo na ang trabaho. Ang orden ay kailangan mo, hindi ako.</p>
+              <p>Sa aking mga kasama sa paglalakbay, sa mga maganing nagbigay sa akin ng dahilan upang ipagpatuloy: Salamat. Binago ninyo ang aking pananampalataya hindi sa pamamagitan ng mga salita, kundi sa pamamagitan ng inyong mga ginawa. Nakita ko ang tapang sa mga katawang pagod. Nakita ko ang awa sa mga kamay na sanay sa giyera. Nakita ko ang pag-asa sa mga matang naroon pa rin pagkatapos ng lahat.</p>
+              <p>Ang buwan ay patuloy na sisikat. Kahit sa pinakamadilim na gabi, nandoon pa rin ito, naghihintay lamang na lumabas mula sa likod ng mga ulap.</p>
+              <p>Paalam.</p>
+              <p style="text-align:right; font-style:italic;">- Dapithapon, Kleriko ni Mayari,<br>Tagabantay ng Punong Balete</p>
+            </div>
+          </article>
+
+          <!-- ── BALANOY'S LETTER ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Sulat ni Balanoy</span>
+              <h3 class="chronicle-title">Ang Sulat ni Balanoy</h3>
+              <hr class="gold-divider">
+
+              <p>Sa aking Ama at Kapatid,</p>
+              <p>Kung mababasa ninyo ito, nangangahulugang natapos na ang aking bahagi sa labanang ito. Hindi ako nagmamadali, ngunit alam ko rin na may mga bagay na hindi maiiwasan.</p>
+              <p>Ama, natatandaan mo pa ba ang araw na itinuro mo sa akin ang unang salamangka? Isang simpleng apoy sa palad, maliit, mahina, ngunit tunay. Sinabi mo: "Hindi ang lakas ng apoy ang mahalaga. Ang mahalaga ay ang lakas ng nagdadala nito." Hindi ko lubos na naunawaan noon. Ngayon, nauunawaan ko na.</p>
+              <p>Ang mga kawayang papel na ibinigay ko sa aking mga kasama, bawat isa ay may kasamang bahagi ng aking sarili. Hindi ito biro. Ibinigay ko ito nang buong-buo, nang may pagmamahal, nang walang pagsisisi. Ito ang pinakamahusay na nagawa ko sa lahat ng aking kapangyarihan, hindi ang pagpatay ng mga kaaway, kundi ang pagbibigay ng lakas sa mga kaibigan.</p>
+              <p>Kapatid, pangalagaan mo si Ibod. Alam ko na wala pa siyang malay, ngunit bumabalik siya. Naniniwala ako doon. At kapag nagising siya, sabihin mo sa kanya: hindi niya kasalanan ang anumang nangyari. Pinahalagahan ko ang bawat araw na magkasama kaming nagbabantay ng Sitio Tambis.</p>
+              <p>Huwag magdalamhati nang matagal. Tandaan ako sa mga maaraw na umaga at sa mga gabi na maliwanag ang buwan. Doon ninyo ako mahahanap.</p>
+              <p style="text-align:right; font-style:italic;">- Balanoy</p>
+            </div>
+          </article>
+
+          <!-- ── YNIO'S LETTER ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Sulat ni Ynio</span>
+              <h3 class="chronicle-title">Ang Sulat ni Ynio</h3>
+              <hr class="gold-divider">
+
+              <p>Mensahe para sa aking Ina.</p>
+              <p>Kamusta, Nay? Ako 'to, si Ynio.</p>
+              <p>Matagal na akong hindi nakakapagsulat sa iyo. Nakakaabala ang mga bagay dito sa Sitio Pasang, ngunit hindi ito dahilan. Pasensya na.</p>
+              <p>Gusto ko sanang sabihin sa iyo na mabuti na ang lahat, ngunit hindi ko magawa iyon nang tapat. Maraming namatay. Maraming nawala. At ako, na nanatili, ay minsan ay nagtatanong kung ano ang ibig sabihin ng "nananatili" sa mundo na tulad nito.</p>
+              <p>Ngunit narito pa rin ako, Nay. Nagtatrabaho. Tinutulungan ang mga tao na nakakulong sa sumpa na higit pa sa isang henerasyon. Mabagal ang trabaho. Masakit ang trabaho. Ngunit tuwing makikita ko ang isang batang humihinga nang mas maayos, isang matanda na muling nakakatayo nang walang sakit, natatandaan ko kung bakit nandito ako.</p>
+              <p>Si Lira, hindi ko siya maaaring hindi banggitin. Siya ang nag-akay sa akin sa mga araw na hindi ko alam kung saan pupunta. Maraming beses akong nagkamali. Maraming beses akong umiyak nang mag-isa. Ngunit nandoon siya, palagi.</p>
+              <p>Nay, salamat sa pagtuturo sa akin na ang totoong lakas ay hindi sa kamao. Nasa puso, nasa pagtitiis, nasa pagmamahal na nagpapatuloy kahit pagod na pagod na.</p>
+              <p>Babalik ako. Hindi ko alam kung kailan, ngunit babalik ako. At kapag nagkita tayo, marami akong ikukwento.</p>
+              <p style="text-align:right; font-style:italic;">- Ynio, ang inyong anak</p>
+            </div>
+          </article>
+
+          <!-- ── SANTEL'S LETTER ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Sulat ni Santel para sa Ate Tsinta</span>
+              <h3 class="chronicle-title">Ang Sulat ni Santel para sa Ate Tsinta</h3>
+              <hr class="gold-divider">
+
+              <p>Sa aking minamahal na Ate Tsinta,</p>
+              <p>Alam ko na bago mo pa matapos itong basahin, maiisip mo na na mali ang lahat ng aking ginawa. At baka tama ka. Ngunit pakibasa mo muna ito nang buo bago ka magsimulang magtalo sa akin sa isipan mo, alam ko na nangyayari iyon.</p>
+              <p>Pumunta ako sa Kasaanan dahil kailangan ko. Hindi dahil gusto ko, o, baka noo'y gusto ko, ngunit ngayon na nakalabas na tayo, malinaw na sa akin ang pagkakaiba ng "gusto" at "kailangan." Kailangan kong malaman kung ano ang naghihintay sa kabilang panig. Kailangan kong harapin ang takot na matagal ko nang tinatago. At kailangan ko... kailangan ko ng katibayan na ang lahat ng sakripisyo, ng mga taong inibig ko at nawala, ay may kahulugan.</p>
+              <p>Hindi ko nahanap ang sagot na hinahanap ko. Ngunit nahanap ko ang isang bagay na mas mahalaga: nahanap ko ang katotohanan na kaya kong harapin ang kasagutan kahit wala ako sa loob nito.</p>
+              <p>At ikaw, sumama ka. Sinubukan mong pigilan ako. Ngunit nang hindi mo ako mapigilan, sumama ka pa rin. Iyon, Ate Tsinta, ang pinaka-Tsinta na bagay na nagawa mo kailanman.</p>
+              <p>Hindi ko lubos na mauunawaan ang nagbago sa atin. Ngunit nandito pa rin ako. Nandito ka pa rin. At sapat iyon sa akin ngayon.</p>
+              <p>Salamat sa hindi mo ako pinabayaan, kahit na lagi mong sinasabing dapat mo akong pabayaan.</p>
+              <p style="text-align:right; font-style:italic;">- Santel, ang iyong nakakaasar na kasamahan</p>
+            </div>
+          </article>
+
+          <!-- ── REA'S LAST WILL ── -->
+          <article class="chronicle-entry">
+            <div class="will-card">
+              <span class="chronicle-label">Ang Huling Habilin ni Rea Labrador</span>
+              <h3 class="chronicle-title">Ang Huling Habilin ni Rea Labrador</h3>
+              <hr class="gold-divider">
+
+              <p>Bihira ako'ng magsalita nang kakaunti, ngunit sa papel, gagawin ko. Huwag manghimasok.</p>
+
+              <p class="chronicle-section-header">Para sa mga batang Lakan at Sulay</p>
+              <p>Alam kong hindi kayo lubos na nakakaintindi ng lahat ng nangyari sa inyong ama. Masyadong marami para sa mga batang katulad ninyo. Ngunit habang lumalaki kayo, nais kong malaman ninyo ito: ang inyong ama ay isang lalaking naharap sa imposible nang paulit-ulit, at nanatiling tao sa kabila ng lahat.</p>
+              <p>Pinalaki ko kayo upang maging malakas, ngunit mas mahalaga, pinalaki ko kayo upang maging mabait. Ang tapang ay maaaring matutuhan. Ang kabutihang-loob ay mas mahirap paunlarin. Huwag kalimutan iyon.</p>
+
+              <p class="chronicle-section-header">Para sa mga anak na tinanggap ko</p>
+              <p>Kayo, ang lahat ng batang walang lugar na pumuntahan, kayo rin ang aking mga anak. Hindi kita ginawa, ngunit pinalaki kita. At iyon, sa aking paniniwala, ay mas mahalaga.</p>
+              <p>Ang mundo ay magiging malupit sa inyo. Magiging hindi makatarungan, magiging mahirap, magiging walang saysay sa ilang mga araw. Ngunit nandito rin ang kagandahan, sa mga tao na pipiliin ninyong mahalin, sa mga laban na pipiliin ninyong labanan, sa mga gabi na hahanapin ninyong bituin.</p>
+
+              <p class="chronicle-section-header">Para sa Salingbobog Council</p>
+              <p>Itinayo ko ang Konseho na may dugo, luha, at hindi kaunting init ng ulo. Kung nagtatagal pa ito pagkatapos ko, nangangahulugang nagtagumpay tayo, nangangahulugang naunawaan ng mga datu at raja na ang kapayapaan ay hindi kahinaan kundi isang napakahirap na uri ng lakas.</p>
+              <p>Huwag hayaang bumalik ang lumang giyera. Kahit na mahirap. Kahit na maraming gustong bumalik doon.</p>
+
+              <p class="chronicle-section-header">Para sa lahat</p>
+              <p>Namatay ang maraming tao para sa mundo na ito. Ang kanilang pangalan ay dapat maalala, hindi bilang mga biktima, kundi bilang mga taong pumili. Pinili nilang lumaban. Pinili nilang magmahal. Pinili nilang manatili kahit nagastos na ang lahat.</p>
+              <p>Iyon ang tunay na pamana ng Salong-Salong.</p>
+              <p>Alagaan ninyo ang isla. Alagaan ninyo ang isa't isa. At kung kailanman ay maging mahirap ang lahat, alalahanin ninyo na may mga nauna na sa inyo na kaharap ang mas mahirap, at nanatili pa rin sila.</p>
+              <p>Kaya kaya rin ninyo.</p>
+              <p style="text-align:right; font-style:italic;">- Rea Labrador</p>
+            </div>
+          </article>
+
+        </div><!-- /.entries-stack -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

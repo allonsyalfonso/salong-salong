@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talasalitaan | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html" class="active">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>TALASALITAAN</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Ang mga salita, titulo, at konsepto ng Isla ng Salong-Salong.</p>
+      </div>
+    </header>
+
+    <!-- ── GLOSSARY ── -->
+    <section aria-label="Talasalitaan">
+      <div class="section-container">
+
+        <!-- ── A ── -->
+        <h2 class="glossary-letter">A</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Aswang</p>
+            <span class="glossary-card__type">Nilalang</span>
+            <p class="glossary-card__def">A shape-shifting supernatural creature capable of wearing the faces of humans. Aswangs infiltrated positions of power across Salong-Salong, replacing leaders with impostors to destabilize the island from within. They are not a single creature but a category, the most dangerous are those you do not realize have replaced someone until it is too late.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Abayan</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">A companion animal bonded spiritually to a babaylan. Not merely a pet, but a spiritual partner whose wellbeing is tied to the babaylan's own. Babaylan Liham's abayan is a Pilandok.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Anagolay</p>
+            <span class="glossary-card__type">Diyosa</span>
+            <p class="glossary-card__def">The goddess of lost things and recovery. Invoked by those seeking what has been taken, forgotten, or destroyed. Rea calls upon Anagolay in her most private writings.</p>
+          </div>
+
+        </div>
+
+        <!-- ── B ── -->
+        <h2 class="glossary-letter">B</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Babaylan</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">A spiritual leader, healer, and intermediary between the human world and the realm of spirits. Babaylans hold significant authority in their sitios, more, often, than the datu in matters of the sacred. They carry knowledge of ritual, medicine, and the invisible world that most people will never directly encounter.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Balete</p>
+            <span class="glossary-card__type">Puno</span>
+            <p class="glossary-card__def">The sacred fig tree, believed to be home to spirits and the spirits of ancestors. Cutting a balete without permission is considered deeply dangerous. The Punong Balete of Salong-Salong is the oldest and most powerful of its kind on the island.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Balatiti</p>
+            <span class="glossary-card__type">Nilalang</span>
+            <p class="glossary-card__def">A mystical bird that serves as the guardian and spokesperson of the Punong Balete. Its age is unknown. It speaks, evaluates, and does not tolerate those who approach the tree with selfish intent.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Banaba Conflict</p>
+            <span class="glossary-card__type">Kasaysayan</span>
+            <p class="glossary-card__def">The ongoing multi-sided war between humans, spirits, and aswangs that began following the Malabulak Crisis. Named after the banaba flower, which blooms in the aftermath of destruction. There is no clear victor. There may never be.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Berbalang</p>
+            <span class="glossary-card__type">Uri ng Aswang</span>
+            <p class="glossary-card__def">A specific type of aswang associated with the Berbalang clan of Sitio Pagangpang. Capable of complex infiltration and shapeshifting. The Berbalang who posed as Maginoo Adlawan was instrumental in spreading the Tigbanua Buso curse in Sitio Pasang.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Bulkan</p>
+            <span class="glossary-card__type">Lugar</span>
+            <p class="glossary-card__def">Volcano. Salong-Salong has two active volcanoes: Bulkang Betis and Bulkang Kamuning. Both are considered sacred and dangerous in equal measure.</p>
+          </div>
+
+        </div>
+
+        <!-- ── D ── -->
+        <h2 class="glossary-letter">D</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Datu</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">The chief or leader of a sitio. A datu's authority is hereditary but can be challenged. The datu handles governance, justice, and represents the sitio in inter-community councils. The longest-serving datu in Salong-Salong's recorded history was Datu Laya of Sitio Tambis.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Diwata</p>
+            <span class="glossary-card__type">Nilalang</span>
+            <p class="glossary-card__def">Nature spirits that inhabit specific places, rivers, trees, mountains. Unlike aswangs, diwatas are not inherently malicious, but they are unpredictable and command respect. Disturbing a diwata's home without acknowledgment is considered the height of foolishness.</p>
+          </div>
+
+        </div>
+
+        <!-- ── G ── -->
+        <h2 class="glossary-letter">G</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Gabunan</p>
+            <span class="glossary-card__type">Nilalang</span>
+            <p class="glossary-card__def">A term referring to a specific category of transformed being, one who has crossed the boundary between human and something older, driven by grief, vengeance, or a power beyond ordinary comprehension. Maria Clara's transformation into a gabunan was the result of a bloodline inheritance long dormant. The full nature of gabunan is not widely understood.</p>
+          </div>
+
+        </div>
+
+        <!-- ── H ── -->
+        <h2 class="glossary-letter">H</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Habilin</p>
+            <span class="glossary-card__type">Salita</span>
+            <p class="glossary-card__def">A last will, final instruction, or dying wish. In the culture of Salong-Salong, a habilin is considered binding and sacred. To ignore a person's habilin is to invite misfortune.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Hilaga / Timog / Silangan / Kanluran</p>
+            <span class="glossary-card__type">Direksyon</span>
+            <p class="glossary-card__def">The cardinal directions in Filipino: North, South, East, West. On the Salong-Salong compass rose, these appear as H, T, S, K.</p>
+          </div>
+
+        </div>
+
+        <!-- ── I ── -->
+        <h2 class="glossary-letter">I</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Itim na Ilog</p>
+            <span class="glossary-card__type">Lugar</span>
+            <p class="glossary-card__def">The black river, the boundary between the world of the living and the realm of the dead. Kasaanan lies beyond it. Sikatuna crossed it twice. Tsinta and Santel descended past it and returned. Those who do so rarely come back unchanged.</p>
+          </div>
+
+        </div>
+
+        <!-- ── K ── -->
+        <h2 class="glossary-letter">K</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Kasaanan</p>
+            <span class="glossary-card__type">Lugar</span>
+            <p class="glossary-card__def">The underworld. The realm of the damned, where the river of souls churns with the wails of the lost. Not a place of rest but of unending trial. Tsinta and Santel are the only known living beings to have descended into Kasaanan and returned.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Kawayang Papel</p>
+            <span class="glossary-card__type">Mahika</span>
+            <p class="glossary-card__def">A form of magic practiced by Balanoy involving specially prepared bamboo paper. Knowledge, power, and spells can be inscribed onto the paper and transferred to or shared with others. It is both an art and a weapon.</p>
+          </div>
+
+        </div>
+
+        <!-- ── L ── -->
+        <h2 class="glossary-letter">L</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Lalahon</p>
+            <span class="glossary-card__type">Diyosa</span>
+            <p class="glossary-card__def">The goddess of volcanoes, harvest, and destruction. Ahbo served her devotedly until death. Following Ahbo's sacrifice, the people of Sitio Amalciga turned against Lalahon, cursing her name and abandoning her worship.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Lakan</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">A term of noble rank, sometimes used as a name. The children left in Rea's care after the campaign include one named Lakan.</p>
+          </div>
+
+        </div>
+
+        <!-- ── M ── -->
+        <h2 class="glossary-letter">M</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Magani</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">A warrior-hero. In Salong-Salong, the term refers specifically to the adventuring party assembled by Datu Laya to rescue his son and investigate the aswang threat. It has since become a broader term for those who take up difficult, dangerous work for the sake of others.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Malabulak Crisis</p>
+            <span class="glossary-card__type">Kasaysayan</span>
+            <p class="glossary-card__def">The massacre of the 39th Salingbobog Council at Sitio Malabulak, carried out by Maria Clara and her companions. It was the event that ended the era of attempted peace and ignited the Banaba Conflict.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Mayari</p>
+            <span class="glossary-card__type">Diyosa</span>
+            <p class="glossary-card__def">The goddess of the moon. Patron deity of Dapithapon, who served her as a cleric for centuries. Her clerics are healers, chroniclers, and guardians of the boundary between memory and forgetting.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Maginoo</p>
+            <span class="glossary-card__type">Titulo</span>
+            <p class="glossary-card__def">A title of nobility, used for sons and daughters of datus. Maginoo Hain is the son of Datu Laya. Maginoo Adlawan was the son of Datu Adlaw, or appeared to be.</p>
+          </div>
+
+        </div>
+
+        <!-- ── R ── -->
+        <h2 class="glossary-letter">R</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Revivify</p>
+            <span class="glossary-card__type">Mahika</span>
+            <p class="glossary-card__def">A powerful resurrection spell capable of returning a recently deceased person to life. Gabunan distributed two scrolls of Revivify as a taunt after killing three Maganis, an act that only deepened the mystery of the creature's motives.</p>
+          </div>
+
+        </div>
+
+        <!-- ── S ── -->
+        <h2 class="glossary-letter">S</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Salingbobog Council</p>
+            <span class="glossary-card__type">Organisasyon</span>
+            <p class="glossary-card__def">The governing alliance of datus and rajas across Salong-Salong. Founded in its modern form by Rea Labrador after the Malabulak Crisis. Its 39th gathering was its last under the old order.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Sitio</p>
+            <span class="glossary-card__type">Lugar</span>
+            <p class="glossary-card__def">A settlement or community. The basic unit of society in Salong-Salong. Each sitio has its own datu, babaylan, and customs. Alliances between sitios are political, cultural, and often fragile.</p>
+          </div>
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Sulay</p>
+            <span class="glossary-card__type">Pangalan</span>
+            <p class="glossary-card__def">One of the children taken into Rea's care after the campaign, daughter of Sikatuna.</p>
+          </div>
+
+        </div>
+
+        <!-- ── T ── -->
+        <h2 class="glossary-letter">T</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-card">
+            <p class="glossary-card__term">Tigbanua Buso</p>
+            <span class="glossary-card__type">Sumpa</span>
+            <p class="glossary-card__def">A curse that afflicted the residents of Sitio Pasang for generations, causing physical deterioration and suffering. The Berbalang accelerated its spread using a mysterious orb. Ynio spent years attempting to break it through ritual.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

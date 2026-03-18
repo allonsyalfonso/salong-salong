@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasaysayan | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html" class="active">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>KASAYSAYAN</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Ang kronolohikal na pagkakasunod ng mga pangyayari sa Isla ng Salong-Salong.</p>
+      </div>
+    </header>
+
+    <!-- ── TIMELINE ── -->
+    <section aria-label="Kasaysayan ng Salong-Salong">
+      <div class="section-container">
+
+        <div class="timeline">
+
+          <!-- ERA 1: Bago ang Digmaan -->
+          <div class="timeline-era">
+            <span class="timeline-era__label">Bago ang Digmaan: The Age Before</span>
+          </div>
+
+          <!-- EVENT 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Bago ang Digmaan</span>
+              <h3 class="timeline-card__title">Ang Mahabang Kapayapaan</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Long Peace</p>
+              <p class="timeline-card__desc">Under the leadership of Datu Laya, the longest-serving Datu in Sitio Tambis's history, Salong-Salong entered an era of unprecedented tranquility. Tribal conflicts were resolved through dialogue. The sitios prospered. The Salingbobog Council, an alliance of datus and rajas, maintained fragile but functional order across the island. It was a peace built on careful hands and quiet sacrifices.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Bago ang Digmaan</span>
+              <h3 class="timeline-card__title">Ang Pagdating ng mga Berbalang</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Coming of the Berbalang</p>
+              <p class="timeline-card__desc">In the shadows of this peace, something moved. The Berbalang, agents of the Berbalang clan of Sitio Pagangpang, began infiltrating the island's power structures, killing and replacing key figures with shapeshifters. Maginoo Adlawan, heir of Datu Adlaw, was among the first to fall. The Tigbanua Buso curse was quietly seeded in Sitio Pasang. The pieces were being arranged long before anyone knew a game was being played.</p>
+            </div>
+          </div>
+
+          <!-- ERA 2: Ang Simula -->
+          <div class="timeline-era">
+            <span class="timeline-era__label">Ang Simula: The Beginning</span>
+          </div>
+
+          <!-- EVENT 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Simula</span>
+              <h3 class="timeline-card__title">Ang Pista ni Datu Laya</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">Datu Laya's Festival</p>
+              <p class="timeline-card__desc">On the occasion of Datu Laya's birthday, the sitio gathered for celebration. Among the guests were envoys from Sitio Pagangpang, or so it seemed. At the height of the feast, the aswangs revealed themselves and launched a brutal assault on Sitio Tambis. Sikatuna and Dapithapon fell in the battle. Maginoo Hain was kidnapped. Datu Laya, refusing to accept the loss, used a forbidden spell to resurrect the fallen Maganis, binding their fates irrevocably to the island's crisis.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Simula</span>
+              <h3 class="timeline-card__title">Ang Punong Balete</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Balete Tree</p>
+              <p class="timeline-card__desc">The Maganis traveled south into the ancient forest to seek answers at the Punong Balete. The Balatiti, guardian of the great tree, received them cautiously. What they learned in the shadow of those ancient roots pointed them further, toward the sleeping sitio to the west.</p>
+            </div>
+          </div>
+
+          <!-- ERA 3: Ang Paglalakbay -->
+          <div class="timeline-era">
+            <span class="timeline-era__label">Ang Paglalakbay: The Journey</span>
+          </div>
+
+          <!-- EVENT 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Paglalakbay</span>
+              <h3 class="timeline-card__title">Ang Natutulog na Sitio</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Sleeping Sitio</p>
+              <p class="timeline-card__desc">Sitio Anilau lay in collective nightmare. Every resident slept, trapped in a curse of unending sleep, while an aswang wearing Datu Cardo's face tightened its grip on the sitio. Babaylan Dalisay alone resisted the darkness, maintaining her post. The Maganis worked to wake the sitio, navigating the brutal coming-of-age ritual the false Datu had redesigned to kill.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Paglalakbay</span>
+              <h3 class="timeline-card__title">Ang Pagdating ni Gabunan</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">Gabunan's Arrival</p>
+              <p class="timeline-card__desc">Without warning, reality warped. Time stopped. An entity of immense and unknown power appeared, Gabunan, and made its displeasure known. Three Maganis fell: Sikatuna, Mang Tomas, and Ponce. Gabunan toyed with the survivors before departing, leaving behind two scrolls of Revivify as if offering mercy were a game. Babaylan Dalisay, completing a desperate teleportation spell, sacrificed herself to scatter the party to safety. Half landed in Sitio Pasang.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Paglalakbay</span>
+              <h3 class="timeline-card__title">Ang Sumpa ng Pasang</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Curse of Pasang</p>
+              <p class="timeline-card__desc">In Sitio Pasang, the Maganis encountered the Berbalang, still wearing the face of Maginoo Adlawan, using a mysterious orb to accelerate the Tigbanua Buso curse among the residents. The Berbalang was defeated in a fierce skirmish. But the curse's roots ran deep, and the suffering of Pasang's people would not end with one battle.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 8 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Paglalakbay</span>
+              <h3 class="timeline-card__title">Bulkang Betis</h3>
+              <p class="timeline-card__desc">Inside the volcano's heart, the Maganis found Ibod trapped in an arcane prism, drained of life by Pian, Sikatuna's wife, who had become something broken and vengeful after her own death. A brutal battle followed. Pian was defeated. In an act of final mercy, she and Sikatuna were laid to rest together, their bodies consumed by the lava as the volcano erupted around them.</p>
+            </div>
+          </div>
+
+          <!-- ERA 4: Ang Katapusan -->
+          <div class="timeline-era">
+            <span class="timeline-era__label">Ang Katapusan: The Ending</span>
+          </div>
+
+          <!-- EVENT 9 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Katapusan</span>
+              <h3 class="timeline-card__title">Ang Ika-39 Salingbobog Council</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The 39th Salingbobog Council</p>
+              <p class="timeline-card__desc">The Salingbobog Council gathered at Sitio Malabulak, a summit of datus and rajas meant to forge a new order for the island. What they did not know was that Maria Clara, now fully transformed into a gabunan alongside Isagani and Hain, had arrived not to negotiate but to deliver a reckoning. The hall became a massacre. The 39th Council would be the last of its kind for a generation.</p>
+            </div>
+          </div>
+
+          <!-- EVENT 10 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Katapusan</span>
+              <h3 class="timeline-card__title">Ang Malabulak Crisis</h3>
+              <p class="timeline-card__desc">The massacre at Malabulak sent shockwaves through every sitio on the island. It was not merely an act of violence, it was the destruction of the island's political architecture. Datus who survived fled or fortified. Old alliances collapsed overnight. The event that followed, the Banaba Conflict, was the direct consequence of that night's blood.</p>
+            </div>
+          </div>
+
+          <!-- ERA 5: Ang Bagong Panahon -->
+          <div class="timeline-era">
+            <span class="timeline-era__label">Ang Bagong Panahon: The New Era</span>
+          </div>
+
+          <!-- EVENT 11 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-card__phase">Ang Bagong Panahon</span>
+              <h3 class="timeline-card__title">Ang Banaba Conflict</h3>
+              <p class="timeline-card__desc" style="font-style:italic; opacity:0.75; font-size:0.85rem; margin-bottom:0.4rem;">The Banaba Conflict</p>
+              <p class="timeline-card__desc">From the ashes of the Malabulak Crisis rose something far worse than any single enemy: a sustained, multi-sided conflict between humans, spirits, and aswangs, each faction locked in cycles of retaliation with no clear end. Rea built the new Salingbobog Council from scattered survivors. Ynio worked to break the Tigbanua Buso curse in Pasang. Dapithapon stood watch at Punong Balete. The island did not recover. It endured. And the Banaba Conflict continues, into the era where new stories are yet to be written.</p>
+            </div>
+          </div>
+
+        </div><!-- /.timeline -->
+
+        <!-- Closing note -->
+        <div class="timeline-closing">
+          <p><em>Ang mga pangyayaring ito ang pundasyon ng bagong kabanata. Ang Banaba Conflict ay hindi pa tapos, at kayo ang susunod na magsasalaysay ng kasaysayan ng Salong-Salong.</em></p>
+          <small>These events are the foundation of the new chapter. The Banaba Conflict is not yet over, and you are the next to write the history of Salong-Salong.</small>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

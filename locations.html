@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mga Lugar | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html" class="active">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MGA LUGAR</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Ang mga lupain, sitio, at di-malilimutang pook ng Isla ng Salong-Salong.</p>
+      </div>
+    </header>
+
+    <!-- ── LOCATION GRID ── -->
+    <section aria-label="Listahan ng mga Lugar">
+      <div class="section-container">
+
+        <div class="npc-grid">
+
+          <!-- 1. SITIO TAMBIS -->
+          <article class="npc-card" id="tambis">
+            <h3 class="npc-card__name">SITIO TAMBIS</h3>
+            <span class="location-tag">Sitio</span>
+            <p class="npc-card__description">The northernmost settlement of Salong-Salong, Sitio Tambis was long considered the heartland of the island, a place of festivals, kinship, and the warmth of firelit feasts. Under the long rule of Datu Laya, it knew an era of peace rarely seen in the wider island. It was here that the Maganis first gathered, and here that everything began to unravel. The aswang attack during Datu Laya's birthday festival shattered the sitio's tranquility, setting the Maganis on a journey that would reshape Salong-Salong forever.</p>
+          </article>
+
+          <!-- 2. PUNONG BALETE -->
+          <article class="npc-card" id="punong-balete">
+            <h3 class="npc-card__name">PUNONG BALETE</h3>
+            <span class="location-tag">Kagubatan</span>
+            <p class="npc-card__description">South of Sitio Tambis, deep within an ancient forest, stands the Punong Balete, a colossal balete tree of unknown age. It is tended by the Balatiti, a mystical bird that serves as the tree's voice and guardian. The roots of the Punong Balete run deeper than the earth itself, touching the boundary between the living world and what lies beyond. Those who seek its wisdom must first earn the trust of its keeper. It was here that Dapithapon ultimately returned, pledging his life to protect the tree and rebuild the order of Mayari's clerics.</p>
+          </article>
+
+          <!-- 3. ABONG BUKID -->
+          <article class="npc-card" id="abong-bukid">
+            <h3 class="npc-card__name">ABONG BUKID</h3>
+            <span class="location-tag">Bundok</span>
+            <p class="npc-card__description">A highland region in the upper-central stretch of the island. The Abong Bukid rises above the forest canopy, offering a vantage point over much of Salong-Salong's northern half. Little is recorded of its settlements, but travelers speak of strange lights seen among its peaks on moonless nights, signs, some say, of old rituals not yet forgotten by the land itself.</p>
+          </article>
+
+          <!-- 4. SITIO ANILAU -->
+          <article class="npc-card" id="anilau">
+            <h3 class="npc-card__name">SITIO ANILAU</h3>
+            <span class="location-tag">Sitio</span>
+            <p class="npc-card__description">A coastal settlement on the western shore, Sitio Anilau fell under a terrible curse of unending sleep. Its people were trapped in collective nightmare while an aswang wearing the face of Datu Cardo ruled in their stead, tightening the coming-of-age rituals into something deadly. Babaylan Dalisay, the sitio's revered spiritual leader, maintained her vigil even as the darkness closed in. It was here that Gabunan first made its presence known, and here that three Maganis fell.</p>
+          </article>
+
+          <!-- 5. ITINADHANANG ILOG -->
+          <article class="npc-card" id="itinadhanang-ilog">
+            <h3 class="npc-card__name">ITINADHANANG ILOG</h3>
+            <span class="location-tag">Ilog</span>
+            <p class="npc-card__description">A river running through the central region of Salong-Salong, the Itinadhanang Ilog is considered a boundary, between the settled north and the wilder, more dangerous south. Its name, meaning "the river that was placed here," hints at old stories of its origin being deliberate, not natural. Locals speak of offerings left at its banks to appease whatever watches from beneath its surface.</p>
+          </article>
+
+          <!-- 6. HINULUGANG ABUNO -->
+          <article class="npc-card" id="hinulugang-abuno">
+            <h3 class="npc-card__name">HINULUGANG ABUNO</h3>
+            <span class="location-tag">Pook</span>
+            <p class="npc-card__description">Nestled near the volcanic interior of the island, Hinulugang Abuno is a place of geothermal vents and mineral-rich springs. The name means roughly "where the ash falls." It is considered sacred ground by those who worship the volcanic deities, a place of cleansing for those who carry too much grief, or too much sin. The proximity to the volcanoes makes it unpredictable and dangerous to linger.</p>
+          </article>
+
+          <!-- 7. SITIO PASANG -->
+          <article class="npc-card" id="pasang">
+            <h3 class="npc-card__name">SITIO PASANG</h3>
+            <span class="location-tag">Isla</span>
+            <p class="npc-card__description">A smaller island to the east, separated from the main landmass by a narrow strait. Sitio Pasang was long afflicted by the Tigbanua Buso curse, a creeping affliction spread through its people for generations. The Berbalang, posing as Maginoo Adlawan, accelerated the curse's spread using a mysterious orb. Ynio, one of the Maganis, returned here after the final events of the campaign and dedicated years of his life to breaking the curse through ritual, sacrifice, and the guidance of Lira.</p>
+          </article>
+
+          <!-- 8. BULKANG BETIS -->
+          <article class="npc-card" id="bulkang-betis">
+            <h3 class="npc-card__name">BULKANG BETIS</h3>
+            <span class="location-tag">Bulkan</span>
+            <p class="npc-card__description">One of two active volcanoes on Salong-Salong, Bulkang Betis dominated the island's midsection with its heat and ash. Inside its volcanic heart, the Maganis discovered an arcane prism holding Ibod, Balanoy's closest friend, drained of life by the vengeful spirit of Pian. After a brutal battle, Pian was defeated and laid to rest alongside Sikatuna, both consumed by the lava as the volcano erupted. Bulkang Betis does not forgive those who linger.</p>
+          </article>
+
+          <!-- 9. SITIO AMALCIGA -->
+          <article class="npc-card" id="amalciga">
+            <h3 class="npc-card__name">SITIO AMALCIGA</h3>
+            <span class="location-tag">Sitio</span>
+            <p class="npc-card__description">A southern settlement, home of Ahbo, one of the Maganis. Following Ahbo's death in service of Lalahon, the people of Amalciga turned against the goddess, cursing her name for abandoning one of her most faithful servants. They abandoned the old ways entirely, instead turning their prayers toward the ancient giants whose footprints still indent the hills nearby. New idols were carved. Old temples fell silent. Sitio Amalciga became a place where the gods no longer tread willingly.</p>
+          </article>
+
+          <!-- 10. BULKANG KAMUNING -->
+          <article class="npc-card" id="bulkang-kamuning">
+            <h3 class="npc-card__name">BULKANG KAMUNING</h3>
+            <span class="location-tag">Bulkan</span>
+            <p class="npc-card__description">The second of Salong-Salong's volcanoes, Bulkang Kamuning burns in the southeastern region of the island with a more violent temperament than its counterpart. Named after the kamuning flower that grows defiantly on its lower slopes, it is considered an ill omen when its smoke turns black. Local babaylans once used its seasonal eruptions to mark the passage of years, a practice that has since been abandoned as the eruptions have grown less predictable.</p>
+          </article>
+
+          <!-- 11. LAWANG KAMAGONG -->
+          <article class="npc-card" id="lawang-kamagong">
+            <h3 class="npc-card__name">LAWANG KAMAGONG</h3>
+            <span class="location-tag">Pook</span>
+            <p class="npc-card__description">A forested region at the southern tip of the island, thick with kamagong trees, the Philippine ebony, whose wood is dense, dark, and nearly indestructible. Lawang Kamagong serves as a natural gateway between the island's interior and the sea. The trees here are ancient enough to remember things humans have forgotten. It is said that those who carve from kamagong without permission of the forest carry misfortune with them for the rest of their lives.</p>
+          </article>
+
+          <!-- 12. SITIO PAGANGPANG -->
+          <article class="npc-card" id="pagangpang">
+            <h3 class="npc-card__name">SITIO PAGANGPANG</h3>
+            <span class="location-tag">Isla</span>
+            <p class="npc-card__description">A small island to the east, home of the Berbalang clan and the seat of Datu Adlaw's family line. Maginoo Adlawan hailed from here, though by the time the Maganis realized it, the real Maginoo Adlawan was already dead, replaced by an aswang agent of chaos. The relationship between Sitio Pagangpang and the main island grew deeply strained following the events of the festival attack, with trust between the communities shattered and slow to rebuild.</p>
+          </article>
+
+        </div><!-- /.npc-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

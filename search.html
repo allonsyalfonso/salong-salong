@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maghanap | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link active" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MAGHANAP</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Hanapin ang anumang pangalan, lugar, o pangyayari.</p>
+      </div>
+    </header>
+
+    <!-- ── SEARCH SECTION ── -->
+    <section aria-label="Paghahanap">
+      <div class="section-container">
+
+        <div class="search-bar-wrapper">
+          <input
+            class="search-input"
+            type="text"
+            id="search-input"
+            placeholder="Maghanap ng pangalan, lugar, o pangyayari..."
+            aria-label="Search query"
+            autocomplete="off"
+          >
+          <button class="search-btn" id="search-btn" aria-label="Hanapin">Hanapin</button>
+        </div>
+
+        <div id="search-results" class="search-results" aria-live="polite">
+          <!-- Results will appear here -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── SEARCH INDEX ──
+    var SEARCH_INDEX = [
+      // LOCATIONS
+      { title: 'Sitio Tambis', category: 'Lugar', url: 'locations.html#tambis',
+        keywords: 'tambis sitio northernmost heartland datu laya festival maganis aswang attack birthday',
+        excerpt: 'The northernmost settlement of Salong-Salong, Sitio Tambis was long considered the heartland of the island, a place of festivals, kinship, and the warmth of firelit feasts. It was here that the Maganis first gathered, and here that everything began to unravel.' },
+      { title: 'Punong Balete', category: 'Lugar', url: 'locations.html#punong-balete',
+        keywords: 'punong balete tree ancient forest balatiti guardian dapithapon mayari south tambis',
+        excerpt: 'South of Sitio Tambis, deep within an ancient forest, stands the Punong Balete, a colossal balete tree of unknown age. It is tended by the Balatiti, a mystical bird that serves as the tree\'s voice and guardian.' },
+      { title: 'Abong Bukid', category: 'Lugar', url: 'locations.html#abong-bukid',
+        keywords: 'abong bukid highland mountain lights peaks rituals northern salong-salong',
+        excerpt: 'A highland region in the upper-central stretch of the island. The Abong Bukid rises above the forest canopy, offering a vantage point over much of Salong-Salong\'s northern half.' },
+      { title: 'Sitio Anilau', category: 'Lugar', url: 'locations.html#anilau',
+        keywords: 'anilau western shore sleep curse datu cardo babaylan dalisay gabunan maganis fell coming of age',
+        excerpt: 'A coastal settlement on the western shore, Sitio Anilau fell under a terrible curse of unending sleep. It was here that Gabunan first made its presence known, and here that three Maganis fell.' },
+      { title: 'Itinadhanang Ilog', category: 'Lugar', url: 'locations.html#itinadhanang-ilog',
+        keywords: 'itinadhanang ilog river central boundary north south offerings placed deliberate',
+        excerpt: 'A river running through the central region of Salong-Salong, the Itinadhanang Ilog is considered a boundary, between the settled north and the wilder, more dangerous south.' },
+      { title: 'Hinulugang Abuno', category: 'Lugar', url: 'locations.html#hinulugang-abuno',
+        keywords: 'hinulugang abuno ash volcanic vents springs sacred cleansing grief sin geothermal',
+        excerpt: 'Nestled near the volcanic interior of the island, Hinulugang Abuno is a place of geothermal vents and mineral-rich springs. The name means roughly "where the ash falls."' },
+      { title: 'Sitio Pasang', category: 'Lugar', url: 'locations.html#pasang',
+        keywords: 'pasang island east tigbanua buso curse berbalang adlawan orb ynio lira',
+        excerpt: 'A smaller island to the east, separated from the main landmass by a narrow strait. Sitio Pasang was long afflicted by the Tigbanua Buso curse. Ynio dedicated years of his life to breaking it.' },
+      { title: 'Bulkang Betis', category: 'Lugar', url: 'locations.html#bulkang-betis',
+        keywords: 'bulkang betis volcano ibod prism pian sikatuna lava eruption balanoy battle',
+        excerpt: 'One of two active volcanoes on Salong-Salong. Inside its volcanic heart, the Maganis discovered Ibod, Balanoy\'s closest friend, drained of life by the vengeful spirit of Pian.' },
+      { title: 'Sitio Amalciga', category: 'Lugar', url: 'locations.html#amalciga',
+        keywords: 'amalciga southern ahbo lalahon death gods abandoned giants idols temple',
+        excerpt: 'A southern settlement, home of Ahbo. Following Ahbo\'s death in service of Lalahon, the people of Amalciga turned against the goddess. They abandoned the old ways, turning their prayers toward the ancient giants.' },
+      { title: 'Bulkang Kamuning', category: 'Lugar', url: 'locations.html#bulkang-kamuning',
+        keywords: 'bulkang kamuning volcano southeastern kamuning flower babaylan eruption smoke black omen',
+        excerpt: 'The second of Salong-Salong\'s volcanoes. Named after the kamuning flower that grows defiantly on its lower slopes, it is considered an ill omen when its smoke turns black.' },
+      { title: 'Lawang Kamagong', category: 'Lugar', url: 'locations.html#lawang-kamagong',
+        keywords: 'lawang kamagong south forest ebony trees ancient gateway sea misfortune carve',
+        excerpt: 'A forested region at the southern tip of the island, thick with kamagong trees, the Philippine ebony, whose wood is dense, dark, and nearly indestructible.' },
+      { title: 'Sitio Pagangpang', category: 'Lugar', url: 'locations.html#pagangpang',
+        keywords: 'pagangpang island east berbalang datu adlaw adlawan shapeshifter trust shattered',
+        excerpt: 'A small island to the east, home of the Berbalang clan and the seat of Datu Adlaw\'s family line. The real Maginoo Adlawan was already dead, replaced by an aswang agent of chaos.' },
+
+      // NPCS
+      { title: 'Datu Laya', category: 'Karakter', url: 'characters.html',
+        keywords: 'datu laya tambis longest serving peace forbidden spell revive sikatuna dapithapon',
+        excerpt: 'The longest-serving Datu in Sitio Tambis, Datu Laya guided Salong-Salong into an era of unprecedented tranquility. He used a forbidden spell to revive the fallen Maganis after the festival attack.' },
+      { title: 'Maginoo Hain', category: 'Karakter', url: 'characters.html',
+        keywords: 'maginoo hain son laya kidnapped aswang heir arrogant reckless mia missing',
+        excerpt: 'The son of Datu Laya, kidnapped by an aswang during the festival attack on Sitio Tambis. His whereabouts have been unknown ever since.' },
+      { title: 'Babaylan Liham', category: 'Karakter', url: 'characters.html',
+        keywords: 'babaylan liham tambis pilandok abayan children chismis cheerful spiritual nature',
+        excerpt: 'The babaylan of Sitio Tambis, known for his contagious cheerfulness. He cared for the children left behind by the Maganis during their journey.' },
+      { title: 'Maginoo Adlawan', category: 'Karakter', url: 'characters.html',
+        keywords: 'maginoo adlawan berbalang pagangpang shapeshifter murdered replaced orb tigbanua buso pasang',
+        excerpt: 'Maginoo Adlawan was murdered and replaced by a shapeshifter, a Berbalang, who used a mysterious orb to accelerate the Tigbanua Buso curse in Sitio Pasang.' },
+      { title: 'Ang Balatiti', category: 'Karakter', url: 'characters.html',
+        keywords: 'balatiti bird guardian punong balete spokesperson protect mystical age unknown',
+        excerpt: 'The Balatiti exists to serve and protect the Balete tree, acting as its spokesperson. It remains ever vigilant and cautious of those who seek to approach.' },
+      { title: 'Datu Cardo', category: 'Karakter', url: 'characters.html',
+        keywords: 'datu cardo anilau shapeshifter aswang coming of age brutal replaced trees ships',
+        excerpt: 'Datu Cardo had been murdered and replaced by an aswang who made the coming-of-age ritual especially brutal in Sitio Anilau.' },
+      { title: 'Gabunan', category: 'Karakter', url: 'characters.html',
+        keywords: 'gabunan unknown creature reality warp time stop sikatuna mang tomas ponce killed revivify maria clara grandmother',
+        excerpt: 'An unknown creature that warped reality and stopped time. It killed three Maganis: Sikatuna, Mang Tomas, and Ponce. Maria Clara asked if it was her grandmother.' },
+      { title: 'Babaylan Dalisay', category: 'Karakter', url: 'characters.html',
+        keywords: 'babaylan dalisay anilau kia died teleportation sacrifice geas ponce healed',
+        excerpt: 'The babaylan of Sitio Anilau who sacrificed herself to teleport the Maganis to safety during their encounter with Gabunan.' },
+      { title: 'Ibod', category: 'Karakter', url: 'characters.html',
+        keywords: 'ibod kapitan tambis balanoy friend prism bulkang betis kidnapped alive unconscious',
+        excerpt: 'Captain of Sitio Tambis and Balanoy\'s closest friend. Found trapped in an arcane prism inside Bulkang Betis, drained of life by the spirit of Pian.' },
+      { title: 'Pian', category: 'Karakter', url: 'characters.html',
+        keywords: 'pian sikatuna wife spirit vengeful deceased lava bulkang betis ibod resurrection',
+        excerpt: 'Sikatuna\'s wife who died protecting his resurrection ritual. Found draining Ibod\'s life energy inside Bulkang Betis, she was laid to rest with Sikatuna in the lava.' },
+
+      // PLAYER CHARACTERS
+      { title: 'Tsinta', category: 'Magani', url: 'pc.html',
+        keywords: 'tsinta kapatid sister santel kasaanan underworld steady hand letters caution changed',
+        excerpt: 'Tsinta was the steady hand that never let go. She journeyed into Kasaanan alongside her younger sister Santel, becoming one of the first humanoids to return from the underworld alive.' },
+      { title: 'Santel', category: 'Magani', url: 'pc.html',
+        keywords: 'santel manlalakbay traveler kasaanan underworld door push tsinta defying boundary quieter sharper',
+        excerpt: 'Santel did not walk into Kasaanan because she was brave. She and Tsinta became the first humanoids to return from Kasaanan alive.' },
+      { title: 'Ynio', category: 'Magani', url: 'pc.html',
+        keywords: 'ynio manggagamot sumpa pasang tigbanua buso curse lira healer stubbornness sacrifice families',
+        excerpt: 'Ynio returned to Sitio Pasang and gave the rest of his life to breaking the Tigbanua Buso curse through Lira\'s guidance and stubborn refusal to quit.' },
+      { title: 'Rea Labrador', category: 'Magani', url: 'pc.html',
+        keywords: 'rea labrador punong tagapangalaga salingbobog council babaylan liham children raised leader malabulak',
+        excerpt: 'In the wreckage of the Malabulak Crisis, Rea formed a new Salingbobog Council from survivors and raised the children of the fallen alongside her own.' },
+      { title: 'Maria Clara', category: 'Magani', url: 'pc.html',
+        keywords: 'maria clara gabunan warrior mother transformation bloodline grief loss isagani agila malabulak',
+        excerpt: 'Maria Clara began as a warrior and mother, and ended the campaign transformed into a gabunan, a slow becoming accelerated by loss and something old in her bloodline.' },
+      { title: 'Dapithapon', category: 'Magani', url: 'pc.html',
+        keywords: 'dapithapon kleriko mayari balete elf six centuries moon goddess chronicler kawayang papel guardian',
+        excerpt: 'A Balete Elf and cleric of Mayari who chronicled the Maganis\' journey. He returned to Punong Balete at the end as a guardian, searching for Hilberto to rebuild the order.' },
+      { title: 'Balanoy', category: 'Magani', url: 'pc.html',
+        keywords: 'balanoy mentala tambis kawayang papel paper magic ibod friend deceased letters sampalok',
+        excerpt: 'Balanoy of Sitio Tambis was a practitioner of kawayang papel, paper magic. He was Ibod\'s closest friend and did not survive the final events of the campaign.' },
+      { title: 'Ahbo', category: 'Magani', url: 'pc.html',
+        keywords: 'ahbo alagad lalahon volcanic goddess death amalciga giants idols abandoned faith',
+        excerpt: 'Ahbo served Lalahon with complete faith and died for it. Her death became the reason Sitio Amalciga abandoned the gods entirely, turning toward the ancient giants.' },
+      { title: 'Mang Tomas', category: 'Magani', url: 'pc.html',
+        keywords: 'mang tomas siday singer morale gabunan died revived kept going answer',
+        excerpt: 'The group\'s siday, a singer and keeper of morale. He died at Gabunan\'s hand, was revived, and kept singing. That seemed to be its own kind of answer.' },
+      { title: 'Sikatuna', category: 'Magani', url: 'pc.html',
+        keywords: 'sikatuna barbaro barbarian pian wife black river afterlife laya volcano betis lava',
+        excerpt: 'A barbarian who had already crossed the black river once. He was laid to rest with his wife Pian in the lava of Bulkang Betis.' },
+      { title: 'Ponce', category: 'Magani', url: 'pc.html',
+        keywords: 'ponce kawal soldier datu laya weapons gabunan died not revived remembered chronicles',
+        excerpt: 'A specialist in many kinds of weapons and a friend of Datu Laya. He died at Gabunan\'s hands and was not revived. Remembered in Dapithapon\'s chronicles.' },
+
+      // TIMELINE EVENTS
+      { title: 'Ang Mahabang Kapayapaan', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'mahabang kapayapaan long peace datu laya salingbobog council tranquility dialogue prosper',
+        excerpt: 'Under Datu Laya, Salong-Salong entered an era of unprecedented tranquility. The Salingbobog Council maintained fragile but functional order across the island.' },
+      { title: 'Ang Pagdating ng mga Berbalang', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'berbalang arrival shapeshifters maginoo adlawan killed replaced tigbanua buso pasang seeded',
+        excerpt: 'The Berbalang began infiltrating the island\'s power structures, killing and replacing key figures. The Tigbanua Buso curse was quietly seeded in Sitio Pasang.' },
+      { title: 'Ang Pista ni Datu Laya', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'pista festival datu laya birthday aswang attack sikatuna dapithapon fell hain kidnapped forbidden spell revive',
+        excerpt: 'At Datu Laya\'s birthday festival, aswangs revealed themselves and launched a brutal assault. Datu Laya used a forbidden spell to resurrect the fallen Maganis.' },
+      { title: 'Ang Natutulog na Sitio', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'natutulog sleeping anilau nightmare datu cardo aswang babaylan dalisay coming of age',
+        excerpt: 'Sitio Anilau lay in collective nightmare. Every resident slept while an aswang wearing Datu Cardo\'s face tightened its grip on the sitio.' },
+      { title: 'Ang Pagdating ni Gabunan', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'gabunan arrival time stop sikatuna mang tomas ponce killed revivify babaylan dalisay teleport',
+        excerpt: 'Reality warped. Time stopped. Gabunan appeared and killed three Maganis. Babaylan Dalisay sacrificed herself to scatter the party to safety.' },
+      { title: 'Ang Sumpa ng Pasang', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'sumpa pasang curse berbalang orb adlawan defeated tigbanua buso roots suffering',
+        excerpt: 'In Sitio Pasang, the Maganis defeated the Berbalang who was accelerating the Tigbanua Buso curse. But the curse\'s roots ran deep.' },
+      { title: 'Ang Ika-39 Salingbobog Council', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'salingbobog council 39th malabulak maria clara gabunan isagani hain massacre last',
+        excerpt: 'The 39th Salingbobog Council gathered at Sitio Malabulak. Maria Clara, transformed into a gabunan, arrived to deliver a reckoning. The hall became a massacre.' },
+      { title: 'Ang Malabulak Crisis', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'malabulak crisis political architecture datus fled alliances collapsed banaba conflict blood',
+        excerpt: 'The massacre at Malabulak shattered the island\'s political architecture. Old alliances collapsed overnight. The Banaba Conflict was its direct consequence.' },
+      { title: 'Ang Banaba Conflict', category: 'Kasaysayan', url: 'timeline.html',
+        keywords: 'banaba conflict war humans spirits aswangs rea salingbobog ynio dapithapon ongoing',
+        excerpt: 'A sustained multi-sided conflict between humans, spirits, and aswangs. The island did not recover. It endured. The Banaba Conflict continues into the era of new stories.' },
+
+      // GLOSSARY TERMS
+      { title: 'Aswang', category: 'Salita', url: 'glossary.html',
+        keywords: 'aswang shapeshifting creature faces humans infiltrated positions power category',
+        excerpt: 'A shape-shifting supernatural creature capable of wearing the faces of humans. The most dangerous are those you do not realize have replaced someone until it is too late.' },
+      { title: 'Babaylan', category: 'Salita', url: 'glossary.html',
+        keywords: 'babaylan spiritual leader healer intermediary spirits sacred authority ritual medicine',
+        excerpt: 'A spiritual leader, healer, and intermediary between the human world and the realm of spirits. Babaylans hold significant authority in their sitios.' },
+      { title: 'Gabunan', category: 'Salita', url: 'glossary.html',
+        keywords: 'gabunan transformed being human older grief vengeance bloodline maria clara',
+        excerpt: 'A term referring to a transformed being who has crossed the boundary between human and something older. Maria Clara\'s transformation was the result of a bloodline inheritance long dormant.' },
+      { title: 'Habilin', category: 'Salita', url: 'glossary.html',
+        keywords: 'habilin last will instruction dying wish binding sacred misfortune',
+        excerpt: 'A last will, final instruction, or dying wish. In the culture of Salong-Salong, a habilin is considered binding and sacred.' },
+      { title: 'Kasaanan', category: 'Salita', url: 'glossary.html',
+        keywords: 'kasaanan underworld realm damned river souls wails trial tsinta santel descended',
+        excerpt: 'The underworld. Not a place of rest but of unending trial. Tsinta and Santel are the only known living beings to have descended into Kasaanan and returned.' },
+      { title: 'Kawayang Papel', category: 'Salita', url: 'glossary.html',
+        keywords: 'kawayang papel bamboo paper magic balanoy knowledge power inscribed transferred art weapon',
+        excerpt: 'A form of magic practiced by Balanoy involving specially prepared bamboo paper. Knowledge, power, and spells can be inscribed onto the paper and transferred to others.' },
+      { title: 'Magani', category: 'Salita', url: 'glossary.html',
+        keywords: 'magani warrior hero adventuring party datu laya assembled difficult dangerous others',
+        excerpt: 'A warrior-hero. In Salong-Salong, the term refers to the adventuring party assembled by Datu Laya. It has since become a broader term for those who take up dangerous work for others.' },
+      { title: 'Mayari', category: 'Salita', url: 'glossary.html',
+        keywords: 'mayari moon goddess dapithapon cleric centuries healers chroniclers boundary memory',
+        excerpt: 'The goddess of the moon. Patron deity of Dapithapon, who served her as a cleric for centuries.' },
+      { title: 'Salingbobog Council', category: 'Salita', url: 'glossary.html',
+        keywords: 'salingbobog council governing alliance datus rajas rea labrador 39th last old order',
+        excerpt: 'The governing alliance of datus and rajas across Salong-Salong. Founded in its modern form by Rea Labrador after the Malabulak Crisis.' },
+      { title: 'Tigbanua Buso', category: 'Salita', url: 'glossary.html',
+        keywords: 'tigbanua buso curse pasang generations physical deterioration berbalang orb ynio broke',
+        excerpt: 'A curse that afflicted the residents of Sitio Pasang for generations. Ynio spent years attempting to break it through ritual.' },
+
+      // EPIC SECTIONS
+      { title: 'Ang Epiko ni Tsinta at Santel', category: 'Epiko', url: 'epic.html',
+        keywords: 'tsinta santel kasaanan underworld descended returned first humanoids mark changed',
+        excerpt: 'Tsinta and Santel descended into Kasaanan, the realm of the damned. They became the first humanoids to return from Kasaanan alive. But something had changed.' },
+      { title: 'Ang Epiko ni Ynio', category: 'Epiko', url: 'epic.html',
+        keywords: 'ynio pasang curse ritual preparation years families lira guidance relic',
+        excerpt: 'Ynio returned to Sitio Pasang, where an old curse had bound his people for generations. Through Lira\'s guidance, Ynio pressed on for years.' },
+      { title: 'Ang Epiko ni Rea', category: 'Epiko', url: 'epic.html',
+        keywords: 'rea salingbobog babaylan liham children lakan sulay agila council fragile alliance',
+        excerpt: 'Rea formed the Salingbobog Council and raised the children left behind by the fallen, watching over them as new cycles of violence were already beginning.' },
+      { title: 'Ang Epiko ni Dapithapon', category: 'Epiko', url: 'epic.html',
+        keywords: 'dapithapon punong balete guardian protector hilberto cleric mayari balatiti name rebuild order',
+        excerpt: 'Dapithapon returned to Punong Balete as its silent protector, searching for Hilberto, a name the Balatiti had given him, to help rebuild the old ways.' },
+      { title: 'Ang Epiko ni Ahbo', category: 'Epiko', url: 'epic.html',
+        keywords: 'ahbo amalciga lalahon goddess proof failure giants idols abandoned old ways',
+        excerpt: 'Ahbo\'s ashes were returned to Sitio Amalciga, but the people turned against Lalahon. Ahbo had become their proof that the gods no longer answered.' },
+      { title: 'Ang Epiko ni Maria Clara', category: 'Epiko', url: 'epic.html',
+        keywords: 'maria clara gabunan transformation isagani hain malabulak salingbobog council massacre',
+        excerpt: 'Maria Clara shed the skin of the woman she once was and, alongside Isagani and Hain, became an instrument of violence at the 39th Salingbobog Council.' },
+      { title: 'Ang Simula ng Banaba Conflict', category: 'Epiko', url: 'epic.html',
+        keywords: 'banaba conflict malabulak crisis reckoning blood old world burned humans spirits aswangs',
+        excerpt: 'The massacre of the 39th Salingbobog Council ignited the Banaba Conflict, where humans, spirits, and aswangs clashed in endless cycles of vengeance.' },
+    ];
+
+    // ── SEARCH FUNCTION ──
+    function escapeRegex(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlight(text, query) {
+      if (!query) return text;
+      var re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+      return text.replace(re, '<mark>$1</mark>');
+    }
+
+    function doSearch(query) {
+      var q = query.trim().toLowerCase();
+      var resultsEl = document.getElementById('search-results');
+
+      if (!q) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+
+      var results = SEARCH_INDEX.filter(function(item) {
+        var haystack = (item.title + ' ' + item.keywords + ' ' + item.excerpt).toLowerCase();
+        return haystack.indexOf(q) !== -1;
+      });
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p class="search-empty">Walang resulta para sa \u201c' + query + '\u201d.</p>';
+        return;
+      }
+
+      var html = results.map(function(item) {
+        var excerptHL = highlight(item.excerpt, query);
+        var titleHL = highlight(item.title, query);
+        return (
+          '<a href="' + item.url + '" class="search-result-card">' +
+            '<div class="search-result-card__header">' +
+              '<span class="search-result-card__title">' + titleHL + '</span>' +
+              '<span class="search-result-card__category">' + item.category + '</span>' +
+            '</div>' +
+            '<p class="search-result-card__excerpt">' + excerptHL + '</p>' +
+          '</a>'
+        );
+      }).join('');
+
+      resultsEl.innerHTML = html;
+    }
+
+    document.getElementById('search-btn').addEventListener('click', function() {
+      doSearch(document.getElementById('search-input').value);
+    });
+
+    document.getElementById('search-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doSearch(this.value);
+    });
+
+    // Auto-search if URL has a query param
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get('q');
+      if (q) {
+        document.getElementById('search-input').value = q;
+        doSearch(q);
+      }
+    })();
+  </script>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

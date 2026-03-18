@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mga NPC | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html" class="active">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MGA NPC</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">The people who shaped the history of Isla ng Salong-Salong.</p>
+      </div>
+    </header>
+
+    <!-- ── NPC GRID ── -->
+    <section aria-label="Listahan ng mga NPC">
+      <div class="section-container">
+
+        <div class="npc-grid">
+
+          <!-- 1. DATU LAYA -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Datu Laya" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">DATU LAYA</h3>
+            <p class="npc-card__title">Datu ng Sitio Tambis</p>
+            <span class="status-badge status-badge--deceased">Deceased</span>
+            <p class="npc-card__description">Datu Laya, weathered by years of battle, carries within him a quiet longing for peace amidst the echoes of strife. Despite his hardened exterior, his heart remains open, extending warmth and camaraderie to all within the village. He holds the esteemed title of the longest-serving Datu in Sitio Tambis, a testament to his unwavering dedication and wisdom. Through his steadfast leadership, he thwarted the specter of conflict countless times and guided Salong-Salong into an era of unprecedented tranquility. Upon finding out that his townspeople and the magani did not survive the onslaught of Sitio Tambis, he used a forbidden spell to revive the very people he served. It was through him that Dapithapon and Sikatuna were brought back from the afterlife.</p>
+          </article>
+
+          <!-- 2. MAGINOO HAIN -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Maginoo Hain" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">MAGINOO HAIN</h3>
+            <p class="npc-card__title">Anak ni Laya</p>
+            <span class="status-badge status-badge--mia">MIA</span>
+            <p class="npc-card__description">Maginoo Hain, a youthful scion of Sitio Tambis, embodies the enthusiasm and vigor of youth. In his teenage years, he exuded an air of arrogance and recklessness, fueled by an unquenchable thirst for battle and the pursuit of leadership. He is the esteemed son of Datu Laya and stands poised as the rightful heir and future successor to his father's legacy. During the onslaught of Sitio Tambis, he was knocked out and kidnapped by one of the aswangs. Ever since the festival, his whereabouts have been unknown.</p>
+          </article>
+
+          <!-- 3. BABAYLAN LIHAM -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Babaylan Liham" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">BABAYLAN LIHAM</h3>
+            <p class="npc-card__title">Babaylan ng Sitio Tambis</p>
+            <span class="status-badge status-badge--alive">Alive</span>
+            <p class="npc-card__description">Babaylan Liham, in his mid-30s, beams with contagious cheerfulness, relishing in the exchange of rumors and chismis. His deep spirituality intertwines with a profound love for nature and animals, radiating warmth and joy in every interaction. He is often found with his Abayan, a Pilandok. Babaylan Liham was left as the temporary leader and main defender of Sitio Tambis as the magani ventured out to locate and retrieve Maginoo Hain. Sikatuna, Maria Clara, and Rea left their children in his care.</p>
+          </article>
+
+          <!-- 4. MAGINOO ADLAWAN -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Maginoo Adlawan" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">MAGINOO ADLAWAN</h3>
+            <p class="npc-card__title">Anak ni Adlaw Berbalang</p>
+            <span class="status-badge status-badge--deceased">Deceased</span>
+            <p class="npc-card__description">Maginoo Adlawan, the only son of Datu Adlaw, was tasked by his father as representative for his tribe. He brought an envoy with him to Sitio Tambis to celebrate the upcoming festival. He is calculative in his actions and always plans out strategies in case things go wrong. It was found out that Maginoo Adlawan was murdered and replaced with a shapeshifter, an aswang. The Berbalang revealed himself in Sitio Pasang, where he used a mysterious orb to accelerate the spread of the Tigbanua Buso curse. He was swiftly defeated in the skirmish with the Maganis.</p>
+          </article>
+
+          <!-- 5. ANG BALATITI -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Ang Balatiti" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">ANG BALATITI</h3>
+            <p class="npc-card__title">Katiwala ng Punong Balete</p>
+            <span class="status-badge status-badge--alive">Alive</span>
+            <p class="npc-card__description">Though its age is unknown, the Balatiti exists to serve and protect the Balete tree, acting as its spokesperson. Harnessing the forest's mystical powers, it safeguards the tree, ensuring that no evil beings come near. The Balatiti remains ever vigilant and cautious of those who seek to approach. The party visited the tree in hopes of finding answers to their questions regarding the aswangs that raided Sitio Tambis.</p>
+          </article>
+
+          <!-- 6. DATU CARDO -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Datu Cardo" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">DATU CARDO</h3>
+            <p class="npc-card__title">Datu ng Sitio Anilau</p>
+            <span class="status-badge status-badge--unknown">Unknown</span>
+            <p class="npc-card__description">Datu Cardo succeeded Datu FPJ, adopting a much harsher stance on the politics of the sitio. He decided to cut down trees in the forest to aid in ship production, drastically altering the surrounding landscape. He also made the coming-of-age ritual more deadly, believing that only the strong should endure. It was discovered that Datu Cardo had been murdered and replaced by a shapeshifter, an aswang, who made the coming-of-age ritual especially brutal in an attempt to undermine the maganis.</p>
+          </article>
+
+          <!-- 7. GABUNAN -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Gabunan" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">GABUNAN</h3>
+            <p class="npc-card__title">???</p>
+            <span class="status-badge status-badge--unknown">Unknown</span>
+            <p class="npc-card__description">An unknown creature that suddenly warped reality and stopped time. It scolded the aswang posing as Datu Cardo before attacking the party, killing three of the seven maganis: Sikatuna, Mang Tomas, and Ponce. Maria Clara called out to the creature, asking if she was her grandmother, but received no meaningful response. The creature toyed with the survivors, offering them two scrolls of Revivify. After Sikatuna and Mang Tomas were revived, the maganis were teleported away by Babaylan Dalisay before a second battle could begin.</p>
+
+            <!-- DM-only note -->
+            <div class="dm-only dm-note-card">
+              <span class="dm-note-card__label">DM Note</span>
+              <p style="font-size:0.9rem; line-height:1.6; color:var(--text-dark); margin:0;">Gabunan is the transformed state of Maria Clara's grandmother. Her connection to Maria Clara is not coincidental, it is the result of a generational pact made with a primordial force. New players should not know this until revealed in the new campaign.</p>
+            </div>
+          </article>
+
+          <!-- 8. BABAYLAN DALISAY -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Babaylan Dalisay" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">BABAYLAN DALISAY</h3>
+            <p class="npc-card__title">Babaylan ng Sitio Anilau</p>
+            <span class="status-badge status-badge--kia">KIA</span>
+            <p class="npc-card__description">Babaylan Dalisay had served as the babaylan of Sitio Anilau since the time of Datu FPJ. She was a revered figure who deeply respected the balance between spirits, nature, and religion. She healed Ponce when he was afflicted by the Geas spell, despite him attacking her. She also provided the magani with a way to escape their battle with Gabunan. Unfortunately, Gabunan struck her down just as she was completing her teleportation incantation, causing the spell to go haywire and teleporting half of the party to Sitio Pasang.</p>
+          </article>
+
+          <!-- 9. IBOD -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Ibod" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">IBOD</h3>
+            <p class="npc-card__title">Kapitan ng Sitio Tambis</p>
+            <span class="status-badge status-badge--alive">Alive</span>
+            <p class="npc-card__description">Ibod served as one of the captains of Sitio Tambis, primarily tasked with reconnaissance and guarding the perimeter of the sitio. He led with a kind heart but balanced it with discipline. As Balanoy's best friend, they often kept each other company. During one of their patrols, they were ambushed by aswangs, almost the entire party was wiped out, leaving Balanoy unconscious and resulting in Ibod's kidnapping. The Maganis eventually found Ibod trapped in an arcane prism inside Bulkang Betis. They freed him, but he has yet to awaken.</p>
+          </article>
+
+          <!-- 10. PIAN -->
+          <article class="npc-card npc-card--with-avatar">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Pian" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <h3 class="npc-card__name">PIAN</h3>
+            <p class="npc-card__title">Espiritung Naghigante</p>
+            <span class="status-badge status-badge--deceased">Deceased</span>
+            <p class="npc-card__description">Pian was Sikatuna's beloved wife. After her husband was slain in battle, she pleaded with fellow healers to revive him. While guarding the resurrection ritual, she was struck by an arrow and killed, though her body was never found or buried. When the Maganis arrived in Bulkang Betis, they discovered Pian draining Ibod's life energy for her own gain. She was ultimately defeated by Ahbo, Maria Clara, Balanoy, and Rea. They proceeded to lay Pian to rest alongside Sikatuna, their bodies consumed by the lava as the volcano erupted.</p>
+          </article>
+
+        </div><!-- /.npc-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Content for players
+      <span class="site-footer__divider">·</span>
+      Last updated: March 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

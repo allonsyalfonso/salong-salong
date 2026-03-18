@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ang Epiko | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html" class="active">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="search.html" class="navbar__icon-link" title="Maghanap">🔍</a></li>
+      <li><button id="dm-toggle" class="dm-btn" title="DM Mode">🔒</button></li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>ANG EPIKO NG SALONG-SALONG</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Ang katapusan ng isang kabanata. Ang simula ng isang giyera.</p>
+      </div>
+    </header>
+
+    <!-- ── INTRO ── -->
+    <section aria-label="Introduksyon">
+      <div class="section-container section-container--tight">
+        <div class="parchment-card parchment-card--quote">
+          <p>"Walang dapat pumunta sa lugar na pinuntahan nila. Ngunit pumunta sila at bumalik."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CHARACTER EPIC ENTRIES ── -->
+    <section aria-label="Mga Epikong Kuwento">
+      <div class="section-container">
+
+        <!-- TSINTA AT SANTEL -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">TSINTA AT SANTEL</h2>
+            <p class="epic-character-tagline">"No one should ever go where they went. But they did and actually returned."</p>
+            <p>Tsinta and Santel descended into Kasaanan. They descended to the realm of the damned, where the river of souls churned with the wails of the lost. They faced death over and over again, their bodies torn apart and remade by the underworld's relentless tide. Tsinta, ever by Santel's side, tried to make her see reason to turn back before they lost themselves entirely. But Santel pushed forward, dragging Tsinta deeper into the abyss, defying every boundary between life and death. When they finally emerged, they became the first humanoids to return from Kasaanan alive. But something had changed. The underworld had left its mark on them, in ways neither could yet understand.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- YNIO -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">YNIO</h2>
+            <p class="epic-character-tagline">"He turned his back on his newfound family. He had a different battle to fight."</p>
+            <p>Ynio could not follow Santel and Tsinta into the darkness they embraced. Hence he returned to Sitio Pasang, where an old curse had bound his people to suffer for generations. Breaking it was no simple feat. The ritual demanded years of preparation, and the sacrifices made along the way weighed heavily upon him. Families were torn apart as those most afflicted succumbed before the cure could reach them. Some resisted, unwilling to believe in salvation after so many years of suffering. Through Lira's guidance, Ynio pressed on, enduring the long nights, weeks, and months of uncertainty. It would take years before the first signs of the curse breaking emerged, and by then, Ynio himself had become something of a relic, a man who had given his life to a cause he might never see fulfilled.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- REA -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">REA</h2>
+            <p class="epic-character-tagline">"She stood where the past had broken. She had no choice but to build."</p>
+            <p>Rea remained in Salong-salong, where the weight of history had settled upon her shoulders. With Babaylan Liham's counsel, she formed the Salingbobog Council, uniting the datus and rajas in a fragile alliance. It was a daunting task, one that did not come without bloodshed. Many refused to sit at the same table as their former enemies, and those who did came bearing grudges, old wounds that had never healed. But in time, all was mended. Rea became a leader who knew when to wield kindness and when to wield fear.</p>
+            <p>But governance was not her only challenge. She took in the children left behind by those who had fallen, Lakan and Sulay, the children of Sikatuna, Agila, Maria Clara's kin, and others who had no one else to turn to. She watched over them, raising them to remember both the past and the price of its mistakes. With every passing year, she saw them grow, saw them take up the swords and names of those who came before them. And she knew that even as she tried to end cycles of violence, new ones were already beginning.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- DAPITHAPON -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">DAPITHAPON</h2>
+            <p class="epic-character-tagline">"He stood beneath the great tree and he did not let go."</p>
+            <p>Dapithapon returned to Punong Balete, taking his place among its guardians. He became its silent protector, ensuring that those who sought its power for their own ends would never reach its roots. His years were spent turning away wanderers, misleading those who sought to exploit the tree's wisdom, and watching over the land that had seen too much blood.</p>
+            <p>Yet in his quiet moments, he followed a whisper of a different kind. The Balatiti, a bird that spoke of the future, had given him a name: Hilberto. A cleric of Mayari. One who would help him rebuild what had been lost. Every few years, Dapithapon would set out, tracing the faintest leads, searching for the one who would help restore the old ways. But rebuilding the order would take longer than a single lifetime, and Dapithapon knew he would not see its rebirth before his end.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- AHBO -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">AHBO</h2>
+            <p class="epic-character-tagline">"She died a god's servant. She returned as proof of their failure."</p>
+            <p>Ahbo's ashes were returned to Sitio Amalciga, but there was no solace in her homecoming. The people, once devoted to their goddess, turned against Lalahon, cursing her name for abandoning one of her most faithful. In time, their prayers shifted. They did not look to the gods for salvation anymore, but to something older, something more concrete, the giants that once walked and ruled their lands. Ahbo had unfortunately become their proof and the sign that the gods no longer answered. And so they abandoned the old ways, carving new gigantic idols, seeking power from something that had long been forgotten.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- BALANOY -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">BALANOY</h2>
+            <p class="epic-character-tagline">"His battle ended, but his family's fight had just begun."</p>
+            <p>Balanoy's ashes were carried back to Sitio Tambis, where his family grieved for a son who had given everything and still lost. Ibod, his last remaining link to the world, remained unconscious, trapped in a stillness that neither time nor medicine could mend. Desperate, his family sought the aid of baganis, warriors whose arts extended beyond the battlefield, into the realms of healing and spirit-weaving. It took years, but one day, Ibod's eyes opened, his breath returned. He had survived, but the weight of what had been lost, what had been taken from him, would never fully fade.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider">
+
+        <!-- MARIA CLARA -->
+        <article class="epic-section">
+          <div class="parchment-card">
+            <span class="epic-character-label">Ang Epiko ni</span>
+            <h2 class="epic-character-name">MARIA CLARA</h2>
+            <p class="epic-character-tagline">"She did not start a war. She ended a world."</p>
+            <p>Maria Clara had long shed the skin of the woman she once was. No longer bound by mortality, she embraced her true nature, her transformation into a pure gabunan finally complete. Alongside Isagani and Hain, she became an instrument of violence. These shadows haunted the datus and rajas who had gathered in Sitio Malabulak, for the Salingbobog Council where Gabunan and the rest would take their vengeance.</p>
+            <p>Yet in the stillness between slaughter and shadow, there were nights she would falter. A child's laughter, soft as whispered prayers, echoed in her mind. For a fleeting breath she wondered if he still spoke her name. If he would see her now and know her at all.</p>
+          </div>
+        </article>
+
+        <hr class="gold-divider gold-divider--wide">
+
+        <!-- ANG MALABULAK CRISIS -->
+        <article class="epic-section">
+          <div class="parchment-card epic-closing-note">
+            <span class="epic-character-label" style="text-align:center; display:block;">Kasaysayan</span>
+            <h2 class="epic-character-name" style="text-align:center;">ANG SIMULA NG BANABA CONFLICT</h2>
+            <hr class="gold-divider">
+            <p style="text-align:center; font-style:italic;">The massacre of the 39th Salingbobog Council, later known as the Malabulak Crisis, was not an act of war. It was a reckoning. Blood painted the halls, and the old world burned in their wake. But fire begets fire. What began as a slaughter grew into something greater, something unstoppable. The Malabulak Crisis ignited the Banaba Conflict, where humans, spirits, and aswangs clashed in endless cycles of vengeance. No longer was it a world of clear divides. No longer was there a single path forward.</p>
+            <p style="text-align:center; font-style:italic;">The land itself stood on the edge of something new, something terrible. And those who remained could only brace for what was to come.</p>
+            <p style="text-align:center; font-family:'Cinzel', serif; font-weight:700; font-size:1.15rem; color:var(--text-dark); margin-top:1.5rem; letter-spacing:0.06em;">The Banaba Conflict had begun.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Nilalaman para sa mga manlalaro
+      <span class="site-footer__divider">·</span>
+      Huling binago: Marso 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">🔒 DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+
+</body>
+</html>
