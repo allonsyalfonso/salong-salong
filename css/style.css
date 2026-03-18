@@ -254,7 +254,7 @@ em { font-style: italic; color: var(--text-muted); }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 5rem 2rem 7rem;
+  padding: 5rem 0 7rem;
   background-color: #0e0400;
   background-image:
     radial-gradient(ellipse at 30% 70%, rgba(180,60,8,0.45) 0%, transparent 50%),
@@ -1958,6 +1958,54 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   overflow: hidden;
   box-shadow: 0 8px 42px rgba(0,0,0,0.78), 0 0 0 1px rgba(196,154,26,0.05);
   background: #080f08;
+  position: relative; /* needed for marker positioning */
+}
+
+/* ── MAP MARKERS ── */
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.map-marker__icon {
+  width: 36px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.9));
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), filter 0.2s ease;
+}
+.map-marker:hover .map-marker__icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.95)) brightness(1.12);
+}
+.map-marker__tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8,4,1,0.93);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid rgba(196,154,26,0.35);
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.map-marker:hover .map-marker__tooltip,
+.map-marker:focus .map-marker__tooltip {
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .map-marker__icon { width: 24px; }
 }
 
 .map-frame .map-caption,
