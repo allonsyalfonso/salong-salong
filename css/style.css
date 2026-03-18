@@ -2010,11 +2010,12 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 }
 
 /* Colour variants by location type */
-.map-marker--sitio   { color: #d4a017; } /* amber   — settlements       */
-.map-marker--sacred  { color: #52b788; } /* teal    — Punong Balete     */
-.map-marker--volcano { color: #e63946; } /* red     — volcanoes         */
-.map-marker--water   { color: #74b3ce; } /* blue    — rivers / springs  */
-.map-marker--forest  { color: #74a85e; } /* green   — forests           */
+.map-marker--sitio    { color: #d4a017; } /* amber  - settlements       */
+.map-marker--sacred   { color: #52b788; } /* teal   - Punong Balete     */
+.map-marker--volcano  { color: #e63946; } /* red    - volcanoes         */
+.map-marker--water    { color: #74b3ce; } /* blue   - rivers / springs  */
+.map-marker--forest   { color: #74a85e; } /* green  - forests           */
+.map-marker--highland { color: #a07850; } /* brown  - highlands         */
 
 /* Tooltip */
 .map-marker__tooltip {
