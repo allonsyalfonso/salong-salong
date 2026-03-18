@@ -70,27 +70,27 @@
       </div>
     </header>
 
+    <!-- ── STICKY SECTION NAV ── -->
+    <nav class="char-section-nav" aria-label="Jump to section" id="char-nav">
+      <button class="char-section-nav__btn active" onclick="filterSection('all', this)">Lahat · All</button>
+      <button class="char-section-nav__btn" onclick="filterSection('alive', this)">Buhay · Survived</button>
+      <button class="char-section-nav__btn" onclick="filterSection('missing', this)">Iba Pa · Other</button>
+      <button class="char-section-nav__btn" onclick="filterSection('fallen', this)">Namatay · Fallen</button>
+    </nav>
+
     <!-- ── PC GRID ── -->
     <section aria-label="Listahan ng mga Magani">
       <div class="section-container">
 
-        <div class="npc-grid npc-grid--pc">
+        <div class="npc-grid npc-grid--pc npc-grid--with-badge">
 
-          <!-- 1. TSINTA -->
-          <article class="npc-card npc-card--with-avatar">
-            <div class="avatar-frame">
-              <img src="" alt="Portrait of Tsinta" class="avatar-frame__img">
-              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
-            </div>
-            <div class="npc-card__header">
-              <h3 class="npc-card__name">TSINTA</h3>
-              <p class="npc-card__title">Magani · Kapatid</p>
-            </div>
-            <p class="npc-card__description">Tsinta was the steady hand that never let go, even when everything she held onto was pulling her under. She journeyed into Kasaanan, the realm of the damned, alongside her younger sister Santel, surviving trials that should have unmade them both. Though she often urged caution, she never once abandoned Santel to face the dark alone. She returned from the underworld changed, carrying marks no living person should bear. In the years that followed, she poured her love into letters, especially into one final letter to Santel that said everything she never found the words for while they were still together.</p>
-          </article>
+          <!-- SECTION: ALIVE -->
+          <div class="npc-section-label" data-section="alive">
+            <span class="npc-section-label__text">Buhay <span class="tagalog">· Survived</span></span>
+          </div>
 
-          <!-- 2. SANTEL -->
-          <article class="npc-card npc-card--with-avatar">
+          <!-- 1. SANTEL -->
+          <article class="npc-card npc-card--with-avatar" data-section="alive">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Santel" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -98,12 +98,14 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">SANTEL</h3>
               <p class="npc-card__title">Magani · Manlalakbay</p>
+              <span class="status-badge status-badge--alive">Survived</span>
             </div>
             <p class="npc-card__description">Santel did not walk into Kasaanan because she was brave. She walked in because she could not stop. Where others saw a boundary between life and death, she saw a door, and she pushed through it, dragging Tsinta with her, defying every rule the underworld had ever written. She and Tsinta became the first humanoids to return from Kasaanan alive, and the mark it left on her was not something that washed off. She emerged quieter, sharper, and carrying something the living world could not quite name.</p>
+            <span class="npc-location-tag">Sitio Tambis</span>
           </article>
 
-          <!-- 3. YNIO -->
-          <article class="npc-card npc-card--with-avatar">
+          <!-- 2. YNIO -->
+          <article class="npc-card npc-card--with-avatar" data-section="alive">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Ynio" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -111,38 +113,14 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">YNIO</h3>
               <p class="npc-card__title">Magani · Manggagamot ng Sumpa</p>
+              <span class="status-badge status-badge--alive">Survived</span>
             </div>
             <p class="npc-card__description">Ynio could have followed his companions into the darkness they embraced. He chose a different path. He returned to Sitio Pasang, the place that had suffered longest under the Tigbanua Buso curse, and gave the rest of his life to breaking it. Years of preparation. Families lost along the way. Resistance from people too broken to believe in salvation. Through Lira's guidance and his own stubborn refusal to abandon what he had started, Ynio pressed on until the first signs of the curse finally began to break. He never stopped finding it a little funny that fate made him face the same enemies his father once had.</p>
+            <span class="npc-location-tag">Sitio Pasang</span>
           </article>
 
-          <!-- 4. REA LABRADOR -->
-          <article class="npc-card npc-card--with-avatar">
-            <div class="avatar-frame">
-              <img src="" alt="Portrait of Rea Labrador" class="avatar-frame__img">
-              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
-            </div>
-            <div class="npc-card__header">
-              <h3 class="npc-card__name">REA LABRADOR</h3>
-              <p class="npc-card__title">Magani · Punong Tagapangalaga</p>
-            </div>
-            <p class="npc-card__description">In the wreckage of the Malabulak Crisis, someone had to pick up the pieces. Rea did not want the task, but she was the one left standing who knew how. With Babaylan Liham's counsel, she formed a new Salingbobog Council from the survivors, holding together an alliance that had every reason to collapse. She raised the children of the fallen alongside her own. She wielded kindness and fear in equal measure, knowing when each was needed. Her last will was the most practical document anyone had ever read, and somehow also the most devastating.</p>
-          </article>
-
-          <!-- 5. MARIA CLARA -->
-          <article class="npc-card npc-card--with-avatar">
-            <div class="avatar-frame">
-              <img src="" alt="Portrait of Maria Clara" class="avatar-frame__img">
-              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
-            </div>
-            <div class="npc-card__header">
-              <h3 class="npc-card__name">MARIA CLARA</h3>
-              <p class="npc-card__title">Magani · Gabunan</p>
-            </div>
-            <p class="npc-card__description">Maria Clara began the campaign as a warrior and a mother, fierce in battle, devoted to her family, the kind of person who ended fights by collecting the head of the enemy's leader. She ended it as something else entirely. Her transformation into a gabunan was not sudden, it was a slow becoming, accelerated by loss, by grief, and by something old in her bloodline that had been waiting to surface. She did not lose herself all at once. She lost herself in pieces, each one preceded by a moment of doubt she could not hold onto long enough.</p>
-          </article>
-
-          <!-- 6. DAPITHAPON -->
-          <article class="npc-card npc-card--with-avatar">
+          <!-- 3. DAPITHAPON -->
+          <article class="npc-card npc-card--with-avatar" data-section="alive">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Dapithapon" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -150,38 +128,14 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">DAPITHAPON</h3>
               <p class="npc-card__title">Magani · Kleriko ni Mayari</p>
+              <span class="status-badge status-badge--alive">Survived</span>
             </div>
             <p class="npc-card__description">A Balete Elf of some six centuries, Dapithapon served Mayari, the Moon Goddess, and carried within him an archive of stories most people had forgotten. He chronicled the Maganis' journey in careful kawayang papel, noting not just what happened, but why it mattered. He died once, was brought back by Datu Laya, and spent the rest of the campaign quietly aware that his time was borrowed. He returned to Punong Balete at the end, as a guardian. His farewell letter remains one of the most complete accounts of the Maganis' journey in existence.</p>
+            <span class="npc-location-tag">Punong Balete</span>
           </article>
 
-          <!-- 7. BALANOY -->
-          <article class="npc-card npc-card--with-avatar">
-            <div class="avatar-frame">
-              <img src="" alt="Portrait of Balanoy" class="avatar-frame__img">
-              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
-            </div>
-            <div class="npc-card__header">
-              <h3 class="npc-card__name">BALANOY</h3>
-              <p class="npc-card__title">Magani · Mentala ng Tambis</p>
-            </div>
-            <p class="npc-card__description">Balanoy of Sitio Tambis was a practitioner of kawayang papel, a form of paper magic capable of transferring power and knowledge between people. He was Ibod's closest friend and one of the most methodical thinkers in the group. He did not survive the final events of the campaign, but he left behind letters, practical, warm, full of the kind of clarity that only comes from people who know they are running out of time. His papag, made of sampalok wood, went to Ibod. His alchemy supplies went back to his maestro. Everything was accounted for.</p>
-          </article>
-
-          <!-- 8. AHBO -->
-          <article class="npc-card npc-card--with-avatar">
-            <div class="avatar-frame">
-              <img src="" alt="Portrait of Ahbo" class="avatar-frame__img">
-              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
-            </div>
-            <div class="npc-card__header">
-              <h3 class="npc-card__name">AHBO</h3>
-              <p class="npc-card__title">Magani · Alagad ni Lalahon</p>
-            </div>
-            <p class="npc-card__description">Ahbo served Lalahon, the volcanic goddess, with complete and uncomplicated faith. She died for it. Her ashes were returned to Sitio Amalciga, but instead of honor, she came home to a people who had turned against Lalahon entirely, blaming the goddess for abandoning her most devoted follower. Ahbo's death did not end her story. It became the reason her sitio abandoned the gods altogether, turning instead toward the ancient giants. She became proof of divine failure. That was not what she intended to be.</p>
-          </article>
-
-          <!-- 9. MANG TOMAS -->
-          <article class="npc-card npc-card--with-avatar">
+          <!-- 4. MANG TOMAS -->
+          <article class="npc-card npc-card--with-avatar" data-section="alive">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Mang Tomas" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -189,12 +143,99 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">MANG TOMAS</h3>
               <p class="npc-card__title">Magani · Siday</p>
+              <span class="status-badge status-badge--alive">Survived</span>
             </div>
             <p class="npc-card__description">Mang Tomas was the group's siday, a singer and keeper of morale whose presence made the impossible feel slightly less so. He died at Gabunan's hand, was revived, and kept going. Not much is written about what he thought of that. He kept singing. That seemed to be its own kind of answer.</p>
+            <span class="npc-location-tag">Sitio Tambis</span>
+          </article>
+
+          <!-- SECTION: TRANSFORMED -->
+          <div class="npc-section-label" data-section="missing">
+            <span class="npc-section-label__text">Naging Ibang Bagay <span class="tagalog">· Transformed</span></span>
+          </div>
+
+          <!-- 5. MARIA CLARA -->
+          <article class="npc-card npc-card--with-avatar" data-section="missing">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Maria Clara" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <div class="npc-card__header">
+              <h3 class="npc-card__name">MARIA CLARA</h3>
+              <p class="npc-card__title">Magani · Gabunan</p>
+              <span class="status-badge status-badge--transformed">Gabunan</span>
+            </div>
+            <p class="npc-card__description">Maria Clara began the campaign as a warrior and a mother, fierce in battle, devoted to her family, the kind of person who ended fights by collecting the head of the enemy's leader. She ended it as something else entirely. Her transformation into a gabunan was not sudden, it was a slow becoming, accelerated by loss, by grief, and by something old in her bloodline that had been waiting to surface. She did not lose herself all at once. She lost herself in pieces, each one preceded by a moment of doubt she could not hold onto long enough.</p>
+            <span class="npc-location-tag">Sitio Malabulak</span>
+          </article>
+
+          <!-- SECTION: FALLEN -->
+          <div class="npc-section-label" data-section="fallen">
+            <span class="npc-section-label__text">Namatay <span class="tagalog">· Fallen</span></span>
+          </div>
+
+          <!-- 6. TSINTA -->
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Tsinta" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <div class="npc-card__header">
+              <h3 class="npc-card__name">TSINTA</h3>
+              <p class="npc-card__title">Magani · Kapatid</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
+            </div>
+            <p class="npc-card__description">Tsinta was the steady hand that never let go, even when everything she held onto was pulling her under. She journeyed into Kasaanan, the realm of the damned, alongside her younger sister Santel, surviving trials that should have unmade them both. Though she often urged caution, she never once abandoned Santel to face the dark alone. She returned from the underworld changed, carrying marks no living person should bear. In the years that followed, she poured her love into letters, especially into one final letter to Santel that said everything she never found the words for while they were still together.</p>
+            <span class="npc-location-tag">Sitio Tambis</span>
+          </article>
+
+          <!-- 7. REA LABRADOR -->
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Rea Labrador" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <div class="npc-card__header">
+              <h3 class="npc-card__name">REA LABRADOR</h3>
+              <p class="npc-card__title">Magani · Punong Tagapangalaga</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
+            </div>
+            <p class="npc-card__description">In the wreckage of the Malabulak Crisis, someone had to pick up the pieces. Rea did not want the task, but she was the one left standing who knew how. With Babaylan Liham's counsel, she formed a new Salingbobog Council from the survivors, holding together an alliance that had every reason to collapse. She raised the children of the fallen alongside her own. She wielded kindness and fear in equal measure, knowing when each was needed. Her last will was the most practical document anyone had ever read, and somehow also the most devastating.</p>
+            <span class="npc-location-tag">Sitio Tambis</span>
+          </article>
+
+          <!-- 8. BALANOY -->
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Balanoy" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <div class="npc-card__header">
+              <h3 class="npc-card__name">BALANOY</h3>
+              <p class="npc-card__title">Magani · Mentala ng Tambis</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
+            </div>
+            <p class="npc-card__description">Balanoy of Sitio Tambis was a practitioner of kawayang papel, a form of paper magic capable of transferring power and knowledge between people. He was Ibod's closest friend and one of the most methodical thinkers in the group. He did not survive the final events of the campaign, but he left behind letters, practical, warm, full of the kind of clarity that only comes from people who know they are running out of time. His papag, made of sampalok wood, went to Ibod. His alchemy supplies went back to his maestro. Everything was accounted for.</p>
+            <span class="npc-location-tag">Sitio Tambis</span>
+          </article>
+
+          <!-- 9. AHBO -->
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
+            <div class="avatar-frame">
+              <img src="" alt="Portrait of Ahbo" class="avatar-frame__img">
+              <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
+            </div>
+            <div class="npc-card__header">
+              <h3 class="npc-card__name">AHBO</h3>
+              <p class="npc-card__title">Magani · Alagad ni Lalahon</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
+            </div>
+            <p class="npc-card__description">Ahbo served Lalahon, the volcanic goddess, with complete and uncomplicated faith. She died for it. Her ashes were returned to Sitio Amalciga, but instead of honor, she came home to a people who had turned against Lalahon entirely, blaming the goddess for abandoning her most devoted follower. Ahbo's death did not end her story. It became the reason her sitio abandoned the gods altogether, turning instead toward the ancient giants. She became proof of divine failure. That was not what she intended to be.</p>
+            <span class="npc-location-tag">Sitio Amalciga</span>
           </article>
 
           <!-- 10. SIKATUNA -->
-          <article class="npc-card npc-card--with-avatar">
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Sikatuna" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -202,12 +243,14 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">SIKATUNA</h3>
               <p class="npc-card__title">Magani · Barbaro</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
             </div>
             <p class="npc-card__description">Sikatuna was a barbarian who had already crossed the black river once, brought back from the afterlife by Datu Laya at the campaign's beginning. He carried the grief of Pian, his wife, who had died protecting his resurrection ritual. Their reunion inside Bulkang Betis was not what either of them would have chosen. He was laid to rest with her in the lava of the volcano that had held her. That, at least, was something.</p>
+            <span class="npc-location-tag">Bulkang Betis</span>
           </article>
 
           <!-- 11. PONCE -->
-          <article class="npc-card npc-card--with-avatar">
+          <article class="npc-card npc-card--with-avatar" data-section="fallen">
             <div class="avatar-frame">
               <img src="" alt="Portrait of Ponce" class="avatar-frame__img">
               <svg class="avatar-frame__placeholder" viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect width="88" height="88" rx="6" fill="currentColor" opacity="0.08"/><circle cx="44" cy="34" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M16 78c0-15.464 12.536-28 28-28s28 12.536 28 28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/></svg>
@@ -215,8 +258,10 @@
             <div class="npc-card__header">
               <h3 class="npc-card__name">PONCE</h3>
               <p class="npc-card__title">Magani · Kawal</p>
+              <span class="status-badge status-badge--deceased">Deceased</span>
             </div>
             <p class="npc-card__description">First a soldier, then a friend of Datu Laya, Ponce was a specialist in many kinds of weapons and the kind of reliable presence every group depends on more than they say aloud. He died at Gabunan's hands alongside Sikatuna and Mang Tomas. Unlike the others, he was not revived. He is remembered in Dapithapon's chronicles as someone who always knew where he stood.</p>
+            <span class="npc-location-tag">Sitio Anilau</span>
           </article>
 
         </div><!-- /.npc-grid -->
@@ -253,6 +298,41 @@
     </div>
   </div>
 
+  <script>
+    function filterSection(key, btn) {
+      document.querySelectorAll('.char-section-nav__btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var all = document.querySelectorAll('[data-section]');
+      all.forEach(function(el) {
+        el.style.display = (key === 'all' || el.dataset.section === key) ? '' : 'none';
+      });
+    }
+    (function() {
+      var navBtns = {
+        alive:   document.querySelector('[onclick*="alive"]'),
+        missing: document.querySelector('[onclick*="missing"]'),
+        fallen:  document.querySelector('[onclick*="fallen"]')
+      };
+      var sections = {
+        alive:   document.querySelector('[data-section="alive"].npc-section-label'),
+        missing: document.querySelector('[data-section="missing"].npc-section-label'),
+        fallen:  document.querySelector('[data-section="fallen"].npc-section-label')
+      };
+      function updateNav() {
+        var current = 'alive';
+        var scrollY = window.scrollY + 120;
+        ['alive','missing','fallen'].forEach(function(k) {
+          if (sections[k] && sections[k].getBoundingClientRect().top + window.scrollY <= scrollY) current = k;
+        });
+        var allBtn = document.querySelector('[onclick*="\'all\'"]');
+        if (allBtn && !allBtn.classList.contains('active')) {
+          document.querySelectorAll('.char-section-nav__btn').forEach(function(b) { b.classList.remove('active'); });
+          if (navBtns[current]) navBtns[current].classList.add('active');
+        }
+      }
+      window.addEventListener('scroll', updateNav, { passive: true });
+    })();
+  </script>
   <script src="js/dm.js"></script>
 
 </body>

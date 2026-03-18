@@ -620,6 +620,7 @@ em { font-style: italic; color: var(--text-muted); }
 .status-badge--mia     { background: #3d2d0a; color: #ccaa52; border: 1px solid rgba(204,170,82,0.25); }
 .status-badge--unknown { background: #2a2a2a; color: #999999; border: 1px solid rgba(153,153,153,0.25); }
 .status-badge--kia     { background: #3d0a0a; color: #ff6b6b; border: 1px solid rgba(255,107,107,0.25); }
+.status-badge--transformed { background: #1a0a3d; color: #b08cff; border: 1px solid rgba(176,140,255,0.25); }
 
 /* ── EPIC SECTION ── */
 .epic-section { padding: 2rem 0; }
@@ -2989,19 +2990,19 @@ button:focus-visible {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(196,154,26,0.22);
+  background: rgba(26,6,0,0.28);
 }
 .npc-section-label__text {
   font-family: var(--font-display);
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--text-dark);
   white-space: nowrap;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 .npc-section-label__text .tagalog {
-  opacity: 0.6;
+  opacity: 0.5;
   margin-left: 0.4em;
 }
 
