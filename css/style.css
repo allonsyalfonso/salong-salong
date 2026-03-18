@@ -1724,9 +1724,10 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
     border: none;
     border-left: 2px solid rgba(196,154,26,0.12);
     margin-left: 0.75rem;
-    padding: 0.25rem 0;
+    padding: 0 0 0 1rem;
     min-width: auto;
     background: transparent;
+    display: none;
   }
 
   .nav-dropdown.open .nav-dropdown__menu { display: block; }
@@ -1763,6 +1764,13 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 
   .timeline-dot { left: 16px; transform: translateY(-50%); }
   .timeline-card { max-width: 100%; }
+
+  /* Map markers on mobile */
+  .map-marker__pin { width: 18px; height: 18px; }
+  .map-marker__pin svg { width: 9px; height: 9px; }
+  .map-legend-row { flex-wrap: wrap; gap: 0.4rem 0.8rem; }
+  .hero__title { font-size: clamp(2.2rem, 10vw, 4rem); }
+  .npc-card__header { min-height: 5rem; }
 }
 
 /* 480px – Mobile */
@@ -1971,6 +1979,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 /* Pin head: colored circle with dark interior + inner SVG glyph */
@@ -2040,7 +2049,8 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   transition: opacity 0.15s ease;
 }
 .map-marker:hover .map-marker__tooltip,
-.map-marker:focus .map-marker__tooltip { opacity: 1; }
+.map-marker:focus .map-marker__tooltip,
+.map-marker.tapped .map-marker__tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* Smaller on mobile */
 @media (max-width: 600px) {
@@ -2902,45 +2912,23 @@ button:focus-visible {
   margin-top: 0.5rem;
 }
 
-/* ── SUBGRID ALIGNMENT: NPC cards with status badge (characters.html) ──
-   Uses CSS subgrid so name / title / badge / description align horizontally
-   across all cards in the same visual row. Requires modern browser (all 2023+). */
+/* ── CARD HEADER NORMALIZATION: ensures descriptions align across cards ── */
+.npc-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-height: 6.5rem;
+}
+.npc-card--with-avatar .npc-card__header {
+  grid-column: 2;
+}
+/* Remove old subgrid setup */
 .npc-grid--with-badge .npc-card--with-avatar {
-  grid-row: span 4;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  column-gap: 1rem;
-  align-items: start;
-  align-content: start;
+  grid-row: unset;
 }
-.npc-grid--with-badge .npc-card--with-avatar .avatar-frame {
-  grid-row: 1 / span 4;
-}
-.npc-grid--with-badge .npc-card--with-avatar .npc-card__name        { grid-row: 1; }
-.npc-grid--with-badge .npc-card--with-avatar .npc-card__title       { grid-row: 2; }
-.npc-grid--with-badge .npc-card--with-avatar .status-badge          { grid-row: 3; }
-.npc-grid--with-badge .npc-card--with-avatar .npc-card__description { grid-row: 4; }
-.npc-grid--with-badge .npc-card--with-avatar .dm-note-card {
-  grid-column: 1 / -1;
-  grid-row: 5;
-  margin-top: 0.5rem;
-}
-
-/* ── SUBGRID ALIGNMENT: PC cards without badge (pc.html) ── */
 .npc-grid--pc .npc-card--with-avatar {
-  grid-row: span 3;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  column-gap: 1rem;
-  align-items: start;
-  align-content: start;
+  grid-row: unset;
 }
-.npc-grid--pc .npc-card--with-avatar .avatar-frame {
-  grid-row: 1 / span 3;
-}
-.npc-grid--pc .npc-card--with-avatar .npc-card__name        { grid-row: 1; }
-.npc-grid--pc .npc-card--with-avatar .npc-card__title       { grid-row: 2; }
-.npc-grid--pc .npc-card--with-avatar .npc-card__description { grid-row: 3; }
 
 /* ══════════════════════════════════════════════════════════════
    NAV CARD SVG GLYPH — consistent icon sizing
