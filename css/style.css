@@ -107,6 +107,18 @@ a:hover { color: var(--bg-surface); }
 
 ul, ol { padding-left: 1.5rem; }
 
+/* ── PAGE ENTRY ANIMATION ── */
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main {
+  animation: pageEnter 0.4s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  main { animation: none; }
+}
+
 /* ── TYPOGRAPHY ── */
 /* Inknut Antiqua is already heavy at 400 — use 700 for headings */
 h1, h2, h3, h4, h5 {
@@ -548,12 +560,13 @@ em { font-style: italic; color: var(--text-muted); }
   flex-direction: column;
   gap: 0.6rem;
   position: relative;
-  transition: transform 0.22s ease, box-shadow 0.25s ease;
+  transition: transform 0.22s ease, box-shadow 0.25s ease, border-left-color 0.22s ease;
 }
 
 .npc-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 36px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  border-left-color: var(--gold-bright);
 }
 
 .npc-card__name {
@@ -578,6 +591,16 @@ em { font-style: italic; color: var(--text-muted); }
   line-height: 1.65;
   color: var(--text-dark);
   flex: 1;
+}
+.npc-card__description::first-letter {
+  font-family: var(--font-display);
+  font-size: 1.65em;
+  font-weight: 700;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.08em;
+  color: var(--gold);
+  opacity: 0.82;
 }
 
 /* ── STATUS BADGES ── */
@@ -1771,6 +1794,8 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   .map-legend-row { flex-wrap: wrap; gap: 0.4rem 0.8rem; }
   .hero__title { font-size: clamp(2.2rem, 10vw, 4rem); }
   .npc-card__header { min-height: 5rem; }
+  .npc-grid--with-badge .npc-card__header { min-height: 7rem; }
+  .npc-grid--pc .npc-card__header { min-height: 5rem; }
 }
 
 /* 480px – Mobile */
@@ -2027,6 +2052,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .map-marker--water    { color: #74b3ce; } /* blue   - rivers / springs  */
 .map-marker--forest   { color: #74a85e; } /* green  - forests           */
 .map-marker--highland { color: #d4b878; } /* tan    - highlands         */
+.map-marker--ashland  { color: #a09580; } /* ash    - volcanic ashland  */
 
 /* Tooltip */
 .map-marker__tooltip {
@@ -2875,6 +2901,22 @@ button:focus-visible {
   border: 1.5px dashed var(--border);
   color: var(--text-muted);
 }
+
+/* Shimmer animation for empty portrait slots */
+@keyframes avatarShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.avatar-frame__placeholder {
+  background: linear-gradient(
+    105deg,
+    var(--bg-card-dark) 40%,
+    rgba(196,154,26,0.12) 50%,
+    var(--bg-card-dark) 60%
+  );
+  background-size: 200% 100%;
+  animation: avatarShimmer 2.8s ease-in-out infinite;
+}
 .avatar-frame__img {
   position: absolute;
   inset: 0;
@@ -2922,12 +2964,45 @@ button:focus-visible {
 .npc-card--with-avatar .npc-card__header {
   grid-column: 2;
 }
+/* Per-grid overrides */
+.npc-grid--with-badge .npc-card__header { min-height: 9rem; }
+.npc-grid--pc .npc-card__header         { min-height: 6rem; }
 /* Remove old subgrid setup */
 .npc-grid--with-badge .npc-card--with-avatar {
   grid-row: unset;
 }
 .npc-grid--pc .npc-card--with-avatar {
   grid-row: unset;
+}
+
+/* ── IN-GRID SECTION DIVIDERS (characters page) ── */
+.npc-section-label {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 0 0.25rem;
+}
+.npc-section-label:first-child { padding-top: 0; }
+.npc-section-label::before,
+.npc-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(196,154,26,0.22);
+}
+.npc-section-label__text {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  white-space: nowrap;
+  opacity: 0.85;
+}
+.npc-section-label__text .tagalog {
+  opacity: 0.6;
+  margin-left: 0.4em;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -3165,4 +3240,91 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+/* ── CHARACTER SECTION STICKY NAV ── */
+.char-section-nav {
+  position: sticky;
+  top: 58px; /* below navbar */
+  z-index: 50;
+  background: rgba(12,7,2,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(196,154,26,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.char-section-nav__btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 99px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(238,221,181,0.55);
+  padding: 0.3em 0.9em;
+  cursor: pointer;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+.char-section-nav__btn:hover {
+  color: var(--gold-light);
+  border-color: rgba(196,154,26,0.3);
+}
+.char-section-nav__btn.active {
+  color: var(--gold-bright);
+  border-color: rgba(196,154,26,0.5);
+  background: rgba(196,154,26,0.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .char-section-nav__btn { transition: none; }
+}
+
+/* ── TIMELINE STICKY ERA CHIP ── */
+#timeline-era-chip {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(12,7,2,0.88);
+  border: 1px solid rgba(196,154,26,0.38);
+  border-radius: 99px;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  padding: 0.35em 1.1em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 80;
+  white-space: nowrap;
+}
+#timeline-era-chip.visible { opacity: 1; }
+@media (max-width: 600px) {
+  #timeline-era-chip { font-size: 0.58rem; bottom: 1rem; }
+}
+
+/* ── NPC LOCATION TAG ── */
+.npc-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.72;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+.npc-location-tag::before {
+  content: '◉';
+  font-size: 0.5rem;
+  opacity: 0.6;
 }
