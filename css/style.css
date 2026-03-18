@@ -1991,6 +1991,8 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   height: 11px;
   fill: currentColor;
   display: block;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
 /* Pin stem */
@@ -2015,7 +2017,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .map-marker--volcano  { color: #e63946; } /* red    - volcanoes         */
 .map-marker--water    { color: #74b3ce; } /* blue   - rivers / springs  */
 .map-marker--forest   { color: #74a85e; } /* green  - forests           */
-.map-marker--highland { color: #a07850; } /* brown  - highlands         */
+.map-marker--highland { color: #d4b878; } /* tan    - highlands         */
 
 /* Tooltip */
 .map-marker__tooltip {
