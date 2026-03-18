@@ -2055,6 +2055,57 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .map-marker--highland { color: #d4b878; } /* tan    - highlands         */
 .map-marker--ashland  { color: #a09580; } /* ash    - volcanic ashland  */
 
+/* ── MARKER TOGGLE BUTTON ── */
+.map-toggle-markers {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+  background: rgba(8, 4, 1, 0.82);
+  color: var(--gold-light);
+  border: 1px solid rgba(196,154,26,0.35);
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.map-toggle-markers:hover {
+  background: rgba(196,154,26,0.18);
+  border-color: rgba(196,154,26,0.6);
+  color: var(--gold-bright);
+}
+.map-toggle-markers:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+/* When markers are hidden, dim the button to indicate off-state */
+.map-frame.markers-hidden .map-toggle-markers {
+  color: var(--text-muted);
+  border-color: rgba(122,58,8,0.35);
+}
+.map-frame.markers-hidden .map-toggle-markers:hover {
+  color: var(--gold-light);
+  border-color: rgba(196,154,26,0.5);
+}
+
+/* Hide / show all markers */
+.map-frame.markers-hidden .map-marker {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.map-frame .map-marker {
+  transition: opacity 0.25s ease;
+}
+
 /* Tooltip */
 .map-marker__tooltip {
   position: absolute;
@@ -2968,6 +3019,8 @@ button:focus-visible {
 /* Per-grid overrides */
 .npc-grid--with-badge .npc-card__header { min-height: 9rem; }
 .npc-grid--pc .npc-card__header         { min-height: 6rem; }
+/* PC grid WITH badges: combined class wins over both single-class rules */
+.npc-grid--pc.npc-grid--with-badge .npc-card__header { min-height: 9.5rem; }
 /* Remove old subgrid setup */
 .npc-grid--with-badge .npc-card--with-avatar {
   grid-row: unset;
