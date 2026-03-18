@@ -142,7 +142,7 @@
               </a>
 
               <!-- VOLCANOES (red) — flame icon -->
-              <a href="locations.html#bulkang-betis" class="map-marker map-marker--volcano" style="left:45%;top:60%">
+              <a href="locations.html#bulkang-betis" class="map-marker map-marker--volcano" style="left:38%;top:54%">
                 <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2.5 2.5 0 0 1-2.5-2.5c0-2.5 2.5-4 2.5-4s2.5 1.5 2.5 4A2.5 2.5 0 0 1 12 17z"/></svg></span>
                 <span class="map-marker__stem" aria-hidden="true"></span>
                 <span class="map-marker__tooltip">Bulkang Betis</span>
@@ -154,7 +154,7 @@
               </a>
 
               <!-- WATER / SPRINGS (blue) — droplet icon -->
-              <a href="locations.html#itinadhanang-ilog" class="map-marker map-marker--water" style="left:28%;top:46%">
+              <a href="locations.html#itinadhanang-ilog" class="map-marker map-marker--water" style="left:24%;top:46%">
                 <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/></svg></span>
                 <span class="map-marker__stem" aria-hidden="true"></span>
                 <span class="map-marker__tooltip">Itinadhanang Ilog</span>
@@ -176,79 +176,6 @@
             </div>
           </div>
 
-          <!-- Slide 2: Interactive (map + side labels) -->
-          <div class="map-slide" id="map-slide-1" aria-label="Locations" hidden>
-            <div class="map-interactive-layout">
-
-              <div class="map-interactive__image">
-                <div class="map-frame">
-                  <img
-                    src="images/map.png"
-                    alt="Ang Mapa ng Isla ng Salong-Salong"
-                    style="width:100%; display:block; filter: brightness(0.84) contrast(1.06) saturate(0.88);"
-                  >
-                </div>
-              </div>
-
-              <aside class="map-interactive__list" aria-label="Listahan ng mga lugar">
-
-                <div class="map-loc-group">
-                  <p class="map-loc-group__label">
-                    <span class="map-legend-dot" style="display:inline-block;"></span>
-                    Settlements <span class="tagalog">Mga Sitio</span>
-                  </p>
-                  <ul class="map-loc-list">
-                    <li><a href="locations.html#tambis" class="map-loc-link">Sitio Tambis <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#anilau" class="map-loc-link">Sitio Anilau <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#pasang" class="map-loc-link">Sitio Pasang <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#amalciga" class="map-loc-link">Sitio Amalciga <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#pagangpang" class="map-loc-link">Sitio Pagangpang <span class="map-loc-arrow">→</span></a></li>
-                  </ul>
-                </div>
-
-                <div class="map-loc-group">
-                  <p class="map-loc-group__label">
-                    <span class="map-legend-dot map-legend-dot--volcano" style="display:inline-block;"></span>
-                    Volcanoes <span class="tagalog">Mga Bulkan</span>
-                  </p>
-                  <ul class="map-loc-list">
-                    <li><a href="locations.html#bulkang-betis" class="map-loc-link">Bulkang Betis <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#bulkang-kamuning" class="map-loc-link">Bulkang Kamuning <span class="map-loc-arrow">→</span></a></li>
-                  </ul>
-                </div>
-
-                <div class="map-loc-group">
-                  <p class="map-loc-group__label">
-                    <span class="map-legend-dot map-legend-dot--nature" style="display:inline-block;"></span>
-                    Nature <span class="tagalog">Kalikasan</span>
-                  </p>
-                  <ul class="map-loc-list">
-                    <li><a href="locations.html#punong-balete" class="map-loc-link">Punong Balete <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#abong-bukid" class="map-loc-link">Abong Bukid <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#itinadhanang-ilog" class="map-loc-link">Itinadhanang Ilog <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#hinulugang-abuno" class="map-loc-link">Hinulugang Abuno <span class="map-loc-arrow">→</span></a></li>
-                    <li><a href="locations.html#lawang-kamagong" class="map-loc-link">Lawang Kamagong <span class="map-loc-arrow">→</span></a></li>
-                  </ul>
-                </div>
-
-                <a href="locations.html" class="map-loc-all">View all locations →</a>
-
-              </aside>
-            </div>
-          </div>
-
-          <!-- Ticker controls -->
-          <div class="map-ticker__controls">
-            <button class="map-ticker__arrow" id="map-prev" onclick="mapTicker(-1)" aria-label="Previous slide">&#8592;</button>
-            <div class="map-ticker__dots">
-              <button class="map-ticker__dot map-ticker__dot--active" onclick="mapGoTo(0)" aria-label="Map"></button>
-              <button class="map-ticker__dot" onclick="mapGoTo(1)" aria-label="Locations"></button>
-            </div>
-            <button class="map-ticker__arrow" id="map-next" onclick="mapTicker(1)" aria-label="Next slide">&#8594;</button>
-          </div>
-
-          <!-- Slide labels -->
-          <p class="map-ticker__label" id="map-ticker-label">1 / 2 - Map</p>
 
         </div>
       </div>
