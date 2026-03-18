@@ -1964,48 +1964,86 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 /* ── MAP MARKERS ── */
 .map-marker {
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
   z-index: 3;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
 }
-.map-marker__icon {
-  width: 36px;
-  height: auto;
+
+/* Pin head: colored circle with dark interior + inner SVG glyph */
+.map-marker__pin {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(8,4,1,0.88);
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,0,0,0.6);
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease;
+}
+.map-marker__pin svg {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
   display: block;
-  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.9));
-  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), filter 0.2s ease;
 }
-.map-marker:hover .map-marker__icon {
-  transform: scale(1.2);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.95)) brightness(1.12);
+
+/* Pin stem */
+.map-marker__stem {
+  width: 2px;
+  height: 7px;
+  background: currentColor;
+  opacity: 0.75;
+  border-radius: 0 0 2px 2px;
 }
+
+/* Hover state */
+.map-marker:hover .map-marker__pin,
+.map-marker:focus .map-marker__pin {
+  transform: scale(1.22);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.95), 0 0 10px currentColor;
+}
+
+/* Colour variants by location type */
+.map-marker--sitio   { color: #d4a017; } /* amber   — settlements       */
+.map-marker--sacred  { color: #52b788; } /* teal    — Punong Balete     */
+.map-marker--volcano { color: #e63946; } /* red     — volcanoes         */
+.map-marker--water   { color: #74b3ce; } /* blue    — rivers / springs  */
+.map-marker--forest  { color: #74a85e; } /* green   — forests           */
+
+/* Tooltip */
 .map-marker__tooltip {
   position: absolute;
-  bottom: calc(100% + 5px);
+  bottom: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%);
   background: rgba(8,4,1,0.93);
   color: var(--gold-light);
   font-family: var(--font-display);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  padding: 0.22rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   border: 1px solid rgba(196,154,26,0.35);
-  border-radius: 4px;
+  border-radius: 3px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s ease;
+  transition: opacity 0.15s ease;
 }
 .map-marker:hover .map-marker__tooltip,
-.map-marker:focus .map-marker__tooltip {
-  opacity: 1;
-}
+.map-marker:focus .map-marker__tooltip { opacity: 1; }
+
+/* Smaller on mobile */
 @media (max-width: 600px) {
-  .map-marker__icon { width: 24px; }
+  .map-marker__pin { width: 16px; height: 16px; border-width: 1.5px; }
+  .map-marker__pin svg { width: 8px; height: 8px; }
+  .map-marker__stem { height: 5px; }
 }
 
 .map-frame .map-caption,
