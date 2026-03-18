@@ -563,9 +563,6 @@ em { font-style: italic; color: var(--text-muted); }
   color: var(--text-dark);
   letter-spacing: 0.06em;
   line-height: 1.2;
-  min-height: 2.8rem; /* normalise 1-line vs 2-line names so badge aligns */
-  display: flex;
-  align-items: flex-end;
 }
 
 .npc-card__title {
@@ -2815,6 +2812,46 @@ button:focus-visible {
   grid-column: 1 / -1;
   margin-top: 0.5rem;
 }
+
+/* ── SUBGRID ALIGNMENT: NPC cards with status badge (characters.html) ──
+   Uses CSS subgrid so name / title / badge / description align horizontally
+   across all cards in the same visual row. Requires modern browser (all 2023+). */
+.npc-grid--with-badge .npc-card--with-avatar {
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  column-gap: 1rem;
+  align-items: start;
+  align-content: start;
+}
+.npc-grid--with-badge .npc-card--with-avatar .avatar-frame {
+  grid-row: 1 / span 4;
+}
+.npc-grid--with-badge .npc-card--with-avatar .npc-card__name        { grid-row: 1; }
+.npc-grid--with-badge .npc-card--with-avatar .npc-card__title       { grid-row: 2; }
+.npc-grid--with-badge .npc-card--with-avatar .status-badge          { grid-row: 3; }
+.npc-grid--with-badge .npc-card--with-avatar .npc-card__description { grid-row: 4; }
+.npc-grid--with-badge .npc-card--with-avatar .dm-note-card {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  margin-top: 0.5rem;
+}
+
+/* ── SUBGRID ALIGNMENT: PC cards without badge (pc.html) ── */
+.npc-grid--pc .npc-card--with-avatar {
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  column-gap: 1rem;
+  align-items: start;
+  align-content: start;
+}
+.npc-grid--pc .npc-card--with-avatar .avatar-frame {
+  grid-row: 1 / span 3;
+}
+.npc-grid--pc .npc-card--with-avatar .npc-card__name        { grid-row: 1; }
+.npc-grid--pc .npc-card--with-avatar .npc-card__title       { grid-row: 2; }
+.npc-grid--pc .npc-card--with-avatar .npc-card__description { grid-row: 3; }
 
 /* ══════════════════════════════════════════════════════════════
    NAV CARD SVG GLYPH — consistent icon sizing

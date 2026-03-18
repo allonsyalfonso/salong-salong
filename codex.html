@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Codex | Sina Una: Isla ng Salong-Salong</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html" class="active">Codex <span class="tagalog">Aklatan</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <div class="page-header dark-section">
+      <div class="page-header__inner">
+        <h1>WORLD CODEX</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="tagalog">Aklatan ng Mundo</p>
+        <p class="page-header__subtitle">Reference guide to the races, calendar, and classes of Salong-Salong.</p>
+      </div>
+    </div>
+
+    <!-- ── CODEX CONTENT ── -->
+    <section aria-label="World Codex" class="dark-section">
+      <div class="section-container">
+
+        <div class="codex-tabs" role="tablist" aria-label="World reference">
+          <button class="codex-tab codex-tab--active" role="tab" aria-selected="true" onclick="codexTab(this,'races')">Races <span class="tagalog">Lahi</span></button>
+          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'calendar')">Calendar <span class="tagalog">Kalendaryo</span></button>
+          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'classes')">Classes <span class="tagalog">Klase</span></button>
+        </div>
+
+        <!-- Races -->
+        <div class="codex-panel codex-panel--active" id="codex-races" role="tabpanel">
+          <div class="codex-entries">
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Tao <span class="codex-entry__sub">Human</span></h3>
+              <p class="codex-entry__desc">The most common people of the island. Found in every sitio and barangay, they build, trade, quarrel, and endure.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Balete Elf <span class="codex-entry__sub">Elfong Balete</span></h3>
+              <p class="codex-entry__desc">Long-lived and forest-bound, tied to the great Balete trees. Few remain after the wars. Dapithapon was one of the last.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Diwata <span class="codex-entry__sub">Celestial Folk</span></h3>
+              <p class="codex-entry__desc">Blessed children of the old gods, rare and mistrusted in equal measure, carrying divine spark in mortal flesh.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Dwende <span class="codex-entry__sub">Hill Folk</span></h3>
+              <p class="codex-entry__desc">Small, secretive, and older than memory. They know paths through the hills that no map has ever charted.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendar -->
+        <div class="codex-panel" id="codex-calendar" role="tabpanel" hidden>
+          <div class="codex-entries">
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Bagong Araw <span class="codex-entry__sub">New Sun · Month I</span></h3>
+              <p class="codex-entry__desc">The first month. Festivals of flame and offering mark the return of Araw's warmth after the cold rains.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Tagsibol <span class="codex-entry__sub">Season of Bloom · Month III</span></h3>
+              <p class="codex-entry__desc">Planting season. Babaylans perform the Ritwal ng Lupa to bless the soil and ensure a full harvest.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Panahon ng Ulan <span class="codex-entry__sub">Rain Season · Month VI</span></h3>
+              <p class="codex-entry__desc">Spirits are most active when the rains come. Travel becomes dangerous. Strange lights appear in the hills.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Huling Araw <span class="codex-entry__sub">Last Sun · Month XII</span></h3>
+              <p class="codex-entry__desc">The final month. The dead are honored, debts settled, and feuds resolved before the year ends.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classes -->
+        <div class="codex-panel" id="codex-classes" role="tabpanel" hidden>
+          <div class="codex-entries">
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Magani <span class="codex-entry__sub">Warrior</span></h3>
+              <p class="codex-entry__desc">Those who take up arms for the sitio. Not all sought the role, some were chosen by circumstance and could not put the blade down.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Babaylan <span class="codex-entry__sub">Spirit-Speaker</span></h3>
+              <p class="codex-entry__desc">Mediators between the living and the spirit realm. They heal, curse, and speak with the dead. Their authority is older than the datus.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Mentala <span class="codex-entry__sub">Paper Mage</span></h3>
+              <p class="codex-entry__desc">Practitioners of kawayang papel, magic worked through bamboo paper, capable of transferring memory, power, and will between people.</p>
+            </div>
+            <div class="codex-entry">
+              <h3 class="codex-entry__name">Manggagamot <span class="codex-entry__sub">Healer</span></h3>
+              <p class="codex-entry__desc">Skilled in herb, root, and ritual. Some heal bodies. Some heal curses. Some heal things that medicine has no name for.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Sina Una: Isla ng Salong-Salong
+      <span class="site-footer__divider">·</span>
+      DM Avips
+      <span class="site-footer__divider">·</span>
+      Content for players
+      <span class="site-footer__divider">·</span>
+      Last updated: March 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+  <script>
+    function codexTab(btn, tab) {
+      document.querySelectorAll('.codex-tab').forEach(function(t) {
+        t.classList.remove('codex-tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.codex-panel').forEach(function(p) {
+        p.hidden = true;
+        p.classList.remove('codex-panel--active');
+      });
+      btn.classList.add('codex-tab--active');
+      btn.setAttribute('aria-selected', 'true');
+      var panel = document.getElementById('codex-' + tab);
+      if (panel) {
+        panel.hidden = false;
+        panel.classList.add('codex-panel--active');
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -34,6 +34,7 @@
         <ul class="nav-dropdown__menu">
           <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
           <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
         </ul>
       </li>
 
@@ -176,86 +177,6 @@
           <p class="map-ticker__label" id="map-ticker-label">1 / 2 - Map</p>
 
         </div>
-      </div>
-    </section>
-
-    <!-- ── WORLD CODEX ── -->
-    <section aria-label="World Codex" class="dark-section">
-      <div class="section-container">
-        <h2 style="color: var(--gold-light); margin-bottom: 2rem;"><span class="h2-wrap">World Codex <span class="tagalog">Aklatan ng Mundo</span></span></h2>
-
-        <div class="codex-tabs" role="tablist" aria-label="World reference">
-          <button class="codex-tab codex-tab--active" role="tab" aria-selected="true" onclick="codexTab(this,'races')">Races <span class="tagalog">Lahi</span></button>
-          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'calendar')">Calendar <span class="tagalog">Kalendaryo</span></button>
-          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'classes')">Classes <span class="tagalog">Klase</span></button>
-        </div>
-
-        <!-- Races -->
-        <div class="codex-panel codex-panel--active" id="codex-races" role="tabpanel">
-          <div class="codex-entries">
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Tao <span class="codex-entry__sub">Human</span></h3>
-              <p class="codex-entry__desc">The most common people of the island. Found in every sitio and barangay, they build, trade, quarrel, and endure.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Balete Elf <span class="codex-entry__sub">Elfong Balete</span></h3>
-              <p class="codex-entry__desc">Long-lived and forest-bound, tied to the great Balete trees. Few remain after the wars. Dapithapon was one of the last.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Diwata <span class="codex-entry__sub">Celestial Folk</span></h3>
-              <p class="codex-entry__desc">Blessed children of the old gods, rare and mistrusted in equal measure, carrying divine spark in mortal flesh.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Dwende <span class="codex-entry__sub">Hill Folk</span></h3>
-              <p class="codex-entry__desc">Small, secretive, and older than memory. They know paths through the hills that no map has ever charted.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Calendar -->
-        <div class="codex-panel" id="codex-calendar" role="tabpanel" hidden>
-          <div class="codex-entries">
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Bagong Araw <span class="codex-entry__sub">New Sun · Month I</span></h3>
-              <p class="codex-entry__desc">The first month. Festivals of flame and offering mark the return of Araw's warmth after the cold rains.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Tagsibol <span class="codex-entry__sub">Season of Bloom · Month III</span></h3>
-              <p class="codex-entry__desc">Planting season. Babaylans perform the Ritwal ng Lupa to bless the soil and ensure a full harvest.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Panahon ng Ulan <span class="codex-entry__sub">Rain Season · Month VI</span></h3>
-              <p class="codex-entry__desc">Spirits are most active when the rains come. Travel becomes dangerous. Strange lights appear in the hills.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Huling Araw <span class="codex-entry__sub">Last Sun · Month XII</span></h3>
-              <p class="codex-entry__desc">The final month. The dead are honored, debts settled, and feuds resolved before the year ends.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Classes -->
-        <div class="codex-panel" id="codex-classes" role="tabpanel" hidden>
-          <div class="codex-entries">
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Magani <span class="codex-entry__sub">Warrior</span></h3>
-              <p class="codex-entry__desc">Those who take up arms for the sitio. Not all sought the role, some were chosen by circumstance and could not put the blade down.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Babaylan <span class="codex-entry__sub">Spirit-Speaker</span></h3>
-              <p class="codex-entry__desc">Mediators between the living and the spirit realm. They heal, curse, and speak with the dead. Their authority is older than the datus.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Mentala <span class="codex-entry__sub">Paper Mage</span></h3>
-              <p class="codex-entry__desc">Practitioners of kawayang papel, magic worked through bamboo paper, capable of transferring memory, power, and will between people.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Manggagamot <span class="codex-entry__sub">Healer</span></h3>
-              <p class="codex-entry__desc">Skilled in herb, root, and ritual. Some heal bodies. Some heal curses. Some heal things that medicine has no name for.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -456,23 +377,6 @@
       mapGoTo(mapCurrentSlide + dir);
     }
 
-    function codexTab(btn, tab) {
-      document.querySelectorAll('.codex-tab').forEach(function(t) {
-        t.classList.remove('codex-tab--active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      document.querySelectorAll('.codex-panel').forEach(function(p) {
-        p.hidden = true;
-        p.classList.remove('codex-panel--active');
-      });
-      btn.classList.add('codex-tab--active');
-      btn.setAttribute('aria-selected', 'true');
-      var panel = document.getElementById('codex-' + tab);
-      if (panel) {
-        panel.hidden = false;
-        panel.classList.add('codex-panel--active');
-      }
-    }
   </script>
 
 </body>
