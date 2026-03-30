@@ -1065,7 +1065,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   align-items: center;
 }
 .about-world__lore-row p {
-  color: rgba(242,216,152,0.88);
+  color: rgba(242,216,152,0.85);
   font-size: 1.25rem;
   line-height: 1.9;
   margin: 0;
@@ -1096,7 +1096,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(232,168,32,0.75);
+  color: rgba(232,168,32,0.8);
 }
 .about-world__dm-credit strong { color: var(--gold-light); }
 
@@ -1172,7 +1172,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .about-campaign__desc {
   font-size: 1rem;
   line-height: 1.82;
-  color: rgba(242,216,152,0.8);
+  color: rgba(242,216,152,0.85);
   margin-bottom: 0.85rem;
 }
 .about-campaign__meta {
