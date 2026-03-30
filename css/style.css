@@ -1013,7 +1013,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 /* ② Title: explicit color so it doesn't fight with any other h2 rule */
 .about-world__title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
   font-weight: 700;
   color: var(--gold-bright);
   letter-spacing: 0.02em;
@@ -1022,6 +1022,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   margin-bottom: 0.45rem;
   /* Reset section-container h2 flex/pseudo-element treatment */
   display: block;
+  white-space: nowrap;
 }
 .about-world__title::before,
 .about-world__title::after { display: none; }
@@ -1049,19 +1050,19 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 /* Lore column */
 .about-world__lore p {
   color: rgba(242,216,152,0.88);
-  font-size: 1rem;
-  line-height: 1.82;
-  margin-bottom: 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 0.85rem;
 }
 /* Pull-quote lead paragraph */
 .about-world__lead {
   color: var(--text-light) !important;
-  font-size: 1.07rem !important;
+  font-size: 0.92rem !important;
   font-style: italic;
-  line-height: 1.85;
+  line-height: 1.78;
   padding-left: 1.15rem;
   border-left: 2px solid rgba(200,146,14,0.5);
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1.2rem !important;
 }
 .about-world__lore strong { color: var(--gold-light); font-weight: 700; }
 .about-world__lore em     { color: var(--gold-bright); font-style: italic; }
@@ -2035,9 +2036,9 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   .map-marker__pin svg { width: 9px; height: 9px; }
   .map-legend-row { flex-wrap: wrap; gap: 0.4rem 0.8rem; }
   .hero__title { font-size: clamp(2.2rem, 10vw, 4rem); }
-  .npc-card__header { min-height: 5rem; }
-  .npc-grid--with-badge .npc-card__header { min-height: 7rem; }
-  .npc-grid--pc .npc-card__header { min-height: 5rem; }
+  .npc-card__header { min-height: auto; }
+  .npc-grid--with-badge .npc-card__header { min-height: auto; }
+  .npc-grid--pc .npc-card__header { min-height: auto; }
 }
 
 /* 480px – Mobile */
@@ -3179,9 +3180,9 @@ button:focus-visible {
 
 .avatar-frame {
   position: relative;
-  width: 88px;
-  height: 88px;
-  margin: 0 0 1rem 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 0.75rem 0;
   flex-shrink: 0;
 }
 .avatar-frame__placeholder {
@@ -3226,24 +3227,16 @@ button:focus-visible {
   display: none;
 }
 
-/* Cards with portrait: grid layout, avatar col 1 spanning all rows */
+/* Cards with portrait: vertical stack layout */
 .npc-card--with-avatar {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 0.5rem 1rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
 }
 .npc-card--with-avatar .avatar-frame {
-  margin: 0;
-  grid-column: 1;
-  grid-row: 1 / span 10;
+  margin: 0 0 0.75rem 0;
 }
-.npc-card--with-avatar > *:not(.avatar-frame) {
-  grid-column: 2;
-}
-/* DM note card inside with-avatar: span full width */
+/* DM note card inside with-avatar: full width */
 .npc-card--with-avatar .dm-note-card {
-  grid-column: 1 / -1;
   margin-top: 0.5rem;
 }
 
@@ -3255,20 +3248,12 @@ button:focus-visible {
   min-height: 6.5rem;
 }
 .npc-card--with-avatar .npc-card__header {
-  grid-column: 2;
+  /* vertical stack, no grid column needed */
 }
-/* Per-grid overrides */
-.npc-grid--with-badge .npc-card__header { min-height: 9rem; }
-.npc-grid--pc .npc-card__header         { min-height: 6rem; }
-/* PC grid WITH badges: combined class wins over both single-class rules */
-.npc-grid--pc.npc-grid--with-badge .npc-card__header { min-height: 9.5rem; }
-/* Remove old subgrid setup */
-.npc-grid--with-badge .npc-card--with-avatar {
-  grid-row: unset;
-}
-.npc-grid--pc .npc-card--with-avatar {
-  grid-row: unset;
-}
+/* Vertical card layout: no min-height needed */
+.npc-grid--with-badge .npc-card__header { min-height: auto; }
+.npc-grid--pc .npc-card__header         { min-height: auto; }
+.npc-grid--pc.npc-grid--with-badge .npc-card__header { min-height: auto; }
 
 /* ── IN-GRID SECTION DIVIDERS (characters page) ── */
 .npc-section-label {
