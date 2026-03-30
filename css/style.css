@@ -1066,16 +1066,16 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 }
 .about-world__lore-row p {
   color: rgba(242,216,152,0.88);
-  font-size: 1rem;
-  line-height: 1.82;
+  font-size: 1.12rem;
+  line-height: 1.85;
   margin: 0;
 }
 /* Pull-quote lead paragraph */
 .about-world__lead {
   color: var(--text-light) !important;
-  font-size: 1.02rem !important;
+  font-size: 1.15rem !important;
   font-style: italic;
-  line-height: 1.85;
+  line-height: 1.88;
   padding-left: 1.15rem;
   border-left: 2px solid rgba(200,146,14,0.5);
 }
@@ -1163,15 +1163,15 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 
 .about-campaign__title {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 600;
   color: var(--gold-light);
   letter-spacing: 0.015em;
   margin-bottom: 0.55rem;
 }
 .about-campaign__desc {
-  font-size: 0.9rem;
-  line-height: 1.78;
+  font-size: 1rem;
+  line-height: 1.82;
   color: rgba(242,216,152,0.8);
   margin-bottom: 0.85rem;
 }
