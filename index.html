@@ -92,7 +92,7 @@
 
           <!-- Slide 1: Plain map with markers -->
           <div class="map-slide map-slide--active" id="map-slide-0" aria-label="Mapa">
-            <div class="map-frame">
+            <div class="map-frame markers-hidden">
               <img
                 src="images/map.png"
                 alt="Ang Mapa ng Isla ng Salong-Salong"
@@ -176,18 +176,18 @@
               <button
                 class="map-toggle-markers"
                 id="map-toggle-markers"
-                aria-pressed="true"
+                aria-pressed="false"
                 aria-label="Toggle map markers"
                 title="Show / hide markers"
                 onclick="
                   var frame = this.closest('.map-frame');
                   var hidden = frame.classList.toggle('markers-hidden');
                   this.setAttribute('aria-pressed', String(!hidden));
-                  this.querySelector('.map-toggle-markers__label').textContent = hidden ? 'Show Markers' : 'Hide Markers';
+                  this.querySelector('.map-toggle-markers__label').textContent = hidden ? 'Ipakita' : 'Itago';
                 "
               >
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                <span class="map-toggle-markers__label">Hide Markers</span>
+                <span class="map-toggle-markers__label">Ipakita</span>
               </button>
 
               <p class="map-caption" style="padding: 0.75rem 1.25rem 1rem;">Island home of the datus, babaylans, and maginoos.</p>
@@ -233,8 +233,8 @@
 
           <!-- LEFT: Lore -->
           <div class="about-world__lore">
-            <p class="about-world__lead">Isla ng Salong-Salong is the living world of the <em>Sina Una</em> tabletop roleplaying campaign — a tropical archipelago steeped in pre-colonial myth, ancestral spirits, and the weight of choices that cannot be undone.</p>
-            <p>Crafted and guided by <strong>DM Avips</strong>, this world was not written in advance. It was built at the table — shaped session by session, decision by decision, until the islands breathed with their own history, their own grief, and their own legends.</p>
+            <p class="about-world__lead">Isla ng Salong-Salong is the living world of the <em>Sina Una</em> tabletop roleplaying campaign, a tropical archipelago steeped in pre-colonial myth, ancestral spirits, and the weight of choices that cannot be undone.</p>
+            <p>Crafted and guided by <strong>DM Avips</strong>, this world was not written in advance. It was built at the table, shaped session by session, decision by decision, until the islands breathed with their own history, their own grief, and their own legends.</p>
             <p>What you find here is the record of that world: its places, its people, and the echoes of those who walked through it.</p>
             <div class="about-world__dm-credit">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -246,59 +246,18 @@
           <div class="about-world__campaigns">
 
             <div class="about-campaign">
-              <span class="about-campaign__badge about-campaign__badge--completed">
-                <svg viewBox="0 0 8 8" width="6" height="6" aria-hidden="true"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
-                Natapos · Completed
-              </span>
-              <h3 class="about-campaign__title">Isla ng Salong-Salong</h3>
-              <p class="about-campaign__desc">The founding campaign of this world. A full-length adventure that ran for more than a year, forging the legends, tragedies, and triumphs that now define the islands. The heroes of this campaign became the myths of the next.</p>
-              <div class="about-campaign__meta">
-                <span class="about-campaign__meta-item">
-                  <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-                  1+ Taon · Over a Year
-                </span>
-                <span class="about-campaign__meta-sep" aria-hidden="true">·</span>
-                <span class="about-campaign__meta-item">Matagal na Kampanya</span>
-              </div>
+              <h3 class="about-campaign__title">Isla ng Salong-Salong: Ang Sinilangan</h3>
+              <p class="about-campaign__desc">Natapos · Completed. The founding campaign of this world. A full-length adventure that ran for more than a year, forging the legends, tragedies, and triumphs that now define the islands. The heroes of this campaign became the myths of the next. 1+ Taon · Over a Year.</p>
             </div>
 
             <div class="about-campaign about-campaign--active">
-              <span class="about-campaign__badge about-campaign__badge--active">
-                <svg viewBox="0 0 8 8" width="6" height="6" aria-hidden="true"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
-                Kasalukuyan · Active
-              </span>
-              <h3 class="about-campaign__title">Mga Nawawalang Salaysay</h3>
-              <p class="about-campaign__desc">A mini-campaign set in the same world, years after the original. New adventurers walk ground once walked by legends — uncovering the stories the first campaign left untold, and the truths that were buried with the fallen.</p>
-              <div class="about-campaign__subtitle">
-                Isla ng Salong-Salong: Mga Nawawalang Salaysay
-              </div>
+              <h3 class="about-campaign__title">Isla ng Salong-Salong: Mga Nawawalang Salaysay</h3>
+              <p class="about-campaign__desc">Kasalukuyan · Active. A mini-campaign set in the same world, a few years after the original. New adventurers walk ground once walked by legends, uncovering the stories the first campaign left untold, and the truths that were buried with the fallen.</p>
             </div>
 
           </div>
         </div>
 
-        <!-- Stats strip -->
-        <div class="about-world__stats" aria-label="Campaign facts">
-          <div class="about-stat">
-            <span class="about-stat__value">2</span>
-            <span class="about-stat__label">Kampanya</span>
-          </div>
-          <div class="about-stat__divider" aria-hidden="true"></div>
-          <div class="about-stat">
-            <span class="about-stat__value">1+ Taon</span>
-            <span class="about-stat__label">Unang Kampanya</span>
-          </div>
-          <div class="about-stat__divider" aria-hidden="true"></div>
-          <div class="about-stat">
-            <span class="about-stat__value">DM Avips</span>
-            <span class="about-stat__label">Dungeon Master</span>
-          </div>
-          <div class="about-stat__divider" aria-hidden="true"></div>
-          <div class="about-stat">
-            <span class="about-stat__value">Sina Una</span>
-            <span class="about-stat__label">World Setting</span>
-          </div>
-        </div>
 
       </div>
     </section>

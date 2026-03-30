@@ -1,0 +1,172 @@
+I'm continuing work on a static D&D lore site called "Isla ng Salong-Salong."
+
+Project path: C:\Users\USER\Documents\GitHub\salong-salong\
+Live URL: https://allonsyalfonso.github.io/salong-salong/
+Stack: Plain HTML / CSS / JS. No build system. Single stylesheet at css/style.css. Script at js/dm.js.
+
+---
+
+WHAT THIS SITE IS:
+A GitHub Pages site for a Filipino pre-colonial D&D campaign world run by DM Avips.
+Two campaigns:
+- "Isla ng Salong-Salong" — main campaign, 1+ year, completed
+- "Isla ng Salong-Salong: Mga Nawawalang Salaysay" — active mini-campaign
+
+---
+
+KEY CSS VARIABLES (css/style.css):
+--bg-dark:     #c98010   (amber — main page bg)
+--bg-surface:  #1c0800   (dark chocolate — dark sections)
+--gold:        #c8920e
+--gold-light:  #e8a820
+--gold-bright: #f5c840
+--text-dark:   #1a0600   (DEFAULT body text — INVISIBLE on dark sections)
+--text-light:  #f2d898   (cream — use on dark section text)
+--text-muted:  #7a3a08
+
+CRITICAL: body { color: var(--text-dark) } = near-black. Any dark section
+wrapper MUST have color: var(--text-light) or all text will be invisible.
+
+---
+
+MAP MARKERS — current positions (index.html, position:absolute % inside .map-frame):
+
+Sitio Tambis       map-marker--sitio    left:15.9%  top:12.2%  (DO NOT MOVE)
+Sitio Pasang       map-marker--sitio    left:39.6%  top:24.4%  (DO NOT MOVE)
+Punong Balete      map-marker--sacred   left:15.4%  top:22.2%  (DO NOT MOVE)
+Sitio Anilau       map-marker--sitio    left:15.1%  top:34%
+Sitio Amalciga     map-marker--sitio    left:50%    top:56%
+Sitio Pagangpang   map-marker--sitio    left:83.7%  top:67%
+Abong Bukid        map-marker--ashland  left:26.5%  top:32%
+Bulkang Betis      map-marker--volcano  left:35%    top:42%
+Bulkang Kamuning   map-marker--volcano  left:68.5%  top:56%
+Itinadhanang Ilog  map-marker--water    left:24%    top:41%
+Hinulugang Abuno   map-marker--water    left:31%    top:40%
+Lawang Kamagong    map-marker--water    left:66%    top:65%
+
+Map legend labels: Purok · Sagrado · Bulkan · Tubig · Ashland
+Itinadhanang Ilog tooltip text: "Itinadhanang Ilog · Tubig" (NOT River)
+
+---
+
+PENDING TASK — MAP MARKER TOGGLE BUTTON (not yet implemented):
+
+Add this HTML inside .map-frame in index.html, after the last marker </a> and before <p class="map-caption">:
+
+<button
+  class="map-toggle-markers"
+  id="map-toggle-markers"
+  aria-label="Toggle map markers"
+  aria-pressed="true"
+  onclick="
+    const frame = this.closest('.map-frame');
+    const hidden = frame.classList.toggle('markers-hidden');
+    this.setAttribute('aria-pressed', String(!hidden));
+    this.querySelector('.map-toggle-markers__label').textContent = hidden ? 'Ipakita' : 'Itago';
+  "
+>
+  <svg class="map-toggle-markers__icon" viewBox="0 0 24 24" width="13" height="13"
+    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
+  </svg>
+  <span class="map-toggle-markers__label">Itago</span>
+</button>
+
+Add this CSS to style.css:
+
+.map-toggle-markers {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+  background: rgba(10,7,4,0.72);
+  border: 1px solid rgba(196,154,26,0.28);
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232,168,32,0.85);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.map-toggle-markers:hover {
+  background: rgba(196,154,26,0.14);
+  border-color: rgba(196,154,26,0.5);
+  color: var(--gold-light);
+}
+.map-toggle-markers:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.map-frame.markers-hidden .map-marker {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.map-frame:not(.markers-hidden) .map-marker {
+  transition: opacity 0.25s ease;
+}
+
+---
+
+CHARACTERS.HTML STRUCTURE:
+Grid class: npc-grid npc-grid--with-badge
+Filter sections (data-section on labels + article cards):
+- alive   → Babaylan Liham, Ang Balatiti, Ibod
+- missing → Maginoo Hain, Datu Cardo, Gabunan
+- fallen  → Datu Laya, Maginoo Adlawan, Babaylan Dalisay, Pian
+
+---
+
+PC.HTML STRUCTURE:
+Grid class: npc-grid npc-grid--pc npc-grid--with-badge
+Filter sections:
+- alive   → Santel, Ynio, Dapithapon, Mang Tomas
+- missing → Maria Clara (Transformed)
+- fallen  → Tsinta, Rea Labrador, Balanoy, Ahbo, Sikatuna, Ponce
+
+Status badge classes:
+- .status-badge--alive         "Survived"
+- .status-badge--deceased      "Deceased"
+- .status-badge--transformed   "Gabunan" (bg:#1a0a3d color:#b08cff — purple)
+
+CSS specificity fix for card header height alignment:
+.npc-grid--with-badge .npc-card__header              { min-height: 9rem; }
+.npc-grid--pc .npc-card__header                      { min-height: 6rem; }
+.npc-grid--pc.npc-grid--with-badge .npc-card__header { min-height: 9.5rem; }
+
+---
+
+ABOUT SECTION (index.html) — IMPORTANT NOTES:
+- Section has classes: about-world dark-section
+- Title is a standalone h2 with class about-world__title (does NOT use h2-wrap pattern)
+- h2 has display:block and ::before/::after { display:none } to suppress decorative side-lines
+- English subtitle is a separate <p class="about-world__subtitle-en">
+- The rule .about-world { color: var(--text-light) } MUST stay — without it all text is invisible
+
+---
+
+JS/DM.JS — DO NOT MODIFY UNLESS INTENTIONAL:
+Handles: IntersectionObserver scroll-reveal, back-to-top, hero parallax,
+ember canvas particle effect, DM Mode modal + localStorage persistence.
+
+---
+
+COMMON PITFALLS:
+1. Text invisible on dark bg → add color: var(--text-light) to the section wrapper
+2. em text invisible on dark bg → global em rule uses var(--text-muted) = dark brown, override per-section
+3. h2 gets unwanted gold side-lines → from .section-container h2::before/after, suppress with display:none
+4. npc-grid card height wrong → combined selector (.classA.classB) always beats two single-class rules
+5. Map marker positions → % of image dimensions, adjust in 1-3% increments
+6. Section label yellow-on-yellow → .npc-section-label bg is amber, text must be var(--text-dark)
+
+---
+
+Full reference also saved at: C:\Users\USER\Documents\GitHub\salong-salong\SESSION-CONTEXT.md
