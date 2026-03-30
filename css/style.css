@@ -1047,37 +1047,40 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   color: rgba(245,200,64,0.55);
 }
 
-/* Two-column layout */
-.about-world__layout {
+/* 2×2 grid: lore paragraphs paired with campaign cards */
+.about-world__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 3.5rem;
+  gap: 2rem 3rem;
   margin-bottom: 3rem;
-  align-items: start;
+  align-items: stretch;
 }
 @media (max-width: 820px) {
-  .about-world__layout { grid-template-columns: 1fr; gap: 2.25rem; }
+  .about-world__grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
-/* Lore column */
-.about-world__lore p {
+/* Lore row cells */
+.about-world__lore-row {
+  display: flex;
+  align-items: center;
+}
+.about-world__lore-row p {
   color: rgba(242,216,152,0.88);
-  font-size: 1.08rem;
-  line-height: 1.85;
-  margin-bottom: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.82;
+  margin: 0;
 }
 /* Pull-quote lead paragraph */
 .about-world__lead {
   color: var(--text-light) !important;
-  font-size: 1.12rem !important;
+  font-size: 1.02rem !important;
   font-style: italic;
-  line-height: 1.9;
+  line-height: 1.85;
   padding-left: 1.15rem;
   border-left: 2px solid rgba(200,146,14,0.5);
-  margin-bottom: 1.5rem !important;
 }
-.about-world__lore strong { color: var(--gold-light); font-weight: 700; }
-.about-world__lore em     { color: var(--gold-bright); font-style: italic; }
+.about-world__lore-row strong { color: var(--gold-light); font-weight: 700; }
+.about-world__lore-row em     { color: var(--gold-bright); font-style: italic; }
 
 /* DM credit line */
 .about-world__dm-credit {
