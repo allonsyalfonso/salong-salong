@@ -308,6 +308,9 @@ em { font-style: italic; color: var(--text-muted); }
   padding: 0 2rem;
   text-align: center;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Ember particle canvas — sits behind hero content */
@@ -1059,19 +1062,19 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 /* Lore column */
 .about-world__lore p {
   color: rgba(242,216,152,0.88);
-  font-size: 0.82rem;
-  line-height: 1.68;
-  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.78;
+  margin-bottom: 0.9rem;
 }
 /* Pull-quote lead paragraph */
 .about-world__lead {
   color: var(--text-light) !important;
-  font-size: 0.85rem !important;
+  font-size: 1rem !important;
   font-style: italic;
-  line-height: 1.72;
-  padding-left: 1rem;
+  line-height: 1.82;
+  padding-left: 1.1rem;
   border-left: 2px solid rgba(200,146,14,0.5);
-  margin-bottom: 1rem !important;
+  margin-bottom: 1.25rem !important;
 }
 .about-world__lore strong { color: var(--gold-light); font-weight: 700; }
 .about-world__lore em     { color: var(--gold-bright); font-style: italic; }
