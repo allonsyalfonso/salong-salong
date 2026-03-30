@@ -1066,16 +1066,16 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 }
 .about-world__lore-row p {
   color: rgba(242,216,152,0.88);
-  font-size: 1.12rem;
-  line-height: 1.85;
+  font-size: 1.25rem;
+  line-height: 1.9;
   margin: 0;
 }
 /* Pull-quote lead paragraph */
 .about-world__lead {
   color: var(--text-light) !important;
-  font-size: 1.15rem !important;
+  font-size: 1.28rem !important;
   font-style: italic;
-  line-height: 1.88;
+  line-height: 1.92;
   padding-left: 1.15rem;
   border-left: 2px solid rgba(200,146,14,0.5);
 }
