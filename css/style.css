@@ -4,7 +4,6 @@
    Fonts: Inknut Antiqua (display) + Gentium Plus (body)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ── CSS VARIABLES ── */
 :root {
@@ -634,6 +633,20 @@ em { font-style: italic; color: var(--text-muted); }
 .status-badge--kia     { background: #3d0a0a; color: #ff6b6b; border: 1px solid rgba(255,107,107,0.25); }
 .status-badge--transformed { background: #1a0a3d; color: #b08cff; border: 1px solid rgba(176,140,255,0.25); }
 
+/* Bestiary type badges */
+.status-badge--creature { background: #3d2b0a; color: #d4a017; }
+.status-badge--spirit { background: #0a2d1f; color: #52b788; }
+.status-badge--elemental { background: #0a1e2d; color: #74b3ce; }
+.status-badge--demon { background: #2d0a0a; color: #e63946; }
+
+.npc-card__threat {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
 /* ── EPIC SECTION ── */
 .epic-section { padding: 2rem 0; }
 .epic-section + .epic-section { border-top: 1px solid rgba(196,154,26,0.1); }
@@ -736,7 +749,7 @@ em { font-style: italic; color: var(--text-muted); }
     0 12px 40px rgba(0,0,0,0.7),
     0 0 0 1px rgba(196,154,26,0.2),
     0 0 24px rgba(196,154,14,0.07);
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   color: inherit;
 }
 .nav-card:hover::before,
@@ -2047,6 +2060,10 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   .timeline-card { max-width: 100%; }
 
   /* Map markers on mobile */
+  .map-marker {
+    min-width: 48px;
+    min-height: 48px;
+  }
   .map-marker__pin { width: 18px; height: 18px; }
   .map-marker__pin svg { width: 9px; height: 9px; }
   .map-legend-row { flex-wrap: wrap; gap: 0.4rem 0.8rem; }
@@ -2301,6 +2318,14 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .map-marker:focus .map-marker__pin {
   transform: scale(1.22);
   box-shadow: 0 4px 14px rgba(0,0,0,0.95), 0 0 10px currentColor;
+}
+
+.map-marker__pin {
+  transition: filter 0.2s ease;
+}
+.map-marker:hover .map-marker__pin,
+.map-marker.tapped .map-marker__pin {
+  filter: drop-shadow(0 0 4px currentColor);
 }
 
 /* Colour variants by location type */
@@ -2723,6 +2748,8 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   .map-marker__dot {
     animation: none;
   }
+
+  .map-marker__pin { transition: none; }
 
   .back-to-top {
     transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -3577,6 +3604,19 @@ button:focus-visible {
 }
 @media (prefers-reduced-motion: reduce) {
   .char-section-nav__btn { transition: none; }
+}
+@media (max-width: 640px) {
+  .char-section-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .char-section-nav__btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 /* ── TIMELINE STICKY ERA CHIP ── */

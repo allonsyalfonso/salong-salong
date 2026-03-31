@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <title>Isla ng Salong-Salong: A Sina Una D&D Campaign World</title>
+  <meta name="description" content="A Filipino pre-colonial D&D campaign world. Explore the islands, meet the characters, and discover the lore of Salong-Salong.">
+  <meta name="author" content="DM Avips">
+  <meta property="og:title" content="Isla ng Salong-Salong: A Sina Una D&D Campaign World">
+  <meta property="og:description" content="A Filipino pre-colonial D&D campaign world. Explore the islands, meet the characters, and discover the lore of Salong-Salong.">
+  <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allonsyalfonso.github.io/salong-salong/">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
 </head>
@@ -35,6 +45,7 @@
           <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
           <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
           <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="bestiary.html">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
         </ul>
       </li>
 
@@ -93,11 +104,16 @@
           <!-- Slide 1: Plain map with markers -->
           <div class="map-slide map-slide--active" id="map-slide-0" aria-label="Mapa">
             <div class="map-frame markers-hidden">
-              <img
-                src="images/map.png"
-                alt="Ang Mapa ng Isla ng Salong-Salong"
-                style="width:100%; display:block; filter: brightness(0.84) contrast(1.06) saturate(0.88);"
-              >
+              <picture>
+                <source srcset="images/map.webp" type="image/webp">
+                <img
+                  src="images/map.png"
+                  alt="Ang Mapa ng Isla ng Salong-Salong"
+                  width="1408" height="1993"
+                  loading="lazy"
+                  style="width:100%; display:block; filter: brightness(0.84) contrast(1.06) saturate(0.88);"
+                >
+              </picture>
 
               <!-- ── MAP MARKERS ── -->
               <!-- SITIOS (amber) — house icon centered in 24x24 viewBox -->
@@ -390,7 +406,21 @@
             <span class="nav-card__arrow">Search →</span>
           </a>
 
-          <div class="nav-card" style="opacity:0; pointer-events:none;"></div>
+          <a href="bestiary.html" class="nav-card" style="opacity:0.85;">
+            <span class="nav-card__glyph" aria-hidden="true">
+              <!-- Dragon / beast -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 4c-2 0-4 2-4 4s2 4 2 6c0 1-1 2-1 2h6s-1-1-1-2c0-2 2-4 2-6s-2-4-4-4z"/>
+                <path d="M9 16c-2 1-4 2-4 4h14c0-2-2-3-4-4"/>
+                <circle cx="10" cy="8" r="0.5" fill="currentColor"/>
+                <path d="M14 6c1-1 3-1 4 0"/>
+                <path d="M10 6c-1-1-3-1-4 0"/>
+              </svg>
+            </span>
+            <span class="nav-card__title" style="font-size:0.97rem;">Bestiary <span class="tagalog">Bestiaryo</span></span>
+            <span class="nav-card__desc">The creatures encountered across the islands.</span>
+            <span class="nav-card__arrow">Explore →</span>
+          </a>
 
         </nav>
       </div>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Bestiaryo | Sina Una: Isla ng Salong-Salong</title>
+  <meta name="description" content="The creatures of Salong-Salong — beasts, spirits, elementals, and demons encountered across the islands.">
+  <meta name="author" content="DM Avips">
+  <meta property="og:title" content="Bestiaryo | Isla ng Salong-Salong">
+  <meta property="og:description" content="The creatures of Salong-Salong — beasts, spirits, elementals, and demons encountered across the islands.">
+  <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="bestiary.html" class="active">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MGA NILALANG NG SALONG-SALONG</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">The creatures encountered across the islands.</p>
+      </div>
+    </header>
+
+    <!-- ── FILTER NAV ── -->
+    <nav class="char-section-nav" aria-label="Jump to section" id="char-nav">
+      <button class="char-section-nav__btn active" onclick="filterSection('all', this)">Lahat · All</button>
+      <button class="char-section-nav__btn" onclick="filterSection('creature', this)">Nilalang · Creatures</button>
+      <button class="char-section-nav__btn" onclick="filterSection('spirit', this)">Espiritu · Spirits</button>
+      <button class="char-section-nav__btn" onclick="filterSection('elemental', this)">Elementals</button>
+      <button class="char-section-nav__btn" onclick="filterSection('demon', this)">Demonyo · Demons</button>
+    </nav>
+
+    <!-- ── CREATURE GRID ── -->
+    <section aria-label="Listahan ng mga Nilalang">
+      <div class="section-container">
+
+        <!-- Section: Creatures -->
+        <h3 class="npc-section-label" data-section="creature">Nilalang · Creatures</h3>
+        <div class="npc-grid npc-grid--with-badge" data-section="creature">
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Bakunawa" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Bakunawa</h4>
+              <p class="npc-card__title">Serpent of the Deep</p>
+              <span class="status-badge status-badge--creature">Nilalang</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Mapanganib · Dangerous</strong></p>
+              <p class="npc-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Tikbalang" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Tikbalang</h4>
+              <p class="npc-card__title">Stalker of the Trails</p>
+              <span class="status-badge status-badge--creature">Nilalang</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Mapanganib · Dangerous</strong></p>
+              <p class="npc-card__description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Sarangay" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Sarangay</h4>
+              <p class="npc-card__title">Bull Guardian of the Mountains</p>
+              <span class="status-badge status-badge--creature">Nilalang</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Napakatindi · Severe</strong></p>
+              <p class="npc-card__description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Spirits -->
+        <h3 class="npc-section-label" data-section="spirit">Espiritu · Spirits</h3>
+        <div class="npc-grid npc-grid--with-badge" data-section="spirit">
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Diwata ng Ilog" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Diwata ng Ilog</h4>
+              <p class="npc-card__title">River Guardian Spirit</p>
+              <span class="status-badge status-badge--spirit">Espiritu</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Hindi Tiyak · Uncertain</strong></p>
+              <p class="npc-card__description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Santelmo" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Santelmo</h4>
+              <p class="npc-card__title">Wandering Flame</p>
+              <span class="status-badge status-badge--spirit">Espiritu</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Katamtaman · Moderate</strong></p>
+              <p class="npc-card__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Elementals -->
+        <h3 class="npc-section-label" data-section="elemental">Elementals</h3>
+        <div class="npc-grid npc-grid--with-badge" data-section="elemental">
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Apoy na Buhay" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Apoy na Buhay</h4>
+              <p class="npc-card__title">Living Flame of Betis</p>
+              <span class="status-badge status-badge--elemental">Elemental</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Napakatindi · Severe</strong></p>
+              <p class="npc-card__description">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Section: Demons -->
+        <h3 class="npc-section-label" data-section="demon">Demonyo · Demons</h3>
+        <div class="npc-grid npc-grid--with-badge" data-section="demon">
+
+          <div class="npc-card">
+            <div class="npc-card__header">
+              <div class="npc-card__avatar-frame">
+                <img src="" alt="Portrait of Aswang ng Dilim" class="npc-card__portrait" loading="lazy">
+              </div>
+              <h4 class="npc-card__name">Aswang ng Dilim</h4>
+              <p class="npc-card__title">Shadow Devourer</p>
+              <span class="status-badge status-badge--demon">Demonyo</span>
+            </div>
+            <div class="npc-card__body">
+              <p class="npc-card__threat"><strong>Nakamamatay · Lethal</strong></p>
+              <p class="npc-card__description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Lore content for the past and present players
+      <span class="site-footer__divider">·</span>
+      Last updated: March 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div id="dm-modal" class="dm-modal" role="dialog" aria-modal="true" aria-label="DM Mode" style="display:none;">
+    <div class="dm-modal__box">
+      <h3 class="dm-modal__title">DM Mode</h3>
+      <p class="dm-modal__desc">Enter the DM password to unlock hidden content.</p>
+      <input type="password" id="dm-password" class="dm-modal__input" placeholder="Password" aria-label="DM password">
+      <p id="dm-error" class="dm-modal__error" aria-live="polite"></p>
+      <div class="dm-modal__actions">
+        <button id="dm-confirm" class="dm-modal__btn dm-modal__btn--confirm">Enter</button>
+        <button id="dm-cancel" class="dm-modal__btn dm-modal__btn--cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── FILTER SECTION ──
+    function filterSection(section, btn) {
+      document.querySelectorAll('.char-section-nav__btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('[data-section]').forEach(function(el) {
+        if (section === 'all' || el.dataset.section === section) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <script src="js/dm.js"></script>
+
+</body>
+</html>

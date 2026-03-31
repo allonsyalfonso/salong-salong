@@ -157,7 +157,7 @@
         setTimeout(function () {
           loadingScreen.style.display = 'none';
         }, 750);
-      }, 1800);
+      }, 800);
     });
   }
 
