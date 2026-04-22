@@ -231,15 +231,14 @@
   </footer>
 
   <!-- ── DM MODAL ── -->
-  <div id="dm-modal" class="dm-modal" role="dialog" aria-modal="true" aria-label="DM Mode" style="display:none;">
-    <div class="dm-modal__box">
-      <h3 class="dm-modal__title">DM Mode</h3>
-      <p class="dm-modal__desc">Enter the DM password to unlock hidden content.</p>
-      <input type="password" id="dm-password" class="dm-modal__input" placeholder="Password" aria-label="DM password">
-      <p id="dm-error" class="dm-modal__error" aria-live="polite"></p>
-      <div class="dm-modal__actions">
-        <button id="dm-confirm" class="dm-modal__btn dm-modal__btn--confirm">Enter</button>
-        <button id="dm-cancel" class="dm-modal__btn dm-modal__btn--cancel">Cancel</button>
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
       </div>
     </div>
   </div>
