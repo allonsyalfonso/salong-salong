@@ -2077,10 +2077,17 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   .timeline-dot { left: 16px; transform: translateY(-50%); }
   .timeline-card { max-width: 100%; }
 
-  /* Map markers on mobile */
-  .map-marker {
-    min-width: 48px;
-    min-height: 48px;
+  /* Map markers on mobile: expand touch target via invisible pseudo-element
+     (keeps marker box size unchanged so translate(-50%, -100%) anchors correctly) */
+  .map-marker::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    transform: translateX(-50%);
+    /* Invisible hit area — catches taps without visual change */
   }
   .map-marker__pin { width: 18px; height: 18px; }
   .map-marker__pin svg { width: 9px; height: 9px; }
@@ -2284,7 +2291,16 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   overflow: hidden;
   box-shadow: 0 8px 42px rgba(0,0,0,0.78), 0 0 0 1px rgba(196,154,26,0.05);
   background: #080f08;
-  position: relative; /* needed for marker positioning */
+  position: relative;
+}
+
+/* Image wrapper: markers and toggle button position relative to this
+   (the image only), NOT the whole frame which also contains caption + legend.
+   Without this wrapper, markers drift downward on mobile because the frame
+   grows taller when caption/legend wrap onto more lines. */
+.map-frame__image {
+  position: relative;
+  line-height: 0; /* eliminate stray inline-image descent gap */
 }
 
 /* ── MAP MARKERS ── */
