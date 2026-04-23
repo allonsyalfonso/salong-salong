@@ -2294,6 +2294,15 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   position: relative;
 }
 
+/* Image sub-wrapper: ensures markers position relative to the IMAGE only,
+   not the whole frame (which also contains caption + legend below).
+   Without this, markers drift downward on narrow viewports when caption/legend
+   wrap onto more lines. Marker top% values are calibrated to this container. */
+.map-frame__image {
+  position: relative;
+  line-height: 0;
+}
+
 /* ── MAP MARKERS ── */
 .map-marker {
   position: absolute;
