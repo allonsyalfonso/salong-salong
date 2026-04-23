@@ -2294,15 +2294,6 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   position: relative;
 }
 
-/* Image wrapper: markers and toggle button position relative to this
-   (the image only), NOT the whole frame which also contains caption + legend.
-   Without this wrapper, markers drift downward on mobile because the frame
-   grows taller when caption/legend wrap onto more lines. */
-.map-frame__image {
-  position: relative;
-  line-height: 0; /* eliminate stray inline-image descent gap */
-}
-
 /* ── MAP MARKERS ── */
 .map-marker {
   position: absolute;
