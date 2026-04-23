@@ -2412,6 +2412,17 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   border-color: rgba(196,154,26,0.5);
 }
 
+/* Mobile: move marker toggle to bottom-right so it doesn't sit on top of
+   the northern-island markers. Placed here (after the base rules) so the
+   cascade overrides top:0.6rem with top:auto correctly. */
+@media (max-width: 768px) {
+  .map-toggle-markers {
+    top: auto;
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+}
+
 /* Hide / show all markers */
 .map-frame.markers-hidden .map-marker {
   opacity: 0;
