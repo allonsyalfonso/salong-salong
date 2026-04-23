@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Mga Layo | Sina Una: Isla ng Salong-Salong</title>
+  <meta name="description" content="Measure distances between locations on the map of Salong-Salong — path, straight-line, and days of travel.">
+  <meta name="author" content="DM Avips">
+  <meta property="og:title" content="Mga Layo · Distances | Isla ng Salong-Salong">
+  <meta property="og:description" content="Measure distances between locations on the map of Salong-Salong — path, straight-line, and days of travel.">
+  <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="bestiary.html">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
+          <li><a href="distances.html" class="active">Distances <span class="tagalog">Mga Layo</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <h1>MGA LAYO</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="page-header__subtitle">Measure distances between locations — path, straight-line, and days of travel.</p>
+      </div>
+    </header>
+
+    <!-- ── DISTANCE MEASURING TOOL ── -->
+    <section aria-label="Distance measuring tool">
+      <div class="section-container">
+
+        <!-- Readout panel (above map) -->
+        <div class="distance-controls">
+          <div class="distance-readout" aria-live="polite" id="distance-readout">
+            <p class="distance-readout__hint">Tap the map to add points. Tap a marker to snap. Tap a point to remove.</p>
+          </div>
+
+          <div class="distance-toggles">
+            <div class="distance-toggle-group" role="group" aria-label="Unit">
+              <button class="distance-toggle active" data-unit="days" id="distance-unit-days">Days</button>
+              <button class="distance-toggle" data-unit="km" id="distance-unit-km">KM</button>
+            </div>
+            <div class="distance-toggle-group" role="group" aria-label="Pace">
+              <button class="distance-toggle active" data-pace="normal" id="distance-pace-normal">Normal</button>
+              <button class="distance-toggle" data-pace="fast" id="distance-pace-fast">Fast</button>
+            </div>
+          </div>
+
+          <div class="distance-actions">
+            <button class="distance-btn" id="distance-clear">Clear</button>
+            <button class="distance-btn distance-btn--primary" id="distance-copy">Copy Link</button>
+          </div>
+        </div>
+
+        <!-- Map with SVG overlay for waypoints -->
+        <div class="distance-map" id="distance-map">
+          <picture>
+            <source srcset="images/map.webp" type="image/webp">
+            <img
+              src="images/map.png"
+              alt="Ang Mapa ng Isla ng Salong-Salong"
+              width="1408" height="1993"
+              style="width:100%; display:block; filter: brightness(0.84) contrast(1.06) saturate(0.88);"
+            >
+          </picture>
+
+          <!-- Snap-target markers (copy from index.html — keep positions identical) -->
+          <a href="#" class="map-marker map-marker--sitio distance-snap-target" data-marker-id="tambis" data-marker-name="Sitio Tambis" style="left:15.9%;top:13.3%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3L4 11v10h5v-6h6v6h5V11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Sitio Tambis · Purok</span>
+          </a>
+          <a href="#" class="map-marker map-marker--sitio distance-snap-target" data-marker-id="pasang" data-marker-name="Sitio Pasang" style="left:39.6%;top:26.5%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3L4 11v10h5v-6h6v6h5V11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Sitio Pasang · Purok</span>
+          </a>
+          <a href="#" class="map-marker map-marker--sitio distance-snap-target" data-marker-id="anilau" data-marker-name="Sitio Anilau" style="left:15.1%;top:37%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3L4 11v10h5v-6h6v6h5V11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Sitio Anilau · Purok</span>
+          </a>
+          <a href="#" class="map-marker map-marker--sitio distance-snap-target" data-marker-id="amalciga" data-marker-name="Sitio Amalciga" style="left:50%;top:60.9%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3L4 11v10h5v-6h6v6h5V11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Sitio Amalciga · Purok</span>
+          </a>
+          <a href="#" class="map-marker map-marker--sitio distance-snap-target" data-marker-id="pagangpang" data-marker-name="Sitio Pagangpang" style="left:83.7%;top:72.9%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3L4 11v10h5v-6h6v6h5V11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Sitio Pagangpang · Purok</span>
+          </a>
+          <a href="#" class="map-marker map-marker--sacred distance-snap-target" data-marker-id="punong-balete" data-marker-name="Punong Balete" style="left:15.4%;top:24.1%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l3.5 6H13v3l3 5h-3v4h-2v-4H8l3-5v-3H8.5z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Punong Balete · Sagrado</span>
+          </a>
+          <a href="#" class="map-marker map-marker--ashland distance-snap-target" data-marker-id="abong-bukid" data-marker-name="Abong Bukid" style="left:26.5%;top:34.8%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4L3 19h18zm0 4.5L17.5 19h-11z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Abong Bukid · Ashland</span>
+          </a>
+          <a href="#" class="map-marker map-marker--volcano distance-snap-target" data-marker-id="bulkang-betis" data-marker-name="Bulkang Betis" style="left:35%;top:45.7%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2.5 2.5 0 0 1-2.5-2.5c0-2.5 2.5-4 2.5-4s2.5 1.5 2.5 4A2.5 2.5 0 0 1 12 17z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Bulkang Betis · Bulkan</span>
+          </a>
+          <a href="#" class="map-marker map-marker--volcano distance-snap-target" data-marker-id="bulkang-kamuning" data-marker-name="Bulkang Kamuning" style="left:68.5%;top:60.9%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2.5 2.5 0 0 1-2.5-2.5c0-2.5 2.5-4 2.5-4s2.5 1.5 2.5 4A2.5 2.5 0 0 1 12 17z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Bulkang Kamuning · Bulkan</span>
+          </a>
+          <a href="#" class="map-marker map-marker--water distance-snap-target" data-marker-id="itinadhanang-ilog" data-marker-name="Itinadhanang Ilog" style="left:24%;top:44.6%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Itinadhanang Ilog · Tubig</span>
+          </a>
+          <a href="#" class="map-marker map-marker--water distance-snap-target" data-marker-id="hinulugang-abuno" data-marker-name="Hinulugang Abuno" style="left:31%;top:43.5%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Hinulugang Abuno · Tubig</span>
+          </a>
+          <a href="#" class="map-marker map-marker--water distance-snap-target" data-marker-id="lawang-kamagong" data-marker-name="Lawang Kamagong" style="left:66%;top:70.7%">
+            <span class="map-marker__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2s-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/></svg></span>
+            <span class="map-marker__stem" aria-hidden="true"></span>
+            <span class="map-marker__tooltip">Lawang Kamagong · Tubig</span>
+          </a>
+
+          <!-- SVG overlay for polylines, dots, labels (JS renders into this) -->
+          <svg class="distance-overlay" viewBox="0 0 1408 1993" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="site-footer__text">
+      Lore content for the past and present players
+      <span class="site-footer__divider">·</span>
+      Last updated: March 2026
+    </p>
+  </footer>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dm.js"></script>
+  <script src="js/distances.js"></script>
+
+</body>
+</html>

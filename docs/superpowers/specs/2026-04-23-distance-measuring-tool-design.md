@@ -26,12 +26,12 @@ Pure HTML/CSS/JS, no build system — fits the existing site architecture. An SV
 
 Rationale: During a previous campaign, a party traveled this route in 7 days. At a realistic jungle/volcanic-terrain pace of 20 km/day on foot, this gives 140 km. This sets the pixel-to-km ratio for all measurements.
 
-Map image dimensions: 1408 × 1993 px. Marker positions (from SESSION-CONTEXT.md):
-- Tambis: 15.9% left, 12.2% top → (224px, 243px)
-- Lawang Kamagong: 66% left, 65% top → (929px, 1295px)
-- Straight-line pixel distance: √((929-224)² + (1295-243)²) ≈ 1266 px
+Map image dimensions: 1408 × 1993 px. Marker positions (updated after 2026-04-23 recalibration so markers sit correctly on their island features across desktop and mobile):
+- Tambis: 15.9% left, 13.3% top → (224px, 265px)
+- Lawang Kamagong: 66% left, 70.7% top → (929px, 1409px)
+- Straight-line pixel distance: √((929-224)² + (1409-265)²) ≈ 1344 px
 
-**Scale constant:** `PX_PER_KM = 9.049` on the 1408×1993 native map space. This is a fixed constant. Distances are always computed in native map pixel space (not rendered pixels), so no resize recalculation is needed — waypoints stored as % coords convert deterministically.
+**Scale constant:** `PX_PER_KM = 9.60` on the 1408×1993 native map space. This is a fixed constant. Distances are always computed in native map pixel space (not rendered pixels), so no resize recalculation is needed — waypoints stored as % coords convert deterministically.
 
 ---
 
@@ -111,10 +111,10 @@ Format: `distances.html?r=<x1,y1;x2,y2;...>`
 
 Coordinates are percentages (0-100) of the map width/height, matching the existing marker format.
 
-- **Snapped waypoints:** use the marker's canonical position (e.g., Tambis = `15.9,12.2`, 1 decimal — matches `SESSION-CONTEXT.md` marker data)
+- **Snapped waypoints:** use the marker's canonical position from `index.html` inline coords (e.g., Tambis = `15.9,13.3`, Lawang Kamagong = `66,70.7`; 1 decimal). Implementation reads markers at runtime from the DOM rather than hardcoding — keeps things in sync if positions are tweaked later.
 - **Free-form waypoints:** encoded with 2 decimals (e.g., `42.37,58.21`)
 
-**Example:** `distances.html?r=15.9,12.2;39.6,24.4;66,65`
+**Example:** `distances.html?r=15.9,13.3;39.6,26.5;66,70.7`
 
 **Limits:**
 - Max 50 waypoints per route. If the URL contains more, the first 50 are parsed and the rest silently dropped.
@@ -190,7 +190,7 @@ Uses fixed native map dimensions — no resize listener needed:
 ```js
 var MAP_W = 1408;
 var MAP_H = 1993;
-var PX_PER_KM = 9.049;
+var PX_PER_KM = 9.60;
 
 function distanceKm(a, b) {
   var dx = (b.x - a.x) / 100 * MAP_W;

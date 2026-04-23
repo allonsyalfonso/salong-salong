@@ -3720,3 +3720,241 @@ button:focus-visible {
   font-size: 0.5rem;
   opacity: 0.6;
 }
+
+/* ============================================================
+   DISTANCE MEASURING TOOL — .distance-* prefix throughout
+   ============================================================ */
+
+/* Map container — relatively positioned so SVG overlay + markers stack */
+.distance-map {
+  position: relative;
+  border: 1px solid rgba(196,154,26,0.18);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 42px rgba(0,0,0,0.78), 0 0 0 1px rgba(196,154,26,0.05);
+  background: #080f08;
+  margin-top: 1.5rem;
+  cursor: crosshair;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.distance-map picture,
+.distance-map > picture img {
+  display: block;
+  width: 100%;
+}
+
+/* SVG overlay fills the image, uses 0-100 viewBox so coords are % */
+.distance-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Path polyline: solid gold. Stroke-width is in viewBox units — native map px
+   (1408×1993 viewBox). At ~1000 CSS px rendered width, scale factor is ~0.71,
+   so stroke-width of 6 renders as ~4 CSS px. */
+.distance-overlay__path {
+  fill: none;
+  stroke: var(--gold-bright);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+}
+
+/* Straight-line polyline: dashed cream */
+.distance-overlay__direct {
+  fill: none;
+  stroke: var(--text-light);
+  stroke-width: 4;
+  stroke-dasharray: 14 10;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+/* Waypoint dot. Circle radius set inline in JS (14 viewBox units ≈ 10 CSS px). */
+.distance-overlay__dot {
+  fill: var(--gold-bright);
+  stroke: #1a0600;
+  stroke-width: 2;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.distance-overlay__dot:hover { fill: #ffe080; }
+
+/* Segment distance label. font-size in CSS px so labels stay readable across
+   all viewports (preserveAspectRatio="xMidYMid meet" on the SVG makes CSS px
+   render as CSS px, not scaled viewBox units). vector-effect on stroke keeps
+   the outline thickness proportional to the font at any zoom. */
+.distance-overlay__label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  fill: var(--gold-bright);
+  stroke: #1a0600;
+  stroke-width: 3px;
+  paint-order: stroke fill;
+  vector-effect: non-scaling-stroke;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+/* Controls panel */
+.distance-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-surface);
+  color: var(--text-light);
+  border: 1px solid rgba(196,154,26,0.18);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+}
+
+.distance-readout {
+  flex: 1 1 260px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  min-height: 2.8em;
+}
+.distance-readout p {
+  margin: 0;
+}
+.distance-readout__hint {
+  color: rgba(242,216,152,0.7);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.distance-readout__primary {
+  color: var(--gold-bright);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+.distance-readout__secondary {
+  color: rgba(242,216,152,0.75);
+  font-size: 0.92rem;
+}
+
+/* Toggle groups */
+.distance-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.distance-toggle-group {
+  display: inline-flex;
+  border: 1px solid rgba(196,154,26,0.3);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(10,7,4,0.4);
+}
+.distance-toggle {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  background: transparent;
+  color: rgba(242,216,152,0.65);
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.distance-toggle:hover { color: var(--gold-light); }
+.distance-toggle.active {
+  background: rgba(196,154,26,0.15);
+  color: var(--gold-bright);
+}
+.distance-toggle + .distance-toggle {
+  border-left: 1px solid rgba(196,154,26,0.2);
+}
+
+/* Action buttons */
+.distance-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.distance-btn {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  background: transparent;
+  color: rgba(242,216,152,0.8);
+  border: 1px solid rgba(196,154,26,0.35);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.distance-btn:hover {
+  background: rgba(196,154,26,0.08);
+  color: var(--gold-light);
+  border-color: rgba(196,154,26,0.55);
+}
+.distance-btn--primary {
+  background: rgba(196,154,26,0.12);
+  color: var(--gold-bright);
+}
+.distance-btn--primary:hover {
+  background: rgba(196,154,26,0.22);
+}
+
+/* Mobile: stack controls vertically */
+@media (max-width: 640px) {
+  .distance-controls {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  .distance-toggles {
+    justify-content: space-between;
+  }
+  .distance-toggle-group {
+    flex: 1;
+  }
+  .distance-toggle {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0.3rem;
+    min-width: 0;
+  }
+  .distance-actions {
+    justify-content: space-between;
+  }
+  .distance-actions .distance-btn {
+    flex: 1;
+  }
+}
+
+/* Transient notice for URL decode warnings / Copy Link feedback */
+.distance-notice {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10,7,4,0.92);
+  color: var(--gold-light);
+  border: 1px solid rgba(196,154,26,0.4);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.distance-notice.visible { opacity: 1; }
