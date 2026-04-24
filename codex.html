@@ -315,12 +315,12 @@
                 </ul>
                 <p class="codex-race__subtitle">Giant Ancestry (pick one at character creation):</p>
                 <ul class="codex-race__traits">
-                  <li><strong>Cloud Higante</strong>:<em>Cloud's Jaunt</em> (Bonus Action, PB / long rest): Teleport up to 30 ft to a space you can see.</li>
-                  <li><strong>Fire Higante</strong>:<em>Fire's Burn</em> (PB / long rest): When you hit with an attack, deal +1d10 Fire damage.</li>
-                  <li><strong>Frost Higante</strong>:<em>Frost's Chill</em> (PB / long rest): When you hit with an attack, deal +1d6 Cold and reduce target Speed by 10 ft.</li>
-                  <li><strong>Hill Higante</strong>:<em>Hill's Tumble</em> (PB / long rest): When you hit a Large or smaller creature, give it Prone.</li>
-                  <li><strong>Stone Higante</strong>:<em>Stone's Endurance</em> (Reaction, PB / long rest): Reduce damage taken by 1d12 + Con mod.</li>
-                  <li><strong>Storm Higante</strong>:<em>Storm's Thunder</em> (Reaction, PB / long rest): When damaged by a creature within 60 ft, deal 1d8 Thunder to it.</li>
+                  <li><strong>Cloud Higante</strong>: <em>Cloud's Jaunt</em> (Bonus Action, PB / long rest): Teleport up to 30 ft to a space you can see.</li>
+                  <li><strong>Fire Higante</strong>: <em>Fire's Burn</em> (PB / long rest): When you hit with an attack, deal +1d10 Fire damage.</li>
+                  <li><strong>Frost Higante</strong>: <em>Frost's Chill</em> (PB / long rest): When you hit with an attack, deal +1d6 Cold and reduce target Speed by 10 ft.</li>
+                  <li><strong>Hill Higante</strong>: <em>Hill's Tumble</em> (PB / long rest): When you hit a Large or smaller creature, give it Prone.</li>
+                  <li><strong>Stone Higante</strong>: <em>Stone's Endurance</em> (Reaction, PB / long rest): Reduce damage taken by 1d12 + Con mod.</li>
+                  <li><strong>Storm Higante</strong>: <em>Storm's Thunder</em> (Reaction, PB / long rest): When damaged by a creature within 60 ft, deal 1d8 Thunder to it.</li>
                 </ul>
               </div>
             </details>
@@ -330,23 +330,333 @@
 
         <!-- Classes -->
         <div class="codex-panel" id="codex-classes" role="tabpanel" hidden>
-          <div class="codex-entries">
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Magani <span class="codex-entry__sub">Warrior</span></h3>
-              <p class="codex-entry__desc">Those who take up arms for the sitio. Not all sought the role, some were chosen by circumstance and could not put the blade down.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Babaylan <span class="codex-entry__sub">Spirit-Speaker</span></h3>
-              <p class="codex-entry__desc">Mediators between the living and the spirit realm. They heal, curse, and speak with the dead. Their authority is older than the datus.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Mentala <span class="codex-entry__sub">Paper Mage</span></h3>
-              <p class="codex-entry__desc">Practitioners of kawayang papel, magic worked through bamboo paper, capable of transferring memory, power, and will between people.</p>
-            </div>
-            <div class="codex-entry">
-              <h3 class="codex-entry__name">Manggagamot <span class="codex-entry__sub">Healer</span></h3>
-              <p class="codex-entry__desc">Skilled in herb, root, and ritual. Some heal bodies. Some heal curses. Some heal things that medicine has no name for.</p>
-            </div>
+          <p class="codex-panel__intro">Two custom classes of Sina Una, plus twelve Sina Una subclasses for the standard 2024 PHB classes. Click a class to view its core features.</p>
+          <div class="codex-entries codex-entries--races">
+
+            <!-- ═══ CUSTOM CLASSES ═══ -->
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Babaylan</span>
+                <span class="codex-race__tag codex-race__tag--verdant">Abayan Spirit</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">The spirit-speakers of the islands, custodians of the unseen world. Each Babaylan walks with an ancestral companion, the Abayan, shaping reality through the callings of memory, sacrifice, or wrath.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.164 (full class)</dd>
+                  <dt>Role</dt><dd>Full custom class (not a subclass)</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Abayan</strong> <em>(Lv 1)</em>: An incorporeal ancestral spirit that accompanies you. Acts as spellcasting focus, spell delivery, and origin point for area effects.</li>
+                  <li><strong>Spellcasting</strong> <em>(Lv 1)</em>: Full caster. Draws from the Babaylan spell list (SinaUna p.224+).</li>
+                  <li><strong>Spirit Conduit</strong> <em>(Lv 3)</em>: Channel your Abayan's connection to extend and amplify your magic.</li>
+                  <li><strong>Spirit Recovery</strong> <em>(Lv 7)</em>: Recover expended spell slots through communion with your Abayan.</li>
+                  <li><strong>Preternatural Speaker</strong> <em>(Lv 10)</em>: Deepened link with the spirit realm unlocks rare conversations.</li>
+                  <li><strong>Walker Between Worlds</strong> <em>(Lv 14)</em>: Move between the living realm and the spirit realm at will.</li>
+                  <li><strong>Mythic Reverence</strong> <em>(Lv 20)</em>: Capstone ability that anchors your legend into the world's memory.</li>
+                </ul>
+                <p class="codex-race__subtitle">Callings (choose one at Lv 1):</p>
+                <ul class="codex-race__traits">
+                  <li><strong>Call of Clairvoyance</strong>: Divining Eye and Vessel for the Spirits; pierce illusions, read fate.</li>
+                  <li><strong>Call of Sacrifice</strong>: Undaunted Healer; yield your own vitality to mend others.</li>
+                  <li><strong>Call of Wrath</strong>: Guided Strikes and Fury of the Spirits; become a warrior-mystic.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Headhunter</span>
+                <span class="codex-race__tag codex-race__tag--darkvision">Hunter's Omen</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Relentless trackers bound by omen and ancestry. The Headhunter marks their quarry and does not relent until the hunt is finished, or they themselves become its memory.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.170 (full class)</dd>
+                  <dt>Role</dt><dd>Full custom class (not a subclass)</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Focused Hunter</strong> <em>(Lv 1)</em>: Advantage and bonuses against marked quarry.</li>
+                  <li><strong>Conviction</strong> <em>(Lv 1)</em>: Your resolve to finish the hunt grants persistent bonuses.</li>
+                  <li><strong>Rite of the Ancestors</strong> <em>(Lv 2)</em>: Call on ancestral strength before battle.</li>
+                  <li><strong>Fighting Style</strong> <em>(Lv 2)</em>: Choose from Defense, Distance, Great Weapon Fighting, Protection, Pursuant, or Skirmisher.</li>
+                  <li><strong>Hunter's Omen</strong> <em>(Lv 3)</em>: Subclass choice shapes the nature of your pursuit.</li>
+                  <li><strong>Forgiveness for the Slain</strong> <em>(Lv 6)</em>: Honor the dead you leave behind.</li>
+                  <li><strong>Unwavering Hunter</strong> <em>(Lv 9)</em>: Cannot be stopped once the hunt has begun.</li>
+                  <li><strong>Tireless Pursuit</strong> <em>(Lv 11)</em>: Ignore exhaustion and terrain on the trail.</li>
+                  <li><strong>Dread Presence</strong> <em>(Lv 13)</em>: Your mark inspires fear in those who have wronged your ancestors.</li>
+                  <li><strong>Inevitable</strong> <em>(Lv 17)</em>: Capstone: no quarry escapes you.</li>
+                </ul>
+                <p class="codex-race__subtitle">Omens (choose one at Lv 3):</p>
+                <ul class="codex-race__traits">
+                  <li><strong>Omen of Knowledge</strong>: Lessons of the Departed; Memories of War (Assured Mark, Cloaked Terror, Cycle Breaker, The Guardian).</li>
+                  <li><strong>Omen of Strife</strong>: Hunt through confrontation; turn enemy defenses against them.</li>
+                  <li><strong>Omen of Swiftness</strong>: Outpace the quarry; strike before the omen fades.</li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- ═══ STANDARD CLASS SUBCLASSES (alphabetical) ═══ -->
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Barbarian <span class="codex-race__sub" style="display:inline">Path of the Black River</span></span>
+                <span class="codex-race__tag codex-race__tag--blindsight">Black River</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Bound to the restless current that flows between life and death, these barbarians rage with water in their veins. They strike with the rhythm of the tide, and return to where it began.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.176</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Isolation of the Soul</strong> <em>(Lv 3, Str mod / short rest)</em>: On a successful attack while Raging, force a Wis save or the target loses sight beyond 30 ft; your hits against it restore HP equal to your Prof Bonus.</li>
+                  <li><strong>Treading Rampage</strong> <em>(Lv 6, Reaction)</em>: Spend HP to instantly end a condition (Blinded, Charmed, Deafened, Frightened, Paralyzed, or Poisoned). Extends to Petrified/Stunned at Lv 10.</li>
+                  <li><strong>Living Tide</strong> <em>(Lv 10, 1 / long rest)</em>: Cast Dimension Door. You can bring more than one willing creature by spending HP equal to your Str mod per extra passenger.</li>
+                  <li><strong>Burial Shroud</strong> <em>(Lv 14)</em>: Capstone ability tied to the river's return.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Bard <span class="codex-race__sub" style="display:inline">College of Siday</span></span>
+                <span class="codex-race__tag codex-race__tag--gilded">Folkloric Epics</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Keepers of the folkloric epics of Salong-Salong, the Siday bard carries the songs that outlast empires. Their verses bolster the brave and lift the footsteps of heroes past.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.177</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Noble Fortitude</strong> <em>(Lv 3)</em>: Your standing as a keeper of epics grants hardiness in body and reputation.</li>
+                  <li><strong>Folkloric Epics</strong> <em>(Lv 3)</em>: Learn the long-form oral traditions — each usable as a powerful inspiration effect.</li>
+                  <li><strong>Bolstering Verse</strong> <em>(Lv 6)</em>: Your verses strengthen nearby allies against fear and despair.</li>
+                  <li><strong>The Footsteps of Heroes</strong> <em>(Lv 14)</em>: Walk in the echo of the great siday, borrowing their power for a moment.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Cleric <span class="codex-race__sub" style="display:inline">Volcano Domain</span></span>
+                <span class="codex-race__tag codex-race__tag--fire">Pyroclasm</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Servants of the fire that sleeps beneath the islands, these clerics channel the wrath and renewal of the volcanoes. Where they walk, the earth remembers what it once was.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.178</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Volcanic Calling &amp; Channel Divinity: Pyroclasm</strong> <em>(Lv 3)</em>: Gain Domain Spells and the Pyroclasm Channel Divinity — unleash a burst of fire and ash.</li>
+                  <li><strong>Revitalize and Renew</strong> <em>(Lv 6)</em>: The same fire that destroys also restores — channel healing through your flames.</li>
+                  <li><strong>Divine Strike</strong> <em>(Lv 8)</em>: Add Fire damage to your weapon attacks.</li>
+                  <li><strong>Igneous Scion</strong> <em>(Lv 17)</em>: Capstone: become the voice and fire of the mountain.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Druid <span class="codex-race__sub" style="display:inline">Circle of Tides</span></span>
+                <span class="codex-race__tag codex-race__tag--craft">Adaptation</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Attuned to the ebb and flow of coast and river, the Circle of Tides druid adapts to any terrain like water to its vessel. What shape they take depends on where the tide takes them.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.180</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Quiet Undercurrent</strong> <em>(Lv 3)</em>: Move unnoticed through natural terrain; your presence barely disturbs it.</li>
+                  <li><strong>Adaptation</strong> <em>(Lv 3)</em>: Gain situational resistances, movement types, or senses drawn from your surroundings.</li>
+                  <li><strong>Ebb and Flow</strong> <em>(Lv 6)</em>: Shift between offensive and defensive adaptations as the fight turns.</li>
+                  <li><strong>Shifting Sands</strong> <em>(Lv 10)</em>: Reshape ground and water under your feet and those of your enemies.</li>
+                  <li><strong>Increased Adaptation</strong> <em>(Lv 14)</em>: Adaptations stack; you become a living expression of the tide.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Fighter <span class="codex-race__sub" style="display:inline">Kawal</span></span>
+                <span class="codex-race__tag codex-race__tag--immovable">Guardian</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Sworn protectors of sitio and kin, the Kawal fighter stands where others fall. Their shield bears the weight of loyalty, and their defense is legend.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.181</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Steadfast Protector</strong> <em>(Lv 3)</em>: Bonus defense while guarding allies within reach.</li>
+                  <li><strong>Guardian Roar</strong> <em>(Lv 3)</em>: A battle-cry that draws enemy attention to you and rallies allies.</li>
+                  <li><strong>Counter Destruction</strong> <em>(Lv 7)</em>: Retaliate against those who strike those you protect.</li>
+                  <li><strong>Resolute Loyalty</strong> <em>(Lv 10)</em>: Your defensive bonuses extend to all allies you have sworn to guard.</li>
+                  <li><strong>Warrior's Legacy</strong> <em>(Lv 15)</em>: Your oath becomes legend; allies are emboldened in your presence.</li>
+                  <li><strong>Peerless Defense</strong> <em>(Lv 18)</em>: Capstone: no strike against your charge lands unchallenged.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Monk <span class="codex-race__sub" style="display:inline">Way of Kaluluwa</span></span>
+                <span class="codex-race__tag codex-race__tag--blindsight">Schism of Self</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Walkers of the boundary between flesh and soul, the Kaluluwa monk lives in two worlds at once. Their discipline is the balance between what the body holds and what the spirit yearns for.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.183</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Temperament of the Soul</strong> <em>(Lv 3)</em>: Channel the mood of your spirit into your martial forms.</li>
+                  <li><strong>Schism of Self</strong> <em>(Lv 3)</em>: Split your focus between body and soul — act on two fronts at once.</li>
+                  <li><strong>Diversion of Magic</strong> <em>(Lv 6)</em>: Redirect incoming magical effects back to their source.</li>
+                  <li><strong>Refinement of Aspects</strong> <em>(Lv 11)</em>: Deepen the schism — body and soul operate independently for short stretches.</li>
+                  <li><strong>Untethered Forms</strong> <em>(Lv 17)</em>: Capstone: your soul moves where your body cannot follow.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Paladin <span class="codex-race__sub" style="display:inline">Oath of Blood</span></span>
+                <span class="codex-race__tag codex-race__tag--fire">Sanguine Light</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Those who have sworn their own blood as the price of protection. Their light shines brightest where they bleed for others.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.185</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Channel Divinity: My Shield Is For Others</strong> <em>(Lv 3)</em>: Intercept attacks aimed at your allies, taking the blow yourself.</li>
+                  <li><strong>Channel Divinity: Under My Light</strong> <em>(Lv 3)</em>: Mark an area as yours to defend; enemies within suffer your wrath.</li>
+                  <li><strong>Sanguine Light (10 ft)</strong> <em>(Lv 7)</em>: Radiate a protective aura for 10 ft around you.</li>
+                  <li><strong>Resilient Guardian</strong> <em>(Lv 15)</em>: Harder to break. Harder to stop.</li>
+                  <li><strong>Sanguine Light (30 ft)</strong> <em>(Lv 18)</em>: Aura extends to 30 ft.</li>
+                  <li><strong>Avatar of Sacrifice</strong> <em>(Lv 20)</em>: Capstone: become the living embodiment of your oath.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Ranger <span class="codex-race__sub" style="display:inline">Mangangayaw</span></span>
+                <span class="codex-race__tag codex-race__tag--verdant">Innate Speech</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Scouts, speakers, and strikers of the wilds. The Mangangayaw reads the land in languages few still remember, and their march rarely ends.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.186</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Innate Speech</strong> <em>(Lv 3)</em>: Choose an approach — Deception, Intimidation, or Persuasion — that becomes second nature to you.</li>
+                  <li><strong>Striker's March</strong> <em>(Lv 3)</em>: Your advance into battle disrupts enemy formations.</li>
+                  <li><strong>Lowering Strikes</strong> <em>(Lv 7)</em>: Attacks against your marked foes erode their defenses.</li>
+                  <li><strong>Undertow</strong> <em>(Lv 11)</em>: Pull enemies down into the terrain as you pass.</li>
+                  <li><strong>Eternal March</strong> <em>(Lv 15)</em>: The hunt does not end; you recover from a day's toll as easily as an hour's.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Rogue <span class="codex-race__sub" style="display:inline">Graverobber</span></span>
+                <span class="codex-race__tag codex-race__tag--giant">Cursed Magic</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Those who barter with the restless dead for power stolen from their graves. The curses they carry come with a price, but so does the knowledge.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.188</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Cursed Magic</strong> <em>(Lv 3)</em>: Learn a Warlock cantrip; scales up at Lv 9.</li>
+                  <li><strong>Anathema</strong> <em>(Lv 3)</em>: Choose a curse — Pestilence, Avarice, or Destruction — that infects your sneak attacks.</li>
+                  <li><strong>Eldritch Secrets</strong> <em>(Lv 9)</em>: Uncover dark magics left behind by the long-dead.</li>
+                  <li><strong>Afflict Ruin</strong> <em>(Lv 13)</em>: Unleash a curse that spreads from your victim outward.</li>
+                  <li><strong>Shroud of Desecration</strong> <em>(Lv 17)</em>: Capstone: death follows your shadow.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Sorcerer <span class="codex-race__sub" style="display:inline">Diwata Bloodline</span></span>
+                <span class="codex-race__tag codex-race__tag--verdant">Spirit Icon</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Born with the spark of a diwata's blood, these sorcerers carry the spirit of the land in their veins. Where they walk, the wilderness answers back.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.190</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Spirit's Cunning</strong> <em>(Lv 3)</em>: The diwata's wit grants you uncanny advantage in social and magical duels.</li>
+                  <li><strong>Sorcerous Nature</strong> <em>(Lv 3)</em>: Shape your sorcery through ties to the natural world.</li>
+                  <li><strong>Icon of the Spirit</strong> <em>(Lv 6)</em>: Manifest a totem of your diwata ancestor that aids your magic.</li>
+                  <li><strong>Icon's Territory</strong> <em>(Lv 14)</em>: The area around your icon becomes a realm you partly control.</li>
+                  <li><strong>One with Nature</strong> <em>(Lv 18)</em>: Capstone: become indistinguishable from the land itself.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Warlock <span class="codex-race__sub" style="display:inline">Mooneater Patron</span></span>
+                <span class="codex-race__tag codex-race__tag--giant">Devourer</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Bound to the ancient hunger that eats the moon, these warlocks wield the terror of cosmic appetites. What they devour, they remember.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.192</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Celestial Yearning</strong> <em>(Lv 3)</em>: Draw on the void's gravity for magical effects.</li>
+                  <li><strong>Agent of Destruction</strong> <em>(Lv 3)</em>: Your patron's hunger becomes your weapon.</li>
+                  <li><strong>Devour Essence</strong> <em>(Lv 6)</em>: Consume a fraction of a fallen enemy's power.</li>
+                  <li><strong>Eclipsing Fear</strong> <em>(Lv 10)</em>: Your presence dims the light around you; enemies falter.</li>
+                  <li><strong>Cataclysmic Hunger</strong> <em>(Lv 14)</em>: Capstone: channel your patron's appetite directly into the world.</li>
+                </ul>
+                <p class="codex-race__subtitle">Mooneater Eldritch Invocations (SinaUna p.195):</p>
+                <ul class="codex-race__traits">
+                  <li><strong>The Crab's Wrath</strong>: Retaliate against those who harm your allies.</li>
+                  <li><strong>The Eagle's Rapacity</strong>: Seize on wounded prey for devastating effect.</li>
+                  <li><strong>The Lion's Revelry</strong>: Grow more powerful with each kill in a fight.</li>
+                  <li><strong>The Serpent's Ire</strong>: Poison or curse enemies with your cantrips.</li>
+                  <li><strong>The Spider's Cunning</strong>: Ensnare and immobilize at a distance.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="codex-race">
+              <summary class="codex-race__summary">
+                <span class="codex-race__title">Wizard <span class="codex-race__sub" style="display:inline">Mentala</span></span>
+                <span class="codex-race__tag codex-race__tag--human">Kawayang Papel</span>
+                <span class="codex-race__chevron" aria-hidden="true">▾</span>
+              </summary>
+              <div class="codex-race__body">
+                <p class="codex-race__flavor">Scribes and keepers of kawayang papel, bamboo-paper magic worked as ink and will. Their durability comes from discipline; their power, from the script.</p>
+                <dl class="codex-race__stats">
+                  <dt>Source</dt><dd>SinaUna p.196</dd>
+                </dl>
+                <ul class="codex-race__traits">
+                  <li><strong>Durability</strong> <em>(Lv 3)</em>: Hardy wizardry. Gain bonuses to hit points and defense without armor.</li>
+                  <li><strong>Shared Scrolls</strong> <em>(Lv 3)</em>: Inscribe bamboo-paper scrolls that allies can activate without being spellcasters.</li>
+                  <li><strong>Scribe's Malediction</strong> <em>(Lv 6)</em>: Curse your scrolls so they punish the unworthy who unseal them.</li>
+                  <li><strong>Bendable Magic</strong> <em>(Lv 10)</em>: Modify the shape, range, or duration of your spells as you cast.</li>
+                  <li><strong>Primordial Conduit</strong> <em>(Lv 14)</em>: Capstone: your magic channels the first language, older than paper itself.</li>
+                </ul>
+              </div>
+            </details>
+
           </div>
         </div>
 
