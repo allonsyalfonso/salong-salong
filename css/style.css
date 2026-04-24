@@ -1054,7 +1054,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   color: var(--gold-light);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.1em;
   line-height: 1.18;
   text-shadow: 0 0 32px rgba(200,146,14,0.22), 0 2px 0 rgba(0,0,0,0.45);
   margin-bottom: 0.45rem;
