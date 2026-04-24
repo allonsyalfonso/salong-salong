@@ -1046,11 +1046,12 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   margin-bottom: 0.6rem;
 }
 /* ② Title: explicit color so it doesn't fight with any other h2 rule */
-/* Specificity: beats .dark-section .section-container h2 (0,2,1) with (0,3,0) */
+/* Specificity: beats .dark-section .section-container h2 (0,2,1) with (0,3,0).
+   Font-size matches the standard section h2 (e.g. "Tuklasin ang Mundo"). */
 .dark-section .section-container .about-world__title,
 .about-world__title {
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.6vw, 1.85rem);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   color: var(--gold-light);
   letter-spacing: 0.02em;
@@ -1067,8 +1068,7 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 @media (max-width: 720px) {
   .about-world__title {
     white-space: normal;
-    font-size: 1.25rem;
-    line-height: 1.25;
+    line-height: 1.2;
   }
 }
 /* ③ English subtitle under the Tagalog title — sized to match the .tagalog
