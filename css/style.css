@@ -1062,8 +1062,11 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   display: block;
   white-space: nowrap;
 }
+/* Bump specificity to beat .dark-section .section-container h2::before (0,2,2) */
+.dark-section .section-container .about-world__title::before,
+.dark-section .section-container .about-world__title::after,
 .about-world__title::before,
-.about-world__title::after { display: none; }
+.about-world__title::after { display: none; content: none; }
 /* Mobile: allow title to wrap to prevent horizontal overflow */
 @media (max-width: 720px) {
   .about-world__title {
@@ -1155,15 +1158,10 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   box-shadow: 0 4px 24px rgba(0,0,0,0.28);
 }
 /* Active campaign — warm amber accent (on-brand, not green) */
+/* --active modifier neutralized: both campaign cards now share the same
+   visual styling. If an "active" distinction is desired later, re-enable. */
 .about-campaign--active {
-  background: rgba(200,146,14,0.04);
-  border-left-color: rgba(245,200,64,0.6);
-  border-color: rgba(200,146,14,0.22);
-}
-.about-campaign--active:hover {
-  border-color: rgba(200,146,14,0.42);
-  border-left-color: var(--gold-bright);
-  box-shadow: 0 4px 28px rgba(200,146,14,0.1);
+  /* inherits .about-campaign defaults */
 }
 
 /* Badges */
@@ -2175,21 +2173,20 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 40px;
-  height: 40px;
-  background: rgba(196,154,26,0.88);
+  width: 64px;
+  height: 64px;
+  background: transparent;
   color: var(--bg-dark);
   border: none;
   border-radius: 50%;
-  font-size: 1.2rem;
-  font-weight: 700;
+  padding: 0;
   cursor: pointer;
   z-index: 900;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.55));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2201,7 +2198,19 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   visibility: visible;
   transform: translateY(0);
 }
-.back-to-top:hover { background: var(--gold-light); }
+.back-to-top:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+.back-to-top:active {
+  transform: translateY(-2px) scale(1.02);
+}
+.back-to-top__mascot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none; /* clicks pass through to the button */
+}
 
 /* ── MAP MARKER COLORS BY TYPE ── */
 .map-marker__dot--volcano {
@@ -2952,10 +2961,14 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
    Pre-Colonial Philippines aesthetic, animation depth, polish
    ══════════════════════════════════════════════════════════════ */
 
-/* ── FIX: BACK-TO-TOP 44×44px (UX skill: touch-target-size) ── */
-.back-to-top {
-  width: 44px;
-  height: 44px;
+/* Mobile back-to-top: slightly smaller so it doesn't dominate the viewport */
+@media (max-width: 640px) {
+  .back-to-top {
+    width: 56px;
+    height: 56px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
 }
 
 /* ── ACCESSIBILITY: VISIBLE FOCUS RINGS ── */
@@ -3176,8 +3189,7 @@ button:focus-visible {
 
 /* ── BACK TO TOP: AMBER GLOW ── */
 .back-to-top:hover {
-  background: var(--gold-light);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.7), 0 0 16px rgba(200,146,14,0.28);
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.7)) drop-shadow(0 0 14px rgba(200,146,14,0.28));
 }
 
 /* ── MAP TOOLTIP: WARMER BORDER ── */

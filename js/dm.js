@@ -91,11 +91,11 @@
     }
   });
 
-  /* ── BACK TO TOP ── */
+  /* ── BACK TO TOP (DM Avips mascot) ── */
   var btn = document.createElement('button');
   btn.className = 'back-to-top';
   btn.setAttribute('aria-label', 'Bumalik sa tuktok');
-  btn.innerHTML = '&#8679;';
+  btn.innerHTML = '<img src="images/mascot-scroll.png" alt="" aria-hidden="true" class="back-to-top__mascot" loading="lazy">';
   document.body.appendChild(btn);
 
   window.addEventListener('scroll', function () {
