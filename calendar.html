@@ -6,11 +6,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <title>404 | Sina Una: Isla ng Salong-Salong</title>
-  <meta name="description" content="Page not found — return to the world of Salong-Salong.">
+  <title>Kalendaryo | Sina Una: Isla ng Salong-Salong</title>
+  <meta name="description" content="The calendar of Salong-Salong — months, seasons, and festivals that mark the passage of the year.">
   <meta name="author" content="DM Avips">
-  <meta property="og:title" content="404 | Sina Una: Isla ng Salong-Salong">
-  <meta property="og:description" content="Page not found — return to the world of Salong-Salong.">
+  <meta property="og:title" content="Kalendaryo · Calendar | Isla ng Salong-Salong">
+  <meta property="og:description" content="The calendar of Salong-Salong — months, seasons, and festivals that mark the passage of the year.">
   <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
@@ -25,9 +25,7 @@
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <ul class="navbar__links">
-
       <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
-
       <li class="nav-dropdown">
         <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
         <ul class="nav-dropdown__menu">
@@ -38,7 +36,6 @@
           <li><a href="distances.html">Distances <span class="tagalog">Mga Layo</span></a></li>
         </ul>
       </li>
-
       <li class="nav-dropdown">
         <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
         <ul class="nav-dropdown__menu">
@@ -46,17 +43,15 @@
           <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
         </ul>
       </li>
-
       <li class="nav-dropdown">
-        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
         <ul class="nav-dropdown__menu">
           <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
           <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
           <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
-          <li><a href="calendar.html">Calendar <span class="tagalog">Kalendaryo</span></a></li>
+          <li><a href="calendar.html" class="active">Calendar <span class="tagalog">Kalendaryo</span></a></li>
         </ul>
       </li>
-
       <li>
         <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
@@ -67,24 +62,53 @@
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
         </button>
       </li>
-
     </ul>
   </nav>
 
   <main>
-    <div class="error-page">
-      <div class="error-page__inner">
-        <p class="error-page__code">404</p>
-        <h1 class="error-page__title">Nawawala Ka</h1>
-        <p class="error-page__message">
-          Ang pahina na iyong hinahanap ay wala sa mapa ng Salong-Salong.<br>
-          Siguro ay naligaw ka sa kagubatan, o mas masahol pa, sa Kasaanan.
-        </p>
-        <a href="index.html" class="error-page__link">Bumalik sa Tahanan</a>
+
+    <!-- ── PAGE HEADER ── -->
+    <div class="page-header dark-section">
+      <div class="page-header__inner">
+        <h1>KALENDARYO</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="tagalog">Calendar of Salong-Salong</p>
+        <p class="page-header__subtitle">Months, seasons, and festivals that mark the passage of the year on the islands.</p>
       </div>
     </div>
+
+    <!-- ── CALENDAR ENTRIES ── -->
+    <section aria-label="Calendar" class="dark-section">
+      <div class="section-container">
+        <div class="codex-entries">
+
+          <div class="codex-entry">
+            <h3 class="codex-entry__name">Bagong Araw <span class="codex-entry__sub">New Sun · Month I</span></h3>
+            <p class="codex-entry__desc">The first month. Festivals of flame and offering mark the return of Araw's warmth after the cold rains.</p>
+          </div>
+
+          <div class="codex-entry">
+            <h3 class="codex-entry__name">Tagsibol <span class="codex-entry__sub">Season of Bloom · Month III</span></h3>
+            <p class="codex-entry__desc">Planting season. Babaylans perform the Ritwal ng Lupa to bless the soil and ensure a full harvest.</p>
+          </div>
+
+          <div class="codex-entry">
+            <h3 class="codex-entry__name">Panahon ng Ulan <span class="codex-entry__sub">Rain Season · Month VI</span></h3>
+            <p class="codex-entry__desc">Spirits are most active when the rains come. Travel becomes dangerous. Strange lights appear in the hills.</p>
+          </div>
+
+          <div class="codex-entry">
+            <h3 class="codex-entry__name">Huling Araw <span class="codex-entry__sub">Last Sun · Month XII</span></h3>
+            <p class="codex-entry__desc">The final month. The dead are honored, debts settled, and feuds resolved before the year ends.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ── FOOTER ── -->
   <footer class="site-footer" role="contentinfo">
     <p class="site-footer__text">
       Lore content for the past and present players
@@ -96,12 +120,12 @@
   <!-- ── DM MODAL ── -->
   <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
     <div class="dm-modal">
-      <p class="dm-modal__title">🔒 DM Mode</p>
+      <p class="dm-modal__title">DM Mode</p>
       <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
       <p class="dm-modal__error" id="dm-error"></p>
       <div class="dm-modal__buttons">
-        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Pumasok</button>
-        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Kanselahin</button>
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
       </div>
     </div>
   </div>

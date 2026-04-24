@@ -3958,3 +3958,221 @@ button:focus-visible {
   pointer-events: none;
 }
 .distance-notice.visible { opacity: 1; }
+
+/* ============================================================
+   CODEX — RACES TAB (expandable <details> cards)
+   ============================================================ */
+
+.codex-panel__intro {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: rgba(242,216,152,0.75);
+  font-style: italic;
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.codex-entries--races {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.codex-race {
+  background: rgba(10,7,4,0.5);
+  border: 1px solid rgba(196,154,26,0.22);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.codex-race[open] {
+  border-color: rgba(196,154,26,0.48);
+  background: rgba(10,7,4,0.72);
+}
+.codex-race[open] .codex-race__chevron {
+  transform: rotate(180deg);
+}
+
+.codex-race__summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.95rem 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+}
+.codex-race__summary::-webkit-details-marker { display: none; }
+.codex-race__summary:hover {
+  background: rgba(196,154,26,0.06);
+}
+.codex-race__summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.codex-race__title {
+  flex: 1 1 240px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.02em;
+}
+.codex-race__sub {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(242,216,152,0.65);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.codex-race__tag {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgba(196,154,26,0.3);
+  background: rgba(196,154,26,0.08);
+  color: rgba(242,216,152,0.85);
+  white-space: nowrap;
+}
+.codex-race__tag--darkvision { color: #d4a017; border-color: rgba(212,160,23,0.4); }
+.codex-race__tag--blindsight { color: #b08cff; border-color: rgba(176,140,255,0.4); background: rgba(176,140,255,0.06); }
+.codex-race__tag--fire { color: #e63946; border-color: rgba(230,57,70,0.4); background: rgba(230,57,70,0.06); }
+.codex-race__tag--verdant { color: #52b788; border-color: rgba(82,183,136,0.4); background: rgba(82,183,136,0.06); }
+.codex-race__tag--gilded { color: #f5c840; border-color: rgba(245,200,64,0.45); background: rgba(245,200,64,0.08); }
+.codex-race__tag--craft { color: #74b3ce; border-color: rgba(116,179,206,0.4); background: rgba(116,179,206,0.06); }
+.codex-race__tag--immovable { color: #a09580; border-color: rgba(160,149,128,0.4); background: rgba(160,149,128,0.08); }
+.codex-race__tag--giant { color: #c8920e; border-color: rgba(200,146,14,0.5); background: rgba(200,146,14,0.1); }
+
+.codex-race__chevron {
+  font-size: 0.9rem;
+  color: rgba(242,216,152,0.55);
+  transition: transform 0.2s ease;
+  margin-left: auto;
+}
+
+.codex-race__body {
+  padding: 0.25rem 1.15rem 1.25rem;
+  border-top: 1px solid rgba(196,154,26,0.18);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+.codex-race__flavor {
+  font-style: italic;
+  color: rgba(242,216,152,0.78);
+  margin: 1rem 0 1.1rem;
+}
+.codex-race__subtitle {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.codex-race__stats {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(26,6,0,0.35);
+  border-left: 2px solid rgba(196,154,26,0.45);
+  border-radius: 2px;
+  font-size: 0.92rem;
+}
+.codex-race__stats dt {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232,168,32,0.85);
+  align-self: start;
+  padding-top: 0.1rem;
+}
+.codex-race__stats dd {
+  margin: 0;
+  color: var(--text-light);
+}
+
+.codex-race__traits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+}
+.codex-race__traits > li {
+  padding: 0.45rem 0 0.45rem 1.1rem;
+  position: relative;
+  border-bottom: 1px solid rgba(196,154,26,0.1);
+}
+.codex-race__traits > li:last-child { border-bottom: none; }
+.codex-race__traits > li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  color: var(--gold);
+  font-size: 0.65rem;
+}
+.codex-race__traits strong {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+.codex-race__traits em {
+  color: rgba(242,216,152,0.65);
+  font-style: italic;
+  font-size: 0.88rem;
+}
+.codex-race__traits ul {
+  list-style: none;
+  padding: 0.35rem 0 0 0.5rem;
+  margin: 0.25rem 0 0;
+}
+.codex-race__traits ul li {
+  padding: 0.2rem 0;
+  border: none;
+  font-size: 0.92rem;
+  color: rgba(242,216,152,0.85);
+}
+.codex-race__traits ul li::before { content: none; }
+
+/* Mobile adjustments for race cards */
+@media (max-width: 640px) {
+  .codex-race__summary {
+    padding: 0.85rem 0.9rem;
+    gap: 0.5rem;
+  }
+  .codex-race__title {
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
+  .codex-race__tag {
+    font-size: 0.58rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .codex-race__chevron { margin-left: 0; }
+  .codex-race__body {
+    padding: 0.25rem 0.9rem 1rem;
+    font-size: 0.92rem;
+  }
+  .codex-race__stats {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding: 0.75rem 0.85rem;
+  }
+  .codex-race__stats dt { padding-top: 0.5rem; }
+  .codex-race__stats dt:first-of-type { padding-top: 0; }
+}
