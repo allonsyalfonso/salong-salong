@@ -1046,11 +1046,13 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
   margin-bottom: 0.6rem;
 }
 /* ② Title: explicit color so it doesn't fight with any other h2 rule */
+/* Specificity: beats .dark-section .section-container h2 (0,2,1) with (0,3,0) */
+.dark-section .section-container .about-world__title,
 .about-world__title {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.6vw, 1.85rem);
   font-weight: 700;
-  color: var(--gold-bright);
+  color: var(--gold-light);
   letter-spacing: 0.02em;
   line-height: 1.18;
   text-shadow: 0 0 32px rgba(200,146,14,0.22), 0 2px 0 rgba(0,0,0,0.45);
@@ -1069,13 +1071,17 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
     line-height: 1.25;
   }
 }
-/* ③ English subtitle under the Tagalog title */
+/* ③ English subtitle under the Tagalog title — sized to match the .tagalog
+   subtitle used in other H2s ("Explore the World" etc.): ~0.48× of a ~3rem
+   parent H2. clamp scales cleanly from mobile to desktop. */
 .about-world__subtitle-en {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: clamp(0.95rem, 2.4vw, 1.5rem);
   font-style: italic;
-  letter-spacing: 0.06em;
-  color: rgba(245,200,64,0.55);
+  letter-spacing: 0.04em;
+  color: rgba(245,200,64,0.6);
+  line-height: 1.3;
+  margin-top: 0.25rem;
 }
 
 /* 2×2 grid: lore paragraphs paired with campaign cards */
@@ -4053,6 +4059,7 @@ button:focus-visible {
 .codex-race__tag--craft { color: #74b3ce; border-color: rgba(116,179,206,0.4); background: rgba(116,179,206,0.06); }
 .codex-race__tag--immovable { color: #a09580; border-color: rgba(160,149,128,0.4); background: rgba(160,149,128,0.08); }
 .codex-race__tag--giant { color: #c8920e; border-color: rgba(200,146,14,0.5); background: rgba(200,146,14,0.1); }
+.codex-race__tag--human { color: #f2d898; border-color: rgba(242,216,152,0.4); background: rgba(242,216,152,0.06); }
 
 .codex-race__chevron {
   font-size: 0.9rem;
