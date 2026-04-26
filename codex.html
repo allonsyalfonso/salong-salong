@@ -90,6 +90,7 @@
         <div class="codex-tabs" role="tablist" aria-label="World reference">
           <button class="codex-tab codex-tab--active" role="tab" aria-selected="true" onclick="codexTab(this,'races')">Races <span class="tagalog">Lahi</span></button>
           <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'classes')">Classes <span class="tagalog">Klase</span></button>
+          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'subclasses')">Subclasses <span class="tagalog">Subklase</span></button>
         </div>
 
         <!-- Races -->
@@ -330,7 +331,7 @@
 
         <!-- Classes -->
         <div class="codex-panel" id="codex-classes" role="tabpanel" hidden>
-          <p class="codex-panel__intro">Two custom classes of Sina Una, plus twelve Sina Una subclasses for the standard 2024 PHB classes. Click a class to view its core features.</p>
+          <p class="codex-panel__intro">Two full custom classes unique to Sina Una. Choose one at character creation (Level 1), the same as any standard PHB class.</p>
           <div class="codex-entries codex-entries--races">
 
             <!-- ═══ CUSTOM CLASSES ═══ -->
@@ -397,7 +398,15 @@
               </div>
             </details>
 
-            <!-- ═══ STANDARD CLASS SUBCLASSES (alphabetical) ═══ -->
+          </div>
+        </div>
+
+        <!-- Subclasses -->
+        <div class="codex-panel" id="codex-subclasses" role="tabpanel" hidden>
+          <p class="codex-panel__intro">Twelve Sina Una subclasses for the standard 2024 PHB classes. Each is chosen at Level 3. Click a subclass to view its features.</p>
+          <div class="codex-entries codex-entries--races">
+
+            <div class="codex-subclass-group"><span>Barbarian</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Barbarian <span class="codex-race__sub" style="display:inline">Path of the Black River</span></span>
@@ -418,6 +427,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Bard</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Bard <span class="codex-race__sub" style="display:inline">College of Siday</span></span>
@@ -438,6 +448,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Cleric</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Cleric <span class="codex-race__sub" style="display:inline">Volcano Domain</span></span>
@@ -458,6 +469,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Druid</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Druid <span class="codex-race__sub" style="display:inline">Circle of Tides</span></span>
@@ -479,6 +491,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Fighter</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Fighter <span class="codex-race__sub" style="display:inline">Kawal</span></span>
@@ -501,6 +514,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Monk</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Monk <span class="codex-race__sub" style="display:inline">Way of Kaluluwa</span></span>
@@ -522,6 +536,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Paladin</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Paladin <span class="codex-race__sub" style="display:inline">Oath of Blood</span></span>
@@ -544,6 +559,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Ranger</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Ranger <span class="codex-race__sub" style="display:inline">Mangangayaw</span></span>
@@ -565,6 +581,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Rogue</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Rogue <span class="codex-race__sub" style="display:inline">Graverobber</span></span>
@@ -586,6 +603,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Sorcerer</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Sorcerer <span class="codex-race__sub" style="display:inline">Diwata Bloodline</span></span>
@@ -607,6 +625,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Warlock</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Warlock <span class="codex-race__sub" style="display:inline">Mooneater Patron</span></span>
@@ -636,6 +655,7 @@
               </div>
             </details>
 
+            <div class="codex-subclass-group"><span>Wizard</span></div>
             <details class="codex-race">
               <summary class="codex-race__summary">
                 <span class="codex-race__title">Wizard <span class="codex-race__sub" style="display:inline">Mentala</span></span>
@@ -710,7 +730,7 @@
     // ── KEYBOARD NAVIGATION FOR TABS ──
     (function() {
       var tabs = Array.from(document.querySelectorAll('.codex-tab'));
-      var tabIds = ['races', 'classes'];
+      var tabIds = ['races', 'classes', 'subclasses'];
       tabs.forEach(function(tab, i) {
         tab.setAttribute('tabindex', tab.classList.contains('codex-tab--active') ? '0' : '-1');
         tab.addEventListener('keydown', function(e) {
