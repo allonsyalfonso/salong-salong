@@ -29,23 +29,22 @@
       <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
 
       <li class="nav-dropdown">
-        <button class="nav-dropdown__trigger active" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
         <ul class="nav-dropdown__menu">
           <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
           <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
-          <li><a href="codex.html" class="active">Codex <span class="tagalog">Aklatan</span></a></li>
           <li><a href="bestiary.html">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
           <li><a href="distances.html">Distances <span class="tagalog">Mga Layo</span></a></li>
         </ul>
       </li>
 
       <li class="nav-dropdown">
-        <button class="nav-dropdown__trigger" aria-haspopup="true">Rules <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Alituntunin</span></button>
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Rules <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Alituntunin</span></button>
         <ul class="nav-dropdown__menu">
+          <li><a href="codex.html" class="active">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="classes.html">Classes <span class="tagalog">Mga Klase</span></a></li>
           <li><a href="equipment.html">Equipment <span class="tagalog">Kagamitan</span></a></li>
-          <li><a href="feats.html">Feats <span class="tagalog">Mga Kakayahan</span></a></li>
           <li><a href="spells.html">Spells <span class="tagalog">Mga Orasyon</span></a></li>
-          <li><a href="backgrounds.html">Backgrounds <span class="tagalog">Mga Pinagmulan</span></a></li>
         </ul>
       </li>
       <li class="nav-dropdown">
@@ -88,7 +87,7 @@
         <h1>WORLD CODEX</h1>
         <div class="page-header__divider">◆ ✦ ◆</div>
         <p class="tagalog">Aklatan ng Mundo</p>
-        <p class="page-header__subtitle">Reference guide to the races and classes of Salong-Salong.</p>
+        <p class="page-header__subtitle">Races, backgrounds and feats for making a character in Salong-Salong.</p>
       </div>
     </div>
 
@@ -96,13 +95,12 @@
     <section aria-label="World Codex" class="dark-section">
       <div class="section-container">
 
-        <div class="codex-tabs" role="tablist" aria-label="World reference">
+        <div class="codex-tabs" role="tablist" aria-label="Character options">
           <button class="codex-tab codex-tab--active" role="tab" aria-selected="true" onclick="codexTab(this,'races')">Races <span class="tagalog">Lahi</span></button>
-          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'classes')">Classes <span class="tagalog">Klase</span></button>
-          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'subclasses')">Subclasses <span class="tagalog">Subklase</span></button>
+          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'backgrounds')">Backgrounds <span class="tagalog">Pinagmulan</span></button>
+          <button class="codex-tab" role="tab" aria-selected="false" onclick="codexTab(this,'feats')">Feats <span class="tagalog">Kakayahan</span></button>
         </div>
 
-        <!-- Races -->
         <div class="codex-panel codex-panel--active" id="codex-races" role="tabpanel">
           <p class="codex-panel__intro">The nine playable races of Sina Una. Click a race to view its full traits.</p>
           <div class="codex-entries codex-entries--races">
@@ -336,372 +334,56 @@
           </div>
         </div>
 
-        <!-- Classes -->
-        <div class="codex-panel" id="codex-classes" role="tabpanel" hidden>
-          <p class="codex-panel__intro">Two full custom classes unique to Sina Una. Choose one at character creation (Level 1), the same as any standard PHB class.</p>
-          <div class="codex-entries codex-entries--races">
-
-            <!-- ═══ CUSTOM CLASSES ═══ -->
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Babaylan</span>
-                <span class="codex-race__tag codex-race__tag--verdant">Abayan Spirit</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">The spirit-speakers of the islands, custodians of the unseen world. Each Babaylan walks with an Abayan, an incorporeal ancestral companion, and bends reality through the power of memory, sacrifice, or wrath.</p>
-                <dl class="codex-race__stats">
-                  <dt>Role</dt><dd>Full custom class (not a subclass)</dd>
-                </dl>
-                <ul class="codex-race__traits">
-                  <li><strong>Abayan</strong> <em>(Lv 1)</em>: An incorporeal ancestral spirit that accompanies you at all times. AC 12 + Int modifier. Truesight 60 ft, Telepathy 60 ft (babaylan only). Speed 30 ft, Medium beast. Immune to all damage and cannot be dispelled. Serves as your spellcasting focus; spells and area effects can originate from its space.</li>
-                  <li><strong>Spellcasting</strong> <em>(Lv 1)</em>: Full caster. You prepare spells from the Babaylan spell list and regain all spell slots on a Long Rest. Intelligence is your spellcasting ability.</li>
-                  <li><strong>Spirit Conduit</strong> <em>(Lv 3)</em>: Gain a pool of Spirit Dice (d4s): 4d4 at Lv 3, 5d4 at Lv 5, 6d4 at Lv 9, 7d4 at Lv 13, and 8d4 at Lv 17. Each die is expended after rolling, and you can spend at most your Int modifier in dice per turn (min 1). All Spirit Dice return on a Long Rest. Spend them on one of three Conduit Options: <em>Persistence</em> (when you cast a spell requiring a saving throw, add the dice total to your spell save DC, declared before targets roll and lasting until the start of your next turn; <strong>you can spend at most your Proficiency Bonus in dice on this option</strong>, and the per-turn limit still applies, so the lower of the two is your cap), <em>Precision</em> (when you cast a spell requiring an attack roll, add the dice total to the attack roll after seeing the d20 but before hit or miss is determined), or <em>Vehemence</em> (add the dice total to one spell's damage roll).</li>
-                  <li><strong>Spirit Recovery</strong> <em>(Lv 7)</em>: During a Short Rest, recover Spirit Dice equal to half your Int modifier (min 1). You also gain Resistance to Necrotic damage.</li>
-                  <li><strong>Preternatural Speaker</strong> <em>(Lv 10)</em>: You can speak and read all languages. Any creature that understands at least one language understands you perfectly.</li>
-                  <li><strong>Walker Between Worlds</strong> <em>(Lv 14)</em>: You are immune to Necrotic damage. You have Advantage on death saving throws.</li>
-                  <li><strong>Mythic Reverence</strong> <em>(Lv 20, 3 / long rest)</em>: If you start your turn below half your HP maximum and are not Incapacitated, you regain 20 HP. When you fail a saving throw, you can choose to succeed instead. Both effects draw from the same pool of 3 uses per long rest.</li>
-                </ul>
-                <p class="codex-race__subtitle">Callings (choose one at Lv 1):</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Call of Clairvoyance</strong>: Read fate and peer through the spirit veil.
-                    <ul>
-                      <li><em>Divining Eye (Lv 3)</em>: You learn True Strike as a free cantrip (Bonus Action to cast). It does not count against your cantrips known.</li>
-                      <li><em>Vessel for the Spirits (Lv 3, Action, 1 / short rest)</em>: Your Abayan inhabits your body for 10 minutes. While active: Advantage on Intelligence checks to recall knowledge; add your Int modifier to Concentration saving throws; cast Detect Evil and Good, Detect Poison and Disease, and Identify each once without expending a spell slot.</li>
-                      <li><em>Clarity of Mind (Lv 6)</em>: You are immune to the Charmed and Frightened conditions.</li>
-                      <li><em>Piercing Sight (Lv 11)</em>: While Vessel for the Spirits is active, you gain Truesight 30 ft.</li>
-                      <li><em>Living Memory (Lv 15, Action, 1 / short rest)</em>: Touch an object or creature to commune with its spirit history. If the target is hostile, succeed on a DC 15 Intelligence check. On a success, you glimpse a number of past events tied to it equal to your Int modifier (min 1), starting with the most recent.</li>
-                    </ul>
-                  </li>
-                  <li><strong>Call of Sacrifice</strong>: Yield your own vitality to sustain others.
-                    <ul>
-                      <li><em>Undaunted Healer (Lv 3)</em>: While your Abayan is within 30 ft, your healing spells restore additional HP equal to your Proficiency Bonus.</li>
-                      <li><em>Absolve Hurt (Lv 3, Reaction)</em>: Friendly creatures within 10 ft of your Abayan gain +2 to saving throws against spells and damage effects. When a creature within 30 ft of your Abayan takes damage, you can expend a spell slot to reduce that damage by your Babaylan level + 1d6 per level of the slot expended.</li>
-                      <li><em>Yield Vitality (Lv 6, Action)</em>: Choose a spellcaster within 30 ft of your Abayan (can be yourself). Lose HP to restore one expended spell slot: HP lost = 10 x the recovered slot's level. If the HP lost exceeds your remaining HP by an amount greater than or equal to your maximum HP, you die instantly. If it exceeds your remaining HP by less than that, you fall Unconscious and gain 1 failed death saving throw.</li>
-                      <li><em>Hale of Body (Lv 11)</em>: You are immune to all Poison damage, the Poisoned condition, and diseases.</li>
-                      <li><em>Banish Affliction (Lv 15, Action, Int mod / long rest)</em>: End one of the following conditions on yourself or a willing creature you touch: Blinded, Charmed, Cursed, Deafened, Frightened, Paralyzed, Petrified, or Poisoned.</li>
-                    </ul>
-                  </li>
-                  <li><strong>Call of Wrath</strong>: Fight alongside your Abayan as a warrior-mystic.
-                    <ul>
-                      <li><em>Bonus Proficiencies (Lv 3)</em>: Gain proficiency with Medium Armor, Shields, and Martial Weapons.</li>
-                      <li><em>Guided Strikes (Lv 3)</em>: While within 10 ft of your Abayan, use your Int modifier for weapon attack and damage rolls.</li>
-                      <li><em>Fury of the Spirits (Lv 3, costs 1 Spirit Die)</em>: Whenever you take the Attack action, you can expend one Spirit Die to have your Abayan make one melee spell attack against a hostile creature within 5 ft of it, using your spell attack modifier. On a hit it deals Force damage: 2d6 (Lv 3-4), 3d6 (Lv 5-10), 4d6 (Lv 11-16), 6d6 (Lv 17+). Without a Spirit Die to spend, this does not trigger. <em>(House rule.)</em></li>
-                      <li><em>Magic Warrior (Lv 6)</em>: Your weapon attacks count as magical for overcoming resistance. You may apply Spirit Conduit's Precision option to weapon attack rolls and its Vehemence option to weapon damage rolls.</li>
-                      <li><em>Guided Strikes, Extended (Lv 6)</em>: The Guided Strikes range extends to 30 ft from your Abayan.</li>
-                      <li><em>Tempered Will (Lv 11)</em>: You have Advantage on Constitution saving throws to maintain Concentration on a spell when you take damage. <em>(House rule, softened from automatic success.)</em></li>
-                      <li><em>Guided Strikes, Unlimited (Lv 15)</em>: You can use your Int modifier for weapon attack and damage rolls regardless of your distance from your Abayan.</li>
-                      <li><em>Armor of Ancients (Lv 15, Action, 1 / short or long rest)</em>: Summon warrior spirit armor for 1 minute (ends if Incapacitated). While active: immune to nonmagical Bludgeoning, Piercing, and Slashing damage; resistance to all other damage types; gain Temp HP equal to your Int modifier + Proficiency Bonus + Babaylan level; creatures that hit you with melee attacks take 1d6 + your Babaylan level Force damage.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Headhunter</span>
-                <span class="codex-race__tag codex-race__tag--darkvision">Hunter's Omen</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Relentless trackers bound by omen and ancestry. The Headhunter marks their quarry and does not relent until the hunt is finished, or they themselves become its memory.</p>
-                <dl class="codex-race__stats">
-                  <dt>Role</dt><dd>Full custom class (not a subclass)</dd>
-                </dl>
-                <ul class="codex-race__traits">
-                  <li><strong>Focused Hunter</strong> <em>(Lv 1)</em>: You have Advantage on saving throws against the Charmed and Frightened conditions.</li>
-                  <li><strong>Conviction</strong> <em>(Lv 1)</em>: Once per round when you target a creature with a weapon attack, deal extra Force damage whether the attack hits or misses (critical hits multiply this damage): 1d4 (Lv 1-4), 1d8 (Lv 5-9), 2d8 (Lv 10-14), 3d8 (Lv 15-19), 4d8 (Lv 20).</li>
-                  <li><strong>Rite of the Ancestors</strong> <em>(Lv 2, 1 / long rest)</em>: After completing a Long Rest, designate one creature as your quarry. Ask your ancestors 3 of the following questions: What is its Armor Class? Is it within 1 mile of you? What is one of its damage resistances? What is one of its damage vulnerabilities? What is its highest ability score? You cannot change quarry until your next Long Rest.</li>
-                  <li><strong>Fighting Style</strong> <em>(Lv 2)</em>: Choose one: Defense (+1 AC in armor), Distance (+2 to ranged and thrown attack rolls), Great Weapon Fighting (reroll 1s and 2s on two-handed or versatile weapon damage), Protection (Reaction: impose Disadvantage on an attack against a creature within 5 ft while wielding a shield), Pursuant (+1 to attack rolls against your Rite quarry), or Skirmisher (when making an Opportunity Attack, also move up to half your speed in the creature's direction).</li>
-                  <li><strong>Hunter's Omen</strong> <em>(Lv 3)</em>: Choose your Omen subclass: Knowledge, Strife, or Swiftness.</li>
-                  <li><strong>Extra Attack</strong> <em>(Lv 5, house rule)</em>: You can attack twice, instead of once, whenever you take the Attack action on your turn. <em>(This is declared homebrew, not sourcebook content. The book gives the Headhunter no Extra Attack; it was added by owner ruling after a balance review measured the class at 58 to 69 percent of Fighter damage from Lv 5 without it.)</em></li>
-                  <li><strong>Forgiveness for the Slain</strong> <em>(Lv 6, 1 / long rest)</em>: Approach the corpse of a creature that died within the last 24 hours (must be recognizable and not undead). Over 10 minutes, commune with its departing spirit and ask up to 2 questions. The spirit may be cryptic or refuse if hostile; you may attempt to persuade it.</li>
-                  <li><strong>Unwavering Hunter</strong> <em>(Lv 9)</em>: You are immune to the Charmed and Frightened conditions. Your weapon attacks score a critical hit on a roll of 19 or 20.</li>
-                  <li><strong>Tireless Pursuit</strong> <em>(Lv 11)</em>: Forced marches impose no Exhaustion on you.</li>
-                  <li><strong>Dread Presence</strong> <em>(Lv 13)</em>: Your movement no longer provokes Opportunity Attacks.</li>
-                  <li><strong>Inevitable</strong> <em>(Lv 17)</em>: Your weapon attacks score a critical hit on a roll of 18, 19, or 20.</li>
-                </ul>
-                <p class="codex-race__subtitle">Omens (choose one at Lv 3):</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Omen of Knowledge</strong>: Hunt through wisdom, memory, and the lessons of the dead.
-                    <ul>
-                      <li><em>Lessons of the Departed (Lv 3)</em>: After each Long Rest, gain one ability proficiency and one skill or tool proficiency of your choice until your next Long Rest.</li>
-                      <li><em>Memories of War (Lv 3)</em>: Choose active Memory options from the list below. You have 2 at Lv 3, 4 at Lv 7, 5 at Lv 10, 6 at Lv 14, and 7 at Lv 18. Save DC for Memory options = 8 + Proficiency Bonus + Int modifier. Available Memories: <em>Assured Mark</em> (Conviction also adds your Int modifier, min +1, to the Force damage); <em>Cloaked Terror</em> (Darkvision 60 ft, or +30 ft if you already have it; magical darkness does not impede your vision); <em>Cycle Breaker</em> (add Int modifier to initiative; Reaction on rolling initiative: make one weapon attack); <em>Living Shield</em> (Bonus Action: add your Int modifier, min +1, to your AC until the end of your next turn, 2 uses / long rest); <em>Nimble Warrior</em> (Bonus Action to Dash or Dodge); <em>Pinning Strike</em> (on a hit, target makes Dex save or is Restrained, Int modifier uses / long rest); <em>The Silent One</em> (Stealth proficiency + Bonus Action to Hide); <em>The Rending Blow</em> (on a hit, target makes Con save or has Disadvantage on all attack rolls, Int modifier uses / long rest); <em>The Unerring Eye</em> (Bonus Action: Advantage on your first attack this turn, 2 uses / long rest); <em>The Waning Might</em> (on a hit, target makes Str save or deals half damage with weapon attacks, Int modifier uses / long rest).</li>
-                      <li><em>Study Remembrance (Lv 7)</em>: After completing a Short or Long Rest, choose one damage type. You gain Resistance to it until you use this feature again.</li>
-                      <li><em>Inescapable End (Lv 14, 1 / long rest)</em>: When you roll initiative while below half your HP maximum, regain HP equal to 10 x your Int modifier (min 1).</li>
-                      <li><em>Memoriam (Lv 18)</em>: After each Long Rest, you may swap one of your active Memory options for a different one from the list.</li>
-                    </ul>
-                  </li>
-                  <li><strong>Omen of Strife</strong>: Hunt through raw confrontation and imposing presence.
-                    <ul>
-                      <li><em>Bonus Proficiencies (Lv 3)</em>: Gain proficiency with Heavy Armor and the Intimidation skill.</li>
-                      <li><em>Awestriking Presence (Lv 3, Bonus Action, Cha mod / long rest, min 1)</em>: Choose a creature within 30 ft that can see you. It makes a Wis save (DC 8 + Proficiency Bonus + Cha modifier). On a failure: its speed is reduced by 10 ft; you have Advantage on attacks against it until the start of your next turn; you have Advantage on Intimidation checks against it for 10 minutes.</li>
-                      <li><em>Formidable Conviction (Lv 7)</em>: When you use your Conviction feature, add an extra 1d8 to the Force damage rolled.</li>
-                      <li><em>The Cost of Fear (Lv 14, Cha mod / short or long rest)</em>: When you hit a creature with a weapon attack, impose a cumulative -1 penalty to its AC (fades after 1 hour).</li>
-                      <li><em>Retribution (Lv 18, 1 / short or long rest)</em>: When you hit a creature with a weapon attack, deal extra damage equal to the number of HP you are currently missing.</li>
-                    </ul>
-                  </li>
-                  <li><strong>Omen of Swiftness</strong>: Hunt through speed and faith, wielding divine magic alongside your blade.
-                    <ul>
-                      <li><em>Spellcasting (Lv 3)</em>: You cast Cleric spells using Wisdom as a one-third caster, with slots reaching 4th-level spells at Headhunter level 19. Cantrips known: 2, rising to 3 at Lv 10. Spells known: 3 at Lv 3, rising to 12 at Lv 19 (one new spell at Lv 4, 7, 8, 10, 11, 13, 14, 16, and 19). Spell save DC = 8 + Proficiency Bonus + Wis modifier; spell attack modifier = Proficiency Bonus + Wis modifier.</li>
-                      <li><em>Devoted Soul (Lv 3)</em>: When you use your Conviction feature, gain Temp HP equal to half the Force damage rolled, rounded down (min 1).</li>
-                      <li><em>Blessed Warrior (Lv 7)</em>: Your weapon attacks count as magical for overcoming resistance and immunity.</li>
-                      <li><em>Grim Persistence (Lv 14, Bonus Action, 1 / long rest)</em>: Teleport to an unoccupied space within 30 ft of your Rite quarry (must be able to see it). Immediately make one weapon attack against the quarry with Advantage.</li>
-                      <li><em>Many-Limbed Silhouette (Lv 18, Bonus Action)</em>: When you score a critical hit with a spell attack, use your Bonus Action to make 2 weapon attacks with Advantage.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </details>
-
+        <!-- GENERATED: backgrounds, from build_backgrounds.py. Do not hand-edit. -->
+        <div class="codex-panel" id="codex-backgrounds" role="tabpanel" hidden>
+        <h3 class="npc-section-label" data-section="island">Mga Taga-Isla &middot; Island Backgrounds</h3>
+        <div class="eq-section" data-section="island">
+          <p class="codex-panel__intro">Six backgrounds original to Sina Una. These are the islands' own, and are given here in full.</p>
+          <div class="codex-entries">
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Lorechanter</span><span class="codex-race__tag codex-race__tag--craft">Musician</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have spent your life learning the tales of your people with a fervent dedication. History is no mere thing to let slip by, or to share so sullenly, but something to be celebrated. Heroes and spirits, gods and monsters all show in the tales you have learned, and from their stories you have learned much of the world around you.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Constitution, Intelligence, and Wisdom</dd><dt>Origin Feat</dt><dd>Musician</dd><dt>Skills</dt><dd>History, Religion</dd><dt>Tools</dt><dd>Musical Instrument</dd><dt>Equipment</dt><dd>Bamboo scroll, Writing implements, Keepsake from your home village, Traveler&#x27;s Clothes, Belt pouch (with coins), 10 GP</dd></dl><p class="eq-meta">Islands of Sina Una, p.198</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Mangangalakal</span><span class="codex-race__tag codex-race__tag--craft">Lucky</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You are well versed in trade and worth, skilled in bartering and the social graces it demands. You are a member of the trade routes that connect one community to another, travelling across land and sea. No apprenticeship brought you to where you are today; you have grown your skills over a life of hands-on experience with others.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Charisma</dd><dt>Origin Feat</dt><dd>Lucky</dd><dt>Skills</dt><dd>Insight, Persuasion</dd><dt>Tools</dt><dd>Vehicles (Water)</dd><dt>Equipment</dt><dd>Betel nut kit, Merchant&#x27;s scales, Perfume, vials of, Fine Clothes, Belt pouch (with coins), 20 GP</dd></dl><p class="eq-meta">Islands of Sina Una, p.199</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Panday</span><span class="codex-race__tag codex-race__tag--craft">Crafter</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You are a crafter of heightened and dedicated skill. At your hands comes forth a great creation, be it made for beauty or for function. Through years of effort and practice you have honed your craft to a fine degree, and are on the road to total mastery.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Strength, Constitution, and Intelligence</dd><dt>Origin Feat</dt><dd>Crafter</dd><dt>Skills</dt><dd>Perception, Sleight of Hand</dd><dt>Tools</dt><dd>Artisan&#x27;s Tools</dd><dt>Equipment</dt><dd>Artisan&#x27;s Tools, Hammer, Whetstone, Traveler&#x27;s Clothes, Belt pouch (with coins), 15 GP</dd></dl><ul class="codex-race__traits"><li><strong>Specialization</strong>: Pandays often dedicate their lifetimes to perfecting one particular craft. Yours is one of Weapons Smith, Shipwright, Carpenter, or Goldworker.</li></ul><p class="eq-meta">Islands of Sina Una, p.199</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Sea Raider</span><span class="codex-race__tag codex-race__tag--craft">Tavern Brawler</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You were raised to traverse the sea and to fight alongside others. You began sailing when others first learn to farm or when others learn of the spirit, and learned the ways of combat at sea. You might be a lesser noble in good standing, or one who has long abandoned service to their community and leader, or even one who has left a formal service and now pursues their own ventures.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Strength, Constitution, and Charisma</dd><dt>Origin Feat</dt><dd>Tavern Brawler</dd><dt>Skills</dt><dd>Athletics, Intimidation</dd><dt>Tools</dt><dd>Vehicles (Water)</dd><dt>Equipment</dt><dd>Grappling hook, Traveler&#x27;s Clothes, Bolo -or- Bangkaw, Belt pouch (with coins), 10 GP</dd></dl><p class="eq-meta">Islands of Sina Una, p.200</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Voyager</span><span class="codex-race__tag codex-race__tag--craft">Tough</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have known the sea all your life. Where others may visit it and return to land, you are a mere visitor on the ground. You may pursue adventures or goals upon the shore, but the sea will always call you back home, and a lifetime of experience on the sea has given you unparalleled mastery when traversing its waters.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Strength, Wisdom, and Charisma</dd><dt>Origin Feat</dt><dd>Tough</dd><dt>Skills</dt><dd>Perception, Survival</dd><dt>Tools</dt><dd>Hunter&#x27;s Kit</dd><dt>Equipment</dt><dd>Fishing tackle, Hunter&#x27;s Kit, Traveler&#x27;s Clothes, Belt pouch (with coins), 10 GP</dd></dl><p class="eq-meta">Islands of Sina Una, p.201</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Aswang Lineage</span><span class="codex-race__tag codex-race__tag--craft">Magic Initiate (Wizard)</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You were born into a family afflicted with evil. It may be a parent, a sibling, or someone farther away from you, but one member of your family is taboo personified. All your life you have lived with this simple truth: that you are related to an aswang, that which reflects all the wrong a mortal can do.</p><dl class="codex-race__stats"><dt>Ability Scores</dt><dd>+2 and +1 -or- +1 to each from Constitution, Intelligence, and Charisma</dd><dt>Origin Feat</dt><dd>Magic Initiate (Wizard)</dd><dt>Skills</dt><dd>Deception, Stealth</dd><dt>Tools</dt><dd>Tool of your choice</dd><dt>Equipment</dt><dd>Bronze mirror, Saltwater, flasks of, Traveler&#x27;s Clothes, Belt pouch (with coins), 10 GP</dd></dl><ul class="codex-race__traits"><li><strong>Embodiment of Wrong</strong>: Every aswang embodies a society&#x27;s most sinister desires. Yours manifests as one of Irreverence, Uncleanliness, Dishonesty, Violence, Greed, or Gluttony.</li></ul><p class="eq-meta">Islands of Sina Una, p.202</p></div></details>
           </div>
         </div>
-
-        <!-- Subclasses -->
-        <div class="codex-panel" id="codex-subclasses" role="tabpanel" hidden>
-          <p class="codex-panel__intro">Twelve Sina Una subclasses for the standard 2024 PHB classes. Each is chosen at Level 3. Click a subclass to view its features.</p>
-          <div class="codex-entries codex-entries--races">
-
-            <div class="codex-subclass-group"><span>Barbarian</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Barbarian <span class="codex-race__sub" style="display:inline">Path of the Black River</span></span>
-                <span class="codex-race__tag codex-race__tag--blindsight">Black River</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Bound to the restless current that flows between life and death, these barbarians rage with water in their veins. They strike with the rhythm of the tide, and return to where it began.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Isolation of the Soul</strong> <em>(Lv 3, Str mod / short rest)</em>: On a hit while Raging, force a Wis save (DC 8 + Wis modifier + Proficiency Bonus). Undead auto-fail. On a failure: the target loses all sight beyond 30 ft (including tremorsense and blindsight); each subsequent hit against it while the effect lasts restores HP equal to your Proficiency Bonus. Only one creature can be under this effect at a time.</li>
-                  <li><strong>Treading Rampage</strong> <em>(Lv 6, Reaction)</em>: When you gain the Blinded, Charmed, Deafened, Frightened, Paralyzed, or Poisoned condition, use your Reaction: lose HP equal to 1d6 + your Proficiency Bonus to end that condition immediately. At Lv 10, also applies to Petrified and Stunned, at a cost of 2d6 + your Proficiency Bonus HP.</li>
-                  <li><strong>Living Tide</strong> <em>(Lv 10, 1 / long rest)</em>: Cast Dimension Door. You can bring more passengers than normal; each additional willing creature beyond the first costs you HP equal to your Str modifier.</li>
-                  <li><strong>Burial Shroud</strong> <em>(Lv 14)</em>: While Raging, you take on a spectral appearance. Your movement no longer provokes Opportunity Attacks. You can move through creatures and objects (treating them as difficult terrain). If you end your turn inside a creature, it takes 4d6 Psychic damage and is forcibly moved to the nearest unoccupied space within 5 ft. The first creature you hit with a melee weapon attack on each of your turns must make a Con save (DC 8 + Proficiency Bonus + Wis modifier) or have its HP maximum reduced by 1d6 + half your Barbarian level. A creature whose HP maximum reaches 0 this way can only be restored by a Wish spell.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Bard</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Bard <span class="codex-race__sub" style="display:inline">College of Siday</span></span>
-                <span class="codex-race__tag codex-race__tag--gilded">Folkloric Epics</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Keepers of the folkloric epics of Salong-Salong, the Siday bard carries the songs that outlast empires. Their verses bolster the brave and lift the footsteps of heroes past.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Noble Fortitude</strong> <em>(Lv 3)</em>: Two benefits. <em>Enduring Performer</em>: for determining the penalty to your D20 Tests from Exhaustion, treat your Exhaustion level as one lower. <em>Shared Endurance</em>: when you finish a Short Rest, you and each creature of your choice within 60 ft that can hear you regains extra HP equal to your Cha modifier, provided it spent at least one Hit Die during that rest.</li>
-                  <li><strong>Folkloric Epics</strong> <em>(Lv 3, Bonus Action)</em>: Expend a Bardic Inspiration die and begin performing (lasts 1 minute; you cannot cast Concentration spells while performing). Choose one epic: <em>Poem of the Ancients</em> (allies within 15 ft add your Cha modifier, min 1, to attack rolls); <em>Tale of the Warriors</em> (once per turn, one ally within 15 ft adds your Bard level in Force damage to a successful attack); <em>Visage of the Sun</em> (allies within 15 ft gain +1 AC; hostile melee attackers must make a Con save vs your spell DC or be Blinded).</li>
-                  <li><strong>Bolstering Verse</strong> <em>(Lv 6, Cha mod / long rest)</em>: While performing, creatures within 15 ft (including you) have Advantage on saves against Charmed and Frightened. Cast Enhance Ability without a spell slot or material components, Cha modifier uses per long rest.</li>
-                  <li><strong>The Footsteps of Heroes</strong> <em>(Lv 14)</em>: While performing: you have Resistance to all damage; you have Advantage on Dexterity saving throws; once per turn, when a friendly creature within 15 ft who is affected by your performance misses with a weapon attack, you can make it hit instead.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Cleric</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Cleric <span class="codex-race__sub" style="display:inline">Volcano Domain</span></span>
-                <span class="codex-race__tag codex-race__tag--fire">Pyroclasm</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Servants of the fire that sleeps beneath the islands, these clerics channel the wrath and renewal of the volcanoes. Where they walk, the earth remembers what it once was.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Domain Spells</strong> <em>(Lv 3)</em>: Always prepared and not counted against your prepared total: create or harden lava, purify food and drink, lesser restoration, molten shell, beacon of hope, eruption, control lava, fire shield, greater restoration, volcanic wall. These count as Cleric spells for you.</li>
-                  <li><strong>Volcanic Calling</strong> <em>(Lv 3)</em>: You know the Light and Mending cantrips. Gain proficiency in one of: Medicine, Nature, or Survival.</li>
-                  <li><strong>Channel Divinity: Pyroclasm</strong> <em>(Lv 3, Action)</em>: Expend your Channel Divinity. Hostile creatures within 15 ft make a Dex save (spell DC); on a failure they take 3d6 + your Cleric level Fire damage, half on a success. Friendly creatures within 15 ft regain HP equal to your Cleric level.</li>
-                  <li><strong>Revitalize and Renew</strong> <em>(Lv 6)</em>: When you score a critical hit, one creature within 30 ft regains HP equal to half the damage dealt by the critical hit.</li>
-                  <li><strong>Igneous Scion</strong> <em>(Lv 17, Action, 1 / long rest)</em>: Emanate a 30 ft aura for 1 minute. Hostile creatures make a Con save at the start of each of their turns or are Stunned until the start of their next turn. You and allies within the aura gain +2 AC. Beacon of Hope activates immediately for the aura's duration (no spell slot or Concentration required).</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Druid</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Druid <span class="codex-race__sub" style="display:inline">Circle of Tides</span></span>
-                <span class="codex-race__tag codex-race__tag--craft">Adaptation</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Attuned to the ebb and flow of coast and river, the Circle of Tides druid adapts to any terrain like water to its vessel. What shape they take depends on where the tide takes them.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Quiet Undercurrent</strong> <em>(Lv 3, Action)</em>: Commune with the land for 1 hour. While active: you cannot be Surprised; you and allies within 15 ft ignore difficult terrain; you and those allies add your Wis modifier to Stealth checks in natural terrain; you gain Resistance to one damage type of your choice (Acid, Cold, Fire, Lightning, or Thunder). Ends if you are Incapacitated.</li>
-                  <li><strong>Adaptation</strong> <em>(Lv 3, Action, expend Wild Shape)</em>: Expend a Wild Shape use to apply one of the following effects to a chosen creature (can be yourself): <em>Alacrity</em> (Bonus Action to Dodge); <em>Balm</em> (automatically succeed on the first death saving throw made at 0 HP); <em>Earthquake</em> (gain Tremorsense 60 ft); <em>Shell</em> (gain +1 AC per 2 points of Wis modifier, min +1); <em>Tidal Wave</em> (at the end of your turn, creatures within 5 ft make a Con save vs your spell DC or take 1d8 + your Druid level Force damage).</li>
-                  <li><strong>Ebb and Flow</strong> <em>(Lv 6, Reaction, Wis mod / short rest)</em>: When you are hit by an attack, use your Reaction: take no damage from it and regain HP equal to half the damage it would have dealt (rounded up).</li>
-                  <li><strong>Shifting Sands</strong> <em>(Lv 10)</em>: After rolling initiative but before the first round begins, swap your initiative count with that of one hostile creature you can see.</li>
-                  <li><strong>Increased Adaptation</strong> <em>(Lv 14)</em>: When you use Adaptation, also choose one additional option: <em>Regrowth</em> (end one condition on the chosen creature; it is immune to that condition for the effect's duration); <em>Roots</em> (the creature disappears into the earth and may emerge in any unoccupied space within 30 ft, with Advantage on its first attack after emerging); <em>Wind</em> (grant a Fly Speed equal to the creature's walking speed, or increase an existing Fly Speed by 15 ft).</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Fighter</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Fighter <span class="codex-race__sub" style="display:inline">Kawal</span></span>
-                <span class="codex-race__tag codex-race__tag--immovable">Guardian</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Sworn protectors of sitio and kin, the Kawal fighter stands where others fall. Their shield bears the weight of loyalty, and their defense is legend.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Steadfast Protector</strong> <em>(Lv 3)</em>: You have Advantage on checks and saving throws against being Grappled, Poisoned, Pushed, or Restrained. Second Wind always heals its maximum possible value.</li>
-                  <li><strong>Guardian Roar</strong> <em>(Lv 3, Bonus Action, 1 / short rest)</em>: Up to 3 creatures within 30 ft make a Wis save (DC 8 + Proficiency Bonus + Con modifier). On a failure: Disadvantage on attacks against targets other than you for 1 minute. On a success: Disadvantage until the end of your next turn.</li>
-                  <li><strong>Counter Destruction</strong> <em>(Lv 7, Reaction, Con mod / short rest)</em>: When you take damage, use your Reaction and make a Con save (DC = 10 or half the damage taken, whichever is higher). On a success: take no damage and reflect the full damage back at the source.</li>
-                  <li><strong>Resolute Loyalty</strong> <em>(Lv 10)</em>: You are immune to the Charmed and Frightened conditions. You can take up to 2 Reactions per turn.</li>
-                  <li><strong>Warrior's Legacy</strong> <em>(Lv 15, Reaction, 1 / long rest)</em>: When you are targeted by an attack, activate for 1 minute: add your Proficiency Bonus to weapon damage rolls; you and allies within 10 ft gain +1 AC; you and allies within 10 ft have Advantage on Str, Dex, and Con saving throws.</li>
-                  <li><strong>Peerless Defense</strong> <em>(Lv 18)</em>: You can take up to 3 Reactions per turn.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Monk</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Monk <span class="codex-race__sub" style="display:inline">Way of Kaluluwa</span></span>
-                <span class="codex-race__tag codex-race__tag--blindsight">Schism of Self</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Walkers of the boundary between flesh and soul, the Kaluluwa monk lives in two worlds at once. Their discipline is the balance between what the body holds and what the spirit yearns for.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Temperament of the Soul</strong> <em>(Lv 3)</em>: Your unarmed strikes deal Psychic damage instead of Bludgeoning.</li>
-                  <li><strong>Schism of Self</strong> <em>(Lv 3, Action, 2 Focus Points, 1 / short rest)</em>: Manifest your soul in an unoccupied space within 5 ft of you. The soul is a translucent copy sharing your speed, AC, size, and saving throw bonuses, drawing from the same HP pool. Your physical form acts on your Action; the soul acts on your Bonus Action (or vice versa). The soul can use your Reaction. While both are within 10 ft of each other: Advantage on attack rolls and Str/Dex skill checks. Lasts 1 minute or until you are Incapacitated.</li>
-                  <li><strong>Diversion of Magic</strong> <em>(Lv 6, Reaction)</em>: When you are hit by a ranged spell attack, reduce the damage by 1d10 + your Wis modifier + your Monk level. Spend additional Focus Points to add +1d10 each.</li>
-                  <li><strong>Refinement of Aspects</strong> <em>(Lv 11, Bonus Action, 1 Focus Point)</em>: While your physical form and soul are split, spend 1 Focus Point and choose one benefit until the start of your next turn: <em>Refinement of the Soul</em>, in which your <strong>soul</strong> gains resistance to Fire, Lightning, Cold, Thunder, Radiant, and Necrotic damage; or <em>Refinement of the Body</em>, in which your <strong>physical form</strong> gains resistance to Piercing, Slashing, Bludgeoning, Poison, Acid, Force, and Psychic damage.</li>
-                  <li><strong>Untethered Forms</strong> <em>(Lv 17, 3 Focus Points)</em>: At the start of your turn while your soul is manifested, spend 3 Focus Points: both your physical form and your soul each gain their own Action, Bonus Action, and Reaction for that round.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Paladin</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Paladin <span class="codex-race__sub" style="display:inline">Oath of Blood</span></span>
-                <span class="codex-race__tag codex-race__tag--fire">Sanguine Light</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Those who have sworn their own blood as the price of protection. Their light shines brightest where they bleed for others.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Channel Divinity: My Shield Is For Others</strong> <em>(Lv 3, Reaction)</em>: Designate one ally. For 1 minute: whenever a creature within your movement speed targets that ally, use your Reaction to move toward the attacker and make one melee weapon attack against it.</li>
-                  <li><strong>Channel Divinity: Under My Light</strong> <em>(Lv 3, Bonus Action)</em>: Grant one ally Temp HP equal to 2d8 + your Paladin level.</li>
-                  <li><strong>Sanguine Light</strong> <em>(Lv 7, aura 10 ft)</em>: Each time an ally within 10 ft takes damage, your next successful attack deals +3 damage (cumulative for each ally hurt; resets when you land a hit). Expands to 30 ft at Lv 18.</li>
-                  <li><strong>Resilient Guardian</strong> <em>(Lv 15, Action, 1 / short rest)</em>: Designate one ally. For 1 minute, while both you and that ally are below half your respective HP maximums at the end of your turn, you both automatically regain HP equal to 2d8 + your Paladin level.</li>
-                  <li><strong>Sanguine Light (30 ft)</strong> <em>(Lv 18)</em>: Your Sanguine Light aura expands to a 30 ft radius.</li>
-                  <li><strong>Avatar of Sacrifice</strong> <em>(Lv 20, Bonus Action, 1 / long rest)</em>: Activate for 1 minute. While active: you may use Dex or Con saving throws as Cha saving throws with Advantage; spend a Bonus Action to lose 10 HP and regain one use of Channel Divinity; your Divine Smite spell slots are treated as one level higher.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Ranger</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Ranger <span class="codex-race__sub" style="display:inline">Mangangayaw</span></span>
-                <span class="codex-race__tag codex-race__tag--verdant">Innate Speech</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Scouts, speakers, and strikers of the wilds. The Mangangayaw reads the land in languages few still remember, and their march rarely ends.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Innate Speech</strong> <em>(Lv 3)</em>: Gain proficiency in one of: Deception, Intimidation, or Persuasion (your choice). Any Charisma ability check you make can use Wisdom instead.</li>
-                  <li><strong>Striker's March</strong> <em>(Lv 3)</em>: When you are targeted by an attack, your speed increases by 15 ft until the end of your next turn. While this speed increase is active: your movement does not provoke Opportunity Attacks; you may reroll one weapon attack roll.</li>
-                  <li><strong>Lowering Strikes</strong> <em>(Lv 7, Wis mod / short rest)</em>: Once per turn on a successful weapon attack, inflict a bleeding strike. The target takes extra damage immediately (1d4 at Lv 7, 2d4 at Lv 11, 3d4 at Lv 15) and takes the same extra damage at the start of each of its turns until it uses its action to staunch the bleeding.</li>
-                  <li><strong>Undertow</strong> <em>(Lv 11, Reaction)</em>: Dragging, pushing, or lifting objects no longer reduces your speed. When you are subjected to a Dex or Con saving throw that deals half damage on a success, use your Reaction: move up to your full speed and shield one creature you choose. You automatically fail the save, but the shielded creature takes none of the damage.</li>
-                  <li><strong>Eternal March</strong> <em>(Lv 15)</em>: You are permanently under the effect of Striker's March (+15 ft speed, no Opportunity Attacks from movement, reroll one attack per turn). While wearing Medium Armor, add your Wis modifier to your AC.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Rogue</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Rogue <span class="codex-race__sub" style="display:inline">Graverobber</span></span>
-                <span class="codex-race__tag codex-race__tag--giant">Cursed Magic</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Those who barter with the restless dead for power stolen from their graves. The curses they carry come with a price, but so does the knowledge.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Cursed Magic</strong> <em>(Lv 3)</em>: Learn 3 Warlock cantrips (4th at Lv 9). Cha-based. Spell save DC = 10 + Proficiency Bonus + Cha modifier; spell attack modifier = Proficiency Bonus + Cha modifier. <em>(The 10 is the sourcebook's printed formula, unusual and unique in 5.5e, verified against the page and ruled to stand.)</em></li>
-                  <li><strong>Anathema</strong> <em>(Lv 3)</em>: After using Cunning Action on your turn (if you have not dealt Sneak Attack damage this turn), target a creature within 30 ft. It makes a Wis save (spell DC). On a failure: take Sneak Attack damage. On a success: take half. Choose one manifestation when you take this subclass: <em>Pestilence</em> (Poison damage), <em>Avarice</em> (Psychic damage), or <em>Destruction</em> (Force damage).</li>
-                  <li><strong>Eldritch Secrets</strong> <em>(Lv 9)</em>: Gain a 4th cantrip. Additional benefit based on your Anathema: <em>Pestilence</em>: Advantage on saves against Poisoned; ignore poison resistance and immunity; cast Stinking Cloud 1 / short rest. <em>Avarice</em>: Gain proficiency in Wis saves (or Con/Cha if already proficient in Wis); cast Haste on yourself 1 / short rest. <em>Destruction</em>: Resistance to nonmagical Bludgeoning, Piercing, and Slashing; cast Lightning Bolt 1 / short rest.</li>
-                  <li><strong>Afflict Ruin</strong> <em>(Lv 13, Bonus Action, 1 / short rest)</em>: Place a ruinous curse on a creature within 30 ft for 1 minute. While cursed: you score critical hits against it on a roll of 19 or 20; it has Disadvantage on saves against your Anathema; when you deal Anathema damage to it, use your Reaction to regain HP equal to half the damage dealt. If the cursed creature drops to 0 HP, the curse transfers to another creature of your choice within 30 ft.</li>
-                  <li><strong>Shroud of Desecration</strong> <em>(Lv 17)</em>: Additional effect based on your Anathema: <em>Pestilence</em>: Reaction when you hit with a weapon attack, the target makes a Con save or takes 3d6 Poison damage and is Paralyzed until the end of its next turn. <em>Avarice</em>: Reaction when you are hit by an attack, redirect that attack to a creature within 30 ft (Wis save, fail = full damage transferred to that creature). <em>Destruction</em>: Your Anathema feature also hits all creatures of your choice within 10 ft of the primary target; each makes a Dex save or takes 6d6 Force damage.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Sorcerer</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Sorcerer <span class="codex-race__sub" style="display:inline">Diwata Bloodline</span></span>
-                <span class="codex-race__tag codex-race__tag--verdant">Spirit Icon</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Born with the spark of a diwata's blood, these sorcerers carry the spirit of the land in their veins. Where they walk, the wilderness answers back.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Spirit's Cunning</strong> <em>(Lv 3)</em>: Gain proficiency in Nature and the Sylvan language. You have Advantage on all Charisma skill checks made toward creatures that understand Sylvan.</li>
-                  <li><strong>Sorcerous Nature</strong> <em>(Lv 3)</em>: When you learn or replace a cantrip or spell, you may choose from the Druid spell list instead of the Sorcerer list.</li>
-                  <li><strong>Icon of the Spirit</strong> <em>(Lv 6, Bonus Action, 2 Sorcery Points, 1 / long rest)</em>: Summon a spectral Icon in an unoccupied space within 30 ft. It is immune to all damage and cannot be dispelled. While within 30 ft of the Icon: your Touch spells can target any creature within 30 ft of the Icon instead. Spend 1 Sorcery Point per turn as a free action to maintain it.</li>
-                  <li><strong>Icon's Territory</strong> <em>(Lv 14)</em>: While within 30 ft of your Icon, your movement can teleport you to any unoccupied space within 30 ft of the Icon (does not provoke Opportunity Attacks).</li>
-                  <li><strong>One with Nature</strong> <em>(Lv 18, + 5 Sorcery Points when summoning Icon)</em>: For the Icon's duration: you are immune to Bludgeoning, Piercing, and Slashing damage and cannot lose Concentration from damage; at the start of your turn, you and allies within 30 ft of you or your Icon regain 1d8 + Cha modifier HP; hostile creatures within 30 ft of you or your Icon make a Wis save at the start of their turn or are Frightened until the start of their next turn.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Warlock</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Warlock <span class="codex-race__sub" style="display:inline">Mooneater Patron</span></span>
-                <span class="codex-race__tag codex-race__tag--giant">Devourer</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Bound to the ancient hunger that eats the moon, these warlocks wield the terror of cosmic appetites. What they devour, they remember.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Patron Spells</strong>: Inflict Wounds, Thunderwave, Enlarge/Reduce, Pass Without Trace, Call Lightning, Water Walk, Dominate Beast, Phantasmal Killer, Planar Binding, Telekinesis.</li>
-                  <li><strong>Celestial Yearning</strong> <em>(Lv 3)</em>: Add your Charisma modifier to initiative rolls.</li>
-                  <li><strong>Agent of Destruction</strong> <em>(Lv 3)</em>: Gain a pool of d6s equal to 1 + your Warlock level (recover on Long Rest). Once per turn on a weapon or spell attack roll, spend up to your Cha modifier in dice. Add the total as Force damage to that attack.</li>
-                  <li><strong>Devour Essence</strong> <em>(Lv 6, Bonus Action, 1 / short rest)</em>: When a creature dies within 60 ft, absorb its essence. For 1 minute: Resistance to Bludgeoning, Piercing, and Slashing; add half your Warlock level to attack rolls; add your Cha modifier to damage rolls for spells that require saving throws.</li>
-                  <li><strong>Eclipsing Fear</strong> <em>(Lv 10, Reaction)</em>: You are immune to the Frightened condition. When a creature attempts to Frighten you, use your Reaction: it makes a Cha save (spell DC). On a failure: takes Psychic damage equal to your Warlock level and is Frightened of you for 1 minute. On a success: takes half and is not Frightened.</li>
-                  <li><strong>Cataclysmic Hunger</strong> <em>(Lv 14, Action, 1 / long rest)</em>: You have Advantage on initiative rolls. On the first turn of combat, target a number of creatures equal to your Cha modifier that have not yet acted. Each makes a Con save. On a failure: 8d8 Force damage. On a success: half.</li>
-                </ul>
-                <p class="codex-race__subtitle">Mooneater Eldritch Invocations:</p>
-                <ul class="codex-race__traits">
-                  <li><strong>The Crab's Wrath</strong> <em>(Reaction, 1 / short or long rest)</em>: On rolling initiative, conjure ethereal armor for 1 minute. Your AC = 10 + Dex modifier + Cha modifier regardless of armor worn; gain a Swim Speed equal to your walk speed. After taking the Attack action, use your Bonus Action to make a spectral claw attack (melee spell attack, 5 ft): 2d6 magical Bludgeoning (Lv 1-4), 3d6 (Lv 5-10), 4d6 (Lv 11-16), 5d6 (Lv 17+).</li>
-                  <li><strong>The Eagle's Rapacity</strong> <em>(Action, 1 / long rest)</em>: Sprout two sharp spectral wings for 1 minute; Fly Speed = half your movement speed. Immediately after summoning the wings, and as a Bonus Action on subsequent turns, dagger-sharp feathers burst from your form: creatures within 5 ft make a Dex save (spell DC) or take magical Piercing damage: 1d8 (Lv 1-4), 2d8 (Lv 5-10), 3d8 (Lv 11-16), 4d8 (Lv 17+).</li>
-                  <li><strong>The Lion's Revelry</strong>: Gain Acrobatics proficiency. Bonus Action to Dash. After Dashing: creatures in a 15 ft cone make a Con save (spell DC) or take Thunder damage: 2d4 (Lv 1-4), 3d4 (Lv 5-10), 4d4 (Lv 11-16), 6d4 (Lv 17+).</li>
-                  <li><strong>The Serpent's Ire</strong> <em>(Reaction, 1 / short or long rest)</em>: You gain proficiency in Intimidation. On rolling initiative, summon a terrifyingly beautiful visage for 1 minute. While it lasts: gain Temp HP equal to your Warlock level; once per turn add your Proficiency Bonus to the damage of a weapon attack or spell; and when a creature that can see you starts its turn within 30 ft, use your Reaction to force a Wis save (spell DC). On a failure it takes Psychic damage equal to your Cha modifier + Warlock level and is Frightened of you until the visage ends; on a success, half damage and no fright.</li>
-                  <li><strong>The Spider's Cunning</strong>: Gain proficiency in 2 skills of your choice. Bonus Action: target a creature within 30 ft, it makes a Dex save (spell DC) or is Restrained. A Restrained creature uses its action to retry the save.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="codex-subclass-group"><span>Wizard</span></div>
-            <details class="codex-race">
-              <summary class="codex-race__summary">
-                <span class="codex-race__title">Wizard <span class="codex-race__sub" style="display:inline">Mentala</span></span>
-                <span class="codex-race__tag codex-race__tag--human">Kawayang Papel</span>
-                <span class="codex-race__chevron" aria-hidden="true">▾</span>
-              </summary>
-              <div class="codex-race__body">
-                <p class="codex-race__flavor">Scribes and keepers of kawayang papel, bamboo-paper magic worked as ink and will. Their durability comes from discipline; their power, from the script.</p>
-                <ul class="codex-race__traits">
-                  <li><strong>Durability</strong> <em>(Lv 3)</em>: While not wearing armor, your AC = 10 + Dex modifier + Int modifier. Add your Int modifier (min +1) to Constitution saving throws to maintain Concentration.</li>
-                  <li><strong>Shared Scrolls</strong> <em>(Lv 3, Int mod / long rest)</em>: During a Long Rest, scribe bamboo scrolls (kawayang papel). Number = your Int modifier. The total combined levels of all spells on your scrolls may not exceed half your Wizard level (rounded down; cantrips count as 0). A creature activates a scroll using your spell attack modifier and spell save DC. Scrolls are destroyed on use or when you use the Utilize action on them.</li>
-                  <li><strong>Scribe's Malediction</strong> <em>(Lv 6, Action, 1 / short rest)</em>: Choose a number of creatures equal to your Int modifier within range. Each takes 2d4 Psychic damage and makes a Wis save (spell DC). On a failure: cursed for 1 hour, rolling 1d6 and subtracting the result from all attack rolls and saving throws.</li>
-                  <li><strong>Bendable Magic</strong> <em>(Lv 10, Int mod / long rest)</em>: When you cast a spell, apply one alteration: <em>Potency</em> (ignore resistances; immunities take half damage); <em>Field</em> (increase area of effect by 10 ft); or <em>Distance</em> (Touch spells target creatures within 60 ft instead).</li>
-                  <li><strong>Primordial Conduit</strong> <em>(Lv 14, Bonus Action, 1 / long rest)</em>: After casting a spell of 1st level or higher, activate for 1 minute. All of the following occur simultaneously for the duration: <em>Radiant Aura</em> (at the start of your turn, hostile creatures within 10 ft make a Con save against your spell save DC, taking 4d8 Radiant damage on a failure and half as much on a success); <em>Velocity</em> (your speed is doubled and you gain a Fly Speed of 30 ft); <em>Life's Flow</em> (Reaction: when a creature you can see within 30 ft drops to 0 HP, immediately restore HP equal to your Wizard level to that creature).</li>
-                </ul>
-              </div>
-            </details>
-
+        <h3 class="npc-section-label" data-section="localized">Isinalin &middot; Localized Backgrounds</h3>
+        <div class="eq-section" data-section="localized">
+          <p class="codex-panel__intro">Twelve standard backgrounds as they are known in the islands. The flavor is ours; the mechanics are the standard 2024 ones, unchanged. Use the rules for the background named in brackets.</p>
+          <div class="codex-entries">
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Timawa <span class="codex-race__sub" style="display:inline">(Soldier)</span></span><span class="codex-race__tag codex-race__tag--craft">Savage Attacker</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You are timawa, sworn to a datu. You defend, you enforce what has been decided, and in return you hold a share of your datu&#x27;s patronage and a place in the order of things. You came by your weapons honestly and you have used them. The oath is not ceremony, it is the arrangement your whole standing rests upon.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Savage Attacker</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Soldier</strong> background (2024 Player&rsquo;s Handbook, p.185). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Maginoo <span class="codex-race__sub" style="display:inline">(Noble)</span></span><span class="codex-race__tag codex-race__tag--craft">Skilled</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You were born maginoo, into the lineage a settlement measures itself by. Your kin sit in the torogan, raised above the ground on its great pillars, and the elder council listens when you speak. You learned the bow that is owed to a datu, and the exact courtesy owed by everyone standing below one. Whatever else you lose, the name stays.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Skilled</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Noble</strong> background (2024 Player&rsquo;s Handbook, p.183). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Sirot <span class="codex-race__sub" style="display:inline">(Criminal)</span></span><span class="codex-race__tag codex-race__tag--craft">Alert</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">A fine was set against you that no amount of coin or trade could ever cover. That is how it is done in the islands: the datu weighs the crime, names the price, and the price is meant to be beyond you. So you became sirot, your debt worked off in service rather than settled in silver. You know exactly what your freedom costs, down to the day.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Alert</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Criminal</strong> background (2024 Player&rsquo;s Handbook, p.179). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Tanod <span class="codex-race__sub" style="display:inline">(Guard)</span></span><span class="codex-race__tag codex-race__tag--craft">Alert</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You stood the watch. Every settlement worth the name keeps a bantayan raised above the treeline, and somebody has to be in it while the rest of the village sleeps. You learned the difference between a fishing boat and a raiding boat at distance, and the difference between a dog barking at nothing and a dog barking at an aswang. Nothing came ashore on your nights.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Alert</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Guard</strong> background (2024 Player&rsquo;s Handbook, p.181). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Alagad <span class="codex-race__sub" style="display:inline">(Acolyte)</span></span><span class="codex-race__tag codex-race__tag--craft">Magic Initiate (Cleric)</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You served at the side of a babaylan, an attendant to one who speaks with the spirits. Yours were the small and constant duties: keeping the spirit house swept, laying out betel nut and wine at the altar, holding the bowl while the offerings were made. You learned the shape of every rite by repetition long before you understood its meaning, and in time the spirits grew used to your presence as well.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Magic Initiate (Cleric)</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Acolyte</strong> background (2024 Player&rsquo;s Handbook, p.178). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Magsasaka <span class="codex-race__sub" style="display:inline">(Farmer)</span></span><span class="codex-race__tag codex-race__tag--craft">Tough</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You worked ground that had to be asked before it could be broken. Rice in the wet season, taro and sago when the rains failed, and an offering left at the field&#x27;s edge every time either one came in. Farming in the islands is a bargain struck with whatever lives in the soil, and you held up your end of it for years. You can read a sky, a tide and a stubborn carabao equally well.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Tough</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Farmer</strong> background (2024 Player&rsquo;s Handbook, p.180). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Gabay <span class="codex-race__sub" style="display:inline">(Guide)</span></span><span class="codex-race__tag codex-race__tag--craft">Magic Initiate (Druid)</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You know the ways between places. Not the sea lanes, which belong to voyagers, but the land: which ridge is passable after rain, which river crossing has moved, which grove you walk around rather than through. Half of guiding is knowing the route and the other half is knowing whose permission to ask along it. You have never lost anyone who listened to you.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Magic Initiate (Druid)</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Guide</strong> background (2024 Player&rsquo;s Handbook, p.181). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Lagalag <span class="codex-race__sub" style="display:inline">(Wayfarer)</span></span><span class="codex-race__tag codex-race__tag--craft">Lucky</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You never stayed. Port to port, island to island, sleeping under other people&#x27;s roofs and moving on before the welcome thinned. You have chewed betel with strangers on six shores and picked up the local courtesies well enough to pass in each. Ask you about anywhere in the islands and you will have been near it, if not through it.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Lucky</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Wayfarer</strong> background (2024 Player&rsquo;s Handbook, p.185). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Mananayaw <span class="codex-race__sub" style="display:inline">(Entertainer)</span></span><span class="codex-race__tag codex-race__tag--craft">Musician</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">When the kulintang starts, the crowd makes room for you. You have danced at harvest feasts and at funerals, for visiting datus and for spirits who were owed an apology. Your body knows the steps for each occasion the way other people know prayers. Give you a gathering of any size and you will have them watching before the first verse is out.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Musician</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Entertainer</strong> background (2024 Player&rsquo;s Handbook, p.180). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Manunulat <span class="codex-race__sub" style="display:inline">(Scribe)</span></span><span class="codex-race__tag codex-race__tag--craft">Skilled</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You are one of the few who commits things to a surface that outlasts the telling. Most law here lives in memory, handed down and argued over between generations, and there are those who think writing it down is a kind of distrust. You keep the records anyway: debts, boundaries, judgments, the terms of a settlement&#x27;s agreements. Memory bends, and you have watched it bend towards whoever spoke last.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Skilled</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Scribe</strong> background (2024 Player&rsquo;s Handbook, p.184). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Mangangatha <span class="codex-race__sub" style="display:inline">(Charlatan)</span></span><span class="codex-race__tag codex-race__tag--craft">Skilled</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You make things that are almost true. A story polished until it fits the listener, a mark of ownership on a jar that was never owned, a lineage recited with such confidence that nobody thinks to question it. You were never idle-handed about it either, and you can produce a convincing seal or a convincing smile wherever one is wanted. Most of what you have ever owned, you talked your way into.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Skilled</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Charlatan</strong> background (2024 Player&rsquo;s Handbook, p.179). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Ermitanyo <span class="codex-race__sub" style="display:inline">(Hermit)</span></span><span class="codex-race__tag codex-race__tag--craft">Healer</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You left. There was a spirit house far up the valley that nobody had tended in living memory, and you went to it and stayed. Years of quiet, of offerings made on behalf of a community that was not there, of listening to something that answered slowly if it answered at all. You came back down carrying an understanding you still cannot explain to anyone who did not sit through the silence with you.</p><dl class="codex-race__stats"><dt>Origin Feat</dt><dd>Healer</dd><dt>Mechanics</dt><dd>Identical to the standard <strong>Hermit</strong> background (2024 Player&rsquo;s Handbook, p.182). Ability scores, skills, tools and starting equipment are unchanged, and are not reprinted here.</dd></dl></div></details>
           </div>
         </div>
+        </div>
+        <!-- END GENERATED: backgrounds -->
+
+        <!-- GENERATED: feats, from build_rules_pages.py. Do not hand-edit. -->
+        <div class="codex-panel" id="codex-feats" role="tabpanel" hidden>
+        <h3 class="npc-section-label" data-section="feats">Mga Kakayahan &middot; Setting Feats</h3>
+        <div class="eq-section" data-section="feats">
+          <p class="codex-panel__intro">Five feats unique to Sina Una. All are General feats: the prerequisite is level 4 plus whatever else is listed.</p>
+          <div class="codex-entries">
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Adept Conduit</span><span class="codex-race__tag codex-race__tag--craft">Spirit Dice</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have petitioned the unseen spirits and, with patient offerings and communion, learnt to channel their power through yourself.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4 and the ability to cast at least one spell</dd></dl><ul class="codex-race__traits"><li><strong>Ability Score Increase</strong>: Increase your Intelligence score by 1, to a maximum of 20.</li><li><strong>Borrowed Cantrip</strong>: You learn one cantrip from the babaylan spell list. Intelligence is your spellcasting ability for it.</li><li><strong>Spirit Dice</strong>: You gain two Spirit Dice (d4s), which add to any Spirit Dice you have from another source. When you cast a spell, you can expend them on the conduit options of the babaylan&#x27;s Spirit Conduit feature. You regain all expended Spirit Dice on a Long Rest.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Cannoneer</span><span class="codex-race__tag codex-race__tag--craft">Ignore Loading</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">Through extensive practice, you have mastered the firepower of the islands&#x27; cannons.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4 and proficiency with lantakas or astinggals</dd></dl><ul class="codex-race__traits"><li><strong>Ignore Loading</strong>: You ignore the loading property of lantakas and astinggals.</li><li><strong>Firing in Melee</strong>: Being within 5 feet of a hostile creature does not impose disadvantage on your ranged attack rolls.</li><li><strong>Enhanced Critical</strong>: You can roll one additional weapon damage die when determining the extra damage for a critical hit with a lantaka or an astinggal.</li></ul><p class="eq-note"><strong>House note:</strong> As printed, this feat covers lantakas only. The owner widened it to the astinggal so both firearms have feat support. Book feat, widened by ruling.</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Headhunting Master</span><span class="codex-race__tag codex-race__tag--craft">Bunang Master</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">The bunang answers to you in both of its aspects, blade and point alike.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Bunang Training</strong>: You gain proficiency with the bunang if you did not have it already, and you can ignore the weapon&#x27;s two-handed property.</li><li><strong>Pointed Side</strong>: When you use your Bonus Action to attack with the pointed side of the bunang, you add your ability modifier to the damage of the attack.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Oceanborne Warrior</span><span class="codex-race__tag codex-race__tag--craft">Swim Speed</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have become an expert in pursuing opponents through, and even beneath, treacherous waters.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Waterborne</strong>: You gain a swimming speed equal to your walking speed, and fighting underwater does not impose disadvantage on your weapon attack rolls.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Unrelenting Hunter</span><span class="codex-race__tag codex-race__tag--craft">Envenom</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have perfected the art of hunting creatures across the islands.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Ability Score Increase</strong>: Increase your Strength or Dexterity score by 1, to a maximum of 20.</li><li><strong>Hunter&#x27;s Kit</strong>: You gain proficiency with a hunter&#x27;s kit.</li><li><strong>Envenom</strong>: As a free action on your turn, you can apply a substance (poison, saltwater and the like) to one slashing or piercing melee weapon you are wielding, or to up to three pieces of ammunition.</li></ul></div></details>
+          </div>
+        </div>
+        </div>
+        <!-- END GENERATED: feats -->
 
       </div>
     </section>
@@ -753,7 +435,7 @@
     // ── KEYBOARD NAVIGATION FOR TABS ──
     (function() {
       var tabs = Array.from(document.querySelectorAll('.codex-tab'));
-      var tabIds = ['races', 'classes', 'subclasses'];
+      var tabIds = ['races', 'backgrounds', 'feats'];
       tabs.forEach(function(tab, i) {
         tab.setAttribute('tabindex', tab.classList.contains('codex-tab--active') ? '0' : '-1');
         tab.addEventListener('keydown', function(e) {

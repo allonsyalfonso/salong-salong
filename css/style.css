@@ -4321,3 +4321,121 @@ button:focus-visible {
   .eq-table tbody td { padding: 0.45rem 0.6rem; }
   .eq-derived td { padding-left: 1.2rem; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   CLASSES PAGE (classes.html) + PIXEL ART
+   Added 2026-08-05 with the owner restructure. Classes and subclasses
+   moved out of the codex into a 5etools-shaped page: sidebar block,
+   level 1-20 progression table, feature text, subclass sections.
+   ══════════════════════════════════════════════════════════════════ */
+.cls-block { margin-bottom: 3.25rem; }
+.cls-block--sub { margin-top: -1.5rem; }
+
+.cls-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(196,154,26,0.28);
+}
+.cls-head__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold-bright);
+  margin: 0 0 0.2rem;
+  letter-spacing: 0.03em;
+}
+.cls-head__flavor {
+  margin: 0;
+  color: var(--text-light);
+  font-style: italic;
+  opacity: 0.88;
+}
+
+/* Pixel art: never smooth, never fractional scale. */
+.cls-badge {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  flex: 0 0 auto;
+  display: block;
+}
+.eq-sprite {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+.codex-race__sub + .cls-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+/* Sidebar stat block */
+.cls-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0 0 1.6rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(26,6,0,0.4);
+  border: 1px solid rgba(196,154,26,0.2);
+  border-radius: var(--radius);
+}
+.cls-side__row {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.32rem 0;
+  border-bottom: 1px solid rgba(196,154,26,0.09);
+}
+.cls-side__row:last-child { border-bottom: none; }
+.cls-side dt {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0;
+  padding-top: 0.15rem;
+}
+.cls-side dd { margin: 0; color: var(--text-light); }
+
+/* Progression tables reuse .eq-table, with tighter numeric columns */
+.cls-table { min-width: 30rem; }
+.cls-table--wide { min-width: 52rem; }
+.cls-table td:first-child,
+.cls-table th:first-child { text-align: center; width: 2.6rem; }
+.cls-table td:nth-child(2) { text-align: center; }
+.cls-table--wide td:nth-child(n+5) { text-align: center; }
+.cls-table thead th:nth-child(n+5) { text-align: center; }
+
+.cls-house {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.05rem 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f0b73a;
+  background: rgba(240,183,58,0.12);
+  border: 1px solid rgba(240,183,58,0.35);
+  border-radius: 2px;
+}
+
+.cls-note {
+  margin: 0.7rem 0 1.6rem;
+  font-size: 0.88rem;
+  color: rgba(242,216,152,0.72);
+  font-style: italic;
+  border-left: 2px solid rgba(196,154,26,0.3);
+  padding-left: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .cls-side__row { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cls-head { gap: 0.7rem; }
+  .cls-head__name { font-size: 1.2rem; }
+}
