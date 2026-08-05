@@ -2,7 +2,7 @@
 **Project:** Static D&D lore site — `C:\Users\USER\Documents\GitHub\salong-salong\`
 **Live URL:** https://allonsyalfonso.github.io/salong-salong/
 **Stack:** Plain HTML / CSS / JS — no build system, no framework
-**Last updated:** 2026-03-30
+**Last updated:** 2026-08-05
 
 ---
 
@@ -23,14 +23,27 @@ salong-salong/
 ├── pc.html             ← Player character cards (Survived / Transformed / Fallen)
 ├── locations.html      ← Location detail pages
 ├── timeline.html       ← Era-based history timeline
-├── codex.html          ← Tabbed lore reference
+├── bestiary.html       ← Creatures (Creatures / Spirits / Elementals / Demons)
+├── distances.html      ← Travel-time tool
+├── calendar.html       ← In-world calendar
+├── codex.html          ← Tabbed rules reference: Races / Classes / Subclasses
+├── equipment.html      ← GENERATED. Armory, 116 items in 8 sections
+├── feats.html          ← GENERATED. 5 setting feats
+├── spells.html         ← GENERATED. 24 homebrew spells, by level
+├── backgrounds.html    ← GENERATED. 18 backgrounds (6 island + 12 localized)
 ├── chronicles.html     ← Letters/final words
 ├── epic.html           ← Full campaign story
 ├── glossary.html       ← Term definitions
-├── search.html         ← Site search
+├── search.html         ← Site search (hardcoded index, see below)
+├── 404.html
 ├── css/style.css       ← Single stylesheet for entire site
-└── js/dm.js            ← Scroll-reveal, parallax, ember canvas, DM modal logic
+└── js/
+    ├── dm.js           ← Scroll-reveal, parallax, ember canvas, DM modal logic
+    └── distances.js    ← Distance tool logic
 ```
+
+18 pages. The four marked GENERATED are built by scripts, not hand-edited.
+See "Generated pages" below before touching them.
 
 ---
 
@@ -94,73 +107,10 @@ Tooltip for Itinadhanang Ilog: `"Itinadhanang Ilog · Tubig"` (NOT River)
 
 ## Pending Tasks
 
-### 1. Map Marker Toggle Button
-Add an on/off toggle button overlaid on the map so players can hide all markers.
-
-**HTML** — insert inside `.map-frame`, after the last marker `</a>` and before `<p class="map-caption">`:
-```html
-<button
-  class="map-toggle-markers"
-  id="map-toggle-markers"
-  aria-label="Toggle map markers"
-  aria-pressed="true"
-  onclick="
-    const frame = this.closest('.map-frame');
-    const hidden = frame.classList.toggle('markers-hidden');
-    this.setAttribute('aria-pressed', String(!hidden));
-    this.querySelector('.map-toggle-markers__label').textContent = hidden ? 'Ipakita' : 'Itago';
-  "
->
-  <svg class="map-toggle-markers__icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
-  </svg>
-  <span class="map-toggle-markers__label">Itago</span>
-</button>
-```
-
-**CSS** — add to `style.css`:
-```css
-/* Map marker toggle button */
-.map-toggle-markers {
-  position: absolute;
-  top: 0.65rem;
-  right: 0.65rem;
-  z-index: 20;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.65rem 0.3rem 0.5rem;
-  background: rgba(10,7,4,0.72);
-  border: 1px solid rgba(196,154,26,0.28);
-  border-radius: 3px;
-  font-family: var(--font-display);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(232,168,32,0.85);
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-}
-.map-toggle-markers:hover {
-  background: rgba(196,154,26,0.14);
-  border-color: rgba(196,154,26,0.5);
-  color: var(--gold-light);
-}
-.map-toggle-markers:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-/* Hidden state */
-.map-frame.markers-hidden .map-marker {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-.map-frame:not(.markers-hidden) .map-marker {
-  transition: opacity 0.25s ease;
-}
-```
+None outstanding. (The Map Marker Toggle Button that sat here from 2026-03-30
+was in fact built and shipped; it is live in index.html and style.css under
+`.map-toggle-markers`. It stayed listed as pending for four months because this
+file was not updated. Do not re-implement it.)
 
 ---
 
@@ -305,3 +255,132 @@ function filterSection(section, btn) {
 | Map markers placed wrong | Positions are `%` of image width/height. Adjust in small increments (1–3%) |
 | h2 gets decorative side-lines | Comes from `.section-container h2::before/::after`. Suppress with `display:none` on the pseudo-elements |
 | Section label yellow-on-yellow | `.npc-section-label` bg is amber. Text must be `var(--text-dark)` not gold |
+
+
+---
+
+## Generated pages (added 2026-08-05)
+
+Four pages are built by scripts. Editing their HTML directly works until
+someone re-runs the generator, at which point the edit is silently overwritten.
+Change the generator instead.
+
+Generators live OUTSIDE this repo, in the source folder:
+`C:\Users\USER\Documents\Claude Code\isla-ng-salong-salong-claude-code-files\tools\`
+
+| Page | Generator | Shell template |
+|---|---|---|
+| equipment.html | build_equipment.py | equipment_shell.html |
+| feats.html | build_rules_pages.py | rules_shell.html |
+| spells.html | build_rules_pages.py | rules_shell.html |
+| backgrounds.html | build_backgrounds.py | rules_shell.html |
+
+They read the Sina Una export at
+`C:\Users\USER\Documents\Claude Code\sina-una-character-sheet\_export\`
+which is 15 JSON files plus index.json, machine-generated from the homebrew
+pub file by the rules session.
+
+If you add a page to the Rules dropdown, update BOTH shell templates, or the
+next regeneration drops the new link from the generated pages.
+
+---
+
+## COPYRIGHT RULE, do not break this
+
+The export contains the full official 2024 Player's Handbook alongside the
+Sina Una homebrew: 415 spells, 71 feats, 85 gear items, 150 creatures, 14
+classes. Only the Sina Una half is ours to publish. Republishing the WotC half
+on a public site is copyright infringement.
+
+**The gate is `isSinaUna == true`,** applied at load time in each generator's
+`su()` helper so it cannot be forgotten section by section.
+
+**Backgrounds are the one deliberate exception.** The 12 localized backgrounds
+(Timawa, Maginoo, Alagad and the rest) have `isSinaUna: false`, because they
+ARE the PHB entries under island names. We still publish them, but only:
+
+- island name, English name in brackets, flavor prose, origin feat
+- a line stating the mechanics match the standard background, with a page ref
+
+We do NOT print their ability scores, skills, tools, equipment or gold. The 6
+island backgrounds (Lorechanter, Mangangalakal, Panday, Sea Raider, Voyager,
+Aswang Lineage) are sourced to the Sina Una book and ARE published in full.
+
+If someone ever "fixes" backgrounds.html to filter on isSinaUna like the other
+pages, all 12 localized backgrounds vanish. That is why it is different.
+
+---
+
+## search.html has a hardcoded index
+
+`SEARCH_INDEX` is a literal JS array inside search.html, currently 174 entries.
+New content is invisible to search unless an entry is added there, and it fails
+silently.
+
+Two hard-won rules:
+
+1. **Generate entries with `json.dumps`, never hand-rolled quoting.** On
+   2026-08-05 one unescaped apostrophe in "the wearer's identity" was a JS
+   syntax error that killed the whole SEARCH_INDEX block, breaking search
+   across the entire site rather than just the new page. Nothing errored
+   visibly; results simply came back empty.
+2. Categories in use: Lugar, Karakter, Magani, Lahi, Klase, Kodeks, Bestiaryo,
+   Epiko, Kasaysayan, Kalendaryo, Salita, Kagamitan (equipment), Alituntunin
+   (feats, spells, backgrounds).
+
+---
+
+## Line endings
+
+`index.html` is CRLF. Every other file is LF. Any script that rewrites files in
+bulk must preserve per-file line endings, or index.html produces a ~980 line
+phantom diff that buries the real change. Read as bytes, test for `\r\n`,
+write back in the same convention.
+
+---
+
+## Working with the rules session
+
+The homebrew rules live in a separate Claude Code session working in
+`sina-una-character-sheet`. It owns mechanics; this repo owns presentation.
+Handoffs arrive as .txt files in the source folder.
+
+Verify before applying. On 2026-08-05, four separate assertions from that
+session proved wrong: that a card already showed the Brave trait (it never
+did), a quoted string from our codex that exists nowhere in this repo's git
+history, that feats were safe to parse from the export (the text is
+malformed), and that no background carried a description field (all 18 did).
+Each was caught by checking the actual files first. They have since agreed to
+quote a line number or mark a claim unverified.
+
+**The diff target is `codex.html` in this repo.** The old sina-una-races.txt
+and sina-una-classes.txt in the source folder are an April 2026 summary index,
+not an extract of this site. Historical only.
+
+**Field authority**, as of 2026-08-05:
+
+| Content | Source |
+|---|---|
+| Races, classes, subclasses | handoff prose (no prose field exists in the export) |
+| Feats | handoff prose for the body, export for prerequisites |
+| Spells, magic items | export `descriptionFull` |
+| Backgrounds | export `description` (NOT `descriptionFull`, which is empty) |
+| Equipment stats | export, authoritative |
+| Level scaling tables | ASK. The `additional` field is not exported. 8 features affected. |
+
+---
+
+## Current content counts
+
+- codex.html: 23 cards (9 races, 2 custom classes, 12 subclasses)
+- equipment.html: 116 items (28 weapons, 9 armor and shields, 11 ammunition,
+  23 gear, 12 tools, 5 poisons, 25 magic items, 3 artifacts)
+- feats.html: 5
+- spells.html: 24 across 10 levels
+- backgrounds.html: 18 (6 island, 12 localized)
+- glossary.html: 39 terms
+- search.html: 174 index entries
+
+Panel intro strings on codex.html hardcode their counts ("The nine playable
+races", "Two full custom classes", "Twelve Sina Una subclasses"). Update that
+prose if the counts change.
