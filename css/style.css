@@ -4421,17 +4421,25 @@ button:focus-visible {
   color: var(--gold);
 }
 
-/* Pixel art: never smooth, never fractional scale. */
+/* Pixel art: never smooth, never fractional scale.
+   crisp-edges first, pixelated last: pixelated is the keyword reliably
+   implemented as nearest-neighbour, so it must be the one that wins. */
 .cls-badge,
 .eq-sprite {
-  image-rendering: pixelated;
   image-rendering: crisp-edges;
+  image-rendering: pixelated;
   flex: 0 0 auto;
 }
 .cls-badge { display: block; }
 .cls-list__item .cls-badge,
 .cls-pill .cls-badge { display: inline-block; }
-.eq-sprite { vertical-align: middle; margin-right: 0.6rem; }
+/* The global `img { display: block }` on line 81 would push the name onto
+   the next line, so the sprite must be explicitly inline-block. */
+.eq-sprite {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+}
 
 /* ── the copyright pointer on the 12 standard classes ───────── */
 .cls-pointer {
@@ -4658,3 +4666,40 @@ button:focus-visible {
   .cls-list__item .cls-badge { width: 24px; height: 24px; }
   .cls-list__item { padding: 0.14rem 0.4rem; font-size: 0.72rem; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   MAGIC ITEM ROWS (equipment.html)
+   Added 2026-08-06. Magic items and artifacts used the codex accordion
+   while the other six sections used tables, so they read as a different
+   page. They now share the table shape; the book prose lives in a row
+   that expands underneath, because a paragraph will not fit in a cell.
+   ══════════════════════════════════════════════════════════════════ */
+tr.eq-expand { cursor: pointer; }
+tr.eq-expand:hover { background: rgba(196,154,26,0.12); }
+tr.eq-expand:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+tr.eq-expand.is-open { background: rgba(196,154,26,0.14); }
+
+.eq-chev {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.7em;
+  color: var(--gold);
+  transition: transform 0.18s ease;
+}
+tr.eq-expand.is-open .eq-chev { transform: rotate(180deg); }
+
+tr.eq-prose > td {
+  padding: 0.2rem 0.85rem 0.9rem 0.85rem;
+  background: rgba(26,6,0,0.32);
+  border-bottom: 1px solid rgba(196,154,26,0.1);
+}
+tr.eq-prose p {
+  margin: 0 0 0.6rem;
+  max-width: 62ch;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+tr.eq-prose p:last-child { margin-bottom: 0; }
+
+/* The item table has fewer, wider columns than the stat tables. */
+.eq-table--items td:first-child { min-width: 14rem; }
