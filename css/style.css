@@ -4322,62 +4322,130 @@ button:focus-visible {
   .eq-derived td { padding-left: 1.2rem; }
 }
 
-/* ══════════════════════════════════════════════════════════════════
+/* ==================================================================
    CLASSES PAGE (classes.html) + PIXEL ART
-   Added 2026-08-05 with the owner restructure. Classes and subclasses
-   moved out of the codex into a 5etools-shaped page: sidebar block,
-   level 1-20 progression table, feature text, subclass sections.
-   ══════════════════════════════════════════════════════════════════ */
-.cls-block { margin-bottom: 3.25rem; }
-.cls-block--sub { margin-top: -1.5rem; }
+   Rebuilt 2026-08-06 as a 5etools-shaped browser: class list on the
+   left, content pane on the right.
 
-.cls-head {
+   CONTRAST RULE, DO NOT REMOVE: this page renders on .dark-section,
+   and body colour is var(--text-dark) which is near-black brown. Any
+   text here without an explicit colour is invisible. The .cls-pane
+   rule below sets cream on everything and each element that needs a
+   different colour overrides it explicitly. Removing it reintroduces
+   the brown-on-brown bug from the first build of this page.
+   ================================================================== */
+.cls-layout {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── class list ─────────────────────────────────────────────── */
+.cls-list {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem;
+  background: rgba(10,7,4,0.5);
+  border: 1px solid rgba(196,154,26,0.2);
+  border-radius: var(--radius);
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+.cls-list__item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.1rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid rgba(196,154,26,0.28);
-}
-.cls-head__name {
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--gold-bright);
-  margin: 0 0 0.2rem;
-  letter-spacing: 0.03em;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: rgba(242,216,152,0.8);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.cls-head__flavor {
-  margin: 0;
-  color: var(--text-light);
+.cls-list__item:hover { background: rgba(196,154,26,0.1); color: var(--gold-light); }
+.cls-list__item.is-active {
+  background: rgba(196,154,26,0.16);
+  border-color: rgba(196,154,26,0.45);
+  color: var(--gold-bright);
+}
+.cls-list__item:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+/* ── content pane. The colour rule here is the contrast fix. ── */
+.cls-pane { color: var(--text-light); min-width: 0; }
+.cls-pane p,
+.cls-pane li,
+.cls-pane dd { color: var(--text-light); }
+.cls-pane em { color: rgba(242,216,152,0.82); }
+.cls-pane strong { color: var(--gold-bright); }
+
+.cls-entry[hidden] { display: none; }
+
+/* ── hero ───────────────────────────────────────────────────── */
+.cls-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(196,154,26,0.3);
+}
+.cls-hero__name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--gold-bright);
+  margin: 0 0 0.35rem;
+}
+.cls-hero__flavor {
+  margin: 0 0 0.3rem;
   font-style: italic;
-  opacity: 0.88;
+  color: rgba(242,216,152,0.9);
+}
+.cls-hero__src {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 /* Pixel art: never smooth, never fractional scale. */
-.cls-badge {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  flex: 0 0 auto;
-  display: block;
-}
+.cls-badge,
 .eq-sprite {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  vertical-align: middle;
-  margin-right: 0.5rem;
+  flex: 0 0 auto;
 }
-.codex-race__sub + .cls-badge {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5rem;
+.cls-badge { display: block; }
+.cls-list__item .cls-badge,
+.cls-pill .cls-badge { display: inline-block; }
+.eq-sprite { vertical-align: middle; margin-right: 0.6rem; }
+
+/* ── the copyright pointer on the 12 standard classes ───────── */
+.cls-pointer {
+  margin: 0 0 1.6rem;
+  padding: 0.7rem 0.95rem;
+  background: rgba(26,6,0,0.4);
+  border-left: 3px solid rgba(196,154,26,0.45);
+  border-radius: 2px;
+  font-size: 0.92rem;
+  color: rgba(242,216,152,0.86) !important;
 }
 
-/* Sidebar stat block */
+/* ── sidebar stat block ─────────────────────────────────────── */
 .cls-side {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.8rem;
   padding: 0.9rem 1.1rem;
   background: rgba(26,6,0,0.4);
   border: 1px solid rgba(196,154,26,0.2);
@@ -4386,8 +4454,8 @@ button:focus-visible {
 .cls-side__row {
   display: grid;
   grid-template-columns: 12rem 1fr;
-  gap: 0.5rem 1rem;
-  padding: 0.32rem 0;
+  gap: 0.4rem 1rem;
+  padding: 0.34rem 0;
   border-bottom: 1px solid rgba(196,154,26,0.09);
 }
 .cls-side__row:last-child { border-bottom: none; }
@@ -4400,16 +4468,16 @@ button:focus-visible {
   margin: 0;
   padding-top: 0.15rem;
 }
-.cls-side dd { margin: 0; color: var(--text-light); }
+.cls-side dd { margin: 0; }
 
-/* Progression tables reuse .eq-table, with tighter numeric columns */
+/* ── progression tables ─────────────────────────────────────── */
 .cls-table { min-width: 30rem; }
 .cls-table--wide { min-width: 52rem; }
 .cls-table td:first-child,
 .cls-table th:first-child { text-align: center; width: 2.6rem; }
 .cls-table td:nth-child(2) { text-align: center; }
-.cls-table--wide td:nth-child(n+5) { text-align: center; }
-.cls-table thead th:nth-child(n+5) { text-align: center; }
+.cls-table--wide td:nth-child(n+5),
+.cls-table--wide th:nth-child(n+5) { text-align: center; }
 
 .cls-house {
   display: inline-block;
@@ -4424,18 +4492,90 @@ button:focus-visible {
   border: 1px solid rgba(240,183,58,0.35);
   border-radius: 2px;
 }
-
 .cls-note {
-  margin: 0.7rem 0 1.6rem;
-  font-size: 0.88rem;
-  color: rgba(242,216,152,0.72);
-  font-style: italic;
-  border-left: 2px solid rgba(196,154,26,0.3);
+  margin: 0.7rem 0 1.8rem;
   padding-left: 0.85rem;
+  border-left: 2px solid rgba(196,154,26,0.3);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(242,216,152,0.74) !important;
 }
 
+/* ── feature lists ──────────────────────────────────────────── */
+.cls-featlist { margin: 0 0 1.6rem; padding-left: 1.15rem; }
+.cls-featlist > li { margin-bottom: 0.7rem; line-height: 1.6; }
+.cls-featlist ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.cls-featlist ul li { margin-bottom: 0.45rem; }
+
+/* ── subclass pills and blocks ──────────────────────────────── */
+.cls-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.4rem; }
+.cls-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem 0.3rem 0.35rem;
+  background: rgba(10,7,4,0.55);
+  border: 1px solid rgba(196,154,26,0.28);
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: rgba(242,216,152,0.82);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.cls-pill:hover { background: rgba(196,154,26,0.12); color: var(--gold-light); }
+.cls-pill.is-active {
+  background: rgba(196,154,26,0.18);
+  border-color: rgba(196,154,26,0.55);
+  color: var(--gold-bright);
+}
+.cls-pill:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+.cls-sub {
+  padding: 1.1rem 1.2rem;
+  background: rgba(10,7,4,0.45);
+  border: 1px solid rgba(196,154,26,0.2);
+  border-radius: var(--radius);
+}
+.cls-sub[hidden] { display: none; }
+.cls-sub--solo { margin-top: 0.4rem; }
+.cls-sub__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(196,154,26,0.22);
+}
+.cls-sub__head h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+}
+.cls-sub__flavor {
+  margin: 0 0 1rem;
+  font-style: italic;
+  color: rgba(242,216,152,0.88) !important;
+}
+
+@media (max-width: 900px) {
+  .cls-layout { grid-template-columns: 1fr; gap: 1.2rem; }
+  .cls-list {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: none;
+    overflow: visible;
+  }
+  .cls-list__item { width: auto; font-size: 0.7rem; }
+  .cls-list__item .cls-badge { width: 24px; height: 24px; }
+}
 @media (max-width: 640px) {
   .cls-side__row { grid-template-columns: 1fr; gap: 0.1rem; }
-  .cls-head { gap: 0.7rem; }
-  .cls-head__name { font-size: 1.2rem; }
+  .cls-hero { gap: 0.9rem; }
+  .cls-hero__name { font-size: 1.4rem; }
+  .cls-hero .cls-badge { width: 96px; height: 96px; }
+  .cls-sub__head .cls-badge { width: 64px; height: 64px; }
 }
