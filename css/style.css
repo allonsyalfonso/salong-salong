@@ -4347,20 +4347,21 @@ button:focus-visible {
   top: 4.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.5rem;
+  gap: 0.1rem;
+  padding: 0.4rem;
   background: rgba(10,7,4,0.5);
   border: 1px solid rgba(196,154,26,0.2);
   border-radius: var(--radius);
-  max-height: calc(100vh - 6rem);
-  overflow-y: auto;
+  /* No max-height and no overflow: a scroll box inside the column meant all
+     14 classes were never visible at once. The list is now as tall as it
+     needs to be and the page scrolls as one. */
 }
 .cls-list__item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   width: 100%;
-  padding: 0.3rem 0.5rem;
+  padding: 0.16rem 0.45rem;
   background: none;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -4636,4 +4637,24 @@ button:focus-visible {
 }
 @media (max-width: 900px) {
   .page-classes .cls-layout { grid-template-columns: 1fr; }
+}
+
+
+/* ==================================================================
+   CLASS LIST HEIGHT
+   The list is sticky, and a sticky element taller than the viewport
+   has an unreachable bottom: you cannot scroll it into view. With
+   48px badges the 14 classes come to ~807px, which is fine on a tall
+   screen and broken on a short one.
+
+   So on shorter viewports the list badges drop to 24px, which is an
+   exact half of the 48px source and therefore still clean for pixel
+   art (every 2x2 block becomes one pixel). That puts the whole list
+   near 430px, so all fourteen classes are always visible and there is
+   never an inner scrollbar. The hero badge stays 144px and the
+   subclass badge 96px, so the art still carries the page.
+   ================================================================== */
+@media (max-height: 940px) {
+  .cls-list__item .cls-badge { width: 24px; height: 24px; }
+  .cls-list__item { padding: 0.14rem 0.4rem; font-size: 0.72rem; }
 }
