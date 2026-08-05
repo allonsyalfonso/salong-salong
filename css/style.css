@@ -4471,8 +4471,9 @@ button:focus-visible {
 .cls-side dd { margin: 0; }
 
 /* ── progression tables ─────────────────────────────────────── */
-.cls-table { min-width: 30rem; }
-.cls-table--wide { min-width: 52rem; }
+/* No min-width: a forced floor is what created the sideways scroll. */
+.cls-table { min-width: 0; }
+.cls-table--wide { min-width: 0; }
 .cls-table td:first-child,
 .cls-table th:first-child { text-align: center; width: 2.6rem; }
 .cls-table td:nth-child(2) { text-align: center; }
@@ -4578,4 +4579,61 @@ button:focus-visible {
   .cls-hero__name { font-size: 1.4rem; }
   .cls-hero .cls-badge { width: 96px; height: 96px; }
   .cls-sub__head .cls-badge { width: 64px; height: 64px; }
+}
+
+
+/* ==================================================================
+   CLASS PAGE WIDTH AND TABLE DENSITY
+   Added 2026-08-06. classes.html carries tables up to 19 columns
+   (Paladin), which do not fit the site's standard 1100px container.
+   This page opts into a wider container and compact table cells so
+   the tables fit on screen instead of scrolling sideways.
+   ================================================================== */
+.page-classes .section-container {
+  max-width: 1680px;
+}
+.page-classes .cls-layout {
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+/* Compact cells: the wide tables are mostly one or two character values. */
+.cls-table { table-layout: auto; font-size: 0.82rem; }
+.cls-table thead th {
+  padding: 0.45rem 0.3rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  white-space: normal;
+  line-height: 1.25;
+  vertical-align: bottom;
+}
+.cls-table tbody td {
+  padding: 0.32rem 0.3rem;
+  line-height: 1.35;
+}
+
+/* Spell slot and other single-digit columns: keep them narrow and centred. */
+.cls-table td.cls-num,
+.cls-table th.cls-num {
+  width: 1.6rem;
+  min-width: 1.6rem;
+  text-align: center;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}
+/* Level and proficiency bonus */
+.cls-table td:first-child,
+.cls-table th:first-child { width: 2.4rem; min-width: 2.4rem; text-align: center; }
+.cls-table td:nth-child(2),
+.cls-table th:nth-child(2) { width: 2.2rem; min-width: 2.2rem; text-align: center; }
+
+/* Wide prose-ish columns may wrap rather than push the table out. */
+.cls-table td.cls-wide { min-width: 6rem; }
+.cls-table td:last-child { min-width: 8.5rem; }
+
+@media (max-width: 1100px) {
+  .page-classes .section-container { max-width: 100%; }
+}
+@media (max-width: 900px) {
+  .page-classes .cls-layout { grid-template-columns: 1fr; }
 }
