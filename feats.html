@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Setting Feats | Sina Una: Isla ng Salong-Salong</title>
+  <meta name="description" content="Five feats unique to Sina Una, from Adept Conduit to Unrelenting Hunter.">
+  <meta name="author" content="DM Avips">
+  <meta property="og:title" content="Setting Feats | Isla ng Salong-Salong">
+  <meta property="og:description" content="Five feats unique to Sina Una, from Adept Conduit to Unrelenting Hunter.">
+  <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="bestiary.html">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
+          <li><a href="distances.html">Distances <span class="tagalog">Mga Layo</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Rules <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Alituntunin</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="equipment.html">Equipment <span class="tagalog">Kagamitan</span></a></li>
+          <li><a href="feats.html" class="active">Feats <span class="tagalog">Mga Kakayahan</span></a></li>
+          <li><a href="spells.html">Spells <span class="tagalog">Mga Orasyon</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+          <li><a href="calendar.html">Calendar <span class="tagalog">Kalendaryo</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <div class="page-header dark-section">
+      <div class="page-header__inner">
+        <h1>Setting Feats</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="tagalog">Mga Kakayahan</p>
+        <p class="page-header__subtitle">Five feats unique to Sina Una, from Adept Conduit to Unrelenting Hunter.</p>
+      </div>
+    </div>
+
+    
+
+    <!-- ── EQUIPMENT ── -->
+    <section aria-label="Setting Feats" class="dark-section">
+      <div class="section-container">
+
+        <h3 class="npc-section-label" data-section="feats">Mga Kakayahan &middot; Setting Feats</h3>
+        <div class="eq-section" data-section="feats">
+          <p class="codex-panel__intro">Five feats unique to Sina Una. All are General feats: the prerequisite is level 4 plus whatever else is listed.</p>
+          <div class="codex-entries">
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Adept Conduit</span><span class="codex-race__tag codex-race__tag--craft">Spirit Dice</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have petitioned the unseen spirits and, with patient offerings and communion, learnt to channel their power through yourself.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4 and the ability to cast at least one spell</dd></dl><ul class="codex-race__traits"><li><strong>Ability Score Increase</strong>: Increase your Intelligence score by 1, to a maximum of 20.</li><li><strong>Borrowed Cantrip</strong>: You learn one cantrip from the babaylan spell list. Intelligence is your spellcasting ability for it.</li><li><strong>Spirit Dice</strong>: You gain two Spirit Dice (d4s), which add to any Spirit Dice you have from another source. When you cast a spell, you can expend them on the conduit options of the babaylan&#x27;s Spirit Conduit feature. You regain all expended Spirit Dice on a Long Rest.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Cannoneer</span><span class="codex-race__tag codex-race__tag--craft">Ignore Loading</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">Through extensive practice, you have mastered the firepower of the islands&#x27; cannons.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4 and proficiency with lantakas or astinggals</dd></dl><ul class="codex-race__traits"><li><strong>Ignore Loading</strong>: You ignore the loading property of lantakas and astinggals.</li><li><strong>Firing in Melee</strong>: Being within 5 feet of a hostile creature does not impose disadvantage on your ranged attack rolls.</li><li><strong>Enhanced Critical</strong>: You can roll one additional weapon damage die when determining the extra damage for a critical hit with a lantaka or an astinggal.</li></ul><p class="eq-note"><strong>House note:</strong> As printed, this feat covers lantakas only. The owner widened it to the astinggal so both firearms have feat support. Book feat, widened by ruling.</p></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Headhunting Master</span><span class="codex-race__tag codex-race__tag--craft">Bunang Master</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">The bunang answers to you in both of its aspects, blade and point alike.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Bunang Training</strong>: You gain proficiency with the bunang if you did not have it already, and you can ignore the weapon&#x27;s two-handed property.</li><li><strong>Pointed Side</strong>: When you use your Bonus Action to attack with the pointed side of the bunang, you add your ability modifier to the damage of the attack.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Oceanborne Warrior</span><span class="codex-race__tag codex-race__tag--craft">Swim Speed</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have become an expert in pursuing opponents through, and even beneath, treacherous waters.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Waterborne</strong>: You gain a swimming speed equal to your walking speed, and fighting underwater does not impose disadvantage on your weapon attack rolls.</li></ul></div></details>
+            <details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Unrelenting Hunter</span><span class="codex-race__tag codex-race__tag--craft">Envenom</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="codex-race__flavor">You have perfected the art of hunting creatures across the islands.</p><dl class="codex-race__stats"><dt>Prerequisite</dt><dd>Level 4</dd></dl><ul class="codex-race__traits"><li><strong>Ability Score Increase</strong>: Increase your Strength or Dexterity score by 1, to a maximum of 20.</li><li><strong>Hunter&#x27;s Kit</strong>: You gain proficiency with a hunter&#x27;s kit.</li><li><strong>Envenom</strong>: As a free action on your turn, you can apply a substance (poison, saltwater and the like) to one slashing or piercing melee weapon you are wielding, or to up to three pieces of ammunition.</li></ul></div></details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── FILTER SECTION ──
+    function filterSection(section, btn) {
+      document.querySelectorAll('.char-section-nav__btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('[data-section]').forEach(function(el) {
+        if (section === 'all' || el.dataset.section === section) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <script src="js/dm.js"></script>
+
+</body>
+</html>
