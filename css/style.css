@@ -4227,3 +4227,97 @@ button:focus-visible {
   .codex-race__stats dt { padding-top: 0.5rem; }
   .codex-race__stats dt:first-of-type { padding-top: 0; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   EQUIPMENT / ARMORY (equipment.html)
+   Tables live on .dark-section, so text defaults to cream, not
+   var(--text-dark). Wide tables scroll inside .eq-scroll so the page
+   body never scrolls horizontally on mobile.
+   ══════════════════════════════════════════════════════════════════ */
+.eq-section { margin-bottom: 2.75rem; }
+
+.eq-subhead {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 1.6rem 0 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(196,154,26,0.22);
+}
+.eq-subhead:first-of-type { margin-top: 0.4rem; }
+
+.eq-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid rgba(196,154,26,0.18);
+  border-radius: var(--radius);
+  background: rgba(10,7,4,0.5);
+}
+
+.eq-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-light);
+}
+.eq-table thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(26,6,0,0.92);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid rgba(196,154,26,0.35);
+  white-space: nowrap;
+}
+.eq-table tbody td {
+  padding: 0.5rem 0.85rem;
+  border-bottom: 1px solid rgba(196,154,26,0.1);
+  vertical-align: top;
+}
+.eq-table tbody tr:last-child td { border-bottom: none; }
+.eq-table tbody tr:nth-child(even) { background: rgba(196,154,26,0.035); }
+.eq-table tbody tr:hover { background: rgba(196,154,26,0.09); }
+
+.eq-name {
+  color: var(--gold-bright);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Derived attack modes: notes attached to the weapon above, not items. */
+.eq-derived td {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(242,216,152,0.72);
+  padding-left: 1.9rem;
+  background: rgba(26,6,0,0.28);
+}
+.eq-derived strong { color: var(--gold-light); font-style: normal; }
+
+/* Rarity / attunement line on magic item cards */
+.eq-meta {
+  font-family: var(--font-display);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .eq-table { font-size: 0.86rem; }
+  .eq-table thead th { font-size: 0.57rem; padding: 0.5rem 0.6rem; }
+  .eq-table tbody td { padding: 0.45rem 0.6rem; }
+  .eq-derived td { padding-left: 1.2rem; }
+}

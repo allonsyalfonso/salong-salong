@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Armory | Sina Una: Isla ng Salong-Salong</title>
+  <meta name="description" content="The armory of Sina Una: weapons, armor, gear, tools, poisons, magic items and the artifacts of Haliya.">
+  <meta name="author" content="DM Avips">
+  <meta property="og:title" content="Armory | Isla ng Salong-Salong">
+  <meta property="og:description" content="The armory of Sina Una: weapons, armor, gear, tools, poisons, magic items and the artifacts of Haliya.">
+  <meta property="og:image" content="https://allonsyalfonso.github.io/salong-salong/images/map.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230a0704'/%3E%3Crect x='45' y='50' width='10' height='36' rx='3' fill='%23c49a1a'/%3E%3Cline x1='43' y1='62' x2='30' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='57' y1='62' x2='70' y2='88' stroke='%23c49a1a' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='34' r='26' fill='%231f3a08'/%3E%3Ccircle cx='36' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='64' cy='44' r='14' fill='%231f3a08'/%3E%3Ccircle cx='50' cy='34' r='25' fill='none' stroke='%23c49a1a' stroke-width='1.5' opacity='0.45'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar__logo">SINA UNA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.closest('nav').querySelector('.navbar__links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navbar__links">
+      <li><a href="index.html" class="navbar__home-link">Home <span class="tagalog">Tahanan</span></a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">World <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mundo</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="locations.html">Locations <span class="tagalog">Mga Lugar</span></a></li>
+          <li><a href="timeline.html">History <span class="tagalog">Kasaysayan</span></a></li>
+          <li><a href="codex.html">Codex <span class="tagalog">Aklatan</span></a></li>
+          <li><a href="bestiary.html">Bestiary <span class="tagalog">Bestiaryo</span></a></li>
+          <li><a href="distances.html">Distances <span class="tagalog">Mga Layo</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger active" aria-haspopup="true">Rules <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Alituntunin</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="equipment.html" class="active">Equipment <span class="tagalog">Kagamitan</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">People <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Mga Tao</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="characters.html">Characters <span class="tagalog">Mga NPC</span></a></li>
+          <li><a href="pc.html">Heroes <span class="tagalog">Mga Magani</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-haspopup="true">Lore <span class="nav-dropdown__caret">&#9662;</span><span class="tagalog">Kaalaman</span></button>
+        <ul class="nav-dropdown__menu">
+          <li><a href="epic.html">The Epic <span class="tagalog">Ang Epiko</span></a></li>
+          <li><a href="chronicles.html">Chronicles <span class="tagalog">Mga Kronika</span></a></li>
+          <li><a href="glossary.html">Glossary <span class="tagalog">Talasalitaan</span></a></li>
+          <li><a href="calendar.html">Calendar <span class="tagalog">Kalendaryo</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="search.html" class="navbar__icon-link" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+        </a>
+      </li>
+      <li>
+        <button id="dm-toggle" class="dm-btn" title="DM Mode" aria-label="DM Mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HEADER ── -->
+    <div class="page-header dark-section">
+      <div class="page-header__inner">
+        <h1>ARMORY</h1>
+        <div class="page-header__divider">◆ ✦ ◆</div>
+        <p class="tagalog">Sandatahan</p>
+        <p class="page-header__subtitle">Everything carried, worn, wielded and hoarded across the islands.</p>
+      </div>
+    </div>
+
+    <!-- ── FILTER NAV ── -->
+    <nav class="char-section-nav" aria-label="Jump to section" id="char-nav">
+        <button class="char-section-nav__btn active" onclick="filterSection('all', this)">Lahat &middot; All</button>
+        <button class="char-section-nav__btn" onclick="filterSection('weapons', this)">Sandata &middot; Weapons</button>
+        <button class="char-section-nav__btn" onclick="filterSection('armor', this)">Baluti &middot; Armor and Shields</button>
+        <button class="char-section-nav__btn" onclick="filterSection('ammunition', this)">Punla &middot; Ammunition</button>
+        <button class="char-section-nav__btn" onclick="filterSection('gear', this)">Kagamitan &middot; Adventuring Gear</button>
+        <button class="char-section-nav__btn" onclick="filterSection('tools', this)">Kasangkapan &middot; Tools</button>
+        <button class="char-section-nav__btn" onclick="filterSection('poisons', this)">Lason &middot; Poisons</button>
+        <button class="char-section-nav__btn" onclick="filterSection('magic', this)">Mahika &middot; Magic Items</button>
+        <button class="char-section-nav__btn" onclick="filterSection('artifacts', this)">Sandata ni Haliya &middot; Artifacts</button>
+    </nav>
+
+    <!-- ── EQUIPMENT ── -->
+    <section aria-label="Armory" class="dark-section">
+      <div class="section-container">
+
+        <h3 class="npc-section-label" data-section="weapons">Sandata &middot; Weapons</h3>
+        <div class="eq-section" data-section="weapons">
+          <p class="codex-panel__intro">Blades, spears, bows and powder. The islands arm themselves with what the forest, the forge and the sea provide.</p>
+<h4 class="eq-subhead">Simple Melee</h4>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th><th>Mastery</th></tr></thead><tbody>
+<tr><td class="eq-name">Bagakay spear</td><td>5 sp</td><td>1d6 piercing</td><td>2 lb</td><td>Thrown</td><td>Slow</td></tr>
+<tr><td class="eq-name">Baladaw</td><td>2 gp</td><td>1d4 piercing</td><td>1 lb</td><td>Finesse, Light, Thrown</td><td>Nick</td></tr>
+<tr><td class="eq-name">Bangkaw</td><td>3 gp</td><td>1d8 piercing</td><td>3 lb</td><td>Two-Handed, Special</td><td>Topple</td></tr>
+<tr><td class="eq-name">Baston</td><td>1 sp</td><td>1d4 bludgeoning</td><td>2 lb</td><td>Light</td><td>Slow</td></tr>
+<tr><td class="eq-name">Bolo</td><td>1 gp</td><td>1d4 slashing</td><td>1 lb</td><td>Light</td><td>Nick</td></tr>
+<tr><td class="eq-name">Kris</td><td>10 gp</td><td>1d6 slashing</td><td>2 lb</td><td>Finesse, Light</td><td>Vex</td></tr>
+<tr><td class="eq-name">Sugob</td><td>5 sp</td><td>1d6 piercing</td><td>2 lb</td><td>Thrown</td><td>Push</td></tr>
+<tr><td class="eq-name">Tungkod</td><td>2 sp</td><td>1d6 bludgeoning</td><td>4 lb</td><td>Versatile (1d8)</td><td>Topple</td></tr>
+</tbody></table></div>
+<h4 class="eq-subhead">Simple Ranged</h4>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th><th>Mastery</th></tr></thead><tbody>
+<tr><td class="eq-name">Busog</td><td>25 gp</td><td>1d6 piercing</td><td>2 lb</td><td>Ammunition (Arrow), Two-Handed</td><td>Vex</td></tr>
+<tr><td class="eq-name">Kalawit</td><td>10 gp</td><td>1d4 piercing</td><td>1 lb</td><td>Harpoon, Thrown</td><td>Slow</td></tr>
+<tr><td class="eq-name">Tirador</td><td>1 sp</td><td>1d4 bludgeoning</td><td>0 lb</td><td>Ammunition (Stone bullet)</td><td>Slow</td></tr>
+</tbody></table></div>
+<h4 class="eq-subhead">Martial Melee</h4>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th><th>Mastery</th></tr></thead><tbody>
+<tr><td class="eq-name">Al-o</td><td>2 sp</td><td>1d8 bludgeoning</td><td>10 lb</td><td>Versatile (1d10)</td><td>Push</td></tr>
+<tr><td class="eq-name">Barong</td><td>20 gp</td><td>1d8 slashing</td><td>4 lb</td><td>Versatile (1d10)</td><td>Graze</td></tr>
+<tr><td class="eq-name">Budjak</td><td>30 gp</td><td>1d10 piercing</td><td>6 lb</td><td>Heavy, Reach, Two-Handed</td><td>Push</td></tr>
+<tr><td class="eq-name">Bunang</td><td>25 gp</td><td>1d8 slashing</td><td>4 lb</td><td>Special, Two-Handed</td><td>Graze</td></tr>
+<tr class="eq-derived"><td colspan="6"><strong>Bunang, back point</strong>: Bonus Action after the Attack action with a bunang; no ability modifier to damage (1d6 piercing)</td></tr>
+<tr><td class="eq-name">Coral-tipped spear</td><td>5 gp</td><td>1d6 piercing</td><td>2 lb</td><td>Salt-imbued, Thrown</td><td>Sap</td></tr>
+<tr><td class="eq-name">Kalis</td><td>25 gp</td><td>1d8 slashing</td><td>3 lb</td><td>Finesse</td><td>Sap</td></tr>
+<tr><td class="eq-name">Kampilan</td><td>15 gp</td><td>1d8 slashing</td><td>3 lb</td><td>Versatile (1d10)</td><td>Sap</td></tr>
+<tr><td class="eq-name">Panabas</td><td>30 gp</td><td>1d10 slashing</td><td>6 lb</td><td>Heavy, Versatile (1d12)</td><td>Cleave</td></tr>
+<tr><td class="eq-name">Sarapang</td><td>5 gp</td><td>1d6 piercing</td><td>4 lb</td><td>Thrown, Versatile (1d8)</td><td>Topple</td></tr>
+<tr><td class="eq-name">Songil</td><td>20 gp</td><td>2d6 piercing</td><td>2 lb</td><td>Finesse</td><td>Vex</td></tr>
+<tr><td class="eq-name">Stingray tail whip</td><td>3 gp</td><td>1d4 slashing</td><td>3 lb</td><td>Finesse, Reach, Salt-imbued</td><td>Slow</td></tr>
+<tr><td class="eq-name">Wasay</td><td>5 gp</td><td>1d6 slashing</td><td>2 lb</td><td>Light, Thrown</td><td>Vex</td></tr>
+</tbody></table></div>
+<h4 class="eq-subhead">Martial Ranged</h4>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th><th>Mastery</th></tr></thead><tbody>
+<tr><td class="eq-name">Astinggal</td><td>75 gp</td><td>1d10 piercing</td><td>7 lb</td><td>Ammunition (Stone bullet), Heavy, Loading</td><td>Slow</td></tr>
+<tr><td class="eq-name">Bontal</td><td>25 gp</td><td>1d10 piercing</td><td>3 lb</td><td>Harpoon, Thrown</td><td>Push</td></tr>
+<tr><td class="eq-name">Lantaka</td><td>100 gp</td><td>2d8 piercing</td><td>10 lb</td><td>Ammunition (Stone bullet), Heavy, Loading, Two-Handed</td><td>Push</td></tr>
+<tr><td class="eq-name">Pana</td><td>50 gp</td><td>1d8 piercing</td><td>2 lb</td><td>Ammunition (Arrow), Two-Handed, Heavy</td><td>Slow</td></tr>
+<tr><td class="eq-name">Sumpit</td><td>50 gp</td><td>1d8 piercing</td><td>1 lb</td><td>Ammunition (Dart), Special</td><td>Vex</td></tr>
+<tr class="eq-derived"><td colspan="6"><strong>Sumpit (melee)</strong>: Finesse; only once the sumpit&#x27;s ammunition has run out (1d6 piercing)</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="armor">Baluti &middot; Armor and Shields</h3>
+        <div class="eq-section" data-section="armor">
+          <p class="codex-panel__intro">Woven abaca, carabao hide, and beaten bronze. Kalasag and palisay are carried as much for display as for defense.</p>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Type</th><th>AC</th><th>Strength</th><th>Stealth</th><th>Cost</th><th>Weight</th></tr></thead><tbody>
+<tr><td class="eq-name">Kurab-a-kulang</td><td>Heavy</td><td>16</td><td>Str 13</td><td>Disadvantage</td><td>200 gp</td><td>55 lb</td></tr>
+<tr><td class="eq-name">Pakil</td><td>Heavy</td><td>18</td><td>Str 15</td><td>Disadvantage</td><td>800 gp</td><td>65 lb</td></tr>
+<tr><td class="eq-name">Habay-habay</td><td>Light</td><td>11</td><td>&ndash;</td><td>&ndash;</td><td>5 gp</td><td>8 lb</td></tr>
+<tr><td class="eq-name">Reinforced leather</td><td>Light</td><td>12</td><td>&ndash;</td><td>&ndash;</td><td>25 gp</td><td>13 lb</td></tr>
+<tr><td class="eq-name">Carabao hide</td><td>Medium</td><td>13</td><td>&ndash;</td><td>&ndash;</td><td>30 gp</td><td>12 lb</td></tr>
+<tr><td class="eq-name">Baluti</td><td>Medium</td><td>14</td><td>&ndash;</td><td>&ndash;</td><td>400 gp</td><td>20 lb</td></tr>
+<tr><td class="eq-name">Barote</td><td>Medium</td><td>15</td><td>&ndash;</td><td>&ndash;</td><td>400 gp</td><td>40 lb</td></tr>
+<tr><td class="eq-name">Kalasag</td><td>Shield</td><td>+2</td><td>&ndash;</td><td>&ndash;</td><td>15 gp</td><td>6 lb</td></tr>
+<tr><td class="eq-name">Palisay</td><td>Shield</td><td>+1</td><td>&ndash;</td><td>&ndash;</td><td>10 gp</td><td>3 lb</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="ammunition">Punla &middot; Ammunition</h3>
+        <div class="eq-section" data-section="ammunition">
+          <p class="codex-panel__intro">Arrows, stone bullets, blowgun darts, and the thrown weapons that come back to the hand only if you fetch them.</p>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Amount</th><th>Cost</th><th>Weight</th></tr></thead><tbody>
+<tr><td><span class="eq-name">Bagakay spears</span></td><td>&ndash;</td><td>&ndash;</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Baladaw</span></td><td>&ndash;</td><td>&ndash;</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Blowgun Darts</span></td><td>20</td><td>1 gp</td><td>0.05 lb</td></tr>
+<tr><td><span class="eq-name">Bontal</span></td><td>&ndash;</td><td>&ndash;</td><td>3 lb</td></tr>
+<tr><td><span class="eq-name">Coral-tipped spears</span></td><td>&ndash;</td><td>&ndash;</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Kalawit</span></td><td>&ndash;</td><td>&ndash;</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Saltwater flasks</span></td><td>&ndash;</td><td>&ndash;</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Sarapang</span></td><td>&ndash;</td><td>&ndash;</td><td>4 lb</td></tr>
+<tr><td><span class="eq-name">Stone Bullets</span></td><td>20</td><td>1 gp</td><td>0.1 lb</td></tr>
+<tr><td><span class="eq-name">Sugob</span></td><td>&ndash;</td><td>&ndash;</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Wasay</span></td><td>&ndash;</td><td>&ndash;</td><td>2 lb</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="gear">Kagamitan &middot; Adventuring Gear</h3>
+        <div class="eq-section" data-section="gear">
+          <p class="codex-panel__intro">The ordinary things that keep a traveler alive, and the focuses through which the islands' magic is channeled.</p>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Type</th><th>Cost</th><th>Weight</th></tr></thead><tbody>
+<tr><td><span class="eq-name">Balete tree vine druidic focus</span></td><td>Druidic Focus</td><td>1 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Bamboo scroll</span></td><td>&ndash;</td><td>2 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Betel nut kit</span></td><td>&ndash;</td><td>5 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Bronze amulet arcane focus</span></td><td>Arcane Focus</td><td>10 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Bronze mirror</span></td><td>&ndash;</td><td>5 gp</td><td>0.5 lb</td></tr>
+<tr><td><span class="eq-name">Carved boar&#x27;s tusk arcane focus</span></td><td>Arcane Focus</td><td>5 gp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Copperplate</span></td><td>&ndash;</td><td>1 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Coral shard druidic focus</span></td><td>Druidic Focus</td><td>5 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Crocodile tooth holy symbol</span></td><td>Holy Symbol</td><td>5 gp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Eagle skull holy symbol</span></td><td>Holy Symbol</td><td>5 gp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Fishing tackle</span></td><td>&ndash;</td><td>1 gp</td><td>4 lb</td></tr>
+<tr><td><span class="eq-name">Hammer</span></td><td>&ndash;</td><td>1 gp</td><td>3 lb</td></tr>
+<tr><td><span class="eq-name">Merchant&#x27;s scales</span></td><td>&ndash;</td><td>5 gp</td><td>3 lb</td></tr>
+<tr><td><span class="eq-name">Palm leaf</span></td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Reetha nuts</span></td><td>&ndash;</td><td>5 cp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Saltwater, flasks of</span></td><td>&ndash;</td><td>1 sp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Seashell druidic focus</span></td><td>Druidic Focus</td><td>1 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Stone egg arcane focus</span></td><td>Arcane Focus</td><td>10 gp</td><td>4 lb</td></tr>
+<tr><td><span class="eq-name">String of beads arcane focus</span></td><td>Arcane Focus</td><td>1 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Volcanic stone holy symbol</span></td><td>Holy Symbol</td><td>5 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Walking stick</span></td><td>&ndash;</td><td>5 sp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Whetstone</span></td><td>&ndash;</td><td>1 cp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Writing implements</span></td><td>&ndash;</td><td>5 gp</td><td>1 lb</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="tools">Kasangkapan &middot; Tools</h3>
+        <div class="eq-section" data-section="tools">
+          <p class="codex-panel__intro">Artisan's kits, gaming sets, and the instruments whose music carries further than any voice.</p>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Type</th><th>Cost</th><th>Weight</th></tr></thead><tbody>
+<tr><td><span class="eq-name">Bodyong</span></td><td>Musical Instrument</td><td>3 gp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Goldworker&#x27;s Kit</span></td><td>Artisan&#X27;S Tools</td><td>25 gp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Hunter&#x27;s Kit</span></td><td>&ndash;</td><td>10 gp</td><td>5 lb</td></tr>
+<tr><td><span class="eq-name">Korlong</span></td><td>Musical Instrument</td><td>30 gp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Kudiyapi</span></td><td>Musical Instrument</td><td>35 gp</td><td>2 lb</td></tr>
+<tr><td><span class="eq-name">Kulintang</span></td><td>Musical Instrument</td><td>50 gp</td><td>15 lb</td></tr>
+<tr><td><span class="eq-name">Lantuy</span></td><td>Musical Instrument</td><td>2 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Mambabatok&#x27;s Tools</span></td><td>Artisan&#X27;S Tools</td><td>5 gp</td><td>1 lb</td></tr>
+<tr><td><span class="eq-name">Spider-Fighting</span></td><td>Gaming Set</td><td>1 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Spun Tops</span></td><td>Gaming Set</td><td>5 sp</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Sungka</span></td><td>Gaming Set</td><td>1 gp</td><td>0.5 lb</td></tr>
+<tr><td><span class="eq-name">Tambal Bundle</span></td><td>Musical Instrument</td><td>5 gp</td><td>1 lb</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="poisons">Lason &middot; Poisons</h3>
+        <div class="eq-section" data-section="poisons">
+          <p class="codex-panel__intro">Drawn from leaf, root and fruit. Every child on the islands is taught which of these not to touch.</p>
+<div class="eq-scroll"><table class="eq-table">
+<thead><tr><th>Name</th><th>Cost</th><th>Weight</th></tr></thead><tbody>
+<tr><td><span class="eq-name">Buta-buta leaves</span></td><td>&ndash;</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Odto</span></td><td>&ndash;</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Pong-pong fruits</span></td><td>&ndash;</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Putat</span></td><td>&ndash;</td><td>&ndash;</td></tr>
+<tr><td><span class="eq-name">Tubli roots</span></td><td>&ndash;</td><td>&ndash;</td></tr>
+</tbody></table></div>
+        </div>
+        <h3 class="npc-section-label" data-section="magic">Mahika &middot; Magic Items</h3>
+        <div class="eq-section" data-section="magic">
+          <p class="codex-panel__intro">Charms, vessels and worked things that carry more than their making.</p>
+<div class="codex-entries">
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Amulet of Apolaki</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Uncommon &middot; Requires attunement</p><p>This gold necklace is embedded with a fine ruby in the shape of the sun.</p><p>The necklace has 5 charges. As a reaction to being hit with an attack, you can expend 1 charge and cast the Apolaki&#x27;s light spell. Once all 5 charges have been expended, the necklace becomes a mundane piece of jewelry.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Amulet of Aqueous Affinity</span><span class="codex-race__tag codex-race__tag--craft">Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Rare &middot; Requires attunement</p><p>While attuned to this necklace made of iridescent glass beads, you can cast the spell aqueous affinity once per day, without requiring material components.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Anklets of the Trembling Earth</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Uncommon &middot; Requires attunement</p><p>These anklets made from precious stone are blessed by spirits of the earth. While attuned to these anklets, you gain tremorsense out to 60 feet.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Ayoding</span><span class="codex-race__tag codex-race__tag--craft">Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Rare &middot; Requires attunement (Requires attunement by a bard)</p><p>This musical instrument is made from a small strip of bamboo with strings on both ends. When played, the ayoding is said to speak out the inner thoughts of its player in musical form.</p><p>You can use an action to play the instrument and cast one of the following spells: calm emotions, enlarge/reduce, locate creature, remove curse, slow, thunderwave. Once the instrument has been used to cast a spell, it can&#x27;t be used to cast that spell again until the next dawn. The spells use your spellcasting ability and spell save DC.</p><p>You can play the instrument while casting a spell that causes any of its targets to be charmed on a failed saving throw, thereby imposing disadvantage on the save. This effect applies only if the spell has a somatic or a material component.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Bamboo Messenger</span><span class="codex-race__tag codex-race__tag--craft">Common</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Common</p><p>Engraved with arcane markings, this tube of bamboo can hold a letter and a small item no more than 3 inches in diameter.</p><p>You can designate a target creature by carving their name along the outside of the tube, and then plant the tube into the ground. The tube disappears, and in 1d10 days, a single stalk of bamboo grows within 10 feet of the target creature, inside of which contains the contents of the tube.</p><p>If the target is not on land, the tube reappears in the sender&#x27;s possession after 1d10 days with the contents still inside.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Banana Gem</span><span class="codex-race__tag codex-race__tag--craft">Legendary</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item (Consumable) &middot; Legendary</p><p>Said to grant fantastical abilities to any creature that can catch and swallow it, this mythical jewel drops from the heart of a banana tree during the full moon. Upon consuming the gem, you gain the following benefits:</p><p>Two of your ability scores increase by 2. The score can exceed 20 but can&#x27;t exceed 24.</p><p>You become 1d6 + 3 years younger. This effect cannot make you younger than 1 year old.</p><p>You can innately cast the invisibility spell, targeting yourself. When cast in this way, the spell does not require concentration. You regain the ability to do this after a short or long rest.</p><p>However, in order to gain the benefits of this jewel, the gem must be consumed during its descent from the banana tree. If the jewel touches the ground, it immediately loses all its power and becomes nothing more than a beautiful but mundane crystal worth 100 gp.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Black Egg</span><span class="codex-race__tag codex-race__tag--craft">Very Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item (Consumable) &middot; Very Rare</p><p>This blackened egg spawns from the body of a dying aswang.</p><p>You can swallow this egg as an action on your turn. Upon consuming the egg, you can speak and understand Abyssal, and you gain immunity to nonmagical bludgeoning, piercing, and slashing damage unless the attack is imbued with salt in some way. However, you must also immediately make a DC 20 Constitution saving throw. On a failure, you are poisoned for 24 hours. A creature descended from an aswang automatically fails this saving throw.</p><p>Curse. Upon consuming this egg, you are cursed to transform into an aswang. Your creature subtype immediately becomes aswang, and over the course of 2d10 + 10 days, you slowly begin to develop the physical characteristics of an aswang of CR 5 or lower (GM&#x27;s choice). If you are not descended from an aswang, this transformation can be stopped and reverted through the remove curse spell or similar magic. However, if you carry aswang lineage in your bloodline, this transformation is inevitable.</p><p>While cursed in this manner, whenever you take a long rest, roll 1d100. On a 40 or lower, your dreams are plagued with the memories of the aswang from which the egg originally spawned.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Box of Multiplicitous Betel Chew</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Uncommon</p><p>In addition to all the necessary tools to prepare betel nut, this hardwood box also contains an inner compartment enchanted to produce up to 1 pound each of the areca palm fruits and betel vine leaves needed for the social custom.</p><p>Once the box has produced the maximum amount of betel nut, it can&#x27;t produce any more until the next dawn.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Bracelet of Tigbalan Hair</span><span class="codex-race__tag codex-race__tag--craft">Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Rare &middot; Requires attunement</p><p>This bracelet has three stiff golden hairs from deep within a tigbalan&#x27;s mane woven into its fibers.</p><p>As an action, you can summon the tigbalan from which these hairs were plucked. The tigbalan appears in an unoccupied space within 15 feet of you, and is friendly to you and your companions. The tigbalan acts on their own initiative, but obeys any verbal commands that you issue to them (no action required by you). If you don&#x27;t issue any commands to the tigbalan, they take whatever actions they see necessary to protect and aid you.</p><p>The tigbalan stays for 1 minute, after which they return to their domain. You cannot summon the tigbalan to aid you again for 1d4 days.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Enchanted Limb</span><span class="codex-race__tag codex-race__tag--craft">Common</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Common</p><p>This prosthetic made of enchanted materials like wood or clay replaces a hand, arm, foot, leg, or other similar appendage. While the prosthetic is attached to you, it functions identically to the missing appendage, though touch sensations through the prosthetic feel muted.</p><p>You do not need to attune to the prosthetic in order to use it. You can remove or reattach the prosthetic as an action, but it cannot be removed or tampered with by anyone else. The prosthetic is also immune to spells like dispel magic and other effects that would hamper its functionality.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Enchanted Sarong</span><span class="codex-race__tag codex-race__tag--craft">Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Rare &middot; Requires attunement</p><p>This long loop of colorful cloth has been woven with enchanted thread. The sarong has the ability to move on its own, doing all it can to protect its wearer.</p><p>The sarong has a movement speed of 15 ft. As a bonus action, you can command the sarong to either move a distance up to its movement speed or wrap a creature within melee range of it. A creature being wrapped by the sarong must immediately make a DC 13 Dexterity saving throw or become restrained. The creature may use their action to repeat the saving throw, ending the effect on a success.</p><p>Additionally, while wearing the sarong, you can use your reaction to cast feather fall at will, as the sarong moves to buffet the air and slow your fall.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Golden Death Mask</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Uncommon</p><p>This gold-plated mask can be placed onto the face of a humanoid creature that has died within the last 24 hours. The mask then records 1d4 of the creature&#x27;s most important memories. Important memories typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals, and other significant life events.</p><p>Once these memories have been recorded, a living creature can don the mask and spend the next 10 minutes witnessing the stored memories. The living creature experiences these memories from the deceased creature&#x27;s perspective and feels everything the deceased creature underwent. Upon removing the mask, the living creature must succeed on a DC 14 Wisdom saving throw or gain one level of exhaustion from the emotional turmoil of experiencing the memories.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Headwrap of the Light Spirits</span><span class="codex-race__tag codex-race__tag--craft">Common</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Common</p><p>A minor spirit of light has inhabited this finely woven scarf to aid its wearer.</p><p>When a creature who is blind or under the blinded condition wears this headwrap, they can visually see things within a 30-foot radius around them. Sight via this headwrap isn&#x27;t perfect; smaller details still require a Wisdom (Perception) check or similar to detect, and darkness and dim light conditions still affect vision.</p><p>The headwrap cannot be removed or tampered with by anyone else other than the wearer, and it is immune to spells like dispel magic and other effects that would hamper their functionality.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Kibaan&#x27;s Magic Powder</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Uncommon</p><p>This magic gold dust is specifically enchanted to beset a creature with a random affliction.</p><p>As an action, you can throw a handful of this dust at one creature within melee range. The target is then afflicted with a random malady, as determined by rolling on the table below. The effect lasts for 1 minute.</p><p>A bag of magic powder typically contains enough for 3 uses.</p><p>1 Lethargy. For the duration, the target has disadvantage on Dexterity saving throws, and its speed is reduced by 10 feet.</p><p>2 Muscle atrophy. The target immediately drops one item it is currently holding, and it has disadvantage on Strength saving throws for the duration.</p><p>3 Skin decay. The target is poisoned for the duration.</p><p>4 Encroaching dark. For the duration, the target can only see out to 5 feet; this malady affects regular vision, darkvision, blindsight, and tremorsense.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Lumandilaw&#x27;s Bolo</span><span class="codex-race__tag codex-race__tag--craft">Very Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Weapon (Bolo) &middot; Very Rare &middot; Requires attunement</p><p>The brilliant glowing blade of this bolo seems to sing as it&#x27;s swiped through the air.</p><p>You have a +2 bonus to attack and damage rolls made with this magic weapon. When you hit with an attack using this magic weapon, the target takes an additional 1d8 radiant damage and must make a DC 15 Constitution saving throw. On a failure, the target is blinded until the end of its next turn, and the next attack roll made against the creature has advantage.</p><p>The blade of this bolo emits bright light in a 15-foot radius and dim light for an additional 15 feet.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Mango of the Pure Maiden</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item (Consumable) &middot; Uncommon</p><p>This magical mango appears to grow randomly on regular mango trees and is indiscernible from a mundane mango unless a creature succeeds on a DC 15 Intelligence (Arcana) check. The mango can be cleanly cut into six slices.</p><p>However, a creature who eats a slice from this mango is immediately cured of one of the following conditions: charmed, frightened, or poisoned. Additionally, the creature must make a DC 14 Charisma saving throw. On a failure, the creature is unable to tell a deliberate lie for 1 hour.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Monsala</span><span class="codex-race__tag codex-race__tag--craft">Legendary</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Legendary &middot; Requires attunement</p><p>This magical flying scarf once belonged to a daring hero, said to have traversed both the heavens and earth.</p><p>While attuned to this scarf, you can cast ride lightning at will.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Piercings of the Wind Spirits</span><span class="codex-race__tag codex-race__tag--craft">Common</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Common</p><p>A minor air spirit has imbued these beautiful gold-plated earrings to aid their wearer.</p><p>When a creature who is deaf or under the deafened condition wears these piercings, they can hear sounds within a 30-foot radius around them. Hearing via these piercings isn&#x27;t perfect; quiet noises still require a Wisdom (Perception) check or similar to detect, and loud sounds may be especially startling or painful.</p><p>The piercings cannot be removed or tampered with by anyone else other than the wearer, and they are immune to spells like dispel magic and other effects that would hamper their functionality.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Potion of Adarna Droppings</span><span class="codex-race__tag codex-race__tag--craft">Very Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Potion &middot; Very Rare</p><p>This opaque white potion is crafted from the droppings of a legendary bird said to roost in a golden tree hidden away somewhere in the islands.</p><p>As an action, you can splash the contents of this potion on one creature in melee range. The creature must immediately make a DC 18 Constitution saving throw. If the saving throw fails by 5 or more, the target is instantly petrified. On any other failed save, the target is restrained and begins to turn to stone. While restrained in this way, the target must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the target is freed by the greater restoration spell or similar magic.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Pouch of Tracking Ant Dust</span><span class="codex-race__tag codex-race__tag--craft">Common</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Common</p><p>This small leather pouch contains a mixture of ground ants and bits of gold flakes.</p><p>You can spread this dust over a set of tracks in the ground. After 1 minute, a swarm of illusory golden ants will emerge from the tracks and continue to follow the path of the creature that made them, regardless if the physical tracks remain visible. These ants last for 1 hour, or until the creature&#x27;s path crosses a body of water, after which the ants are no longer able to follow.</p><p>While the ants are active, you have advantage on Wisdom (Survival) checks made to track the creature the ants are following.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Salimbal</span><span class="codex-race__tag codex-race__tag--craft">Legendary</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item (Water Vehicle) &middot; Legendary</p><p>Said to be the only vehicle that can travel beyond the edge of the world, this mythical balangay is carved from stone and heavily inlaid with gold.</p><p>A creature who is proficient with water vehicles can spend 1 hour communing with the spirits of the vessel, at the end of which the spirits allow the creature and their companions to command the ship. The Salimbal has the following properties:</p><p>The ship has AC 20, 500 hit points, and a damage threshold of 50.</p><p>The ship is immune to poison damage, necrotic damage, and all bludgeoning, piercing, and slashing damage. The ship has resistance to acid, cold, fire, lightning, and thunder damage.</p><p>Instead of sailing on the water, the ship sails through the skies. It has a fly speed of 40 feet; if a creature who is proficient with water vehicles is moving the ship, this fly speed increases to 60 feet.</p><p>Once per day, the ship can be used to cast plane shift without needing material components.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Singing Spear</span><span class="codex-race__tag codex-race__tag--craft">Uncommon</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Weapon (Bagakay Spear) &middot; Uncommon &middot; Requires attunement</p><p>You have a +1 bonus to attack and damage rolls you make with this magic weapon.</p><p>This bamboo spear has a long, open-mouthed face carved along the bottom end. As a bonus action, you can cause this carving to sing, calling a local nature spirit to your aid. For the next minute, the spear deals an extra 1d4 damage. The damage type is determined by the kind of nature spirit that comes to your aid; roll randomly or choose one of the spirits listed in the table below.</p><p>Some nature spirits may be more common in certain environments than others. For example, while traversing a volcanic field, you may only be able to call upon rock and lava spirits, whereas on the ocean water spirits may be more willing to help.</p><p>1d6 Spirit Type, Damage Type: 1 Lava, Fire. 2 Water, Cold. 3 Wind, Thunder. 4 Rock, Force. 5 Vine, Poison. 6 Storm, Lightning.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Tala&#x27;s Wayfinder</span><span class="codex-race__tag codex-race__tag--craft">Very Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Rod &middot; Very Rare</p><p>Gold and pearl-inlaid engravings of stars cascade up the side of the dark wooden rod.</p><p>While holding this rod at night, you can use your action to whisper the name of a destination to the rod. A line of starlight then appears in front of you, pointing you in the direction of that location. The route the wayfinder shows is the safest possible route, though it may not be the shortest.</p><p>The guiding starlight lasts for 8 hours, or until dawn. If you attempt to use the rod during the day, nothing happens. Once you have asked the rod for its guidance, you cannot use it again for 1d4 days.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Vessel of Ibingan Acid</span><span class="codex-race__tag codex-race__tag--craft">Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Potion &middot; Rare</p><p>This earthenware bowl contains the corrosive spittle of an ibingan, mixed with other ingredients to render it stable for transport.</p><p>As an action, you can splash the contents of this bowl onto a creature within 5 feet of you. Make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 4d6 acid damage. If the target is wearing armor, the armor takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 is destroyed.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Waters of the Black River</span><span class="codex-race__tag codex-race__tag--craft">Very Rare</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Potion &middot; Very Rare</p><p>This vessel contains water drawn from the river of the Underworld itself, the liquid swirling with shadow. When this potion is applied to a creature, the creature can immediately end one of the following effects on themselves:</p><p>One effect that charmed, frightened, or paralyzed the target.</p><p>Any reduction to one of the target&#x27;s ability scores.</p><p>One effect reducing the target&#x27;s hit point maximum.</p></div></details>
+</div>
+        </div>
+        <h3 class="npc-section-label" data-section="artifacts">Sandata ni Haliya &middot; Artifacts</h3>
+        <div class="eq-section" data-section="artifacts">
+          <p class="codex-panel__intro">Three relics, the armament of Haliya herself. They are not bought, and they are not given twice.</p>
+<div class="codex-entries">
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Mask of the Tusked Warrior</span><span class="codex-race__tag codex-race__tag--gilded">Artifact</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Wondrous Item &middot; Artifact &middot; Requires attunement</p><p>Bearing a fearsome tusked grin, this mask is forged from the sky itself, golden starlight interwoven with shards of the night to protect the wearer&#x27;s identity.</p><p>While you are attuned to and wear this mask, you can access the following properties.</p><p>All-Seeing Sky. You gain truesight out to 120 feet.</p><p>Blessings of the Night. The mask has 8 charges. You can use an action to expend 1 or more of its charges to cast one of the following spells (spell save DC 20): darkness (1 charge), greater invisibility (2 charges), major image (1 charge), seeming (3 charges), mist of the Moon Twins (3 charges).</p><p>Legendary Resistance (1/Day). If you fail a saving throw, you can choose to succeed instead.</p><p>Mask of the Stars. You cannot be targeted by divination magic or perceived through magical scrying sensors. You are also immune to any effect that would sense your emotions or read your thoughts.</p><p>Warrior&#x27;s Majesty. You can add your Charisma bonus (minimum of +1) to your Armor Class.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Shield of the Valiant Sister</span><span class="codex-race__tag codex-race__tag--gilded">Artifact</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Shield &middot; Artifact &middot; Requires attunement</p><p>This tall kalasag shield is crafted from silvery hardwood that glows faintly in the night. On its front is emblazoned a glittering mosaic of the heavenly family: the sky, the moon, the stars, the sun, and the dawn.</p><p>While attuned to and equipped with this shield, you can access the following properties.</p><p>Emissary of the Sky. You gain a fly speed of 60 feet.</p><p>Legendary Resistance (1/Day). If you fail a saving throw, you can choose to succeed instead.</p><p>Lunar Defender. As a bonus action on your turn, you can activate a protective aura around yourself, which extends to a distance of 15 feet and lasts for 1 minute. A hostile creature that enters the aura for the first time on a turn or starts its turn there must make a DC 20 Wisdom saving throw. On a failed save, the creature takes 6d8 radiant damage. On a successful save, the creature takes half as much damage.</p></div></details>
+<details class="codex-race"><summary class="codex-race__summary"><span class="codex-race__title">Sword of the Earnest Moon</span><span class="codex-race__tag codex-race__tag--gilded">Artifact</span><span class="codex-race__chevron" aria-hidden="true">&#9662;</span></summary><div class="codex-race__body"><p class="eq-meta">Weapon (Kampilan) &middot; Artifact &middot; Requires attunement</p><p>Forged from sharpened moonlight, this sword hums with ethereal power. The flat of its blade is engraved with the phases of the moon.</p><p>The sword grants a +3 bonus to attack and damage rolls made with it. While attuned to this sword, you can access the following properties.</p><p>Blessings of the Moon. You can cast the moonbeam spell as a 4th-level spell at will, without requiring material components. Additionally, you can cast celestial chaos once and regain the ability to do so after a long rest.</p><p>Legendary Resistance (1/Day). If you fail a saving throw, you can choose to succeed instead.</p><p>Sister&#x27;s Fury. While your current hit points are equal to or less than half your hit point maximum, you deal an extra 2d12 radiant damage with your weapon attacks.</p></div></details>
+</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── DM MODAL ── -->
+  <div class="dm-modal-overlay" id="dm-modal-overlay" role="dialog" aria-modal="true" aria-label="DM Mode">
+    <div class="dm-modal">
+      <p class="dm-modal__title">DM Mode</p>
+      <input class="dm-modal__input" type="password" id="dm-password-input" placeholder="Password..." autocomplete="off">
+      <p class="dm-modal__error" id="dm-error"></p>
+      <div class="dm-modal__buttons">
+        <button class="dm-modal__btn dm-modal__btn--confirm" id="dm-confirm-btn">Enter</button>
+        <button class="dm-modal__btn dm-modal__btn--cancel" id="dm-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── FILTER SECTION ──
+    function filterSection(section, btn) {
+      document.querySelectorAll('.char-section-nav__btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('[data-section]').forEach(function(el) {
+        if (section === 'all' || el.dataset.section === section) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <script src="js/dm.js"></script>
+
+</body>
+</html>
