@@ -4334,49 +4334,47 @@ button:focus-visible {
    different colour overrides it explicitly. Removing it reintroduces
    the brown-on-brown bug from the first build of this page.
    ================================================================== */
-.cls-layout {
-  display: grid;
-  grid-template-columns: 15rem 1fr;
-  gap: 2rem;
-  align-items: start;
-}
+.cls-layout { display: block; }
 
-/* ── class list ─────────────────────────────────────────────── */
+/* ── class list: a centred strip under the page title ───────────
+   Was a left sidebar. It squeezed the content pane to ~760px, which
+   is not enough for a 19-column table, and it needed its own
+   scrollbar to fit 14 classes. As a strip it costs no width at all
+   and every class is visible at once. ─────────────────────────── */
 .cls-list {
-  position: sticky;
-  top: 4.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  padding: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 auto 2rem;
+  padding: 0.9rem 1rem;
+  max-width: 1100px;
   background: rgba(10,7,4,0.5);
-  border: 1px solid rgba(196,154,26,0.2);
-  border-radius: var(--radius);
-  /* No max-height and no overflow: a scroll box inside the column meant all
-     14 classes were never visible at once. The list is now as tall as it
-     needs to be and the page scrolls as one. */
+  border-top: 1px solid rgba(196,154,26,0.2);
+  border-bottom: 1px solid rgba(196,154,26,0.2);
 }
 .cls-list__item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  width: 100%;
-  padding: 0.16rem 0.45rem;
-  background: none;
-  border: 1px solid transparent;
-  border-radius: 2px;
+  gap: 0.45rem;
+  width: auto;
+  padding: 0.22rem 0.7rem 0.22rem 0.35rem;
+  background: rgba(26,6,0,0.35);
+  border: 1px solid rgba(196,154,26,0.22);
+  border-radius: 3px;
   font-family: var(--font-display);
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  color: rgba(242,216,152,0.8);
-  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: rgba(242,216,152,0.82);
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.cls-list__item:hover { background: rgba(196,154,26,0.1); color: var(--gold-light); }
+/* 1x. 32px from a 48px source is a 0.67x downscale and blurs pixel art. */
+.cls-list__item .cls-badge { width: 48px; height: 48px; }
+.cls-list__item:hover { background: rgba(196,154,26,0.14); color: var(--gold-light); }
 .cls-list__item.is-active {
-  background: rgba(196,154,26,0.16);
-  border-color: rgba(196,154,26,0.45);
+  background: rgba(196,154,26,0.2);
+  border-color: rgba(196,154,26,0.6);
   color: var(--gold-bright);
 }
 .cls-list__item:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
@@ -4601,10 +4599,7 @@ button:focus-visible {
 .page-classes .section-container {
   max-width: 1680px;
 }
-.page-classes .cls-layout {
-  grid-template-columns: 13rem minmax(0, 1fr);
-  gap: 1.5rem;
-}
+
 
 /* Compact cells: the wide tables are mostly one or two character values. */
 .cls-table { table-layout: auto; font-size: 0.82rem; }
@@ -4643,9 +4638,7 @@ button:focus-visible {
 @media (max-width: 1100px) {
   .page-classes .section-container { max-width: 100%; }
 }
-@media (max-width: 900px) {
-  .page-classes .cls-layout { grid-template-columns: 1fr; }
-}
+
 
 
 /* ==================================================================
@@ -4662,10 +4655,7 @@ button:focus-visible {
    never an inner scrollbar. The hero badge stays 144px and the
    subclass badge 96px, so the art still carries the page.
    ================================================================== */
-@media (max-height: 940px) {
-  .cls-list__item .cls-badge { width: 24px; height: 24px; }
-  .cls-list__item { padding: 0.14rem 0.4rem; font-size: 0.72rem; }
-}
+
 
 /* ══════════════════════════════════════════════════════════════════
    MAGIC ITEM ROWS (equipment.html)
@@ -4703,3 +4693,55 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
 
 /* The item table has fewer, wider columns than the stat tables. */
 .eq-table--items td:first-child { min-width: 14rem; }
+
+
+/* ── per-level feature list (the 12 standard classes) ─────────────
+   Names, levels and a page citation. The descriptive paragraphs are
+   WotC's and are not reproduced; the citation points to them. ──── */
+.cls-feats {
+  list-style: none;
+  margin: 0 0 1.8rem;
+  padding: 0;
+  border-top: 1px solid rgba(196,154,26,0.14);
+}
+.cls-feat {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  padding: 0.42rem 0.6rem;
+  border-bottom: 1px solid rgba(196,154,26,0.1);
+}
+.cls-feat:nth-child(even) { background: rgba(196,154,26,0.035); }
+.cls-feat__lv {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.cls-feat__name { color: var(--text-light); font-weight: 600; }
+.cls-feat__src {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  color: rgba(242,216,152,0.5);
+  white-space: nowrap;
+}
+.cls-feat--sub { background: rgba(196,154,26,0.09) !important; }
+.cls-feat--sub .cls-feat__name { color: var(--gold-light); font-style: italic; }
+
+/* The class description that replaced the pointer paragraph. */
+.cls-hero__lead {
+  margin: 0 0 1.6rem;
+  max-width: 68ch;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+@media (max-width: 640px) {
+  .cls-feat { grid-template-columns: 1fr auto; }
+  .cls-feat__lv { grid-column: 1 / -1; }
+}
