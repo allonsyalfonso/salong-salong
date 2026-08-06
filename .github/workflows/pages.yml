@@ -1,0 +1,52 @@
+name: Deploy site to GitHub Pages
+
+# Replaces GitHub's built-in "pages build and deployment" workflow, whose
+# queue wedged on 2026-08-06: run #58 stuck in "queued" for hours, refusing to
+# cancel, and every later deploy timed out at ten minutes waiting behind it.
+# This workflow has its own run queue and its own concurrency group.
+#
+# Settings > Pages > Source must be set to "GitHub Actions" for this to serve.
+# If it is ever set back to "Deploy from a branch", this workflow still runs
+# but its deploy step will fail, because the branch pipeline owns the site.
+#
+# The site is plain static HTML with no build step, so the whole repo is
+# uploaded as-is. upload-pages-artifact does a raw upload, so unlike the branch
+# pipeline this never runs Jekyll at all. No .nojekyll file is needed.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it midway, so the site is
+# never left half-published. Queued duplicates are dropped.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
