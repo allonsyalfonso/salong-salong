@@ -4705,14 +4705,19 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
   border-top: 1px solid rgba(196,154,26,0.14);
 }
 .cls-feat {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr auto;
-  gap: 0.5rem 1rem;
-  align-items: baseline;
-  padding: 0.42rem 0.6rem;
-  border-bottom: 1px solid rgba(196,154,26,0.1);
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.3rem;
+  border-bottom: 1px solid rgba(196,154,26,0.12);
 }
-.cls-feat:nth-child(even) { background: rgba(196,154,26,0.035); }
+.cls-feat:last-child { border-bottom: 0; }
+.cls-feat__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0 0 0.55rem;
+  font-size: 1.06rem;
+}
 .cls-feat__lv {
   font-family: var(--font-display);
   font-size: 0.6rem;
@@ -4721,27 +4726,68 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
   color: var(--gold);
   white-space: nowrap;
 }
-.cls-feat__name { color: var(--text-light); font-weight: 600; }
+.cls-feat__name { color: var(--gold-light); font-weight: 700; }
 .cls-feat__src {
+  margin-left: auto;
   font-family: var(--font-display);
   font-size: 0.58rem;
   letter-spacing: 0.06em;
   color: rgba(242,216,152,0.5);
   white-space: nowrap;
 }
-.cls-feat--sub { background: rgba(196,154,26,0.09) !important; }
-.cls-feat--sub .cls-feat__name { color: var(--gold-light); font-style: italic; }
+/* The feature prose itself. Cream on the dark pane, per the site-wide gotcha
+   that the default body colour is near-black and would be invisible here. */
+.cls-feat__body { color: var(--text-light); }
+.cls-feat__body p { margin: 0 0 0.7rem; line-height: 1.7; }
+.cls-feat__body p:last-child { margin-bottom: 0; }
+.cls-feat__body ul,
+.cls-feat__body ol { margin: 0 0 0.7rem 1.1rem; line-height: 1.65; }
+.cls-feat__body li { margin: 0 0 0.3rem; }
+.cls-feat__body strong { color: var(--gold-light); }
+.cls-feat__body em { color: rgba(242,216,152,0.85); }
+.cls-feat__body table {
+  width: 100%;
+  margin: 0 0 0.8rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.cls-feat__body th,
+.cls-feat__body td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid rgba(196,154,26,0.12);
+  text-align: left;
+}
+.cls-feat--appendix { background: rgba(196,154,26,0.04); padding: 1rem; border-radius: var(--radius); }
 
-/* The class description that replaced the pointer paragraph. */
+/* The Sina Una subclass, spliced into its level-3 feature. */
+.cls-sub--inline {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(196,154,26,0.07);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* CC BY 4.0 attribution for the SRD 5.2 feature text. Required by the licence. */
+.cls-attrib {
+  margin: 2rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(196,154,26,0.14);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: rgba(242,216,152,0.6);
+}
+.cls-attrib a { color: rgba(242,216,152,0.85); }
+
+/* The class description. Was capped at 68ch, which left it hugging the left
+   edge of the much wider class pane. It now runs the full pane width. */
 .cls-hero__lead {
   margin: 0 0 1.6rem;
-  max-width: 68ch;
   font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text-light);
 }
 
 @media (max-width: 640px) {
-  .cls-feat { grid-template-columns: 1fr auto; }
-  .cls-feat__lv { grid-column: 1 / -1; }
+  .cls-feat__src { margin-left: 0; width: 100%; }
 }
