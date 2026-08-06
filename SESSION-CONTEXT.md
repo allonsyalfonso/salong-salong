@@ -1,16 +1,16 @@
-# Isla ng Salong-Salong — Session Context
-**Project:** Static D&D lore site — `C:\Users\USER\Documents\GitHub\salong-salong\`
+# Isla ng Salong-Salong: Session Context
+**Project:** Static D&D lore site at `C:\Users\USER\Documents\GitHub\salong-salong\`
 **Live URL:** https://allonsyalfonso.github.io/salong-salong/
-**Stack:** Plain HTML / CSS / JS — no build system, no framework
-**Last updated:** 2026-08-05
+**Stack:** Plain HTML / CSS / JS, no build system, no framework
+**Last updated:** 2026-08-06 (post-restructure: classes.html exists, codex is Races/Backgrounds/Feats)
 
 ---
 
 ## What This Site Is
 
 A static GitHub Pages site for a Filipino pre-colonial D&D campaign world called **Isla ng Salong-Salong**, run by **DM Avips**. Two campaigns:
-- **Isla ng Salong-Salong** — main campaign, 1+ year, now completed
-- **Isla ng Salong-Salong: Mga Nawawalang Salaysay** — active mini-campaign
+- **Isla ng Salong-Salong**: main campaign, 1+ year, now completed
+- **Isla ng Salong-Salong: Mga Nawawalang Salaysay**: active mini-campaign
 
 ---
 
@@ -26,11 +26,10 @@ salong-salong/
 ├── bestiary.html       ← Creatures (Creatures / Spirits / Elementals / Demons)
 ├── distances.html      ← Travel-time tool
 ├── calendar.html       ← In-world calendar
-├── codex.html          ← Tabbed rules reference: Races / Classes / Subclasses
-├── equipment.html      ← GENERATED. Armory, 116 items in 8 sections
-├── feats.html          ← GENERATED. 5 setting feats
+├── codex.html          ← GENERATED. Tabbed: Races / Backgrounds / Feats (32 cards)
+├── classes.html        ← GENERATED. All 14 classes with 20-level tables
+├── equipment.html      ← GENERATED. Armory, 108 items in 8 sections
 ├── spells.html         ← GENERATED. 24 homebrew spells, by level
-├── backgrounds.html    ← GENERATED. 18 backgrounds (6 island + 12 localized)
 ├── chronicles.html     ← Letters/final words
 ├── epic.html           ← Full campaign story
 ├── glossary.html       ← Term definitions
@@ -42,21 +41,35 @@ salong-salong/
     └── distances.js    ← Distance tool logic
 ```
 
-18 pages. The four marked GENERATED are built by scripts, not hand-edited.
-See "Generated pages" below before touching them.
+17 pages. `backgrounds.html` and `feats.html` were absorbed into codex.html
+and DELETED in the 2026-08-06 restructure; do not recreate them. The four
+pages marked GENERATED are built by scripts, not hand-edited. See "Generated
+pages" below before touching them.
+
+## Nav structure (since the restructure)
+
+```
+World:  Locations, History, Bestiary, Distances
+Rules:  Codex, Classes, Equipment, Spells
+People: Characters, Heroes
+Lore:   Epic, Chronicles, Glossary, Calendar
+```
+
+Codex moved from the World menu to Rules. If a page is ever added to the
+Rules dropdown, BOTH shell templates must be updated (see Generated pages).
 
 ---
 
 ## Key CSS Variables (in style.css)
 
 ```css
---bg-dark:      #c98010   /* amber — main page bg / section backgrounds */
---bg-surface:   #1c0800   /* dark chocolate — dark sections */
+--bg-dark:      #c98010   /* amber, main page bg / section backgrounds */
+--bg-surface:   #1c0800   /* dark chocolate, dark sections */
 --gold:         #c8920e
 --gold-light:   #e8a820
 --gold-bright:  #f5c840
---text-dark:    #1a0600   /* near-black — default body text */
---text-light:   #f2d898   /* cream — text on dark sections */
+--text-dark:    #1a0600   /* near-black, default body text */
+--text-light:   #f2d898   /* cream, text on dark sections */
 --text-muted:   #7a3a08
 --font-display: /* display/heading font */
 --font-body:    /* body font */
@@ -69,7 +82,7 @@ See "Generated pages" below before touching them.
 
 ---
 
-## Map Markers — Current Positions (index.html)
+## Map Markers: Current Positions (index.html)
 
 All markers are `position: absolute` inside `.map-frame`. The image is `width: 100%`.
 
@@ -114,7 +127,7 @@ file was not updated. Do not re-implement it.)
 
 ---
 
-## characters.html — Structure
+## characters.html: Structure
 
 **Grid class:** `npc-grid npc-grid--with-badge`
 
@@ -142,7 +155,7 @@ file was not updated. Do not re-implement it.)
 
 ---
 
-## pc.html — Structure
+## pc.html: Structure
 
 **Grid class:** `npc-grid npc-grid--pc npc-grid--with-badge`
 
@@ -165,7 +178,7 @@ file was not updated. Do not re-implement it.)
 ```css
 .status-badge--alive        /* "Survived" */
 .status-badge--deceased     /* "Deceased" */
-.status-badge--transformed  /* "Gabunan" — purple: bg #1a0a3d, color #b08cff */
+.status-badge--transformed  /* "Gabunan", purple: bg #1a0a3d, color #b08cff */
 ```
 
 **CSS specificity fix for card header height:**
@@ -184,19 +197,19 @@ file was not updated. Do not re-implement it.)
 3. Drop-cap on `.npc-card__description::first-letter` (gold, 1.65em, float left)
 4. Gold left-border accent on `.npc-card:hover`
 5. Sticky filter nav on characters.html and pc.html
-6. Timeline era chip (`#timeline-era-chip` — fixed bottom pill, scroll-spy)
+6. Timeline era chip (`#timeline-era-chip`, fixed bottom pill, scroll-spy)
 7. Keyboard navigation on codex.html tabs (Arrow/Home/End keys)
 8. `.npc-location-tag` styled tags on character cards
 9. About section on index.html homepage
-10. Section label contrast fix (`.npc-section-label` — was gold-on-amber = invisible)
+10. Section label contrast fix (`.npc-section-label`, was gold-on-amber = invisible)
 
 ---
 
-## About Section (index.html) — Key CSS Notes
+## About Section (index.html): Key CSS Notes
 
 The about section has class `about-world dark-section`.
 
-**Critical rule — must stay:**
+**Critical rule, must stay:**
 ```css
 .about-world { color: var(--text-light); }
 ```
@@ -235,7 +248,7 @@ function filterSection(section, btn) {
 
 ---
 
-## dm.js — What It Does (do not modify unless intentional)
+## dm.js: What It Does (do not modify unless intentional)
 
 - IntersectionObserver scroll-reveal (watches elements for fade-in)
 - Back-to-top button
@@ -259,29 +272,37 @@ function filterSection(section, btn) {
 
 ---
 
-## Generated pages (added 2026-08-05)
+## Generated pages (updated 2026-08-06)
 
-Four pages are built by scripts. Editing their HTML directly works until
-someone re-runs the generator, at which point the edit is silently overwritten.
-Change the generator instead.
+Four pages are built by scripts: codex.html, classes.html, equipment.html,
+spells.html. Editing their HTML directly works until someone re-runs the
+generator, at which point the edit is silently overwritten. Change the
+generator instead.
 
 Generators live OUTSIDE this repo, in the source folder:
 `C:\Users\USER\Documents\Claude Code\isla-ng-salong-salong-claude-code-files\tools\`
 
-| Page | Generator | Shell template |
+| Script | Produces | Reads |
 |---|---|---|
-| equipment.html | build_equipment.py | equipment_shell.html |
-| feats.html | build_rules_pages.py | rules_shell.html |
-| spells.html | build_rules_pages.py | rules_shell.html |
-| backgrounds.html | build_backgrounds.py | rules_shell.html |
+| build_equipment.py | equipment.html | `_export/` + equipment_shell.html |
+| build_classes.py | classes.html | `_panels/classes12.json`, featpages.json, druid_ws.json, `_panels/*.html`, rules_shell.html |
+| build_rules_pages.py | spells.html + `_panels/feats_frag.html` | `_export/spells.json` |
+| build_backgrounds.py | `_panels/backgrounds_frag.html` | `_export/backgrounds.json` |
+| build_codex.py | codex.html | `_panels/races.html` + the two fragments |
+| parse_handoff5.py | `_panels/classes12.json` | handoff #5 (pipe-delimited, authoritative) |
+| parse_handoff7.py | `_panels/featpages.json`, `_panels/druid_ws.json` | handoff #7 |
+
+**Build order matters:** run build_backgrounds.py and build_rules_pages.py
+BEFORE build_codex.py, because codex consumes their fragments.
 
 They read the Sina Una export at
 `C:\Users\USER\Documents\Claude Code\sina-una-character-sheet\_export\`
 which is 15 JSON files plus index.json, machine-generated from the homebrew
 pub file by the rules session.
 
-If you add a page to the Rules dropdown, update BOTH shell templates, or the
-next regeneration drops the new link from the generated pages.
+Two shell templates exist: equipment_shell.html and rules_shell.html. If you
+add a page to the Rules dropdown, update BOTH, or the next regeneration drops
+the new link from the generated pages.
 
 ---
 
@@ -306,14 +327,24 @@ We do NOT print their ability scores, skills, tools, equipment or gold. The 6
 island backgrounds (Lorechanter, Mangangalakal, Panday, Sea Raider, Voyager,
 Aswang Lineage) are sourced to the Sina Una book and ARE published in full.
 
-If someone ever "fixes" backgrounds.html to filter on isSinaUna like the other
-pages, all 12 localized backgrounds vanish. That is why it is different.
+If someone ever "fixes" build_backgrounds.py to filter on isSinaUna like the
+other generators, all 12 localized backgrounds vanish from the codex. That is
+why it is different. The reason is documented at the top of that script.
+
+**classes.html and WotC prose:** the 12 standard classes publish MECHANICS
+only: hit dice, proficiencies, level/proficiency tables, class-specific
+columns, feature NAMES by level, and page citations. Never feature prose.
+This was requested three times (personal-use framing, copy from 5etools,
+relabel as SRD) and correctly declined each time. The 12 class descriptions
+are original text written by the website session and reviewed by the rules
+session. Warlock's Pact Magic slot columns are permanently dropped with a
+visible note (the sheet stores them as an interpreted token, not a table).
 
 ---
 
 ## search.html has a hardcoded index
 
-`SEARCH_INDEX` is a literal JS array inside search.html, currently 174 entries.
+`SEARCH_INDEX` is a literal JS array inside search.html, currently 195 entries.
 New content is invisible to search unless an entry is added there, and it fails
 silently.
 
@@ -370,17 +401,31 @@ not an extract of this site. Historical only.
 
 ---
 
-## Current content counts
+## Current content counts (verified 2026-08-06 against the files)
 
-- codex.html: 23 cards (9 races, 2 custom classes, 12 subclasses)
-- equipment.html: 116 items (28 weapons, 9 armor and shields, 11 ammunition,
+- codex.html: 32 cards in 3 tabs (9 races, 18 backgrounds, 5 feats)
+- classes.html: 14 classes (12 standard + Babaylan + Headhunter), all with
+  20-level tables; the 12 standard also have descriptions, per-level feature
+  lists and page citations
+- equipment.html: 108 items (28 weapons, 9 armor and shields, 3 ammunition,
   23 gear, 12 tools, 5 poisons, 25 magic items, 3 artifacts)
-- feats.html: 5
 - spells.html: 24 across 10 levels
-- backgrounds.html: 18 (6 island, 12 localized)
 - glossary.html: 39 terms
-- search.html: 174 index entries
+- search.html: 195 index entries
 
 Panel intro strings on codex.html hardcode their counts ("The nine playable
-races", "Two full custom classes", "Twelve Sina Una subclasses"). Update that
-prose if the counts change.
+races", "Six backgrounds original to Sina Una", "Twelve standard backgrounds",
+"Five feats unique to Sina Una"). Update that prose if the counts change.
+
+---
+
+## GitHub Pages deploy note (2026-08-06)
+
+Deploys use GitHub's built-in "pages build and deployment" workflow, Source =
+Deploy from a branch, main, / (root). There is no workflow file in the repo.
+On 2026-08-06 two consecutive deploys reported failure with "Timeout reached,
+aborting!" because GitHub's backend took ~14 minutes against the workflow's
+10-minute wait; the deployment then landed anyway a few minutes after the
+"failure". If a deploy shows a plain timeout failure, check the live site
+(hard-refresh, or curl with a cache-buster) a few minutes later before
+escalating. Repo size and content were verified irrelevant.
