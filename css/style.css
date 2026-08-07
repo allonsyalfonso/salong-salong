@@ -4341,10 +4341,12 @@ button:focus-visible {
    is not enough for a 19-column table, and it needed its own
    scrollbar to fit 14 classes. As a strip it costs no width at all
    and every class is visible at once. ─────────────────────────── */
+/* A 7-column grid, not flex wrap. There are 14 classes, and flex packed them
+   by pixel width, which gave a lopsided 8 on the first row and 6 on the
+   second. Seven fixed columns splits them evenly, 7 and 7. */
 .cls-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.4rem;
   margin: 0 auto 2rem;
   padding: 0.9rem 1rem;
@@ -4353,6 +4355,8 @@ button:focus-visible {
   border-top: 1px solid rgba(196,154,26,0.2);
   border-bottom: 1px solid rgba(196,154,26,0.2);
 }
+@media (max-width: 900px) { .cls-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .cls-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .cls-list__item {
   display: inline-flex;
   align-items: center;
@@ -4758,6 +4762,39 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
   text-align: left;
 }
 .cls-feat--appendix { background: rgba(196,154,26,0.04); padding: 1rem; border-radius: var(--radius); }
+
+/* Sina Una subclass features, now sitting at their own levels in the list
+   rather than bundled under the level 3 subclass heading. Marked so a reader
+   can see at a glance which features come from the subclass. */
+.cls-feat--sub {
+  padding-left: 0.95rem;
+  border-left: 3px solid var(--gold);
+}
+.cls-feat--sub .cls-feat__name { color: var(--gold-bright); }
+.cls-feat__meta {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  color: rgba(242,216,152,0.65);
+}
+
+/* Grouped header spanning the spell-slot columns, as the book prints it. */
+.cls-table__group th { border-bottom: 0; padding-bottom: 0.15rem; }
+.cls-table__groupspan {
+  text-align: center !important;
+  font-size: 0.52rem !important;
+  letter-spacing: 0.1em;
+  color: rgba(242,216,152,0.55);
+  border-bottom: 1px solid rgba(196,154,26,0.25) !important;
+}
+/* The Features column carries the longest strings, so give it the slack and
+   stop the numeric columns being squeezed to fit it. */
+.cls-table td.cls-feats-col,
+.cls-table th.cls-feats-col {
+  min-width: 11rem;
+  text-align: left;
+  line-height: 1.4;
+}
 
 /* The Sina Una subclass, spliced into its level-3 feature. */
 .cls-sub--inline {
