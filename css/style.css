@@ -4409,6 +4409,15 @@ button:focus-visible {
   color: var(--gold-bright);
   margin: 0 0 0.35rem;
 }
+/* The class name is an h2 inside .section-container, which decorates its h2s
+   with gradient rules on both sides and makes them flex to position those
+   rules. That framing suits a centred section title but not a name sitting
+   beside a badge, so suppress it. The selector has to out-specify
+   `.section-container h2::before` (0,1,2), which a bare `.cls-hero__name`
+   (0,1,1) does not, so the parent class is repeated here deliberately. */
+.section-container h2.cls-hero__name { display: block; }
+.section-container h2.cls-hero__name::before,
+.section-container h2.cls-hero__name::after { display: none; content: none; }
 .cls-hero__flavor {
   margin: 0 0 0.3rem;
   font-style: italic;
@@ -4777,6 +4786,25 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
   letter-spacing: 0.06em;
   color: rgba(242,216,152,0.65);
 }
+
+/* The subclass chooser on Babaylan and Headhunter, and the line shown while
+   nothing is picked. */
+.cls-feat--chooser .cls-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0.6rem;
+}
+.cls-subempty {
+  margin: 0.4rem 0 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px dashed rgba(196,154,26,0.35);
+  border-radius: var(--radius);
+  background: rgba(196,154,26,0.04);
+  font-style: italic;
+  color: rgba(242,216,152,0.7);
+}
+.cls-pill[aria-pressed="true"] { border-color: var(--gold); }
 
 /* Grouped header spanning the spell-slot columns, as the book prints it. */
 .cls-table__group th { border-bottom: 0; padding-bottom: 0.15rem; }
