@@ -1067,8 +1067,16 @@ body:has(#tala:target) .tab-nav__link[href="#tala"] {
 .dark-section .section-container .about-world__title::after,
 .about-world__title::before,
 .about-world__title::after { display: none; content: none; }
-/* Mobile: allow title to wrap to prevent horizontal overflow */
+/* Mobile: allow title to wrap to prevent horizontal overflow.
+   This override existed but never took effect: it was written as
+   `.about-world__title` (0,1,0) while the rule above it sets nowrap via
+   `.dark-section .section-container .about-world__title` (0,3,0), and
+   specificity beats a media query. The result was 331px of horizontal scroll
+   on the homepage at 375px, because "Ang Balangkas ng Salong-Salong" laid out
+   690px wide in a 343px box. The selector list is repeated here so the two
+   match. */
 @media (max-width: 720px) {
+  .dark-section .section-container .about-world__title,
   .about-world__title {
     white-space: normal;
     line-height: 1.2;
@@ -4402,6 +4410,14 @@ button:focus-visible {
   padding-bottom: 1.1rem;
   border-bottom: 1px solid rgba(196,154,26,0.3);
 }
+/* A flex item defaults to min-width:auto, so it refuses to shrink below its
+   content. Beside a 96px badge on a 375px screen that pushed "Headhunter" and
+   its source line past the right edge. Allow the text column to shrink and
+   wrap instead. */
+.cls-hero > div { min-width: 0; }
+.cls-hero__name,
+.cls-hero__src { overflow-wrap: break-word; }
+.cls-hero .cls-badge { flex: none; }
 .cls-hero__name {
   font-family: var(--font-display);
   font-size: 2rem;
