@@ -4982,6 +4982,11 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
    Replaces the accordion cards, which showed the same content but were
    not the requested layout.
    ================================================================== */
+/* The site default container is 1100px, which boxed this browser into a
+   narrow centred column and left the Source values clipped. The codex opts
+   into the wide container the class page already uses. */
+.page-codex .section-container { max-width: 1680px; }
+
 .cdx-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
@@ -5032,9 +5037,10 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
 .cdx-table th,
 .cdx-table td { overflow-wrap: anywhere; }
 /* Fixed layout would otherwise split every column equally, starving the name
-   and over-feeding short ones like Category. */
-.cdx-table th:first-child { width: 32%; }
-.cdx-table th:last-child { width: 18%; }
+   and over-feeding short ones like Category. Source needs real room because
+   "Islands of Sina Una" is the longest value in the table. */
+.cdx-table th:first-child { width: 26%; }
+.cdx-table th:last-child { width: 21%; }
 .cdx-th {
   position: sticky;
   top: 0;
@@ -5067,12 +5073,15 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
   line-height: 1.4;
 }
 .cdx-td--name { font-weight: 600; }
+/* Must wrap, not nowrap. With table-layout: fixed and no overflow container,
+   nowrap simply clipped "Islands of Sina Una" mid-word. */
 .cdx-td--src {
   font-family: var(--font-display);
   font-size: 0.58rem;
   letter-spacing: 0.05em;
+  line-height: 1.35;
   color: rgba(242,216,152,0.62);
-  white-space: nowrap;
+  white-space: normal;
 }
 .cdx-empty { padding: 1rem; margin: 0; color: rgba(242,216,152,0.7); font-style: italic; }
 
