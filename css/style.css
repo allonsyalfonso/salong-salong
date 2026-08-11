@@ -5022,9 +5022,19 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
   color: rgba(242,216,152,0.7);
   white-space: nowrap;
 }
-/* The list scrolls inside its own pane so the detail stays put beside it. */
-.cdx-scroll { max-height: 32rem; overflow-y: auto; }
-.cdx-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+/* No inner scrollbars, on owner instruction. The list renders at full height
+   and the page is the only thing that scrolls; the detail panel is sticky
+   below so it stays beside the list without needing a scrolling box. */
+.cdx-scroll { max-height: none; overflow: visible; }
+.cdx-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; table-layout: fixed; }
+/* Long values wrap rather than forcing the table wider than its pane, which
+   is what would otherwise reintroduce a horizontal scrollbar. */
+.cdx-table th,
+.cdx-table td { overflow-wrap: anywhere; }
+/* Fixed layout would otherwise split every column equally, starving the name
+   and over-feeding short ones like Category. */
+.cdx-table th:first-child { width: 32%; }
+.cdx-table th:last-child { width: 18%; }
 .cdx-th {
   position: sticky;
   top: 0;
@@ -5066,8 +5076,13 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
 }
 .cdx-empty { padding: 1rem; margin: 0; color: rgba(242,216,152,0.7); font-style: italic; }
 
-/* Detail panel, styled as the stat block 5e.tools shows on the right. */
+/* Detail panel, styled as the stat block 5e.tools shows on the right.
+   Sticky rather than scrollable: it follows the page down so a row picked
+   near the bottom of a 77-row list still has its detail in view, and no
+   scrollbar is introduced to achieve that. */
 .cdx-detail {
+  position: sticky;
+  top: 1rem;
   padding: 1.15rem 1.3rem;
   border: 1px solid rgba(196,154,26,0.28);
   border-left: 3px solid var(--gold);
@@ -5134,11 +5149,12 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
   white-space: nowrap;
 }
 
-/* One column on narrow screens: list first, then the detail beneath it. */
+/* One column on narrow screens: list first, then the detail beneath it.
+   Sticky is dropped here because the detail sits below the list rather than
+   beside it, so pinning it would cover the rows. */
 @media (max-width: 900px) {
   .cdx-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-  .cdx-scroll { max-height: 20rem; }
-  .cdx-detail { border-left-width: 3px; }
+  .cdx-detail { position: static; }
 }
 @media (max-width: 560px) {
   .cdx-table { font-size: 0.8rem; }
