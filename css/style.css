@@ -4975,6 +4975,72 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
       the light colour rather than the muted brown, which read 2.35. */
 .map-toggle-markers__label { color: var(--text-light); }
 
+/* ==================================================================
+   CODEX ENTRIES IN THE 5ETOOLS SHAPE, 2026-08-07
+   Races, backgrounds and feats now share one presentation: title with a
+   source tag, then bold inline labels ("Ability Scores:", "Feat:"),
+   then the prose. That replaces the old two-column <dl> stat grid.
+   ================================================================== */
+.codex-entry .codex-race__title { margin-right: 0.1rem; }
+.codex-entry__src {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(242,216,152,0.62);
+  white-space: nowrap;
+  margin-right: auto;
+  padding-left: 0.55rem;
+}
+.codex-entry__lines {
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+.codex-entry__lines li {
+  margin: 0 0 0.32rem;
+  padding-left: 0.9rem;
+  text-indent: -0.9rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+.codex-entry__lines strong { color: var(--gold-light); }
+/* Trait lists carry longer prose, so they get a little more breathing room. */
+.codex-entry__lines--traits li { margin-bottom: 0.5rem; }
+.codex-entry__flavor {
+  margin: 0 0 0.85rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+.codex-entry__prose { color: var(--text-light); }
+.codex-entry__prose p { margin: 0 0 0.6rem; line-height: 1.7; }
+.codex-entry__prose p:last-child { margin-bottom: 0; }
+.codex-entry__prose strong { color: var(--gold-light); }
+/* The pointer shown for Player's Handbook backgrounds we cannot reproduce. */
+.codex-entry__note {
+  margin: 0.2rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid rgba(196,154,26,0.4);
+  background: rgba(196,154,26,0.05);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(242,216,152,0.88);
+}
+.codex-entry__link {
+  color: var(--gold-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.codex-subhead {
+  margin: 1.8rem 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* 8. .eq-scroll used a half-transparent dark over the amber page, which
       composited to a muddy mid-tone and left the expanded magic-item
       prose at 2.18. An opaque panel restores the intended dark surface
