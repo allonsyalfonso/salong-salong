@@ -4987,6 +4987,39 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
    into the wide container the class page already uses. */
 .page-codex .section-container { max-width: 1680px; }
 
+/* Sub-tabs, so a 77-row feat list opens on one category instead of all. */
+.cdx-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+}
+.cdx-subtab {
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242,216,152,0.8);
+  background: rgba(26,6,0,0.4);
+  border: 1px solid rgba(196,154,26,0.28);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.cdx-subtab:hover { background: rgba(196,154,26,0.14); color: var(--gold-bright); }
+.cdx-subtab.is-active {
+  color: var(--text-dark);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.cdx-intro {
+  margin: 0 0 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(242,216,152,0.85);
+}
+
 .cdx-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
