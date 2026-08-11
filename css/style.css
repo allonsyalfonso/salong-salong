@@ -5076,7 +5076,9 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
 .cdx-table th:last-child { width: 21%; }
 .cdx-th {
   position: sticky;
-  top: 0;
+  /* Same reason as .cdx-detail: clear the 54px sticky navbar rather than
+     sliding under it. Matched to the detail panel so the two line up. */
+  top: 4.4rem;
   z-index: 1;
   padding: 0.45rem 0.5rem;
   text-align: left;
@@ -5124,7 +5126,10 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
    scrollbar is introduced to achieve that. */
 .cdx-detail {
   position: sticky;
-  top: 1rem;
+  /* The site navbar is sticky at 54px with z-index 1000. Sticking at 1rem put
+     the panel underneath it, which cut off the entry title whenever a row far
+     down the list was selected. Clear the navbar. */
+  top: 4.4rem;
   padding: 1.15rem 1.3rem;
   border: 1px solid rgba(196,154,26,0.28);
   border-left: 3px solid var(--gold);
@@ -5159,6 +5164,42 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
   font-size: 0.92rem;
   color: rgba(242,216,152,0.75);
 }
+/* Per-entry tabs inside the detail panel: Traits / Lore / Image on species. */
+.cdx-etabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 0 0.9rem;
+  border-bottom: 1px solid rgba(196,154,26,0.22);
+  padding-bottom: 0.5rem;
+}
+.cdx-etab {
+  padding: 0.28rem 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242,216,152,0.75);
+  background: transparent;
+  border: 1px solid rgba(196,154,26,0.25);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.cdx-etab:hover { background: rgba(196,154,26,0.12); color: var(--gold-bright); }
+.cdx-etab.is-active {
+  color: var(--text-dark);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.cdx-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(196,154,26,0.25);
+}
+
 .cdx-lines { list-style: none; margin: 0 0 0.9rem; padding: 0; }
 .cdx-lines li {
   margin: 0 0 0.32rem;
