@@ -4872,3 +4872,111 @@ tr.eq-prose p:last-child { margin-bottom: 0; }
 @media (max-width: 640px) {
   .cls-feat__src { margin-left: 0; width: 100%; }
 }
+
+
+/* ==================================================================
+   CONTRAST FIXES, 2026-08-07
+   Audited every page by computing each text node's colour against its
+   composited background. Everything below measured under 3:1, and the
+   worst cases were 1.01:1, which is invisible rather than merely hard
+   to read. Kept in one block so the next audit can find them.
+
+   Two root causes recur:
+   1. Dark sections. body sets color: var(--text-dark) (near black), so
+      any element inside a .dark-section that does not set its own
+      colour inherits near-black onto near-black. This is the gotcha
+      already documented in SESSION-CONTEXT.
+   2. --bg-dark is amber (#c98010), not a dark colour, despite the
+      name. `color: var(--bg-dark)` on a gold button is therefore amber
+      on gold. Those want --text-dark.
+   ================================================================== */
+
+/* 1. Dark sections: page-header subtitles and in-grid section dividers
+      were rgb(26,6,0) on rgb(28,8,0), a ratio of 1.01. Affected the
+      page subtitle on codex, classes, equipment, spells and calendar,
+      and the section headings on codex, equipment and spells. */
+.dark-section .tagalog,
+.dark-section .npc-section-label,
+.dark-section .npc-section-label__text {
+  color: var(--text-light);
+}
+/* The divider rules either side of those headings were also near-black. */
+.dark-section .npc-section-label::before,
+.dark-section .npc-section-label::after {
+  background: rgba(242,216,152,0.28);
+}
+
+/* 2. Gold buttons: amber-on-gold at 1.15. */
+.search-btn,
+.error-page__link,
+.error-page__link:hover {
+  color: var(--text-dark);
+}
+
+/* 3. The 404 page renders on the amber background, but its text was
+      coloured for a dark one: 1.15 to 2.29 throughout. */
+.error-page__code { color: rgba(26,6,0,0.68); }
+.error-page__title { color: var(--text-dark); }
+.error-page__message { color: rgba(26,6,0,0.85); }
+
+/* 3b. The back-to-top arrow is `color: var(--bg-dark)` on a transparent
+       button over the amber page, so it was amber on amber, 1.0, and
+       simply not there. index.html hides it behind the mascot image, but
+       the other pages render the arrow itself. */
+.back-to-top { color: var(--text-dark); }
+
+/* 4. Small gold labels sitting on cream cards, 1.84 to 2.21. Same
+      treatment for each: the deep brown already used for muted text on
+      light surfaces. */
+.chronicle-label,
+.epic-character-label,
+.timeline-card__phase,
+.location-tag {
+  color: var(--text-muted);
+}
+
+/* 5. Chronicles tab links sit on amber, not on a dark bar. The inactive
+      ones were fixed by the plain selector, but the active state is set
+      by `[href="#tala"]` and `body:has(...)` rules that out-specify it,
+      leaving gold-light on amber at 1.53. Those are listed explicitly so
+      the specificity matches, and the active tab keeps its distinction
+      through weight plus the border it already has. */
+.tab-nav__link,
+.tab-nav__link:hover,
+.tab-nav__link[href="#tala"],
+.tab-nav__link[href="#habilin"],
+body:has(#tala:target) .tab-nav__link[href="#tala"],
+body:has(#tala:target) .tab-nav__link[href="#habilin"],
+body:has(#habilin:target) .tab-nav__link[href="#tala"],
+body:has(#habilin:target) .tab-nav__link[href="#habilin"] {
+  color: var(--text-dark);
+}
+body:has(#tala:target) .tab-nav__link[href="#tala"],
+body:has(#habilin:target) .tab-nav__link[href="#habilin"],
+.tab-nav__link[href="#tala"] { font-weight: 700; }
+
+/* 6. The timeline closing note was --text-muted on amber, 2.70. It sits
+      in .timeline-closing, not .timeline-intro. */
+.timeline-closing em,
+.timeline-closing small,
+.timeline-intro em,
+.timeline-intro small { color: rgba(26,6,0,0.82); }
+
+/* 9. Secondary labels set at 0.5 alpha landed just under AA (4.1 to
+      4.4). Nudging the alpha keeps the recessive look and clears the
+      threshold. */
+.cls-feat__src { color: rgba(242,216,152,0.68); }
+.codex-tab { color: rgba(238,221,181,0.68); }
+.status-badge--kia,
+.status-badge--deceased { color: #e08585; }
+.status-badge--demon { color: #f4626e; }
+
+/* 7. The map marker toggle label sits on a near-black pill, so it needs
+      the light colour rather than the muted brown, which read 2.35. */
+.map-toggle-markers__label { color: var(--text-light); }
+
+/* 8. .eq-scroll used a half-transparent dark over the amber page, which
+      composited to a muddy mid-tone and left the expanded magic-item
+      prose at 2.18. An opaque panel restores the intended dark surface
+      and lifts that text well clear. */
+.eq-scroll { background: #140b03; }
