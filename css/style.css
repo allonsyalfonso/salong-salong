@@ -5074,12 +5074,12 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
    "Islands of Sina Una" is the longest value in the table. */
 .cdx-table th:first-child { width: 26%; }
 .cdx-table th:last-child { width: 21%; }
+/* NOT sticky. A sticky header floats above the rows by design, and with no
+   scroll container it did that against the page, so the first row sat half
+   hidden underneath it. The header now scrolls away with the table, which
+   costs nothing because the detail panel beside it is the sticky element. */
 .cdx-th {
-  position: sticky;
-  /* Same reason as .cdx-detail: clear the 54px sticky navbar rather than
-     sliding under it. Matched to the detail panel so the two line up. */
-  top: 4.4rem;
-  z-index: 1;
+  position: static;
   padding: 0.45rem 0.5rem;
   text-align: left;
   font-family: var(--font-display);
