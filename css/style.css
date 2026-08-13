@@ -5233,16 +5233,17 @@ body:has(#habilin:target) .tab-nav__link[href="#habilin"],
 
 .cdx-figure { margin: 0; }
 /* Capped so the detail panel never grows taller than the list beside it.
-   The binding case is the WIDEST layout: at 1900px the columns stop wrapping
+   The binding case is the WIDEST layout: at 1920px the columns stop wrapping
    so the species list is at its shortest, 427px, while the panel chrome
-   (padding, title, subtitle, tab strip, credit) stays about 171px. 16rem of
-   art overshot by 22px there, so 14rem it is, which clears every width with
-   room to spare. width:auto keeps the 3:4 portraits in proportion rather than
-   stretching them. */
+   (padding, title, subtitle, tab strip, credit) stays about 171px.
+   Measured: 16rem overshot by 22px, 14rem cleared by 10px. 14.5rem is the
+   largest that still fits, clearing by 2px, so it is the most art we can show
+   without crossing the line. width:auto keeps the 3:4 portraits in proportion
+   rather than stretching them. */
 .cdx-art {
   display: block;
   max-width: 100%;
-  max-height: 14rem;
+  max-height: 14.5rem;
   width: auto;
   height: auto;
   margin: 0 auto;
