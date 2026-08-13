@@ -4712,9 +4712,11 @@ tr.eq-prose > td {
   background: rgba(26,6,0,0.32);
   border-bottom: 1px solid rgba(196,154,26,0.1);
 }
+/* No max-width. It was capped at 62ch back when only the 25 magic items had
+   prose; now that all 109 items do, the cap left every description hugging
+   the left of a much wider table. Owner asked for the full width. */
 tr.eq-prose p {
   margin: 0 0 0.6rem;
-  max-width: 62ch;
   color: var(--text-light);
   line-height: 1.6;
 }
